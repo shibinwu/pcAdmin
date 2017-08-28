@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>控制台页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.flot.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.flot.resize.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.slimscroll.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/dashboard.js"></script>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/dashboard.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
@@ -49,13 +49,13 @@
                 <a class="count" href="ajax/notifications.html"><span>9</span></a>
         	</div>-->
             <div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+            	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <span>管理员</span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">
             	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                	<a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                     <div class="changetheme">
                     	切换主题: <br />
                     	<a class="default"></a>
@@ -82,8 +82,8 @@
     
     <div class="header">
     	<ul class="headermenu">
-        	<li class="current"><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li class="current"><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
             <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
             <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
             <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
@@ -106,22 +106,37 @@
         </div><!--headerwidget-->
         
     </div><!--header-->
-
-
+    
     <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#index" class="editor">banner管理</a>
-                <span class="arrow"></span>
-                <ul id="index">
-                    <li><a href="forms.html">列表展示</a></li>
-                    <li><a href="wizard.html">添加banner</a></li>
+    	<ul>
+        	<li><a href="#formsub" class="editor">游戏管理</a>
+            	<span class="arrow"></span>
+            	<ul id="formsub">
+               		<li><a href="forms.html">游戏类型</a></li>
+                    <li><a href="wizard.html">饰品</a></li>
+                    <li><a href="editor.html">英雄</a></li>
                 </ul>
             </li>
 
-            <li><a href="#addons" class="addons">其他页面</a>
+            <li><a href="#race" class="error">赛事管理</a>
+            	<span class="arrow"></span>
+            	<ul id="race">
+                    <li><a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+               		<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#team" class="error">战队管理</a>
                 <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
+                </ul>
+            </li>
+            <li><a href="#addons" class="addons">其他页面</a>
+            	<span class="arrow"></span>
+            	<ul id="addons">
+               		<li><a href="newsfeed.html">新闻订阅</a></li>
                     <li><a href="profile.html">资料页面</a></li>
                     <li><a href="productlist.html">产品列表</a></li>
                     <li><a href="photo.html">图片视频分享</a></li>
@@ -132,31 +147,31 @@
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--左侧栏-->
-
+    </div><!--leftmenu-->
+        
     <div class="centercontent">
-
+    
         <div class="pageheader">
             <h1 class="pagetitle">控制台</h1>
             <span class="pagedesc">页面的描述内容</span>
-
+            
             <ul class="hornav">
                 <li class="current"><a href="#updates">最新更新</a></li>
                 <li><a href="#activities">最近活动</a></li>
             </ul>
         </div><!--pageheader-->
-
+        
         <div id="contentwrapper" class="contentwrapper">
-
+        
         	<div id="updates" class="subcontent">
                     <div class="notibar announcement">
                         <a class="close"></a>
                         <h3>Announcement</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div><!-- notification announcement -->
-
+                    
                     <div class="two_third dashboard_left">
-
+                    
                     	<ul class="shortcuts">
                         	<li><a href="" class="settings"><span>设置</span></a></li>
                             <li><a href="" class="users"><span>用户</span></a></li>
@@ -164,13 +179,13 @@
                             <li><a href="" class="events"><span>事件</span></a></li>
                             <li><a href="" class="analytics"><span>分析</span></a></li>
                         </ul>
-
+                        
                         <br clear="all" />
-
+                    
                         <div class="contenttitle2 nomargintop">
                             <h3>Visit Overview</h3>
                         </div><!--contenttitle-->
-
+                        
                         <div class="overviewhead">
                         	<div class="overviewselect">
                                 <select id="overviewselect" name="select">
@@ -186,9 +201,9 @@
                             </div><!--floatright-->
                         	From: &nbsp;<input type="text" id="datepickfrom" /> &nbsp; &nbsp; To: &nbsp;<input type="text" id="datepickto" />
                         </div><!--overviewhead-->
-
+                        
                         <br clear="all" />
-
+                        
                         <table cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">
                             <colgroup>
                                 <col class="con0" width="20%" />
@@ -220,13 +235,13 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                        
                         <br clear="all" />
-
+                        
                         <div id="chartplace" style="height:300px;"></div>
-
+                        
                         <br clear="all" />
-
+                        
                         <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablecb overviewtable2">
                             <colgroup>
                                 <col class="con0" style="width: 4%" />
@@ -283,9 +298,9 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                        
                         <br />
-
+                        
                         <div class="widgetbox">
                         	<div class="title"><h3>Latest Articles</h3></div>
                             <div class="widgetcontent">
@@ -293,7 +308,7 @@
                                         <ul class="entrylist">
                                               <li>
                                                 <div class="entry_wrap">
-                                                    <div class="entry_img"><img src="__PUBLIC__/Admin/images/thumbs/image1.png" alt="" /></div>
+                                                    <div class="entry_img"><img src="/Public/Admin/images/thumbs/image1.png" alt="" /></div>
                                                     <div class="entry_content">
                                                         <h4><a href="">Why Won't My Cat Eat?</a></h4>
                                                         <small>Submitted by: <a href=""><strong>Hiccup</strong></a> - June 10, 2012</small>
@@ -304,7 +319,7 @@
                                               </li>
                                               <li class="even">
                                                 <div class="entry_wrap">
-                                                <div class="entry_img"><img src="__PUBLIC__/Admin/images/thumbs/image2.png" alt="" /></div>
+                                                <div class="entry_img"><img src="/Public/Admin/images/thumbs/image2.png" alt="" /></div>
                                                 <div class="entry_content">
                                                     <h4><a href="">We Are About Color</a></h4>
                                                     <small>Submitted by: <a href=""><strong>Hiccup</strong></a> - June 10, 2012</small>
@@ -315,7 +330,7 @@
                                               </li>
                                               <li>
                                                 <div class="entry_wrap">
-                                                <div class="entry_img"><img src="__PUBLIC__/Admin/images/thumbs/image3.png" alt="" /></div>
+                                                <div class="entry_img"><img src="/Public/Admin/images/thumbs/image3.png" alt="" /></div>
                                                 <div class="entry_content">
                                                     <h4><a href="">Ancient Technology</a></h4>
                                                     <small>Submitted by: <a href=""><strong>Hiccup</strong></a> - June 10, 2012</small>
@@ -326,7 +341,7 @@
                                               </li>
                                               <li class="even">
                                                 <div class="entry_wrap">
-                                                <div class="entry_img"><img src="__PUBLIC__/Admin/images/thumbs/image4.png" alt="" /></div>
+                                                <div class="entry_img"><img src="/Public/Admin/images/thumbs/image4.png" alt="" /></div>
                                                 <div class="entry_content">
                                                     <h4><a href="">Bird's Nest Soup</a></h4>
                                                     <small>Submitted by: <a href=""><strong>Hiccup</strong></a> - June 10, 2012</small>
@@ -335,21 +350,21 @@
                                                 </div>
                                                 </div>
                                               </li>
-                                            </ul>
+                                            </ul>                        
                                 </div><!--#scroll1-->
                             </div><!--widgetcontent-->
-                        </div><!-- widgetbox -->
-
-
+                        </div><!-- widgetbox -->                            
+                        
+                        
                     </div><!--two_third dashboard_left -->
-
+                    
                     <div class="one_third last dashboard_right">
-
+                    
                         <div class="contenttitle2 nomargintop">
                             <h3>Top Rated Sites</h3>
                         </div><!--contenttitle-->
-
-
+                    
+                    
                     	<ul class="toplist">
                         	<li>
                             	<div>
@@ -400,7 +415,7 @@
                                 </div>
                             </li>
                         </ul>
-
+                        
 						<div class="widgetbox">
                             <div class="title"><h3>Newly Registered User</h3></div>
                             <div class="widgetoptions">
@@ -410,7 +425,7 @@
                             <div class="widgetcontent userlistwidget nopadding">
                                 <ul>
                                     <li>
-                                        <div class="avatar"><img alt="" src="__PUBLIC__/Admin/images/thumbs/avatar1.png" /></div>
+                                        <div class="avatar"><img alt="" src="/Public/Admin/images/thumbs/avatar1.png" /></div>
                                         <div class="info">
                                             <a href="">Squint</a> <br />
                                             Front-End Engineer <br /> 18 minutes ago
@@ -441,7 +456,7 @@
                                 <a class="more" href="">View More Users</a>
                             </div><!--widgetcontent-->
                         </div>
-
+                        
                         <div class="widgetbox">
                             <div class="title"><h3>Latest News</h3></div>
                             <div class="widgetcontent">
@@ -492,23 +507,23 @@
                                         inceptos himenaeos.
                                         </p>
                                     </div>
-                                </div>
+                                </div>     
                               </div> <!--widgetcontent-->
-                         </div><!--widgetbox-->
-
+                         </div><!--widgetbox-->                        
+                                            
                     </div><!--one_third last-->
-
-
+                    
+                    
             </div><!-- #updates -->
-
+            
             <div id="activities" class="subcontent" style="display: none;">
             	&nbsp;
             </div><!-- #activities -->
-
+        
         </div><!--contentwrapper-->
-
+        
         <br clear="all" />
-
+        
 	</div><!-- centercontent -->
     
     

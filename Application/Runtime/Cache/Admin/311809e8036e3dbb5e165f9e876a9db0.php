@@ -1,25 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
 <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie9.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
 <![endif]-->
 <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie8.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
 <![endif]-->
 <!--[if lt IE 9]>
-	<script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
+	<script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
 
@@ -47,12 +47,12 @@
         	</div>
 			-->
             <div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+            	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">            	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                	<a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                     <div class="changetheme">
                     	Change theme: <br />
                     	<a class="default"></a>
@@ -79,14 +79,12 @@
     
     <div class="header">
     	<ul class="headermenu">
-            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li class="current"><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
+        	<li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="<?php echo U('Index/manageblog');?>"><span class="icon icon-pencil"></span>博客管理</a></li>
+            <li><a href="<?php echo U('Index/messages');?>"><span class="icon icon-message"></span>查看消息</a></li>
+            <li><a href="<?php echo U('Index/reports');?>"><span class="icon icon-chart"></span>统计报表</a></li>
+            <li class="current"><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>系统管理</a></li>
         </ul>
         
         <div class="headerwidget">
@@ -115,19 +113,27 @@
                 </ul>
             </li>
 
+            <!--<li><a href="filemanager.html" class="gallery">文件管理</a></li>-->
+            <!-- <li><a href="elements.html" class="elements">网页元素</a></li>
+            <li><a href="widgets.html" class="widgets">网页插件</a></li>
+            <li><a href="calendar.html" class="calendar">日历事件</a></li>
+            <li><a href="support.html" class="support">客户支持</a></li>
+            <li><a href="typography.html" class="typo">文字排版</a></li>
+            <li><a href="tables.html" class="tables">数据表格</a></li>
+			<li><a href="buttons.html" class="buttons">按钮 &amp; 图标</a></li> -->
             <li><a href="#error" class="error">赛事管理</a>
                 <span class="arrow"></span>
                 <ul id="error">
-                    <li class="current"><a href="{:U('Race/showList')}">赛事列表</a></li>
-                    <li><a href="{:U('Race/add')}">添加赛事</a></li>
+                    <li><a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+                    <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
                 </ul>
             </li>
 
             <li><a href="#team" class="error">战队管理</a>
                 <span class="arrow"></span>
                 <ul id="team">
-                    <li><a href="{:U('Team/showList')}">战队列表</a></li>
-                    <li><a href="{:U('Team/add')}">添加战队</a></li>
+                    <li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
                 </ul>
             </li>
             <li><a href="#addons" class="addons">其他页面</a>
@@ -155,6 +161,8 @@
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
+                        
+
 
                 <div class="contenttitle2">
                 	<h3>Table with Action</h3>
@@ -201,30 +209,28 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <volist name='data' id='vol'>
-                        <tr>
-                            <td>{$vol.rname}</td>
-                            <td>{$vol.sponsor_name}</td>
-                            <td>{$vol.sponsor_phone}</td>
-                            <td>{$vol.sponsor_qq}</td>
-                            <td>{$vol.types}</td>
-                            <td>{$vol.game_type}</td>
-                            <td>{$vol.picurl}</td>
-                            <td>{$vol.race_start_time}</td>
-                            <td>{$vol.bonus}</td>
-                            <!--<td>{$vol.race_mode}</td>-->
-                            <!--<td>{$vol.join_mode}</td>-->
-                            <!--<td>{$vol.game_area}</td>-->
-                            <!--<td>{$vol.signed_num}</td>-->
-                            <!--<td>{$vol.join_cost}</td>-->
-                            <!--<td>{$vol.rice_stage}</td>-->
-                            <!--<td>{$vol.rice_sponsor}</td>-->
-                            <!--<td>{$vol.raceprocess}</td>-->
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                            <td><?php echo ($vol["rname"]); ?></td>
+                            <td><?php echo ($vol["sponsor_name"]); ?></td>
+                            <td><?php echo ($vol["sponsor_phone"]); ?></td>
+                            <td><?php echo ($vol["sponsor_qq"]); ?></td>
+                            <td><?php echo ($vol["types"]); ?></td>
+                            <td><?php echo ($vol["game_type"]); ?></td>
+                            <td><?php echo ($vol["picurl"]); ?></td>
+                            <td><?php echo ($vol["race_start_time"]); ?></td>
+                            <td><?php echo ($vol["bonus"]); ?></td>
+                            <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
+                            <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
+                            <!--<td><?php echo ($vol["game_area"]); ?></td>-->
+                            <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
+                            <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
+                            <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
+                            <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
+                            <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
                             <!--<td class="center">4</td>-->
                             <!--<td class="center">X</td>-->
-                            <td class="center"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
-                        </tr>
-                    </volist>
+                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
                     </tbody>
                 </table>
@@ -255,7 +261,7 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '__CONTROLLER__/del/id/' + id;
+            window.location.href = '/index.php/Admin/Team/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
@@ -263,7 +269,7 @@
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);
-            window.location.href = '__CONTROLLER__/edit/id/' + id;
+            window.location.href = '/index.php/Admin/Team/edit/id/' + id;
         });
     });
    </script>

@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
 <link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
-<script type="/Public/Admin/text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/plugins/jquery.cookie.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/plugins/jquery.uniform.min.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/custom/general.js"></script>
-<script type="/Public/Admin/text/javascript" src="js/custom/tables.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
 <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
 <![endif]-->
 <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
 <![endif]-->
 <!--[if lt IE 9]>
-	<script src="js/plugins/css3-mediaqueries.js"></script>
+	<script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
 
@@ -27,7 +27,7 @@
 <div class="bodywrapper">
     <div class="topheader">
         <div class="left">
-            <h1 class="logo">Ama.<span>Admin</span></h1>
+            <h1 class="logo">Wnv.<span>Admin</span></h1>
             <span class="slogan">后台管理系统</span>
             
             <div class="search">
@@ -79,10 +79,14 @@
     
     <div class="header">
     	<ul class="headermenu">
-        	<li><a href="dashboard.html"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
-            <li><a href="manageblog.html"><span class="icon icon-pencil"></span>Manage Blog</a></li>
-            <li><a href="messages.html"><span class="icon icon-message"></span>Messages</a></li>
-            <li><a href="reports.html"><span class="icon icon-chart"></span>Reports</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li class="current"><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
+            <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
+            <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+            <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+            <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
         
         <div class="headerwidget">
@@ -99,47 +103,48 @@
         </div><!--headerwidget-->
         
     </div><!--header-->
-    
+
     <div class="vernav2 iconmenu">
-    	<ul>
-        	<li><a href="#formsub" class="editor">Forms</a>
-            	<span class="arrow"></span>
-            	<ul id="formsub">
-               		<li><a href="forms.html">Basic Form</a></li>
-                    <li><a href="wizard.html">Wizard</a></li>
-                    <li><a href="editor.html">WYSIWYG</a></li>
+        <ul>
+            <li><a href="#formsub" class="editor">游戏管理</a>
+                <span class="arrow"></span>
+                <ul id="formsub">
+                    <li><a href="forms.html">游戏类型</a></li>
+                    <li><a href="wizard.html">饰品</a></li>
+                    <li><a href="editor.html">英雄</a></li>
                 </ul>
             </li>
-            <!--<li><a href="filemanager.html" class="gallery">File Manager</a></li>-->
-            <li><a href="elements.html" class="elements">Elements</a></li>
-            <li><a href="widgets.html" class="widgets">Widgets</a></li>
-            <li><a href="calendar.html" class="calendar">Calendar</a></li>
-            <li><a href="support.html" class="support">Customer Support</a></li>
-            <li><a href="typography.html" class="typo">Typography</a></li>
-            <li class="current"><a href="tables.html" class="tables">Tables</a></li>
-            <li><a href="buttons.html" class="buttons">Buttons &amp; Icons</a></li>
-            <li><a href="#error" class="error">Error Pages</a>
-            	<span class="arrow"></span>
-            	<ul id="error">
-               		<li><a href="notfound.html">Page Not Found</a></li>
-                    <li><a href="forbidden.html">Forbidden Page</a></li>
-                    <li><a href="internal.html">Internal Server Error</a></li>
-                    <li><a href="offline.html">Offline</a></li>
+
+            <li><a href="#error" class="error">赛事管理</a>
+                <span class="arrow"></span>
+                <ul id="error">
+                    <li class="current"><a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+                    <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
                 </ul>
             </li>
-            <li><a href="#addons" class="addons">Addons</a>
-            	<span class="arrow"></span>
-            	<ul id="addons">
-               		<li><a href="newsfeed.html">News Feed</a></li>
-                    <li><a href="profile.html">Profile Page</a></li>
-                    <li><a href="productlist.html">Product List</a></li>
-                    <li><a href="photo.html">Photo/Video Sharing</a></li>
+
+            <li><a href="#team" class="error">战队管理</a>
+                <span class="arrow"></span>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
+                </ul>
+            </li>
+            <li><a href="#addons" class="addons">其他页面</a>
+                <span class="arrow"></span>
+                <ul id="addons">
+                    <li><a href="newsfeed.html">新闻订阅</a></li>
+                    <li><a href="profile.html">资料页面</a></li>
+                    <li><a href="productlist.html">产品列表</a></li>
+                    <li><a href="photo.html">图片视频分享</a></li>
+                    <li><a href="gallery.html">相册</a></li>
+                    <li><a href="invoice.html">购物车</a></li>
                 </ul>
             </li>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--leftmenu-->
+    </div><!--左侧栏-->
         
     <div class="centercontent tables">
     
@@ -150,324 +155,7 @@
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
-                        
-                <div class="contenttitle2">
-                	<h3>Standard Table</h3>
-                </div><!--contenttitle-->
-                	
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
-                    <colgroup>
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet  Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <br /><br />
-                
-                <div class="contenttitle2">
-                	<h3>Table with Quick Edit/View</h3>
-                </div><!--contenttitle-->
-                
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablequick">
-                    <colgroup>
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                            <th class="head1">&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                            <th class="head1">&nbsp;</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td class="con0">Trident</td>
-                            <td class="con1">Internet Explorer 4.0</td>
-                            <td class="con0">Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                            <td class="center"><a href="ajax/blog/quickedit.html" class="toggle">Quick View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                            <td class="center"><a href="ajax/blog/quickedit.html" class="toggle">Quick View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet  Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="ajax/blog/quickedit.html" class="toggle">Quick View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="ajax/blog/quickedit.html" class="toggle">Quick View</a></td>
-                        </tr>
-                        <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="ajax/blog/quickedit.html" class="toggle">Quick View</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <br /><br />
-                
-                <div class="contenttitle2">
-                	<h3>Table with Row Selection</h3>
-                </div><!--contenttitle-->
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 4%" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet  Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <br clear="all" />
-                
-                <br /><br />
-                
-                <div class="contenttitle2">
-                	<h3>Table with Options</h3>
-                </div><!--contenttitle-->
-                <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table1">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
-                    <button class="radius3">Apply Filter</button>
-                </div><!--tableoptions-->	
-                <table cellpadding="0" cellspacing="0" border="0" id="table1" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 4%" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet  Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <br /><br />
-                
+
                 <div class="contenttitle2">
                 	<h3>Table with Action</h3>
                 </div><!--contenttitle-->
@@ -482,1032 +170,99 @@
                 </div><!--tableoptions-->	
                 <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
                     <colgroup>
-                        <col class="con0" style="width: 4%" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                            <th class="head0">&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                        	<th class="head0"><input type="checkbox" class="checkall" /></th>
-                            <th class="head1">Rendering engine</th>
-                            <th class="head0">Browser</th>
-                            <th class="head1">Platform(s)</th>
-                            <th class="head0">Engine version</th>
-                            <th class="head1">CSS grade</th>
-                            <th class="head0">&nbsp;</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet  Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
-                        </tr>
-                        <tr>
-                        	<td align="center"><input type="checkbox" /></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                            <td class="center"><a href="" class="edit">Edit</a> &nbsp; <a href="" class="delete">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <br /><br />
-                
-                <div class="contenttitle2">
-                	<h3>Dynamic Table</h3>
-                </div><!--contenttitle-->
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
-                    <colgroup>
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
+                        <col class="con0" style="width: 7%" />
+                        <col class="con1" style="width: 8%" />
+                        <col class="con0" style="width: 8%" />
+                        <col class="con1" style="width: 8%" />
+                        <col class="con0" style="width: 7%" />
+                        <col class="con1" style="width: 7%" />
                         <col class="con0" />
                     </colgroup>
                     <thead>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
+                    <tr>
+                        <th class="head0">联赛名称</th>
+                        <th class="head1">主办方姓名</th>
+                        <th class="head0">主办方电话</th>
+                        <th class="head1">主办方QQ</th>
+                        <th class="head0">赛事类型</th>
+                        <th class="head1">赛事方式</th>
+                        <th class="head0">赛事LOGO</th>
+                        <th class="head1">赛事开始时间</th>
+                        <th class="head0">奖金</th>
+                        <th class="head1">操作</th>
+                        <!--<th class="head0">游戏模式</th>-->
+                        <!--<th class="head0">报名方式</th>-->
+                        <!--<th class="head0">比赛区域</th>-->
+                        <!--<th class="head0">报名人数</th>-->
+                        <!--<th class="head0">报名费</th>-->
+                        <!--<th class="head0">赛程阶段</th>-->
+                        <!--<th class="head0">主办方</th>-->
+                        <!--<th class="head0">报名流程</th>-->
+                    </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
-                        <tr class="gradeX">
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr class="gradeC">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Firefox 3.0</td>
-                            <td>Win 2k+ / OSX.3+</td>
-                            <td class="center">1.9</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Camino 1.0</td>
-                            <td>OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Camino 1.5</td>
-                            <td>OSX.3+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Netscape 7.2</td>
-                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Netscape Browser 8</td>
-                            <td>Win 98SE+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Netscape Navigator 9</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.1</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.2</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.2</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.3</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.4</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.4</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.5</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.6</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.7</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Mozilla 1.8</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Seamonkey 1.1</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Epiphany 2.20</td>
-                            <td>Gnome</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>Safari 1.2</td>
-                            <td>OSX.3</td>
-                            <td class="center">125.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>Safari 1.3</td>
-                            <td>OSX.3</td>
-                            <td class="center">312.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>Safari 2.0</td>
-                            <td>OSX.4+</td>
-                            <td class="center">419.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>Safari 3.0</td>
-                            <td>OSX.4+</td>
-                            <td class="center">522.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>OmniWeb 5.5</td>
-                            <td>OSX.4+</td>
-                            <td class="center">420</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>iPod Touch / iPhone</td>
-                            <td>iPod</td>
-                            <td class="center">420.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Webkit</td>
-                            <td>S60</td>
-                            <td>S60</td>
-                            <td class="center">413</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 7.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 7.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 8.0</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 8.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 9.0</td>
-                            <td>Win 95+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 9.2</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera 9.5</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Opera for Wii</td>
-                            <td>Wii</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Nokia N800</td>
-                            <td>N800</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Presto</td>
-                            <td>Nintendo DS browser</td>
-                            <td>Nintendo DS</td>
-                            <td class="center">8.5</td>
-                            <td class="center">C/A<sup>1</sup></td>
-                        </tr>
-                        <tr class="gradeC">
-                            <td>KHTML</td>
-                            <td>Konqureror 3.1</td>
-                            <td>KDE 3.1</td>
-                            <td class="center">3.1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>KHTML</td>
-                            <td>Konqureror 3.3</td>
-                            <td>KDE 3.3</td>
-                            <td class="center">3.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>KHTML</td>
-                            <td>Konqureror 3.5</td>
-                            <td>KDE 3.5</td>
-                            <td class="center">3.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeX">
-                            <td>Tasman</td>
-                            <td>Internet Explorer 4.5</td>
-                            <td>Mac OS 8-9</td>
-                            <td class="center">-</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr class="gradeC">
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.1</td>
-                            <td>Mac OS 7.6-9</td>
-                            <td class="center">1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeC">
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.2</td>
-                            <td>Mac OS 8-X</td>
-                            <td class="center">1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Misc</td>
-                            <td>NetFront 3.1</td>
-                            <td>Embedded devices</td>
-                            <td class="center">-</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Misc</td>
-                            <td>NetFront 3.4</td>
-                            <td>Embedded devices</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                            <td><?php echo ($vol["rname"]); ?></td>
+                            <td><?php echo ($vol["sponsor_name"]); ?></td>
+                            <td><?php echo ($vol["sponsor_phone"]); ?></td>
+                            <td><?php echo ($vol["sponsor_qq"]); ?></td>
+                            <td><?php echo ($vol["types"]); ?></td>
+                            <td><?php echo ($vol["game_type"]); ?></td>
+                            <td><?php echo ($vol["picurl"]); ?></td>
+                            <td><?php echo ($vol["race_start_time"]); ?></td>
+                            <td><?php echo ($vol["bonus"]); ?></td>
+                            <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
+                            <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
+                            <!--<td><?php echo ($vol["game_area"]); ?></td>-->
+                            <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
+                            <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
+                            <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
+                            <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
+                            <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
+                            <!--<td class="center">4</td>-->
+                            <!--<td class="center">X</td>-->
+                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+
                     </tbody>
                 </table>
-                
-          <br /><br />
-                
-          <div class="contenttitle2">
-                	<h3>Dynamic Table with Checkbox Column</h3>
-                </div><!--contenttitle-->
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable2">
-                    <colgroup>
-                        <col class="con0" style="width: 4%" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                          <th class="head0 nosort"><input type="checkbox" /></th>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                          <th class="head0"><span class="center">
-                            <input type="checkbox" />
-                          </span></th>
-                            <th class="head0">Rendering engine</th>
-                            <th class="head1">Browser</th>
-                            <th class="head0">Platform(s)</th>
-                            <th class="head1">Engine version</th>
-                            <th class="head0">CSS grade</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr class="gradeX">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr class="gradeC">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 5.5</td>
-                            <td>Win 95+</td>
-                            <td class="center">5.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 6</td>
-                            <td>Win 98+</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td class="center">7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td class="center">6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Firefox 3.0</td>
-                            <td>Win 2k+ / OSX.3+</td>
-                            <td class="center">1.9</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Camino 1.0</td>
-                            <td>OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Camino 1.5</td>
-                            <td>OSX.3+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Netscape 7.2</td>
-                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Netscape Browser 8</td>
-                            <td>Win 98SE+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Netscape Navigator 9</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.1</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.2</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.2</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.3</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.4</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.4</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.5</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.6</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">1.6</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.7</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td class="center">1.7</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.8</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Seamonkey 1.1</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Gecko</td>
-                            <td>Epiphany 2.20</td>
-                            <td>Gnome</td>
-                            <td class="center">1.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>Safari 1.2</td>
-                            <td>OSX.3</td>
-                            <td class="center">125.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>Safari 1.3</td>
-                            <td>OSX.3</td>
-                            <td class="center">312.8</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>Safari 2.0</td>
-                            <td>OSX.4+</td>
-                            <td class="center">419.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>Safari 3.0</td>
-                            <td>OSX.4+</td>
-                            <td class="center">522.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>OmniWeb 5.5</td>
-                            <td>OSX.4+</td>
-                            <td class="center">420</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>iPod Touch / iPhone</td>
-                            <td>iPod</td>
-                            <td class="center">420.1</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Webkit</td>
-                            <td>S60</td>
-                            <td>S60</td>
-                            <td class="center">413</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 7.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 7.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 8.0</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 8.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 9.0</td>
-                            <td>Win 95+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 9.2</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera 9.5</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Opera for Wii</td>
-                            <td>Wii</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Nokia N800</td>
-                            <td>N800</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Presto</td>
-                            <td>Nintendo DS browser</td>
-                            <td>Nintendo DS</td>
-                            <td class="center">8.5</td>
-                            <td class="center">C/A<sup>1</sup></td>
-                        </tr>
-                        <tr class="gradeC">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.1</td>
-                            <td>KDE 3.1</td>
-                            <td class="center">3.1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.3</td>
-                            <td>KDE 3.3</td>
-                            <td class="center">3.3</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.5</td>
-                            <td>KDE 3.5</td>
-                            <td class="center">3.5</td>
-                            <td class="center">A</td>
-                        </tr>
-                        <tr class="gradeX">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 4.5</td>
-                            <td>Mac OS 8-9</td>
-                            <td class="center">-</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr class="gradeC">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.1</td>
-                            <td>Mac OS 7.6-9</td>
-                            <td class="center">1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeC">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.2</td>
-                            <td>Mac OS 8-X</td>
-                            <td class="center">1</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Misc</td>
-                            <td>NetFront 3.1</td>
-                            <td>Embedded devices</td>
-                            <td class="center">-</td>
-                            <td class="center">C</td>
-                        </tr>
-                        <tr class="gradeA">
-                          <td align="center"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Misc</td>
-                            <td>NetFront 3.4</td>
-                            <td>Embedded devices</td>
-                            <td class="center">-</td>
-                            <td class="center">A</td>
-                        </tr>
-                    </tbody>
-                </table>
-        
+
         </div><!--contentwrapper-->
         
 	</div><!-- centercontent -->
-    
+
     
 </div><!--bodywrapper-->
 
 </body>
+<script type="text/javascript">
+
+    //jQuery代码
+    jQuery(function(){
+        //给删除按钮绑定点击事件
+        jQuery('.del').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+//            console.log(id);
+            //遍历jQuery对象
+            //需要将id拼凑成1,2,3,4形式
+//            var ids = '';
+//            for(var i = 0;i < id.length;i++){
+//                ids += id[i].value + ',';
+//            }
+            //去除末尾多余的逗号
+//            ids = ids.substring(0,ids.length-1);
+            //console.log(ids);
+            window.location.href = '/index.php/Admin/Race/del/id/' + id;
+        });
+
+        //给编辑按钮绑定点击事件
+        jQuery('.edit').on('click',function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '/index.php/Admin/Race/edit/id/' + id;
+        });
+    });
+   </script>
 </html>

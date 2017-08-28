@@ -64,8 +64,8 @@
                 </div>
                 
                 <!-- 修改登录按钮的默认行为，取消跳转 -->
-                <a href="javascript:;" class="btn">登录</a>
-                
+                <!--<a href="javascript:;" class="btn">登录</a>-->
+                <button class="btn">登录</button>
                 <div class="keep"><input type="checkbox" /> 记住密码</div>
             
             </form>

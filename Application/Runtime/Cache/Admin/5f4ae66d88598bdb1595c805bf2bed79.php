@@ -1,17 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>查看消息页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.alerts.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/messages.js"></script>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.alerts.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
 <![endif]-->
@@ -47,13 +47,13 @@
         	</div>
 			-->
         	<div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+            	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">
             	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                	<a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                     <div class="changetheme">
                     	Change theme: <br />
                     	<a class="default"></a>
@@ -80,10 +80,14 @@
     
     <div class="header">
     	<ul class="headermenu">
-        	<li><a href="index.html"><span class="icon icon-flatscreen"></span>Dashboard</a></li>
-            <li><a href="manageblog.html"><span class="icon icon-pencil"></span>Manage Blog</a></li>
-            <li class="current"><a href="messages.html"><span class="icon icon-message"></span>Messages</a></li>
-            <li><a href="reports.html"><span class="icon icon-chart"></span>Reports</a></li>
+            <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
+            <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
+            <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+            <li class="current"><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+            <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
         
         <div class="headerwidget">
@@ -100,13 +104,37 @@
         </div><!--headerwidget-->
         
     </div><!--header-->
-    
-    <div class="vernav iconmenu">
-    	<ul>
-        	<li class="current"><a href="manageblog.html" class="inbox">Inbox</a></li>
-            <li><a href="newpost.html" class="drafts">Drafts</a></li>
-            <li><a href="" class="sent">Sent Mail</a></li>
-            <li><a href="" class="trash">Trash</a></li>
+
+    <div class="vernav2 iconmenu">
+        <ul>
+            <li><a href="#formsub" class="editor">roll饰品</a>
+                <span class="arrow"></span>
+                <ul id="formsub">
+                    <li><a href="forms.html">饰品列表</a></li>
+                    <li><a href="wizard.html">添加饰品</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#formsub" class="editor">积分管理</a>
+                <span class="arrow"></span>
+                <ul id="formsub">
+                    <li><a href="forms.html">积分列表</a></li>
+                    <li><a href="wizard.html">添加积分</a></li>
+                </ul>
+            </li>
+
+
+            <li><a href="#addons" class="addons">其他页面</a>
+                <span class="arrow"></span>
+                <ul id="addons">
+                    <li><a href="newsfeed.html">新闻订阅</a></li>
+                    <li><a href="profile.html">资料页面</a></li>
+                    <li><a href="productlist.html">产品列表</a></li>
+                    <li><a href="photo.html">图片视频分享</a></li>
+                    <li><a href="gallery.html">相册</a></li>
+                    <li><a href="invoice.html">购物车</a></li>
+                </ul>
+            </li>
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
@@ -186,7 +214,7 @@
                             <td class="star"><a class="msgstar"></a></td>
                             <td>Hiccup Haddock</td>
                             <td><a href="" class="title">Ut enim ad minim veniam, quis nostrud exercitation</a></td>
-                            <td class="attachment"><img src="__PUBLIC__/Admin/images/icons/attachment.png" alt="" /></td>
+                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
                             <td class="date">July 1</td>
                         </tr>
                         <tr class="unread">
@@ -210,7 +238,7 @@
                             <td class="star"><a class="msgstar"></a></td>
                             <td>Humpty Dumpty</td>
                             <td><a href="" class="title">Sit voluptatem accusantium doloremque laudantium</a></td>
-                            <td class="attachment"><img src="__PUBLIC__/Admin/images/icons/attachment.png" alt="" /></td>
+                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
                             <td class="date">June 20</td>
                         </tr>
                         <tr>
@@ -226,7 +254,7 @@
                             <td class="star"><a class="msgstar"></a></td>
                             <td>Hiccup Haddock</td>
                             <td><a href="" class="title">Ut enim ad minim veniam, quis nostrud exercitation</a></td>
-                            <td class="attachment"><img src="__PUBLIC__/Admin/images/icons/attachment.png" alt="" /></td>
+                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
                             <td class="date">July 1</td>
                         </tr>
                         <tr class="unread">
@@ -250,7 +278,7 @@
                             <td class="star"><a class="msgstar"></a></td>
                             <td>Humpty Dumpty</td>
                             <td><a href="" class="title">Sit voluptatem accusantium doloremque laudantium</a></td>
-                            <td class="attachment"><img src="__PUBLIC__/Admin/images/icons/attachment.png" alt="" /></td>
+                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
                             <td class="date">June 20</td>
                         </tr>
                         <tr>

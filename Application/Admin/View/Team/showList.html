@@ -79,14 +79,12 @@
     
     <div class="header">
     	<ul class="headermenu">
-            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
+        	<li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="{:U('Index/manageblog')}"><span class="icon icon-pencil"></span>博客管理</a></li>
+            <li><a href="{:U('Index/messages')}"><span class="icon icon-message"></span>查看消息</a></li>
+            <li><a href="{:U('Index/reports')}"><span class="icon icon-chart"></span>统计报表</a></li>
             <li class="current"><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
+            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>系统管理</a></li>
         </ul>
         
         <div class="headerwidget">
@@ -115,10 +113,18 @@
                 </ul>
             </li>
 
+            <!--<li><a href="filemanager.html" class="gallery">文件管理</a></li>-->
+            <!-- <li><a href="elements.html" class="elements">网页元素</a></li>
+            <li><a href="widgets.html" class="widgets">网页插件</a></li>
+            <li><a href="calendar.html" class="calendar">日历事件</a></li>
+            <li><a href="support.html" class="support">客户支持</a></li>
+            <li><a href="typography.html" class="typo">文字排版</a></li>
+            <li><a href="tables.html" class="tables">数据表格</a></li>
+			<li><a href="buttons.html" class="buttons">按钮 &amp; 图标</a></li> -->
             <li><a href="#error" class="error">赛事管理</a>
                 <span class="arrow"></span>
                 <ul id="error">
-                    <li class="current"><a href="{:U('Race/showList')}">赛事列表</a></li>
+                    <li><a href="{:U('Race/showList')}">赛事列表</a></li>
                     <li><a href="{:U('Race/add')}">添加赛事</a></li>
                 </ul>
             </li>
@@ -155,6 +161,8 @@
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
+                        
+
 
                 <div class="contenttitle2">
                 	<h3>Table with Action</h3>

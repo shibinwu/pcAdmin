@@ -83,9 +83,13 @@
     <div class="header">
     	<ul class="headermenu">
         	<li class="current"><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="manageblog.html"><span class="icon icon-pencil"></span>博客管理</a></li>
-            <li><a href="messages.html"><span class="icon icon-message"></span>查看消息</a></li>
-            <li><a href="reports.html"><span class="icon icon-chart"></span>统计报表</a></li>
+            <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
+            <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
+            <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+            <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+            <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
         
        <div class="headerwidget">
@@ -102,40 +106,22 @@
         </div><!--headerwidget-->
         
     </div><!--header-->
-    
+
+
     <div class="vernav2 iconmenu">
-    	<ul>
-        	<li><a href="#formsub" class="editor">游戏管理</a>
-            	<span class="arrow"></span>
-            	<ul id="formsub">
-               		<li><a href="forms.html">游戏类型</a></li>
-                    <li><a href="wizard.html">饰品</a></li>
-                    <li><a href="editor.html">英雄</a></li>
+        <ul>
+            <li><a href="#index" class="editor">banner管理</a>
+                <span class="arrow"></span>
+                <ul id="index">
+                    <li><a href="forms.html">列表展示</a></li>
+                    <li><a href="wizard.html">添加banner</a></li>
                 </ul>
             </li>
 
-            <!--<li><a href="filemanager.html" class="gallery">文件管理</a></li>-->
-            <!-- <li><a href="elements.html" class="elements">网页元素</a></li>
-            <li><a href="widgets.html" class="widgets">网页插件</a></li>
-            <li><a href="calendar.html" class="calendar">日历事件</a></li>
-            <li><a href="support.html" class="support">客户支持</a></li>
-            <li><a href="typography.html" class="typo">文字排版</a></li>
-            <li><a href="tables.html" class="tables">数据表格</a></li>
-			<li><a href="buttons.html" class="buttons">按钮 &amp; 图标</a></li> -->
-            <li><a href="#error" class="error">赛事管理</a>
-            	<span class="arrow"></span>
-            	<ul id="error">
-                    <li><a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
-               		<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
-                    <li><a href="forbidden.html">编辑赛事</a></li>
-                    <li><a href="internal.html">删除赛事</a></li>
-                    <!-- <li><a href="offline.html">赛事列表</a></li> -->
-                </ul>
-            </li>
             <li><a href="#addons" class="addons">其他页面</a>
-            	<span class="arrow"></span>
-            	<ul id="addons">
-               		<li><a href="newsfeed.html">新闻订阅</a></li>
+                <span class="arrow"></span>
+                <ul id="addons">
+                    <li><a href="newsfeed.html">新闻订阅</a></li>
                     <li><a href="profile.html">资料页面</a></li>
                     <li><a href="productlist.html">产品列表</a></li>
                     <li><a href="photo.html">图片视频分享</a></li>
@@ -146,31 +132,31 @@
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--leftmenu-->
-        
+    </div><!--左侧栏-->
+
     <div class="centercontent">
-    
+
         <div class="pageheader">
             <h1 class="pagetitle">控制台</h1>
             <span class="pagedesc">页面的描述内容</span>
-            
+
             <ul class="hornav">
                 <li class="current"><a href="#updates">最新更新</a></li>
                 <li><a href="#activities">最近活动</a></li>
             </ul>
         </div><!--pageheader-->
-        
+
         <div id="contentwrapper" class="contentwrapper">
-        
+
         	<div id="updates" class="subcontent">
                     <div class="notibar announcement">
                         <a class="close"></a>
                         <h3>Announcement</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div><!-- notification announcement -->
-                    
+
                     <div class="two_third dashboard_left">
-                    
+
                     	<ul class="shortcuts">
                         	<li><a href="" class="settings"><span>设置</span></a></li>
                             <li><a href="" class="users"><span>用户</span></a></li>
@@ -178,13 +164,13 @@
                             <li><a href="" class="events"><span>事件</span></a></li>
                             <li><a href="" class="analytics"><span>分析</span></a></li>
                         </ul>
-                        
+
                         <br clear="all" />
-                    
+
                         <div class="contenttitle2 nomargintop">
                             <h3>Visit Overview</h3>
                         </div><!--contenttitle-->
-                        
+
                         <div class="overviewhead">
                         	<div class="overviewselect">
                                 <select id="overviewselect" name="select">
@@ -200,9 +186,9 @@
                             </div><!--floatright-->
                         	From: &nbsp;<input type="text" id="datepickfrom" /> &nbsp; &nbsp; To: &nbsp;<input type="text" id="datepickto" />
                         </div><!--overviewhead-->
-                        
+
                         <br clear="all" />
-                        
+
                         <table cellpadding="0" cellspacing="0" border="0" class="stdtable overviewtable">
                             <colgroup>
                                 <col class="con0" width="20%" />
@@ -234,13 +220,13 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <br clear="all" />
-                        
+
                         <div id="chartplace" style="height:300px;"></div>
-                        
+
                         <br clear="all" />
-                        
+
                         <table cellpadding="0" cellspacing="0" border="0" class="stdtable stdtablecb overviewtable2">
                             <colgroup>
                                 <col class="con0" style="width: 4%" />
@@ -297,9 +283,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <br />
-                        
+
                         <div class="widgetbox">
                         	<div class="title"><h3>Latest Articles</h3></div>
                             <div class="widgetcontent">
@@ -349,21 +335,21 @@
                                                 </div>
                                                 </div>
                                               </li>
-                                            </ul>                        
+                                            </ul>
                                 </div><!--#scroll1-->
                             </div><!--widgetcontent-->
-                        </div><!-- widgetbox -->                            
-                        
-                        
+                        </div><!-- widgetbox -->
+
+
                     </div><!--two_third dashboard_left -->
-                    
+
                     <div class="one_third last dashboard_right">
-                    
+
                         <div class="contenttitle2 nomargintop">
                             <h3>Top Rated Sites</h3>
                         </div><!--contenttitle-->
-                    
-                    
+
+
                     	<ul class="toplist">
                         	<li>
                             	<div>
@@ -414,7 +400,7 @@
                                 </div>
                             </li>
                         </ul>
-                        
+
 						<div class="widgetbox">
                             <div class="title"><h3>Newly Registered User</h3></div>
                             <div class="widgetoptions">
@@ -455,7 +441,7 @@
                                 <a class="more" href="">View More Users</a>
                             </div><!--widgetcontent-->
                         </div>
-                        
+
                         <div class="widgetbox">
                             <div class="title"><h3>Latest News</h3></div>
                             <div class="widgetcontent">
@@ -506,23 +492,23 @@
                                         inceptos himenaeos.
                                         </p>
                                     </div>
-                                </div>     
+                                </div>
                               </div> <!--widgetcontent-->
-                         </div><!--widgetbox-->                        
-                                            
+                         </div><!--widgetbox-->
+
                     </div><!--one_third last-->
-                    
-                    
+
+
             </div><!-- #updates -->
-            
+
             <div id="activities" class="subcontent" style="display: none;">
             	&nbsp;
             </div><!-- #activities -->
-        
+
         </div><!--contentwrapper-->
-        
+
         <br clear="all" />
-        
+
 	</div><!-- centercontent -->
     
     
