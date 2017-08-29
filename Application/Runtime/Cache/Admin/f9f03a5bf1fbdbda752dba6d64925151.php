@@ -79,8 +79,8 @@
     
     <div class="header">
     	<ul class="headermenu">
-            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li class="current"><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li class="current"><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
             <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
             <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
             <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
@@ -106,31 +106,22 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="#formsub" class="editor">游戏管理</a>
+            <li><a href="#user" class="editor">用户管理</a>
                 <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">游戏类型</a></li>
-                    <li><a href="wizard.html">饰品</a></li>
-                    <li><a href="editor.html">英雄</a></li>
+                <ul id="user">
+                    <li><a href="<?php echo U('User/showList');?>">用户列表</a></li>
+                    <li><a href="<?php echo U('User/add');?>">添加用户</a></li>
                 </ul>
             </li>
 
-            <li><a href="#error" class="error">赛事管理</a>
+            <li><a href="#index" class="editor">banner管理</a>
                 <span class="arrow"></span>
-                <ul id="error">
-                    <li class="current">
-                        <a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
-                    <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
+                <ul id="index">
+                    <li><a href="forms.html">列表展示</a></li>
+                    <li><a href="wizard.html">添加banner</a></li>
                 </ul>
             </li>
 
-            <li><a href="#team" class="error">战队管理</a>
-                <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
-                </ul>
-            </li>
             <li><a href="#addons" class="addons">其他页面</a>
                 <span class="arrow"></span>
                 <ul id="addons">
@@ -150,7 +141,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">Tables</h1>
+            <h1 class="pagetitle">用户列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -158,7 +149,7 @@
         <div id="contentwrapper" class="contentwrapper">
 
                 <div class="contenttitle2">
-                	<h3>Table with Action</h3>
+                	<h3>用户列表</h3>
                 </div><!--contenttitle-->
                 <div class="tableoptions">
                 	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
@@ -171,58 +162,34 @@
                 </div><!--tableoptions-->	
                 <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
                     <colgroup>
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 8%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 7%" />
-                        <col class="con0" />
+                        <col class="con0" style="width: 13%" />
+                        <col class="con1"  />
+                        <col class="con0"  />
+                        <col class="con1"  />
+                        <col class="con0"  />
+                        <col class="con1"  />
                     </colgroup>
                     <thead>
                     <tr>
-                        <th class="head0">联赛名称</th>
-                        <th class="head1">主办方姓名</th>
-                        <th class="head0">主办方电话</th>
-                        <th class="head1">主办方QQ</th>
-                        <th class="head0">赛事类型</th>
-                        <th class="head1">赛事方式</th>
-                        <th class="head0">赛事LOGO</th>
-                        <th class="head1">赛事开始时间</th>
-                        <th class="head0">奖金</th>
-                        <th class="head1">操作</th>
-                        <!--<th class="head0">游戏模式</th>-->
-                        <!--<th class="head0">报名方式</th>-->
-                        <!--<th class="head0">比赛区域</th>-->
-                        <!--<th class="head0">报名人数</th>-->
-                        <!--<th class="head0">报名费</th>-->
-                        <!--<th class="head0">赛程阶段</th>-->
-                        <!--<th class="head0">主办方</th>-->
-                        <!--<th class="head0">报名流程</th>-->
+                        <th class="head0">用户名</th>
+                        <th class="head1">邮箱</th>
+                        <th class="head0">手机号</th>
+                        <th class="head1">密码</th>
+                        <th class="head0">注册时间</th>
+                        <th class="head1">角色ID</th>
+                        <th class="head0">操作</th>
+
                     </tr>
                     </thead>
                     <tbody>
                     <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                            <td><?php echo ($vol["rname"]); ?></td>
-                            <td><?php echo ($vol["sponsor_name"]); ?></td>
-                            <td><?php echo ($vol["sponsor_phone"]); ?></td>
-                            <td><?php echo ($vol["sponsor_qq"]); ?></td>
-                            <td><?php echo ($vol["types"]); ?></td>
-                            <td><?php echo ($vol["game_type"]); ?></td>
-                            <td><?php echo ($vol["picurl"]); ?></td>
-                            <td><?php echo ($vol["race_start_time"]); ?></td>
-                            <td><?php echo ($vol["bonus"]); ?></td>
-                            <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
-                            <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
-                            <!--<td><?php echo ($vol["game_area"]); ?></td>-->
-                            <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
-                            <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
-                            <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
-                            <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
-                            <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
-                            <!--<td class="center">4</td>-->
-                            <!--<td class="center">X</td>-->
-                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                            <td><?php echo ($vol["username"]); ?></td>
+                            <td><?php echo ($vol["email"]); ?></td>
+                            <td><?php echo ($vol["phone"]); ?></td>
+                            <td><?php echo ($vol["password"]); ?></td>
+                            <td><?php echo ($vol["reg_time"]); ?></td>
+                            <td><?php echo ($vol["role_id"]); ?></td>
+                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                         </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
                     </tbody>
