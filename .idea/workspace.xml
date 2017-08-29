@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b6103cd-b8aa-4c73-97c9-b1efcc4ccc76" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/UserController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/UserController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/User/add.html" afterPath="$PROJECT_DIR$/Application/Admin/View/User/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/User/edit.html" afterPath="$PROJECT_DIR$/Application/Admin/View/User/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/User/showList.html" afterPath="$PROJECT_DIR$/Application/Admin/View/User/showList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/4e1f0ee1a12a8dbb63343fe9e6a3f60d.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/4e1f0ee1a12a8dbb63343fe9e6a3f60d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/f9f03a5bf1fbdbda752dba6d64925151.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/f9f03a5bf1fbdbda752dba6d64925151.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_08_29.log" afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_08_29.log" />
-    </list>
+    <list default="true" id="4b6103cd-b8aa-4c73-97c9-b1efcc4ccc76" name="Default" comment="" />
     <ignored path="wnv.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -295,7 +286,7 @@
     <option name="totallyTimeSpent" value="33078000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
