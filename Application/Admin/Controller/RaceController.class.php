@@ -17,7 +17,7 @@ class RaceController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-//		dump($post);die;
+		dump($post);die;
 		#获取文件的数据
 		 $file = $_FILES['file'];
 		#配置上传信息

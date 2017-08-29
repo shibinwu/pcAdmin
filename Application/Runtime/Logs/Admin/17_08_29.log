@@ -1105,3 +1105,6 @@ ERR: 非法操作:logout.html"
 [ 2017-08-29T15:25:21+08:00 ] 127.0.0.1 /index.php/Admin/User/showList.html
 ERR: 无法加载控制器:User
 
+[ 2017-08-29T15:50:30+08:00 ] 127.0.0.1 /index.php/Admin/User/add.html
+ERR: 模板不存在:./Application/Admin/View/User/add.html
+
