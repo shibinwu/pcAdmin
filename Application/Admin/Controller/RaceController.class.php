@@ -4,7 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明类并且继承父类
-class RaceController extends Controller{
+class RaceController extends CommonController{
 
 
 	#add方法，展示模版文件

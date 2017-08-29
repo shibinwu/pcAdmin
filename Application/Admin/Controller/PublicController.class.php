@@ -54,9 +54,11 @@ class PublicController extends Controller{
 			#判断用户是否存在
 			if($data){
 				#会话控制记录用户登录信息
-				session('uid',$data['id']);//记录用户id
-				session('uname',$data['name']);//记录用户名
-				// session('role_id',$data['role_id']);//记录用户角色id
+				session('uid',$data['uid']);//记录用户id
+				session('uname',$data['username']);//记录用户名
+				session('role_id',$data['role_id']);//记录用户角色id
+//				$uid = session('uid');
+//				dump($uid);die;
 				#提示
 				$this -> success('登录成功！',U('Index/index'),3);
 			}else{
@@ -67,6 +69,16 @@ class PublicController extends Controller{
 		// 	#验证码错误
 		// 	$this -> error('验证码错误...',U('login'),3);
 		// }
+	}
+
+	#用户退出
+	public function logout(){
+		#清空session
+		session(null);
+		if(!session('?uid')){
+			#清空成功
+			$this -> success('退出成功',U('login'),3);
+		}
 	}
 
 

@@ -12,4 +12,23 @@ return array(
     'DB_PWD'                =>  'root',          // 密码
     'DB_PORT'               =>  '3306',        // 端口
     // 'DB_PREFIX'             =>  'tp_',    // 数据库表前缀
+
+	//跟踪信息
+		'SHOW_PAGE_TRACE'       =>  true,
+
+	#动态加载
+		'LOAD_EXT_FILE'         =>  'test',
+
+	#用户组的数据
+		'RBAC_ROLES'            =>  array(
+				1 => '管理员',
+				2 => '审核员',
+//				3 => '普通职员'
+		),
+	#用户组的权限
+		'RBAC_ROLES_AUTHS'      =>  array(
+				1 => array('*/*'),  //全部权限
+				2 => array('race/showlist','team/showlist','index/*')
+//				3 => array('email/*','doc/showlist','index/*')
+		),
 );

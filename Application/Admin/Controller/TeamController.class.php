@@ -4,7 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明类并且继承类
-class TeamController extends Controller{
+class TeamController extends CommonController{
     #add方法，展示添加战队模板
     public function add(){
         $this -> display();

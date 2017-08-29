@@ -50,7 +50,7 @@
         	</div>-->
             <div class="userinfo">
             	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
-                <span>管理员</span>
+                <span><?php echo (session('uname')); ?></span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">
@@ -72,7 +72,7 @@
                     	<li><a href="editprofile.html">编辑资料</a></li>
                         <li><a href="accountsettings.html">账号设置</a></li>
                         <li><a href="help.html">帮助</a></li>
-                        <li><a href="index.html">退出</a></li>
+                        <li><a href="javascript:;" class="exit">退出</a></li>
                     </ul>
                 </div><!--userdata-->
             </div><!--userinfodrop-->
@@ -110,6 +110,14 @@
 
     <div class="vernav2 iconmenu">
         <ul>
+            <li><a href="#user" class="editor">用户管理</a>
+                <span class="arrow"></span>
+                <ul id="user">
+                    <li><a href="<?php echo U('User/showList');?>">用户列表</a></li>
+                    <li><a href="<?php echo U('User/add');?>">添加用户</a></li>
+                </ul>
+            </li>
+
             <li><a href="#index" class="editor">banner管理</a>
                 <span class="arrow"></span>
                 <ul id="index">
@@ -515,4 +523,11 @@
 </div><!--bodywrapper-->
 
 </body>
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
+    });
+</script>
 </html>

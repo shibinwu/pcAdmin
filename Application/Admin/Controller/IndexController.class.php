@@ -4,7 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明并继承父类
-class IndexController extends Controller{
+class IndexController extends CommonController{
 
 	#index方法
 	public function index(){
