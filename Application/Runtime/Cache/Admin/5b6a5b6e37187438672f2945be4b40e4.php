@@ -118,7 +118,8 @@
             <li><a href="#error" class="error">赛事管理</a>
                 <span class="arrow"></span>
                 <ul id="error">
-                    <li class="current"><a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+                    <li class="current">
+                        <a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
                     <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
                 </ul>
             </li>
