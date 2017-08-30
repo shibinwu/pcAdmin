@@ -140,6 +140,15 @@
                     <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
                 </ul>
             </li>
+
+            <li><a href="#friend" class="error">我的好友</a>
+                <span class="arrow"></span>
+                <ul id="friend">
+                    <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                    <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+                </ul>
+            </li>
+
             <li><a href="#addons" class="addons">其他页面</a>
                 <span class="arrow"></span>
                 <ul id="addons">
