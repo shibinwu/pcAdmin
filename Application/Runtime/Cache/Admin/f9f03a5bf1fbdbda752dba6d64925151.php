@@ -148,52 +148,38 @@
         
         <div id="contentwrapper" class="contentwrapper">
 
-                <div class="contenttitle2">
-                	<h3>用户列表</h3>
-                </div><!--contenttitle-->
-                <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
-                    <button class="radius3">Apply Filter</button>
-                </div><!--tableoptions-->	
-                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 13%" />
-                        <col class="con1"  />
-                        <col class="con0"  />
-                        <col class="con1"  />
-                        <col class="con0"  />
-                        <col class="con1"  />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="head0">用户名</th>
-                        <th class="head1">邮箱</th>
-                        <th class="head0">手机号</th>
-                        <th class="head1">密码</th>
-                        <th class="head0">注册时间</th>
-                        <th class="head1">角色ID</th>
-                        <th class="head0">操作</th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                            <td><?php echo ($vol["username"]); ?></td>
-                            <td><?php echo ($vol["email"]); ?></td>
-                            <td><?php echo ($vol["phone"]); ?></td>
-                            <td><?php echo ($vol["password"]); ?></td>
-                            <td><?php echo ($vol["reg_time"]); ?></td>
-                            <td><?php echo ($vol["role_id"]); ?></td>
-                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
-                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-
-                    </tbody>
-                </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">用户名</th>
+                    <th class="head1">邮箱</th>
+                    <th class="head0">手机号</th>
+                    <th class="head1">密码</th>
+                    <th class="head0">注册时间</th>
+                    <th class="head1">角色ID</th>
+                    <th class="head0">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["username"]); ?></td>
+                        <td><?php echo ($vol["email"]); ?></td>
+                        <td><?php echo ($vol["phone"]); ?></td>
+                        <td><?php echo ($vol["password"]); ?></td>
+                        <td><?php echo ($vol["reg_time"]); ?></td>
+                        <td><?php echo ($vol["role_id"]); ?></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
 
         </div><!--contentwrapper-->
         
@@ -205,8 +191,14 @@
 </body>
 <script type="text/javascript">
 
+
     //jQuery代码
     jQuery(function(){
+        //DOM动态修改分页的显示内容
+        document.getElementById("dyntable_first").innerHTML = "首页";
+        document.getElementById("dyntable_previous").innerHTML = "上一页";
+        document.getElementById("dyntable_next").innerHTML = "下一页";
+        document.getElementById("dyntable_last").innerHTML = "末页";
         //给删除按钮绑定点击事件
         jQuery('.del').on('click',function(){
             //事件处理程序

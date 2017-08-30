@@ -66,6 +66,38 @@ class UserController extends CommonController{
         $this -> display();
     }
 
+#showList方法，展示模版
+//    public function showList(){
+//        #实例化模型
+//        $model = M('User');
+//        #1、查询总的记录数
+//        $count = $model -> count();
+//        #2、实例化分页类,传递总的记录数，每页显示1个记录
+//        $page = new \Think\Page($count,10);
+//        #可选步骤：定义按钮提示文字
+//        //每页显示的页码数，如果需要显示出首页/末页，则要求这个页码数必须要小于分页的总的页码数
+//        $page -> rollPage = 5;
+//        #让最后一页不显示数字
+//        $page -> lastSuffix = false;
+//        $page -> setConfig('prev','上一页');
+//        $page -> setConfig('next','下一页');
+//        $page -> setConfig('first','首页');
+//        $page -> setConfig('last','末页');
+//        #3、组装页码的地址
+//        $show = $page -> show();
+//        //dump($show);die;
+//        #4、通过limit方法限制输出的记录数
+//        #查询数据
+//        $data = $model -> limit($page -> firstRow,$page -> listRows) -> select();
+////        dump($data);die;
+//        #5、数据变量的分配
+//        #传递给模版
+//        $this -> assign('show',$show);
+//        $this -> assign('data',$data);
+//        #6、展示模版
+//        $this -> display();
+//    }
+
     #del方法，删除用户
     public function del(){
         #接收参数
