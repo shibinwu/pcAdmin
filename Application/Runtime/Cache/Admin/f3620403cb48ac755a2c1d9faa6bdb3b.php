@@ -208,7 +208,7 @@
                             <td><?php echo ($vol["uid2"]); ?></td>
                             <td><?php echo ($vol["status"]); ?></td>
                             <td><?php echo ($vol["addtime"]); ?></td>
-                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["fid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["fid"]); ?>" class="del">删除</a></td>
                         </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
                     </tbody>
@@ -229,7 +229,9 @@
         //给删除按钮绑定点击事件
         jQuery('.del').on('click',function(){
             //事件处理程序
+//            alert(1);
             id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+//            alert(id)
 //            console.log(id);
             //遍历jQuery对象
             //需要将id拼凑成1,2,3,4形式

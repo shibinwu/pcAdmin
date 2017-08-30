@@ -14,3 +14,6 @@ ERR: 1054:Unknown column 'statu' in 'where clause'
 [ 2017-08-30T10:40:37+08:00 ] 127.0.0.1 /index.php/Admin/Friend/showList.html
 ERR: 模板不存在:./Application/Admin/View/Friend/showList.html
 
+[ 2017-08-30T19:15:41+08:00 ] 127.0.0.1 /index.php/Admin/Index/forms.html
+ERR: 非法操作:forms
+

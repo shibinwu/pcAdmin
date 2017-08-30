@@ -88,6 +88,11 @@ class TestController extends Controller{
 		#展示模版
 		$this -> display();
 	}
+
+	#第三方接口调用
+	public function test7(){
+
+	}
 }
 
 

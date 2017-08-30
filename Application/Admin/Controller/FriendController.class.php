@@ -77,7 +77,7 @@ class FriendController extends CommonController{
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'uid'   =>  $id,
+            'fid'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
