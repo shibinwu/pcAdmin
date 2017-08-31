@@ -156,7 +156,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">竞猜列表</h1>
+            <h1 class="pagetitle">竞猜比赛数据</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -174,45 +174,54 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">比赛名称</th>
-                    <th class="head1">左边队伍ID</th>
-                    <th class="head0">右边队伍ID</th>
+                    <!--<th class="head0">竞猜数据ID</th>-->
+                    <!--<th class="head1">竞猜比赛ID</th>-->
+                    <th class="head0">竞猜左边边队伍ID</th>
+                    <th class="head0">竞猜右边边队伍ID</th>
+                    <th class="head0">竞猜队伍左边支持率</th>
+                    <th class="head0">竞猜队伍右边支持率</th>
+                    <th class="head0">让分局中让分队伍的ID</th>
+                    <th class="head0">让分局中让的分数</th>
                     <th class="head1">比赛机制</th>
-                    <th class="head0">比赛类型</th>
+                    <!--<th class="head0">比赛类型</th>-->
                     <th class="head1">竞猜类型</th>
-                    <th class="head0">竞猜状态</th>
+                    <th class="head1">比率</th>
+                    <th class="head0">比赛当前局状态</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.g_name}</td>
-                        <td>{$vol.g_leftid}</td>
-                        <td>{$vol.g_rightid}</td>
-                        <td><if condition='$vol.mechanism == 1'>BO1
-                            <elseif condition='$vol.mechanism ==2'/>BO2
-                            <elseif condition='$vol.mechanism ==3'/>BO3
-                            <elseif condition='$vol.mechanism ==4'/>BO4
+                        <!--<td>{$vol.dgid}</td>-->
+                        <!--<td>{$vol.gid}</td>-->
+                        <td>{$vol.ltid}</td>
+                        <td>{$vol.rtid}</td>
+                        <td>{$vol.lrate}</td>
+                        <td>{$vol.rrate}</td>
+                        <td>{$vol.gtid}</td>
+                        <td>{$vol.score}</td>
+                        <td><if condition='$vol.part == 1'>BO1
+                            <elseif condition='$vol.part ==2'/>BO2
+                            <elseif condition='$vol.part ==3'/>BO3
+                            <elseif condition='$vol.part ==4'/>BO4
                             <else/>BO5</if>
                         </td>
-                        <td><if condition='$vol.guesstype == 1'>CSGO
-                            <elseif condition='$vol.guesstype ==2'/>DOTA
-                            <else/>体育赛事</if>
+                        <td><if condition='$vol.type == 1'>猜输赢
+                            <elseif condition='$vol.type ==2'/>让分局
+                            <else/>大小分</if>
                         </td>
-                        <td><if condition='$vol.type == 1'>猜输赢<else/>让分局</if></td>
+                        <td>{$vol.rate}</td>
                         <td><if condition='$vol.status == 1'>未开始
                             <elseif condition='$vol.status ==2'/>进行中
                             <else/>已结束</if>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.g_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.g_id}" class="del">删除</a></td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.dgid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.dgid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
             <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
-
-
 
         </div><!--contentwrapper-->
         

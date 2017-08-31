@@ -114,27 +114,27 @@
                 </ul>
             </li>
 
-            <li><a href="#race" class="error">竞猜比赛数据</a>
+            <li><a href="#guessdata" class="error">竞猜比赛数据</a>
                 <span class="arrow"></span>
-                <ul id="race">
-                    <li><a href="<?php echo U('Team/showList');?>">数据列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加比赛数据</a></li>
+                <ul id="guessdata">
+                    <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
+                    <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
                 </ul>
             </li>
 
-            <li><a href="#team" class="error">竞猜队伍管理</a>
+            <li><a href="#guessteam" class="error">竞猜队伍管理</a>
                 <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="<?php echo U('Team/showList');?>">队伍列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加队伍</a></li>
+                <ul id="guessteam">
+                    <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
+                    <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
                 </ul>
             </li>
 
-            <li><a href="#team" class="error">竞猜用户管理</a>
+            <li><a href="#guessuser" class="error">竞猜用户管理</a>
                 <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="<?php echo U('Team/showList');?>">用户列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加用户</a></li>
+                <ul id="guessuser">
+                    <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
+                    <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
                 </ul>
             </li>
             <li><a href="#addons" class="addons">其他页面</a>

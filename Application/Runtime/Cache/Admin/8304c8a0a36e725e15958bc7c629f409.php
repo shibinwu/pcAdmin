@@ -1,25 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
 <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie9.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
 <![endif]-->
 <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie8.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
 <![endif]-->
 <!--[if lt IE 9]>
-	<script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
+	<script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
 
@@ -47,12 +47,12 @@
         	</div>
 			-->
             <div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+            	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
             
             <div class="userinfodrop">            	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                	<a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                     <div class="changetheme">
                     	Change theme: <br />
                     	<a class="default"></a>
@@ -79,14 +79,14 @@
     
     <div class="header">
     	<ul class="headermenu">
-            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li class="current"><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
+            <li class="current"><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
+            <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+            <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+            <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
         
         <div class="headerwidget">
@@ -109,32 +109,32 @@
             <li><a href="#guess" class="editor">竞猜比赛管理</a>
                 <span class="arrow"></span>
                 <ul id="guess">
-                    <li><a href="{:U('Guess/showList')}">竞猜比赛列表</a></li>
-                    <li><a href="{:U('Guess/add')}">添加竞猜比赛</a></li>
+                    <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                    <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
                 </ul>
             </li>
 
             <li><a href="#guessdata" class="error">竞猜比赛数据</a>
                 <span class="arrow"></span>
                 <ul id="guessdata">
-                    <li><a href="{:U('Guessdata/showList')}">数据列表</a></li>
-                    <li><a href="{:U('Guessdata/add')}">添加比赛数据</a></li>
+                    <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
+                    <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
                 </ul>
             </li>
 
             <li><a href="#guessteam" class="error">竞猜队伍管理</a>
                 <span class="arrow"></span>
                 <ul id="guessteam">
-                    <li><a href="{:U('Guessteam/showList')}">队伍列表</a></li>
-                    <li><a href="{:U('Guessteam/add')}">添加队伍</a></li>
+                    <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
+                    <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
                 </ul>
             </li>
 
             <li><a href="#guessuser" class="error">竞猜用户管理</a>
                 <span class="arrow"></span>
                 <ul id="guessuser">
-                    <li><a href="{:U('Guessuser/showList')}">用户列表</a></li>
-                    <li><a href="{:U('Guessuser/add')}">添加用户</a></li>
+                    <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
+                    <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
                 </ul>
             </li>
             <li><a href="#addons" class="addons">其他页面</a>
@@ -156,7 +156,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">竞猜列表</h1>
+            <h1 class="pagetitle">竞猜比赛数据</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -174,45 +174,52 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">比赛名称</th>
-                    <th class="head1">左边队伍ID</th>
-                    <th class="head0">右边队伍ID</th>
+                    <!--<th class="head0">竞猜数据ID</th>-->
+                    <!--<th class="head1">竞猜比赛ID</th>-->
+                    <th class="head0">竞猜左边边队伍ID</th>
+                    <th class="head0">竞猜右边边队伍ID</th>
+                    <th class="head0">竞猜队伍左边支持率</th>
+                    <th class="head0">竞猜队伍右边支持率</th>
+                    <th class="head0">让分局中让分队伍的ID</th>
+                    <th class="head0">让分局中让的分数</th>
                     <th class="head1">比赛机制</th>
-                    <th class="head0">比赛类型</th>
+                    <!--<th class="head0">比赛类型</th>-->
                     <th class="head1">竞猜类型</th>
-                    <th class="head0">竞猜状态</th>
+                    <th class="head1">比率</th>
+                    <th class="head0">比赛当前局状态</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <volist name='data' id='vol'>
-                    <tr>
-                        <td>{$vol.g_name}</td>
-                        <td>{$vol.g_leftid}</td>
-                        <td>{$vol.g_rightid}</td>
-                        <td><if condition='$vol.mechanism == 1'>BO1
-                            <elseif condition='$vol.mechanism ==2'/>BO2
-                            <elseif condition='$vol.mechanism ==3'/>BO3
-                            <elseif condition='$vol.mechanism ==4'/>BO4
-                            <else/>BO5</if>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <!--<td><?php echo ($vol["dgid"]); ?></td>-->
+                        <!--<td><?php echo ($vol["gid"]); ?></td>-->
+                        <td><?php echo ($vol["ltid"]); ?></td>
+                        <td><?php echo ($vol["rtid"]); ?></td>
+                        <td><?php echo ($vol["lrate"]); ?></td>
+                        <td><?php echo ($vol["rrate"]); ?></td>
+                        <td><?php echo ($vol["gtid"]); ?></td>
+                        <td><?php echo ($vol["score"]); ?></td>
+                        <td><?php if($vol["part"] == 1): ?>BO1
+                            <?php elseif($vol["part"] ==2): ?>BO2
+                            <?php elseif($vol["part"] ==3): ?>BO3
+                            <?php elseif($vol["part"] ==4): ?>BO4
+                            <?php else: ?>BO5<?php endif; ?>
                         </td>
-                        <td><if condition='$vol.guesstype == 1'>CSGO
-                            <elseif condition='$vol.guesstype ==2'/>DOTA
-                            <else/>体育赛事</if>
+                        <td><?php if($vol["type"] == 1): ?>猜输赢
+                            <?php elseif($vol["type"] ==2): ?>让分局
+                            <?php else: ?>大小分<?php endif; ?>
                         </td>
-                        <td><if condition='$vol.type == 1'>猜输赢<else/>让分局</if></td>
-                        <td><if condition='$vol.status == 1'>未开始
-                            <elseif condition='$vol.status ==2'/>进行中
-                            <else/>已结束</if>
+                        <td><?php echo ($vol["rate"]); ?></td>
+                        <td><?php if($vol["status"] == 1): ?>未开始
+                            <?php elseif($vol["status"] ==2): ?>进行中
+                            <?php else: ?>已结束<?php endif; ?>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.g_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.g_id}" class="del">删除</a></td>
-                    </tr>
-                </volist>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["dgid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["dgid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
-            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
-
-
+            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
 
         </div><!--contentwrapper-->
         
@@ -246,7 +253,7 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '__CONTROLLER__/del/id/' + id;
+            window.location.href = '/index.php/Admin/Guessdata/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
@@ -254,7 +261,7 @@
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);
-            window.location.href = '__CONTROLLER__/edit/id/' + id;
+            window.location.href = '/index.php/Admin/Guessdata/edit/id/' + id;
         });
     });
    </script>

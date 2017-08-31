@@ -42,3 +42,18 @@ ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
 ERR: XML标签语法错误 : 
                             <else
 
+[ 2017-08-31T16:26:46+08:00 ] 127.0.0.1 /index.php/Admin/Index/messages.html
+ERR: 非法操作:messages
+
+[ 2017-08-31T16:34:56+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/showList.html
+ERR: 1146:Table 'db_wnv.guessdata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `guessdata`
+
+[ 2017-08-31T16:38:11+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/showList.html
+ERR: 1146:Table 'db_wnv.guessdata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `guessdata`
+
+[ 2017-08-31T17:40:36+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/addOk
+ERR: 1146:Table 'db_wnv.guessdata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `guessdata`
+
