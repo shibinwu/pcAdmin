@@ -1,0 +1,44 @@
+[ 2017-08-31T11:07:34+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('rr','0','0','4','2','','0','0','0')
+
+[ 2017-08-31T11:08:12+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('rr','2','3','4','2','','0','0','0')
+
+[ 2017-08-31T11:08:24+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('rr','2','3','4','2','','0','0','0')
+
+[ 2017-08-31T11:08:31+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('rr','2','3','4','2','United States','0','0','0')
+
+[ 2017-08-31T11:09:47+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('','0','0','','0','','0','0','0')
+
+[ 2017-08-31T11:10:48+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('','0','0','','0','','0','0','0')
+
+[ 2017-08-31T11:10:55+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('4','0','0','','0','','0','0','0')
+
+[ 2017-08-31T11:11:38+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('rr','3','4','United States','0','','0','0','0')
+
+[ 2017-08-31T11:13:27+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('','0','0','','0','','0','0','0')
+
+[ 2017-08-31T11:14:02+08:00 ] 127.0.0.1 /index.php/Admin/Guess/addOk
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `guess` (`g_name`,`g_leftId`,`g_rightId`,`mechanism`,`guessType`,`type`,`status`,`ctime`,`mtime`) VALUES ('ff','0','0','','0','','0','0','0')
+
+[ 2017-08-31T13:38:50+08:00 ] 127.0.0.1 /index.php/Admin/Guess/showList.html
+ERR: XML标签语法错误 : 
+                            <else
+

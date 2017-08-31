@@ -112,8 +112,8 @@
             <li><a href="#guess" class="editor">竞猜比赛管理</a>
                 <span class="arrow"></span>
                 <ul id="guess">
-                    <li><a href="forms.html">竞猜比赛列表</a></li>
-                    <li><a href="wizard.html">添加竞猜比赛</a></li>
+                    <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                    <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
                 </ul>
             </li>
 
