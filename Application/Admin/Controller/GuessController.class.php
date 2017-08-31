@@ -102,12 +102,12 @@ class GuessController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Race');
+        $model = M('Guess');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'rid'   =>  $id,
+            'g_id'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
@@ -129,9 +129,10 @@ class GuessController extends CommonController{
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Race');
+	 	$model = M('Guess');
 	 	#查询操作
 	 	$data = $model -> find($id);
+//		 dump($data);
 	 	#传递给模版
 	 	$this -> assign('data',$data);
 	 	#展示模版
@@ -168,9 +169,13 @@ class GuessController extends CommonController{
 //	 		}
 //	 	}
 	 	#写入到数据表
-	 	$model = M('Race');
-	 	$rst = $model -> save($post);
-//	 	dump($rst);die;
+	 	$model = M('Guess');
+		 if($post['g_id']){
+			 $rst = $model -> save($post);
+		 }else{
+			 echo '123';
+			 die();
+		 }
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功

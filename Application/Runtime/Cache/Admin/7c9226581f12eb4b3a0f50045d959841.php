@@ -200,11 +200,11 @@
                             <?php else: ?>体育赛事<?php endif; ?>
                         </td>
                         <td><?php if($vol["type"] == 1): ?>猜输赢<?php else: ?>让分局<?php endif; ?></td>
-                        <td><?php if($vol["status"] == 0): ?>未开始
-                            <?php elseif($vol["status"] ==1): ?>进行中
+                        <td><?php if($vol["status"] == 1): ?>未开始
+                            <?php elseif($vol["status"] ==2): ?>进行中
                             <?php else: ?>已结束<?php endif; ?>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["g_id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["g_id"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>

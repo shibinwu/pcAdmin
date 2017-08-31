@@ -201,11 +201,11 @@
                             <else/>体育赛事</if>
                         </td>
                         <td><if condition='$vol.type == 1'>猜输赢<else/>让分局</if></td>
-                        <td><if condition='$vol.status == 0'>未开始
-                            <elseif condition='$vol.status ==1'/>进行中
+                        <td><if condition='$vol.status == 1'>未开始
+                            <elseif condition='$vol.status ==2'/>进行中
                             <else/>已结束</if>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.g_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.g_id}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
