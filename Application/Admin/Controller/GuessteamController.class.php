@@ -44,7 +44,7 @@ class GuessteamController extends CommonController{
 		#添加addtime字段
 		// $post['addtime'] = time();
 		#写入数据表
-		$model = M('Guessdata');
+		$model = M('Guess_team');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
@@ -59,7 +59,7 @@ class GuessteamController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('Guessdata');
+		$model = M('Guess_team');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
 //		dump($data);die;
@@ -102,12 +102,12 @@ class GuessteamController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Guessdata');
+        $model = M('Guess_team');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'dgid'   =>  $id,
+            'gtId'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
@@ -129,7 +129,7 @@ class GuessteamController extends CommonController{
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Guessdata');
+	 	$model = M('Guess_team');
 	 	#查询操作
 	 	$data = $model -> find($id);
 //		 dump($data);
@@ -169,9 +169,10 @@ class GuessteamController extends CommonController{
 //	 		}
 //	 	}
 	 	#写入到数据表
-	 	$model = M('Guessdata');
-		 if($post['dgid']){
+	 	$model = M('Guess_team');
+		 if($post['gtId']){
 			 $rst = $model -> save($post);
+			 dump($rst);
 		 }else{
 			 echo '123';
 			 die();

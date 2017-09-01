@@ -1,0 +1,8 @@
+[ 2017-09-01T10:04:40+08:00 ] 127.0.0.1 /index.php/Admin/Guessuser/showList.html
+ERR: 1146:Table 'db_wnv.guessdata' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `guessdata`
+
+[ 2017-09-01T10:15:17+08:00 ] 127.0.0.1 /index.php/Admin/Guessuser/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `guess_user_data` WHERE ( statu = 1 ) 
+
