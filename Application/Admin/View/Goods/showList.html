@@ -82,8 +82,8 @@
             <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
             <li><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
             <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li class="current"><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
+            <li class="current"><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
             <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
             <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
             <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
@@ -106,35 +106,35 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="#guess" class="editor">竞猜比赛管理</a>
+            <li><a href="#goods" class="editor">商品管理</a>
                 <span class="arrow"></span>
-                <ul id="guess">
-                    <li><a href="{:U('Guess/showList')}">竞猜比赛列表</a></li>
-                    <li><a href="{:U('Guess/add')}">添加竞猜比赛</a></li>
+                <ul id="goods">
+                    <li><a href="{:U('Goods/showList')}">商品列表</a></li>
+                    <li><a href="{:U('Goods/add')}">添商品加</a></li>
                 </ul>
             </li>
 
-            <li><a href="#guessdata" class="error">竞猜比赛数据</a>
+            <li><a href="#goodsattr" class="error">商品详情</a>
                 <span class="arrow"></span>
-                <ul id="guessdata">
-                    <li><a href="{:U('Guessdata/showList')}">数据列表</a></li>
-                    <li><a href="{:U('Guessdata/add')}">添加比赛数据</a></li>
+                <ul id="goodsattr">
+                    <li><a href="{:U('Goodsattr/showList')}">详情列表</a></li>
+                    <li><a href="{:U('Goodsattr/add')}">添加详情</a></li>
                 </ul>
             </li>
 
-            <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+            <li><a href="#goodssell" class="error">出售管理</a>
                 <span class="arrow"></span>
-                <ul id="guessteam">
-                    <li><a href="{:U('Guessteam/showList')}">队伍列表</a></li>
-                    <li><a href="{:U('Guessteam/add')}">添加队伍</a></li>
+                <ul id="gootssell">
+                    <li><a href="{:U('Goodssell/showList')}">出售列表</a></li>
+                    <li><a href="{:U('Goodssell/add')}">添加出售</a></li>
                 </ul>
             </li>
 
-            <li><a href="#guessuser" class="error">竞猜用户管理</a>
+            <li><a href="#goodswant" class="error">求购管理</a>
                 <span class="arrow"></span>
-                <ul id="guessuser">
-                    <li><a href="{:U('Guessuser/showList')}">用户列表</a></li>
-                    <li><a href="{:U('Guessuser/add')}">添加用户</a></li>
+                <ul id="goodswant">
+                    <li><a href="{:U('Goodswant/showList')}">求购列表</a></li>
+                    <li><a href="{:U('Goodswant/add')}">添加求购</a></li>
                 </ul>
             </li>
             <li><a href="#addons" class="addons">其他页面</a>
@@ -156,7 +156,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">竞猜比赛队伍</h1>
+            <h1 class="pagetitle">商品列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -174,31 +174,49 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <!--<th class="head0">竞猜数据ID</th>-->
-                    <th class="head1">竞猜队伍ID</th>
-                    <th class="head0">竞猜竞猜队伍名称</th>
-                    <th class="head0">头像路径</th>
-                    <th class="head0">创建时间</th>
-                    <th class="head0">修改时间</th>
+                    <th class="head0">商品名称</th>
+                    <th class="head1">商品价格</th>
+                    <th class="head0">库存</th>
+                    <th class="head1">商品所在售卖区</th>
+                    <th class="head0">可否竞猜</th>
+                    <th class="head1">市场估值</th>
+                    <th class="head0">累计成交量</th>
+                    <th class="head0">商品所属游戏</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <!--<td>{$vol.dgid}</td>-->
-                        <!--<td>{$vol.gid}</td>-->
-                        <td>{$vol.gtid}</td>
-                        <td>{$vol.gtname}</td>
-                        <td>{$vol.gtpic}</td>
-                        <td>{$vol.ctime|date='Y-m-d H:i:s',###}</td>
-                        <td>{$vol.mtime|date='Y-m-d H:i:s',###}</td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.gtid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gtid}" class="del">删除</a></td>
+                        <td>{$vol.good_name}</td>
+                        <td>{$vol.price}</td>
+                        <td>{$vol.stock}</td>
+                        <td><if condition='$vol.g_part == 1'>推荐区
+                            <elseif condition='$vol.g_part ==2'/>打折区
+                            <elseif condition='$vol.g_part ==3'/>人气区
+                            <elseif condition='$vol.g_part ==4'/>土豪区
+                            <elseif condition='$vol.g_part ==5'/>求购区
+                            <else/>&nbsp</if>
+                        </td>
+                        <td><if condition='$vol.guess == 1'>可竞猜
+                            <elseif condition='$vol.guess ==2'/>不可竞猜
+                            <else/>&nbsp</if>
+                        </td>
+                        <td>{$vol.valuation}</td>
+                        <td>{$vol.saled_num}</td>
+                        <td><if condition='$vol.gameowner == 1'>dota2
+                            <elseif condition='$vol.gameowner == 2'/>csgo
+                            <else/></if>
+                        </td>
+
+                        <td class="center"><a href="javascript:;" data-id="{$vol.g_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.g_id}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
             <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
+
+
 
         </div><!--contentwrapper-->
         
@@ -221,7 +239,6 @@
         //给删除按钮绑定点击事件
         jQuery('.del').on('click',function(){
             //事件处理程序
-            alert(1);
             id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
 //            console.log(id);
             //遍历jQuery对象
@@ -238,7 +255,6 @@
 
         //给编辑按钮绑定点击事件
         jQuery('.edit').on('click',function(){
-
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);

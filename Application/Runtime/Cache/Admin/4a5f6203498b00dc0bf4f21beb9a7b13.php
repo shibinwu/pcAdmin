@@ -190,8 +190,8 @@
                         <td><?php echo ($vol["gtid"]); ?></td>
                         <td><?php echo ($vol["gtname"]); ?></td>
                         <td><?php echo ($vol["gtpic"]); ?></td>
-                        <td><?php echo ($vol["ctime"]); ?></td>
-                        <td><?php echo ($vol["mtime"]); ?></td>
+                        <td><?php echo (date('Y-m-d H:i:s',$vol["ctime"])); ?></td>
+                        <td><?php echo (date('Y-m-d H:i:s',$vol["mtime"])); ?></td>
                         <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gtid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gtid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>

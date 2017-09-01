@@ -112,32 +112,32 @@
             <li><a href="#goods" class="editor">商品管理</a>
                 <span class="arrow"></span>
                 <ul id="goods">
-                    <li><a href="forms.html">商品列表</a></li>
-                    <li><a href="wizard.html">添商品加</a></li>
+                    <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
+                    <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
                 </ul>
             </li>
 
-            <li><a href="#race" class="error">商品详情</a>
+            <li><a href="#goodsattr" class="error">商品详情</a>
                 <span class="arrow"></span>
-                <ul id="race">
-                    <li><a href="<?php echo U('Team/showList');?>">详情列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加详情</a></li>
+                <ul id="goodsattr">
+                    <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
+                    <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
                 </ul>
             </li>
 
-            <li><a href="#team" class="error">出售管理</a>
+            <li><a href="#goodssell" class="error">出售管理</a>
                 <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="<?php echo U('Team/showList');?>">出售列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加出售</a></li>
+                <ul id="gootssell">
+                    <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
+                    <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
                 </ul>
             </li>
 
-            <li><a href="#team" class="error">求购管理</a>
+            <li><a href="#goodswant" class="error">求购管理</a>
                 <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="<?php echo U('Team/showList');?>">求购列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加求购</a></li>
+                <ul id="goodswant">
+                    <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
+                    <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
                 </ul>
             </li>
             <li><a href="#addons" class="addons">其他页面</a>

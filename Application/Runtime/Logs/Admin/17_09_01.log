@@ -6,3 +6,10 @@ ERR: 1146:Table 'db_wnv.guessdata' doesn't exist
 ERR: 1054:Unknown column 'statu' in 'where clause'
  [ SQL语句 ] : SELECT * FROM `guess_user_data` WHERE ( statu = 1 ) 
 
+[ 2017-09-01T15:18:46+08:00 ] 127.0.0.1 /index.php/Admin/Goods/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( statu = 1 ) 
+
+[ 2017-09-01T15:27:50+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
+ERR: 无法加载控制器:Goodsattr
+
