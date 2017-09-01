@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4b6103cd-b8aa-4c73-97c9-b1efcc4ccc76" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Guessteam/showList.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Guessteam/showList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Index/mall.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Index/mall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/4a5f6203498b00dc0bf4f21beb9a7b13.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/4a5f6203498b00dc0bf4f21beb9a7b13.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/b6975411e6f7a351ff5d6b49f4cbda57.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/b6975411e6f7a351ff5d6b49f4cbda57.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/showList.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/showList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/866888a2fdc11407c8ccf55025eb00a4.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/866888a2fdc11407c8ccf55025eb00a4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_09_01.log" afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/17_09_01.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="wnv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,43 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.117647">
-              <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-              <folding>
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-35.294117">
-              <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GoodsController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.735294">
-              <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuessteamController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GuessteamController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.854839">
-              <caret line="146" column="16" selection-start-line="146" selection-start-column="16" selection-end-line="146" selection-end-column="16" />
+            <state vertical-scroll-proportion="10.080646">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -103,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showList.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="showList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/showList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55454546">
-              <caret line="207" column="57" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
+            <state vertical-scroll-proportion="-2.8924732">
+              <caret line="211" column="153" selection-start-line="211" selection-start-column="153" selection-end-line="211" selection-end-column="153" />
               <folding>
                 <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -120,6 +90,48 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.088235">
               <caret line="190" column="28" selection-start-line="185" selection-start-column="24" selection-end-line="190" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.558824">
+              <caret line="284" column="76" selection-start-line="284" selection-start-column="73" selection-end-line="284" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.4117646">
+              <caret line="232" column="62" selection-start-line="232" selection-start-column="62" selection-end-line="232" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#span#0;n#p#7;n#form#0;n#div#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsattrController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsattrController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.088235">
+              <caret line="173" column="22" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showList.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goodsattr/showList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6861167">
+              <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -138,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/Admin/View/Public/login.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Team/showList.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Team/add.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/battle.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/bigdata.html" />
@@ -185,10 +195,12 @@
         <option value="$PROJECT_DIR$/Application/Admin/View/Guessuser/edit.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Guessteam/showList.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Index/mall.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/showList.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/showList.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/GoodsattrController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Goodsattr/showList.html" />
       </list>
     </option>
   </component>
@@ -203,9 +215,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="19" />
-    <option name="y" value="59" />
     <option name="width" value="1386" />
-    <option name="height" value="671" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -300,7 +311,7 @@
     <option name="totallyTimeSpent" value="33078000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="59" width="1386" height="671" extended-state="0" />
+    <frame x="19" y="0" width="1386" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -347,20 +358,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Team/showList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6083916">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="152" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Index/battle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-46.52941">
-          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Index/bigdata.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.470589">
@@ -699,24 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.117647">
-          <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.735294">
-          <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Guess/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.5591183">
@@ -743,21 +722,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/showList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.294117">
-          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.8924732">
+          <caret line="211" column="153" selection-start-line="211" selection-start-column="153" selection-end-line="211" selection-end-column="153" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.080646">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/showList.html">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55454546">
-          <caret line="207" column="57" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
+        <state vertical-scroll-proportion="-9.558824">
+          <caret line="284" column="76" selection-start-line="284" selection-start-column="73" selection-end-line="284" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4117646">
+          <caret line="232" column="62" selection-start-line="232" selection-start-column="62" selection-end-line="232" selection-end-column="62" />
           <folding>
-            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#select#0;n#span#0;n#p#7;n#form#0;n#div#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsattrController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.088235">
+          <caret line="173" column="22" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goodsattr/showList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6861167">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -13,3 +13,7 @@ ERR: 1054:Unknown column 'statu' in 'where clause'
 [ 2017-09-01T15:27:50+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
 ERR: 无法加载控制器:Goodsattr
 
+[ 2017-09-01T19:18:37+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods_attr` WHERE ( statu = 1 ) 
+

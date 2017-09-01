@@ -174,40 +174,32 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
-                    <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
+                    <th class="head0">商品描述id</th>
+                    <th class="head1">本父级ID</th>
+                    <th class="head0">商品描述名称</th>
+                    <th class="head1">描述类型</th>
+                    <th class="head0">创建时间</th>
+                    <th class="head1">修改时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["good_name"]); ?></td>
-                        <td><?php echo ($vol["price"]); ?></td>
-                        <td><?php echo ($vol["stock"]); ?></td>
-                        <td><?php if($vol["g_part"] == 1): ?>推荐区
-                            <?php elseif($vol["g_part"] ==2): ?>打折区
-                            <?php elseif($vol["g_part"] ==3): ?>人气区
-                            <?php elseif($vol["g_part"] ==4): ?>土豪区
-                            <?php elseif($vol["g_part"] ==5): ?>求购区
+                        <td><?php echo ($vol["ga_id"]); ?></td>
+                        <td><?php echo ($vol["pgaid"]); ?></td>
+                        <td><?php echo ($vol["ga_name"]); ?></td>
+                        <!--<td><?php echo ($vol["ga_type"]); ?></td>-->
+                        <td><?php if($vol["ga_type"] == 1): ?>游戏类型
+                            <?php elseif($vol["ga_type"] ==2): ?>商品分类
+                            <?php elseif($vol["ga_type"] ==3): ?>商品等级
+                            <?php elseif($vol["ga_type"] ==4): ?>商品部位
+                            <?php elseif($vol["ga_type"] ==5): ?>商品外观
                             <?php else: ?>&nbsp<?php endif; ?>
-                        </td>
-                        <td><?php if($vol["guess"] == 1): ?>可竞猜
-                            <?php elseif($vol["guess"] ==2): ?>不可竞猜
-                            <?php else: ?>&nbsp<?php endif; ?>
-                        </td>
-                        <td><?php echo ($vol["valuation"]); ?></td>
-                        <td><?php echo ($vol["saled_num"]); ?></td>
-                        <td><?php if($vol["gameowner"] == 1): ?>dota2
-                            <?php elseif($vol["gameowner"] == 2): ?>csgo
-                            <?php else: endif; ?>
                         </td>
 
+                        <td><?php echo ($vol["ctime"]); ?></td>
+                        <td><?php echo ($vol["mtime"]); ?></td>
+                        
                         <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
@@ -248,7 +240,7 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '/index.php/Admin/Goods/del/id/' + id;
+            window.location.href = '/index.php/Admin/Goodsattr/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
@@ -256,7 +248,7 @@
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);
-            window.location.href = '/index.php/Admin/Goods/edit/id/' + id;
+            window.location.href = '/index.php/Admin/Goodsattr/edit/id/' + id;
         });
     });
    </script>
