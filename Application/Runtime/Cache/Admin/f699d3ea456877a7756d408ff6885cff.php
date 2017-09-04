@@ -1,25 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-    <link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
+    <link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
     <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie9.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
     <![endif]-->
     <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie8.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
     <![endif]-->
     <!--[if lt IE 9]>
-    <script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
+    <script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
     <![endif]-->
 </head>
 
@@ -47,12 +47,12 @@
             </div>
             -->
             <div class="userinfo">
-                <img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+                <img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
 
             <div class="userinfodrop">            	<div class="avatar">
-                <a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                <a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                 <div class="changetheme">
                     Change theme: <br />
                     <a class="default"></a>
@@ -79,14 +79,14 @@
 
     <div class="header">
         <ul class="headermenu">
-            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li class="current"><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li class="current"><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+            <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
+            <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
+            <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+            <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+            <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+            <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
 
         <div class="headerwidget">
@@ -119,8 +119,8 @@
                 <span class="arrow"></span>
                 <ul id="race">
                     <li class="arrow">
-                        <a href="{:U('Race/showList')}">赛事列表</a></li>
-                    <li><a href="{:U('Race/add')}">添加赛事</a></li>
+                        <a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+                    <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
                 </ul>
             </li>
 
@@ -128,24 +128,24 @@
                 <span class="arrow"></span>
                 <ul id="racedetail">
                     <li class="arrow">
-                        <a href="{:U('Racedetail/showList')}">详情列表</a></li>
-                    <li><a href="{:U('Racedetail/add')}">添加详情</a></li>
+                        <a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
+                    <li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
                 </ul>
             </li>
 
             <li><a href="#team" class="error">战队管理</a>
                 <span class="arrow"></span>
                 <ul id="team">
-                    <li><a href="{:U('Team/showList')}">战队列表</a></li>
-                    <li><a href="{:U('Team/add')}">添加战队</a></li>
+                    <li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
                 </ul>
             </li>
 
             <li><a href="#teammember" class="error">战队成员</a>
                 <span class="arrow"></span>
                 <ul id="teammember">
-                    <li><a href="{:U('Teammember/showList')}">成员列表</a></li>
-                    <li><a href="{:U('Teammember/add')}">添加成员</a></li>
+                    <li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
+                    <li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
                 </ul>
             </li>
 
@@ -168,7 +168,7 @@
     <div class="centercontent tables">
 
         <div class="pageheader notab">
-            <h1 class="pagetitle">赛事详情</h1>
+            <h1 class="pagetitle">成员列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
 
         </div><!--pageheader-->
@@ -186,44 +186,40 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">战队ID</th>
-                    <th class="head1">战队成员ID</th>
-                    <th class="head0">战队国家ID</th>
-                    <th class="head1">did</th>
-                    <th class="head0">战队名字</th>
-                    <th class="head1">战队简称</th>
-                    <th class="head0">战队头像</th>
-                    <th class="head1">战队简介</th>
-                    <th class="head1">添加时间</th>
-                    <th class="head1">战队状态</th>
+                    <th class="head0">成员ID</th>
+                    <th class="head1">战队ID</th>
+                    <th class="head0">用户ID</th>
+                    <th class="head1">担任职务</th>
+                    <th class="head0">状态</th>
+                    <th class="head1">创建时间</th>
                     <th class="head1">修改时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <volist name='data' id='vol'>
-                    <tr>
-                        <td>{$vol.tid}</td>
-                        <td>{$vol.uid}</td>
-                        <td>{$vol.cid}</td>
-                        <td>{$vol.did}</td>
-                        <td>{$vol.team_name}</td>
-                        <td>{$vol.team_shortname}</td>
-                        <td>{$vol.picurl}</td>
-                        <td>{$vol.team_desc}</td>
-                        <!--<td>{$vol.allow_join}</td>-->
-                        <td>{$vol.addtime}</td>
-                        <td><if condition='$vol.status == 1'>正常
-                            <elseif condition='$vol.status ==2'/>解散
-                            <else/>&nbsp</if>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["tmid"]); ?></td>
+                        <td><?php echo ($vol["tid"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php if($vol["role"] == manager): ?>经理
+                            <?php elseif($vol["role"] == leader): ?>领队
+                            <?php elseif($vol["role"] == coach): ?>教练
+                            <?php elseif($vol["role"] == captain): ?>队长
+                            <?php elseif($vol["role"] == member): ?>队员
+                            <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td>{$vol.mtime}</td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.tid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.tid}" class="del">删除</a></td>
-                    </tr>
-                </volist>
+                        <td><?php if($vol["status"] == 0): ?>等待确认
+                            <?php elseif($vol["status"] == 1): ?>正式队员
+                            <?php elseif($vol["status"] == 2): ?>拒绝
+                            <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
+                        <td><?php echo ($vol["addtime"]); ?></td>
+                        <td><?php echo (date('Y-m-d H:i:s',$vol["mtime"])); ?></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["tmid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["tmid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
-            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
+            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
 
 
 
@@ -259,7 +255,7 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '__CONTROLLER__/del/id/' + id;
+            window.location.href = '/index.php/Admin/Teammember/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
@@ -267,7 +263,7 @@
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);
-            window.location.href = '__CONTROLLER__/edit/id/' + id;
+            window.location.href = '/index.php/Admin/Teammember/edit/id/' + id;
         });
     });
 </script>

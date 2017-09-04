@@ -124,7 +124,7 @@
 
             <li><a href="#goodssell" class="error">出售管理</a>
                 <span class="arrow"></span>
-                <ul id="gootssell">
+                <ul id="goodssell">
                     <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
                     <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
                 </ul>

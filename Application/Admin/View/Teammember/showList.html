@@ -168,7 +168,7 @@
     <div class="centercontent tables">
 
         <div class="pageheader notab">
-            <h1 class="pagetitle">赛事详情</h1>
+            <h1 class="pagetitle">成员列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
 
         </div><!--pageheader-->
@@ -186,16 +186,12 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">战队ID</th>
-                    <th class="head1">战队成员ID</th>
-                    <th class="head0">战队国家ID</th>
-                    <th class="head1">did</th>
-                    <th class="head0">战队名字</th>
-                    <th class="head1">战队简称</th>
-                    <th class="head0">战队头像</th>
-                    <th class="head1">战队简介</th>
-                    <th class="head1">添加时间</th>
-                    <th class="head1">战队状态</th>
+                    <th class="head0">成员ID</th>
+                    <th class="head1">战队ID</th>
+                    <th class="head0">用户ID</th>
+                    <th class="head1">担任职务</th>
+                    <th class="head0">状态</th>
+                    <th class="head1">创建时间</th>
                     <th class="head1">修改时间</th>
                     <th class="head1">操作</th>
                 </tr>
@@ -203,22 +199,24 @@
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
+                        <td>{$vol.tmid}</td>
                         <td>{$vol.tid}</td>
                         <td>{$vol.uid}</td>
-                        <td>{$vol.cid}</td>
-                        <td>{$vol.did}</td>
-                        <td>{$vol.team_name}</td>
-                        <td>{$vol.team_shortname}</td>
-                        <td>{$vol.picurl}</td>
-                        <td>{$vol.team_desc}</td>
-                        <!--<td>{$vol.allow_join}</td>-->
-                        <td>{$vol.addtime}</td>
-                        <td><if condition='$vol.status == 1'>正常
-                            <elseif condition='$vol.status ==2'/>解散
+                        <td><if condition='$vol.role == manager'>经理
+                            <elseif condition='$vol.role == leader'/>领队
+                            <elseif condition='$vol.role == coach'/>教练
+                            <elseif condition='$vol.role == captain'/>队长
+                            <elseif condition='$vol.role == member'/>队员
                             <else/>&nbsp</if>
                         </td>
-                        <td>{$vol.mtime}</td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.tid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.tid}" class="del">删除</a></td>
+                        <td><if condition='$vol.status == 0'>等待确认
+                            <elseif condition='$vol.status == 1'/>正式队员
+                            <elseif condition='$vol.status == 2'/>拒绝
+                            <else/>&nbsp</if>
+                        </td>
+                        <td>{$vol.addtime}</td>
+                        <td>{$vol.mtime|date='Y-m-d H:i:s',###}</td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.tmid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.tmid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>

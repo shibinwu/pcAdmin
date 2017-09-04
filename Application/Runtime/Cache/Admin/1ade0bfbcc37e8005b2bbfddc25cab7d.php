@@ -124,7 +124,7 @@
 
             <li><a href="#goodssell" class="error">出售管理</a>
                 <span class="arrow"></span>
-                <ul id="gootssell">
+                <ul id="goodssell">
                     <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
                     <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
                 </ul>
@@ -200,7 +200,7 @@
                         <td><?php echo ($vol["ctime"]); ?></td>
                         <td><?php echo ($vol["mtime"]); ?></td>
 
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["ga_id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["ga_id"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -244,10 +244,10 @@
         });
 
         //给编辑按钮绑定点击事件
-        jQuery('.edit').on('click',function(){
+        jQuery(document).on('click',".edit",function(){
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
-            //alert(id);
+            alert(id);
             window.location.href = '/index.php/Admin/Goodsattr/edit/id/' + id;
         });
     });
