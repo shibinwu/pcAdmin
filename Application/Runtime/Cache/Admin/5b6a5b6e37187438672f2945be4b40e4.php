@@ -115,12 +115,21 @@
                 </ul>
             </li>
 
-            <li><a href="#error" class="error">赛事管理</a>
+            <li><a href="#race" class="error">赛事管理</a>
                 <span class="arrow"></span>
-                <ul id="error">
-                    <li class="current">
+                <ul id="race">
+                    <li class="arrow">
                         <a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
                     <li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#racedetail" class="error">赛事详情</a>
+                <span class="arrow"></span>
+                <ul id="racedetail">
+                    <li class="arrow">
+                        <a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
+                    <li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
                 </ul>
             </li>
 
@@ -131,6 +140,15 @@
                     <li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
                 </ul>
             </li>
+
+            <li><a href="#teammember" class="error">战队管理</a>
+                <span class="arrow"></span>
+                <ul id="teammember">
+                    <li><a href="<?php echo U('Teammember/showList');?>">战队列表</a></li>
+                    <li><a href="<?php echo U('Teammember/add');?>">添加战队</a></li>
+                </ul>
+            </li>
+
             <li><a href="#addons" class="addons">其他页面</a>
                 <span class="arrow"></span>
                 <ul id="addons">
@@ -145,7 +163,7 @@
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--左侧栏-->
+    </div><!--对战中心左侧栏-->
         
     <div class="centercontent tables">
     

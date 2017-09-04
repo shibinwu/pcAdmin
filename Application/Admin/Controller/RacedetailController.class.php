@@ -4,7 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明类并且继承父类
-class RaceController extends CommonController{
+class RacedetailController extends CommonController{
 
 
 	#add方法，展示模版文件
@@ -44,7 +44,7 @@ class RaceController extends CommonController{
 		#添加addtime字段
 		// $post['addtime'] = time();
 		#写入数据表
-		$model = M('Race');
+		$model = M('Race_detail');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
@@ -59,7 +59,7 @@ class RaceController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('Race');
+		$model = M('Race_detail');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
 //		dump($data);die;
@@ -102,12 +102,12 @@ class RaceController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Race');
+        $model = M('Race_detail');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'rid'   =>  $id,
+            'tmid'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
@@ -129,7 +129,7 @@ class RaceController extends CommonController{
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Race');
+	 	$model = M('Race_detail');
 	 	#查询操作
 	 	$data = $model -> find($id);
 	 	#传递给模版
@@ -168,7 +168,7 @@ class RaceController extends CommonController{
 //	 		}
 //	 	}
 	 	#写入到数据表
-	 	$model = M('Race');
+	 	$model = M('Race_detail');
 	 	$rst = $model -> save($post);
 //	 	dump($rst);die;
 	 	#判断返回结果

@@ -1,26 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
-<!--[if IE 9]>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
+    <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie9.css"/>
-<![endif]-->
-<!--[if IE 8]>
+    <![endif]-->
+    <!--[if IE 8]>
     <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie8.css"/>
-<![endif]-->
-<!--[if lt IE 9]>
-	<script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
-<![endif]-->
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
+    <![endif]-->
 </head>
 
 <body class="withvernav">
@@ -29,44 +29,44 @@
         <div class="left">
             <h1 class="logo">Wnv.<span>Admin</span></h1>
             <span class="slogan">后台管理系统</span>
-            
+
             <div class="search">
-            	<form action="" method="post">
-                	<input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
+                <form action="" method="post">
+                    <input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
                     <button class="submitbutton"></button>
                 </form>
             </div><!--search-->
-            
+
             <br clear="all" />
-            
+
         </div><!--left-->
-        
+
         <div class="right">
-        	<!--<div class="notification">
+            <!--<div class="notification">
                 <a class="count" href="notifications.html"><span>9</span></a>
-        	</div>
-			-->
+            </div>
+            -->
             <div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+                <img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
                 <span>Juan Dela Cruz</span>
             </div><!--userinfo-->
-            
+
             <div class="userinfodrop">            	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
-                    <div class="changetheme">
-                    	Change theme: <br />
-                    	<a class="default"></a>
-                        <a class="blueline"></a>
-                        <a class="greenline"></a>
-                        <a class="contrast"></a>
-                        <a class="custombg"></a>
-                    </div>
-                </div><!--avatar-->
-<div class="userdata">
-                	<h4>Juan Dela Cruz</h4>
+                <a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                <div class="changetheme">
+                    Change theme: <br />
+                    <a class="default"></a>
+                    <a class="blueline"></a>
+                    <a class="greenline"></a>
+                    <a class="contrast"></a>
+                    <a class="custombg"></a>
+                </div>
+            </div><!--avatar-->
+                <div class="userdata">
+                    <h4>Juan Dela Cruz</h4>
                     <span class="email">youremail@yourdomain.com</span>
                     <ul>
-                    	<li><a href="editprofile.html">Edit Profile</a></li>
+                        <li><a href="editprofile.html">Edit Profile</a></li>
                         <li><a href="accountsettings.html">Account Settings</a></li>
                         <li><a href="help.html">Help</a></li>
                         <li><a href="index.html">Sign Out</a></li>
@@ -75,10 +75,10 @@
             </div><!--userinfodrop-->
         </div><!--right-->
     </div><!--topheader-->
-    
-    
+
+
     <div class="header">
-    	<ul class="headermenu">
+        <ul class="headermenu">
             <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
             <li class="current"><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
             <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
@@ -88,20 +88,20 @@
             <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
             <li><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
         </ul>
-        
+
         <div class="headerwidget">
-        	<div class="earnings">
-            	<div class="one_half">
-                	<h4>Today's Earnings</h4>
+            <div class="earnings">
+                <div class="one_half">
+                    <h4>Today's Earnings</h4>
                     <h2>$640.01</h2>
                 </div><!--one_half-->
                 <div class="one_half last alignright">
-                	<h4>Current Rate</h4>
+                    <h4>Current Rate</h4>
                     <h2>53%</h2>
                 </div><!--one_half last-->
             </div><!--earnings-->
         </div><!--headerwidget-->
-        
+
     </div><!--header-->
 
     <div class="vernav2 iconmenu">
@@ -164,102 +164,91 @@
         <a class="togglemenu"></a>
         <br /><br />
     </div><!--对战中心左侧栏-->
-        
+
     <div class="centercontent tables">
-    
+
         <div class="pageheader notab">
-            <h1 class="pagetitle">Tables</h1>
+            <h1 class="pagetitle">赛事详情</h1>
             <span class="pagedesc">This is a sample description of a page</span>
-            
+
         </div><!--pageheader-->
-        
+
         <div id="contentwrapper" class="contentwrapper">
 
-                <div class="contenttitle2">
-                	<h3>Table with Action</h3>
-                </div><!--contenttitle-->
-                <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
-                    <button class="radius3">Apply Filter</button>
-                </div><!--tableoptions-->	
-                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 8%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 7%" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="head0">联赛名称</th>
-                        <th class="head1">主办方姓名</th>
-                        <th class="head0">主办方电话</th>
-                        <th class="head1">主办方QQ</th>
-                        <th class="head0">赛事类型</th>
-                        <th class="head1">赛事方式</th>
-                        <th class="head0">赛事LOGO</th>
-                        <th class="head1">赛事开始时间</th>
-                        <th class="head0">奖金</th>
-                        <th class="head1">操作</th>
-                        <!--<th class="head0">游戏模式</th>-->
-                        <!--<th class="head0">报名方式</th>-->
-                        <!--<th class="head0">比赛区域</th>-->
-                        <!--<th class="head0">报名人数</th>-->
-                        <!--<th class="head0">报名费</th>-->
-                        <!--<th class="head0">赛程阶段</th>-->
-                        <!--<th class="head0">主办方</th>-->
-                        <!--<th class="head0">报名流程</th>-->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <volist name='data' id='vol'>
-                        <tr>
-                            <td>{$vol.rname}</td>
-                            <td>{$vol.sponsor_name}</td>
-                            <td>{$vol.sponsor_phone}</td>
-                            <td>{$vol.sponsor_qq}</td>
-                            <td>{$vol.types}</td>
-                            <td>{$vol.game_type}</td>
-                            <td>{$vol.picurl}</td>
-                            <td>{$vol.race_start_time}</td>
-                            <td>{$vol.bonus}</td>
-                            <!--<td>{$vol.race_mode}</td>-->
-                            <!--<td>{$vol.join_mode}</td>-->
-                            <!--<td>{$vol.game_area}</td>-->
-                            <!--<td>{$vol.signed_num}</td>-->
-                            <!--<td>{$vol.join_cost}</td>-->
-                            <!--<td>{$vol.rice_stage}</td>-->
-                            <!--<td>{$vol.rice_sponsor}</td>-->
-                            <!--<td>{$vol.raceprocess}</td>-->
-                            <!--<td class="center">4</td>-->
-                            <!--<td class="center">X</td>-->
-                            <td class="center"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
-                        </tr>
-                    </volist>
 
-                    </tbody>
-                </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">详情ID</th>
+                    <th class="head1">姓名</th>
+                    <th class="head0">手机号</th>
+                    <th class="head1">QQ</th>
+                    <th class="head0">开始时间</th>
+                    <th class="head1">结束时间</th>
+                    <th class="head0">报名开始时间</th>
+                    <th class="head1">报名结束时间</th>
+                    <th class="head1">赛区ID</th>
+                    <th class="head1">报名费用</th>
+                    <th class="head1">队伍个数</th>
+                    <th class="head1">联系方式</th>
+                    <th class="head0">简介</th>
+                    <th class="head1">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name='data' id='vol'>
+                    <tr>
+                        <td>{$vol.rid}</td>
+                        <td>{$vol.owner_name}</td>
+                        <td>{$vol.phone}</td>
+                        <td>{$vol.qq}</td>
+                        <td>{$vol.start_time}</td>
+                        <td>{$vol.end_time}</td>
+                        <td>{$vol.join_start_time}</td>
+                        <td>{$vol.join_end_time}</td>
+                        <td>{$vol.did}</td>
+                        <td>{$vol.join_cost}</td>
+                        <td>{$vol.expect_joins}</td>
+                        <td><if condition='$vol.contact == 1'>手机
+                            <elseif condition='$vol.contact ==2'/>微信
+                            <elseif condition='$vol.contact ==3'/>qq
+                            <else/>&nbsp</if>
+                        </td>
+                        <td>{$vol.desc}</td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
+
+
 
         </div><!--contentwrapper-->
-        
-	</div><!-- centercontent -->
 
-    
+    </div><!-- centercontent -->
+
+
 </div><!--bodywrapper-->
 
 </body>
 <script type="text/javascript">
 
+
     //jQuery代码
     jQuery(function(){
+        //DOM动态修改分页的显示内容
+        document.getElementById("dyntable_first").innerHTML = "首页";
+        document.getElementById("dyntable_previous").innerHTML = "上一页";
+        document.getElementById("dyntable_next").innerHTML = "下一页";
+        document.getElementById("dyntable_last").innerHTML = "末页";
         //给删除按钮绑定点击事件
         jQuery('.del').on('click',function(){
             //事件处理程序
@@ -285,5 +274,5 @@
             window.location.href = '__CONTROLLER__/edit/id/' + id;
         });
     });
-   </script>
+</script>
 </html>

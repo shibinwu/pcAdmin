@@ -106,23 +106,33 @@
         </div><!--headerwidget-->
         
     </div><!--header-->
-    
+
     <div class="vernav2 iconmenu">
-    	<ul>
-        	<li><a href="#formsub" class="editor">游戏管理</a>
-            	<span class="arrow"></span>
-            	<ul id="formsub">
-               		<li><a href="forms.html">游戏类型</a></li>
+        <ul>
+            <li><a href="#formsub" class="editor">游戏管理</a>
+                <span class="arrow"></span>
+                <ul id="formsub">
+                    <li><a href="forms.html">游戏类型</a></li>
                     <li><a href="wizard.html">饰品</a></li>
                     <li><a href="editor.html">英雄</a></li>
                 </ul>
             </li>
 
             <li><a href="#race" class="error">赛事管理</a>
-            	<span class="arrow"></span>
-            	<ul id="race">
-                    <li><a href="{:U('Race/showList')}">赛事列表</a></li>
-               		<li><a href="{:U('Race/add')}">添加赛事</a></li>
+                <span class="arrow"></span>
+                <ul id="race">
+                    <li class="arrow">
+                        <a href="{:U('Race/showList')}">赛事列表</a></li>
+                    <li><a href="{:U('Race/add')}">添加赛事</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#racedetail" class="error">赛事详情</a>
+                <span class="arrow"></span>
+                <ul id="racedetail">
+                    <li class="arrow">
+                        <a href="{:U('Racedetail/showList')}">详情列表</a></li>
+                    <li><a href="{:U('Racedetail/add')}">添加详情</a></li>
                 </ul>
             </li>
 
@@ -133,10 +143,19 @@
                     <li><a href="{:U('Team/add')}">添加战队</a></li>
                 </ul>
             </li>
+
+            <li><a href="#teammember" class="error">战队管理</a>
+                <span class="arrow"></span>
+                <ul id="teammember">
+                    <li><a href="{:U('Teammember/showList')}">战队列表</a></li>
+                    <li><a href="{:U('Teammember/add')}">添加战队</a></li>
+                </ul>
+            </li>
+
             <li><a href="#addons" class="addons">其他页面</a>
-            	<span class="arrow"></span>
-            	<ul id="addons">
-               		<li><a href="newsfeed.html">新闻订阅</a></li>
+                <span class="arrow"></span>
+                <ul id="addons">
+                    <li><a href="newsfeed.html">新闻订阅</a></li>
                     <li><a href="profile.html">资料页面</a></li>
                     <li><a href="productlist.html">产品列表</a></li>
                     <li><a href="photo.html">图片视频分享</a></li>
@@ -147,7 +166,10 @@
         </ul>
         <a class="togglemenu"></a>
         <br /><br />
-    </div><!--leftmenu-->
+    </div><!--对战中心左侧栏-->
+
+
+
         
     <div class="centercontent">
     
