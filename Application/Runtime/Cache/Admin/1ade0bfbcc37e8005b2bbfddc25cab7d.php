@@ -199,7 +199,7 @@
 
                         <td><?php echo ($vol["ctime"]); ?></td>
                         <td><?php echo ($vol["mtime"]); ?></td>
-                        
+
                         <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
