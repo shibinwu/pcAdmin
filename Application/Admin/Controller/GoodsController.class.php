@@ -19,7 +19,8 @@ class GoodsController extends CommonController{
 		$post = I('post.');
 //		dump($post);die;
 		#获取文件的数据
-		 $file = $_FILES['file'];
+		 $file = $_FILES['icon'];
+//		dump($_FILES);die;
 		#配置上传信息
 		 $cfg = array(
 		 		//保存根路径
@@ -30,7 +31,7 @@ class GoodsController extends CommonController{
 		#上传操作
 		 if($file['size'] > 0){
 		 	$info = $uplaod -> uploadOne($file);//一维数组
-			 dump($info);die;
+//			 dump($info);die;
 		 	#判断返回结果
 		 	if($info){
 		 		#hasfile字段
