@@ -89,32 +89,41 @@
 </html>   <!--包含网页头文件-->
 
 
-    <div class="header">
-        <ul class="headermenu">
-            <li class="current"><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
-            <li class="current"><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
-        </ul>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 
-        <div class="headerwidget">
-            <div class="earnings">
-                <div class="one_half">
-                    <h4>Today's Earnings</h4>
-                    <h2>$640.01</h2>
-                </div><!--one_half-->
-                <div class="one_half last alignright">
-                    <h4>Current Rate</h4>
-                    <h2>53%</h2>
-                </div><!--one_half last-->
-            </div><!--earnings-->
-        </div><!--headerwidget-->
+    </body><div class="header">
+    <ul class="headermenu">
+        <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
+        <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+        <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
+        <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
+        <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
+        <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+        <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+        <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
+    </ul>
 
-    </div><!--header-->
+    <div class="headerwidget">
+        <div class="earnings">
+            <div class="one_half">
+                <h4>Today's Earnings</h4>
+                <h2>$640.01</h2>
+            </div><!--one_half-->
+            <div class="one_half last alignright">
+                <h4>Current Rate</h4>
+                <h2>53%</h2>
+            </div><!--one_half last-->
+        </div><!--earnings-->
+    </div><!--headerwidget-->
+
+</div><!--header-->
+</html>   <!--包含导航文件-->
 
     <div class="vernav2 iconmenu">
         <ul>
@@ -524,4 +533,13 @@
 </div><!--bodywrapper-->
 
 </body>
+<!--js代码关于退出操作-->
+<script type="text/javascript">
+    jQuery(function() {
+        jQuery('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
+        jQuery(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")
+    });
+</script>
 </html>

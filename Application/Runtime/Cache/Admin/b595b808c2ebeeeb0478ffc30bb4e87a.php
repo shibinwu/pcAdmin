@@ -78,7 +78,7 @@
                 <span class="email">youremail@yourdomain.com</span>
                 <ul>
                     <li><a href="editprofile.html">编辑资料</a></li>
-                    <li><a href="accountsettings.html">账号设置</a></li>
+                    <li><a href="">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -541,6 +541,7 @@
 </div><!--bodywrapper-->
 
 </body>
+<!--js代码关于退出操作-->
 <script type="text/javascript">
     jQuery(function() {
         jQuery('.exit').click(function () {
