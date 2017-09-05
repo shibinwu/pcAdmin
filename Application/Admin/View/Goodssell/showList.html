@@ -104,59 +104,12 @@
         
     </div><!--header-->
 
-    <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#goods" class="editor">商品管理</a>
-                <span class="arrow"></span>
-                <ul id="goods">
-                    <li><a href="{:U('Goods/showList')}">商品列表</a></li>
-                    <li><a href="{:U('Goods/add')}">添商品加</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#goodsattr" class="error">商品详情</a>
-                <span class="arrow"></span>
-                <ul id="goodsattr">
-                    <li><a href="{:U('Goodsattr/showList')}">详情列表</a></li>
-                    <li><a href="{:U('Goodsattr/add')}">添加详情</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#goodssell" class="error">出售管理</a>
-                <span class="arrow"></span>
-                <ul id="goodssell">
-                    <li><a href="{:U('Goodssell/showList')}">出售列表</a></li>
-                    <li><a href="{:U('Goodssell/add')}">添加出售</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#goodswant" class="error">求购管理</a>
-                <span class="arrow"></span>
-                <ul id="goodswant">
-                    <li><a href="{:U('Goodswant/showList')}">求购列表</a></li>
-                    <li><a href="{:U('Goodswant/add')}">添加求购</a></li>
-                </ul>
-            </li>
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu-->
+    <include file = 'Test/leftmall' />   <!--包含商城左侧栏文件-->
         
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品列表</h1>
+            <h1 class="pagetitle">出售列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -174,42 +127,31 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
+                    <th class="head0">出售ID</th>
+                    <th class="head1">商品ID</th>
+                    <th class="head0">用户ID</th>
                     <th class="head1">商品价格</th>
                     <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
-                    <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
+                    <th class="head1">状态</th>
+                    <th class="head0">添加时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.good_name}</td>
+                        <td>{$vol.gsid}</td>
+                        <td>{$vol.gid}</td>
+                        <td>{$vol.uid}</td>
                         <td>{$vol.price}</td>
                         <td>{$vol.stock}</td>
-                        <td><if condition='$vol.g_part == 1'>推荐区
-                            <elseif condition='$vol.g_part ==2'/>打折区
-                            <elseif condition='$vol.g_part ==3'/>人气区
-                            <elseif condition='$vol.g_part ==4'/>土豪区
-                            <elseif condition='$vol.g_part ==5'/>求购区
+                        <td><if condition='$vol.status == 1'>出售中
+                            <elseif condition='$vol.status ==2'/>已取消
+                            <elseif condition='$vol.status ==3'/>完成
                             <else/>&nbsp</if>
                         </td>
-                        <td><if condition='$vol.guess == 1'>可竞猜
-                            <elseif condition='$vol.guess ==2'/>不可竞猜
-                            <else/>&nbsp</if>
-                        </td>
-                        <td>{$vol.valuation}</td>
-                        <td>{$vol.saled_num}</td>
-                        <td><if condition='$vol.gameowner == 1'>dota2
-                            <elseif condition='$vol.gameowner == 2'/>csgo
-                            <else/></if>
-                        </td>
-
-                        <td class="center"><a href="javascript:;" data-id="{$vol.gid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gid}" class="del">删除</a></td>
+                        <td>{$vol.addtime}</td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.gsid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gsid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>

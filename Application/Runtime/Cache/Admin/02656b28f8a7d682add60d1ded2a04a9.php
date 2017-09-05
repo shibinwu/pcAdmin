@@ -42,11 +42,11 @@
 			</ul>
 		</li>
 
-		<li><a href="#teammember" class="error">战队管理</a>
+		<li><a href="#teammember" class="error">战队成员</a>
 			<span class="arrow"></span>
 			<ul id="teammember">
-				<li><a href="<?php echo U('Teammember/showList');?>">战队列表</a></li>
-				<li><a href="<?php echo U('Teammember/add');?>">添加战队</a></li>
+				<li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
+				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
 			</ul>
 		</li>
 

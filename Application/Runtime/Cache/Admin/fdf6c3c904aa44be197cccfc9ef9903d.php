@@ -165,7 +165,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品列表</h1>
+            <h1 class="pagetitle">出售列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -183,33 +183,30 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品描述id</th>
-                    <th class="head1">本父级ID</th>
-                    <th class="head0">商品描述名称</th>
-                    <th class="head1">描述类型</th>
-                    <th class="head0">创建时间</th>
-                    <th class="head1">修改时间</th>
+                    <th class="head0">出售ID</th>
+                    <th class="head1">商品ID</th>
+                    <th class="head0">用户ID</th>
+                    <th class="head1">商品价格</th>
+                    <th class="head0">库存</th>
+                    <th class="head1">状态</th>
+                    <th class="head0">添加时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["ga_id"]); ?></td>
-                        <td><?php echo ($vol["pgaid"]); ?></td>
-                        <td><?php echo ($vol["ga_name"]); ?></td>
-                        <!--<td><?php echo ($vol["ga_type"]); ?></td>-->
-                        <td><?php if($vol["ga_type"] == 1): ?>游戏类型
-                            <?php elseif($vol["ga_type"] ==2): ?>商品分类
-                            <?php elseif($vol["ga_type"] ==3): ?>商品等级
-                            <?php elseif($vol["ga_type"] ==4): ?>商品部位
-                            <?php elseif($vol["ga_type"] ==5): ?>商品外观
+                        <td><?php echo ($vol["gsid"]); ?></td>
+                        <td><?php echo ($vol["gid"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["price"]); ?></td>
+                        <td><?php echo ($vol["stock"]); ?></td>
+                        <td><?php if($vol["status"] == 1): ?>出售中
+                            <?php elseif($vol["status"] ==2): ?>已取消
+                            <?php elseif($vol["status"] ==3): ?>完成
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-
-                        <td><?php echo ($vol["ctime"]); ?></td>
-                        <td><?php echo ($vol["mtime"]); ?></td>
-
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["ga_id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["ga_id"]); ?>" class="del">删除</a></td>
+                        <td><?php echo ($vol["addtime"]); ?></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gsid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gsid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -249,15 +246,15 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '/index.php/Admin/Goodsattr/del/id/' + id;
+            window.location.href = '/index.php/Admin/Goodssell/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
-        jQuery(document).on('click',".edit",function(){
+        jQuery('.edit').on('click',function(){
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
-            alert(id);
-            window.location.href = '/index.php/Admin/Goodsattr/edit/id/' + id;
+            //alert(id);
+            window.location.href = '/index.php/Admin/Goodssell/edit/id/' + id;
         });
     });
    </script>
