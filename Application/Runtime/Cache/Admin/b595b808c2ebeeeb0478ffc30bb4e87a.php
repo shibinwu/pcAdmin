@@ -78,7 +78,7 @@
                 <span class="email">youremail@yourdomain.com</span>
                 <ul>
                     <li><a href="editprofile.html">编辑资料</a></li>
-                    <li><a href="">账号设置</a></li>
+                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -109,18 +109,18 @@
         <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
 
-    <div class="headerwidget">
-        <div class="earnings">
-            <div class="one_half">
-                <h4>Today's Earnings</h4>
-                <h2>$640.01</h2>
-            </div><!--one_half-->
-            <div class="one_half last alignright">
-                <h4>Current Rate</h4>
-                <h2>53%</h2>
-            </div><!--one_half last-->
-        </div><!--earnings-->
-    </div><!--headerwidget-->
+    <!--<div class="headerwidget">-->
+        <!--<div class="earnings">-->
+            <!--<div class="one_half">-->
+                <!--<h4>Today's Earnings</h4>-->
+                <!--<h2>$640.01</h2>-->
+            <!--</div>&lt;!&ndash;one_half&ndash;&gt;-->
+            <!--<div class="one_half last alignright">-->
+                <!--<h4>Current Rate</h4>-->
+                <!--<h2>53%</h2>-->
+            <!--</div>&lt;!&ndash;one_half last&ndash;&gt;-->
+        <!--</div>&lt;!&ndash;earnings&ndash;&gt;-->
+    <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
 </html>   <!--包含导航文件-->

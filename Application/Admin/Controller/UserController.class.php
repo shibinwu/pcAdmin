@@ -130,6 +130,9 @@ class UserController extends CommonController{
         #接收数据
         $id = I('get.id');
 
+
+//        dump($id);die;
+
         #实例化模型
         $model = M('User');
         #查询操作
@@ -139,6 +142,7 @@ class UserController extends CommonController{
         #展示模版
         $this -> display();
     }
+
 
     #editOk方法
     public function editOk(){
