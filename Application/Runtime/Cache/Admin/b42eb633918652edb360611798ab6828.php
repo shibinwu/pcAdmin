@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 <body>
     <div class="topheader">
     <div class="left">
-        <h1 class="logo"><span><img src="__PUBLIC__/Admin/images/logo.png" alt="" height="22px"/></span></h1>
+        <h1 class="logo"><span><img src="/Public/Admin/images/logo.png" alt="" height="22px"/></span></h1>
         <span class="slogan">后台管理系统</span>
 
         <div class="search">
@@ -26,14 +26,14 @@
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
         <div class="userinfo">
-            <!--<?php dump("$Think.session")?>-->
-            <img src="{$Think.session.picurl}"  width="30px" alt="" />
-            <span>{$Think.session.uname}</span>
+            <?php echo($data);?>
+            <img src="<?php echo ($data["picurl"]); ?>" alt="" />
+            <span><?php echo (session('uname')); ?></span>
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="{$Think.session.picurl}" width="100px" alt="" /></a>
+                <a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>
@@ -48,7 +48,7 @@
                 <span class="email">youremail@yourdomain.com</span>
                 <ul>
                     <li><a href="editprofile.html">编辑资料</a></li>
-                    <li><a href="{:U('User/edit')}?id={$Think.session.uid}">账号设置</a></li>
+                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>

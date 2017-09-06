@@ -16,7 +16,8 @@ class UserController extends CommonController{
         $post = I('post.');
 //        dump($post);die;
         #获取文件的数据
-        $file = $_FILES['file'];
+        $file = $_FILES['picurl'];
+//        dump($file);die;
         #配置上传信息
         $cfg = array(
             //保存根路径
@@ -34,7 +35,7 @@ class UserController extends CommonController{
                 #filename字段
                 $post['filename'] = $info['savename'];
                 #filepath字段
-                $post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+                $post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
             }
         }
 //		dump($post);die;
@@ -141,6 +142,7 @@ class UserController extends CommonController{
         $this -> assign('data',$data);
         #展示模版
         $this -> display();
+//        $this->display('Test:topheader');
     }
 
 

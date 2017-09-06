@@ -37,7 +37,7 @@
 <body>
     <div class="topheader">
     <div class="left">
-        <h1 class="logo">Wnv.<span>Admin</span></h1>
+        <h1 class="logo"><span><img src="/Public/Admin/images/logo.png" alt="" height="22px"/></span></h1>
         <span class="slogan">后台管理系统</span>
 
         <div class="search">
@@ -56,13 +56,14 @@
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
         <div class="userinfo">
-            <img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
+            <!--<?php dump("$Think.session")?>-->
+            <img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" />
             <span><?php echo (session('uname')); ?></span>
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
+                <a href=""><img src="<?php echo (session('picurl')); ?>" width="100px" alt="" /></a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>

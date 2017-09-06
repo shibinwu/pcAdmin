@@ -57,6 +57,7 @@ class PublicController extends Controller{
 				session('uid',$data['uid']);//记录用户id
 				session('uname',$data['username']);//记录用户名
 				session('role_id',$data['role_id']);//记录用户角色id
+				session('picurl',$data['picurl']);//记录用户角色id
 //				$uid = session('uid');
 //				dump($uid);die;
 				#提示
