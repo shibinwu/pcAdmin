@@ -37,7 +37,7 @@
 <body>
     <div class="topheader">
     <div class="left">
-        <h1 class="logo"><span><img src="/Public/Admin/images/logo.png" alt="" height="22px"/></span></h1>
+        <h1 class="logo"><span><img src="/Public/Admin/images/logo.png" alt="" height="28px"/></span></h1>
         <span class="slogan">后台管理系统</span>
 
         <div class="search">
@@ -56,14 +56,21 @@
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
         <div class="userinfo">
+            <!--<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />-->
             <!--<?php dump("$Think.session")?>-->
-            <img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" />
-            <span><?php echo (session('uname')); ?></span>
+            <?php if(session.picurl): ?><img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" />
+                <?php else: ?>
+                <img src="/Public/Admin/images/thumbs/avatar.png" alt="" /><?php endif; ?>
+
+            <!--<?php if(session.uname): ?>-->
+                <span><?php echo (session('uname')); ?></span>
+                <!--<?php else: ?> <span>111</span>-->
+            <!--<?php endif; ?>-->
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="<?php echo (session('picurl')); ?>" width="100px" alt="" /></a>
+                <a href=""><img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /></a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>
@@ -74,10 +81,10 @@
                 </div>
             </div><!--avatar-->
             <div class="userdata">
-                <h4>Juan</h4>
-                <span class="email">youremail@yourdomain.com</span>
+                <h4><?php echo (session('nickname')); ?></h4>
+                <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <li><a href="editprofile.html">编辑资料</a></li>
+                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
                     <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
@@ -101,9 +108,9 @@
     </body><div class="header">
     <ul class="headermenu">
         <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="battle.html"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="bigdata.html"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="guess.html"><span class="icon icon-message"></span>竞猜</a></li>
+        <li><a href="battle.html"><span class="icon icon-speech"></span>对战中心</a></li>
+        <li><a href="bigdata.html"><span class="icon icon-message"></span>大数据</a></li>
+        <li><a href="guess.html"><span class="icon icon-pencil"></span>竞猜</a></li>
         <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
         <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
         <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>

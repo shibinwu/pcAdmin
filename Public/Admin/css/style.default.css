@@ -169,7 +169,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 .topheader { background: #34445e url(../images/default/topheaderbg.png); padding: 8px 10px; position: relative; border-bottom: 1px solid #303f59; }
 .topheader .left h1.logo { 
 	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; font-weight: normal; text-transform: uppercase; color: #fb9337;
-	float: left; font-size: 30px; margin: 10px 0;
+	float: left; font-size: 30px; margin: 5px 0;
 }.topheader .left h1.logo a { color: #fb9337; }
 .topheader .left h1.logo span { color: #fff; }
 .topheader .left .slogan { 
