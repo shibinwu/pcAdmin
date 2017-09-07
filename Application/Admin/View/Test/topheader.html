@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="topheader">
+    <div class="left">
+        <h1 class="logo"><span><img src="__PUBLIC__/Admin/images/logo.png" alt="" height="28px"/></span></h1>
+        <span class="slogan">后台管理系统</span>
+
+        <div class="search">
+            <form action="" method="post">
+                <input type="text" name="keyword" id="keyword" value="请输入" />
+                <button class="submitbutton"></button>
+            </form>
+        </div><!--search-->
+
+        <br clear="all" />
+
+    </div><!--left-->
+
+    <div class="right">
+        <!--<div class="notification">
+            <a class="count" href="ajax/notifications.html"><span>9</span></a>
+        </div>-->
+        <div class="userinfo">
+            <if condition = "$Think.session.picurl eq ''">
+                <img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
+                <else/>
+                <img src="{$Think.session.picurl}"  width="30px" alt="" />
+            </if>
+
+            <if condition = "$Think.session.username eq ''">
+                <span>游客</span>
+                <else/>
+                <span>{$Think.session.username}</span>
+            </if>
+        </div><!--userinfo-->
+
+        <div class="userinfodrop">
+            <div class="avatar">
+                <a href="">
+                    <if condition = "$Think.session.picurl eq ''">
+                        <img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                        <else/>
+                        <img src="{$Think.session.picurl}" width="80px" alt="" />
+                    </if>
+                </a>
+                <div class="changetheme">
+                    切换主题: <br />
+                    <a class="default"></a>
+                    <a class="blueline"></a>
+                    <a class="greenline"></a>
+                    <a class="contrast"></a>
+                    <a class="custombg"></a>
+                </div>
+            </div><!--avatar-->
+            <div class="userdata">
+                <h4>{$Think.session.nickname}</h4>
+                <span class="email">{$Think.session.email}</span>
+                <ul>
+                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
+                    <li><a href="{:U('User/edit')}?id={$Think.session.uid}">账号设置</a></li>
+                    <li><a href="help.html">帮助</a></li>
+                    <li><a href="javascript:;" class="exit">退出</a></li>
+                </ul>
+            </div><!--userdata-->
+        </div><!--userinfodrop-->
+    </div><!--right-->
+</div><!--topheader-->
+</body>
+</html>

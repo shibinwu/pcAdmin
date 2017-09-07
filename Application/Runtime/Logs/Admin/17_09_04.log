@@ -1,0 +1,36 @@
+[ 2017-09-04T11:10:41+08:00 ] 127.0.0.1 /index.php/Admin/Index/header.html
+ERR: 非法操作:header
+
+[ 2017-09-04T11:10:44+08:00 ] 127.0.0.1 /index.php/Admin/Index/header.html
+ERR: 非法操作:header
+
+[ 2017-09-04T11:15:46+08:00 ] 127.0.0.1 /index.php/Admin/Index/top.html
+ERR: 非法操作:top
+
+[ 2017-09-04T11:35:07+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 无法加载控制器:Racedetail
+
+[ 2017-09-04T11:40:45+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 无法加载控制器:Racedetail
+
+[ 2017-09-04T13:13:33+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 无法加载控制器:Racedetail
+
+[ 2017-09-04T13:14:42+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 无法加载控制器:Racedetail
+
+[ 2017-09-04T13:15:37+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 无法加载控制器:Racedetail
+
+[ 2017-09-04T13:20:06+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 模板不存在:./Application/Admin/View/Racedetail/showList.html
+
+[ 2017-09-04T14:06:11+08:00 ] 127.0.0.1 /index.php/Admin/Race/forms.html
+ERR: 非法操作:forms
+
+[ 2017-09-04T16:38:10+08:00 ] 127.0.0.1 /index.php/Admin/Teammember/showList.html
+ERR: 无法加载控制器:Teammember
+
+[ 2017-09-04T16:42:00+08:00 ] 127.0.0.1 /index.php/Admin/Teammember/showList.html
+ERR: 模板不存在:./Application/Admin/View/Teammember/showList.html
+
