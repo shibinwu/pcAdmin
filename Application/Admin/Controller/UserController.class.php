@@ -150,31 +150,34 @@ class UserController extends CommonController{
     public function editOk(){
         #接收post数据
         $post = I('post.');
-//	 	dump($post);die;
+//       $file = $_FILES['picurl'];
+//	 	dump($file);die;
         #判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
+	 	if($_FILES['picurl']['size'] > 0){
+	 		#配置
+	 		$cfg = array(
+	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
+	 			);
+	 		#实例化
+	 		$upload = new \Think\Upload($cfg);
+	 		#上传操作
+	 		$info = $upload -> uploadOne($_FILES['picurl']);
+//            dump($info);die;
+	 		#判断上传结果
+	 		if($info){
+	 			#上传成功
+	 			#filepath字段
+	 			$post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+	 			#filename字段
+	 			$post['filename'] = $info['savename'];
+	 			#hasfile字段
+	 			$post['hasfile'] = 1;
+	 			// $yuanshi = $model -> find($post['id']);
+	 			// $path = WORKING_PATH . $yuanshi['filepath'];
+	 			// unlink($path);
+	 		}
+	 	}
+//        dump($post);die;
         #写入到数据表
         $model = M('User');
         $rst = $model -> save($post);

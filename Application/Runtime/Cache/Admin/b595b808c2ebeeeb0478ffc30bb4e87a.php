@@ -61,14 +61,18 @@
                 <?php else: ?>
                 <img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" /><?php endif; ?>
 
-            <?php if($_SESSION['uname']== ''): ?><span>游客</span>
+            <?php if($_SESSION['username']== ''): ?><span>游客</span>
                 <?php else: ?>
-                <span><?php echo (session('uname')); ?></span><?php endif; ?>
+                <span><?php echo (session('username')); ?></span><?php endif; ?>
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /></a>
+                <a href="">
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                        <?php else: ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                </a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>

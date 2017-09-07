@@ -32,16 +32,22 @@
                 <img src="{$Think.session.picurl}"  width="30px" alt="" />
             </if>
 
-            <if condition = "$Think.session.uname eq ''">
+            <if condition = "$Think.session.username eq ''">
                 <span>游客</span>
                 <else/>
-                <span>{$Think.session.uname}</span>
+                <span>{$Think.session.username}</span>
             </if>
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="{$Think.session.picurl}" width="80px" alt="" /></a>
+                <a href="">
+                    <if condition = "$Think.session.picurl eq ''">
+                        <img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                        <else/>
+                        <img src="{$Think.session.picurl}" width="80px" alt="" />
+                    </if>
+                </a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>

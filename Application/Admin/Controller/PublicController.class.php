@@ -42,20 +42,20 @@ class PublicController extends Controller{
 			#删除验证码元素
 			// unset($post['captcha']);
 			#查询
-//			$map['username']= $post['name'];
-//			$map['password']= $post['password'];
+			$map['username']= $post['username'];
+			$map['password']= $post['password'];
 			$data = $model -> where($post)->find();
+			//打印最后一条sql语句
+//			$sql = $model->getLastSql();
+//			dump($sql);die();
 
-
-//		$sql = $model->getLastSql();
-//			var_dump($sql);die();
 //		dump($data);die;
 
 			#判断用户是否存在
 			if($data){
 				#会话控制记录用户登录信息
 				session('uid',$data['uid']);//记录用户id
-				session('uname',$data['username']);//记录用户名
+				session('username',$data['username']);//记录用户名
 				session('role_id',$data['role_id']);//记录用户角色id
 				session('picurl',$data['picurl']);//记录用户头像
 				session('email',$data['email']);//记录用户邮箱

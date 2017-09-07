@@ -219,7 +219,7 @@
         });
 
         //给编辑按钮绑定点击事件
-        jQuery('.edit').on('click',function(){
+        jQuery(document).on('click',".edit",function(){
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);

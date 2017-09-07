@@ -53,7 +53,7 @@
                 
                 <div class="username">
                     <div class="usernameinner">
-                        <input type="text" name="name" id="username" />
+                        <input type="text" name="username" id="username" />
                     </div>
                 </div>
                 
