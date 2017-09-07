@@ -60,9 +60,9 @@
                 <?php else: ?>
                 <img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" /><?php endif; ?>
 
-            <?php if($_SESSION['uname']== ''): ?><span>游客</span>
+            <?php if($_SESSION['username']== ''): ?><span>游客</span>
                 <?php else: ?>
-                <span><?php echo (session('uname')); ?></span><?php endif; ?>
+                <span><?php echo (session('username')); ?></span><?php endif; ?>
         </div><!--userinfo-->
 
         <div class="userinfodrop">

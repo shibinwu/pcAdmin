@@ -54,22 +54,22 @@
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
         <div class="userinfo">
-            <!--<?php dump("$Think.session")?>-->
-            <!--<?php if(session.picurl): ?>-->
-                <!--<img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" />-->
-                <!--<?php else: ?>-->
-            <img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
-            <!--<?php endif; ?>-->
+            <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
+                <?php else: ?>
+                <img src="<?php echo (session('picurl')); ?>"  width="30px" alt="" /><?php endif; ?>
 
-            <!--<?php if(session.uname): ?>-->
-                <span><?php echo (session('uname')); ?></span>
-                <!--<?php else: ?> <span>111</span>-->
-            <!--<?php endif; ?>-->
+            <?php if($_SESSION['username']== ''): ?><span>游客</span>
+                <?php else: ?>
+                <span><?php echo (session('username')); ?></span><?php endif; ?>
         </div><!--userinfo-->
 
         <div class="userinfodrop">
             <div class="avatar">
-                <a href=""><img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /></a>
+                <a href="">
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                        <?php else: ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                </a>
                 <div class="changetheme">
                     切换主题: <br />
                     <a class="default"></a>

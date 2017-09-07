@@ -109,7 +109,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品列表</h1>
+            <h1 class="pagetitle">求购列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -127,42 +127,27 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
-                    <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
+                    <th class="head0">求购ID</th>
+                    <th class="head1">求购者ID</th>
+                    <th class="head0">商品ID</th>
+                    <th class="head1">数量</th>
+                    <th class="head0">价格</th>
+                    <th class="head1">状态</th>
+                    <th class="head0">添加时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.good_name}</td>
+                        <td>{$vol.gwid}</td>
+                        <td>{$vol.uid}</td>
+                        <td>{$vol.gid}</td>
+                        <td>{$vol.num}</td>
                         <td>{$vol.price}</td>
-                        <td>{$vol.stock}</td>
-                        <td><if condition='$vol.g_part == 1'>推荐区
-                            <elseif condition='$vol.g_part ==2'/>打折区
-                            <elseif condition='$vol.g_part ==3'/>人气区
-                            <elseif condition='$vol.g_part ==4'/>土豪区
-                            <elseif condition='$vol.g_part ==5'/>求购区
-                            <else/>&nbsp</if>
-                        </td>
-                        <td><if condition='$vol.guess == 1'>可竞猜
-                            <elseif condition='$vol.guess ==2'/>不可竞猜
-                            <else/>&nbsp</if>
-                        </td>
-                        <td>{$vol.valuation}</td>
-                        <td>{$vol.saled_num}</td>
-                        <td><if condition='$vol.gameowner == 1'>dota2
-                            <elseif condition='$vol.gameowner == 2'/>csgo
-                            <else/></if>
-                        </td>
-
-                        <td class="center"><a href="javascript:;" data-id="{$vol.gid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gid}" class="del">删除</a></td>
+                        <td>{$vol.status}</td>
+                        <td>{$vol.addtime|date="Y-m-d H:i:s",###}</td>
+                        <td class="center"><a href="javascript:;" data-id="{$vol.gwid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gwid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>

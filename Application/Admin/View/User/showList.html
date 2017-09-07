@@ -164,7 +164,7 @@
                     <th class="head0">手机号</th>
                     <th class="head1">密码</th>
                     <th class="head0">注册时间</th>
-                    <th class="head1">角色ID</th>
+                    <th class="head1">角色名称</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
@@ -176,7 +176,11 @@
                         <td>{$vol.phone}</td>
                         <td>{$vol.password}</td>
                         <td>{$vol.reg_time}</td>
-                        <td>{$vol.role_id}</td>
+                        <!--<td>{$vol.role_id}</td>-->
+                        <td><if condition='$vol.role_id == 1'>超级管理员
+                            <elseif condition='$vol.role_id ==2'/>审核员
+                            <else/>&nbsp</if>
+                        </td>
                         <td class="center"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>

@@ -28,7 +28,7 @@ return array(
 	#用户组的权限
 		'RBAC_ROLES_AUTHS'      =>  array(
 				1 => array('*/*'),  //全部权限
-				2 => array('race/showlist','team/showlist','user/*','index/*')
+				2 => array('race/showlist','race/edit','team/showlist','user/*','goods/showlist','goodsattr/showlist','goodssell/showlist','goodswant/showlist','guess/showlist','index/*')
 //				3 => array('email/*','doc/showlist','index/*')
 		),
 );

@@ -79,11 +79,11 @@
     
     <div class="header">
     	<ul class="headermenu">
-            <li class="current"><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
             <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
             <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
             <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+            <li class="current"><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
             <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
             <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
             <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
@@ -104,44 +104,68 @@
         
     </div><!--header-->
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商城左侧栏</title>
+</head>
+<body>
     <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#user" class="editor">用户管理</a>
-                <span class="arrow"></span>
-                <ul id="user">
-                    <li><a href="<?php echo U('User/showList');?>">用户列表</a></li>
-                    <li><a href="<?php echo U('User/add');?>">添加用户</a></li>
-                </ul>
-            </li>
+    <ul>
+        <li><a href="#goods" class="editor">商品管理</a>
+            <span class="arrow"></span>
+            <ul id="goods">
+                <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
+                <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#index" class="editor">banner管理</a>
-                <span class="arrow"></span>
-                <ul id="index">
-                    <li><a href="forms.html">列表展示</a></li>
-                    <li><a href="wizard.html">添加banner</a></li>
-                </ul>
-            </li>
+        <li><a href="#goodsattr" class="error">商品详情</a>
+            <span class="arrow"></span>
+            <ul id="goodsattr">
+                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
+                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--左侧栏-->
+        <li><a href="#goodssell" class="error">出售管理</a>
+            <span class="arrow"></span>
+            <ul id="goodssell">
+                <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
+                <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#goodswant" class="error">求购管理</a>
+            <span class="arrow"></span>
+            <ul id="goodswant">
+                <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
+                <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
+            </ul>
+        </li>
+        <li><a href="#addons" class="addons">其他页面</a>
+            <span class="arrow"></span>
+            <ul id="addons">
+                <li><a href="newsfeed.html">新闻订阅</a></li>
+                <li><a href="profile.html">资料页面</a></li>
+                <li><a href="productlist.html">产品列表</a></li>
+                <li><a href="photo.html">图片视频分享</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="invoice.html">购物车</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--商城左侧栏-->
+</body>
+</html>   <!--包含商城左侧栏文件-->
         
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">用户列表</h1>
+            <h1 class="pagetitle">求购列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -159,31 +183,32 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">用户名</th>
-                    <th class="head1">邮箱</th>
-                    <th class="head0">手机号</th>
-                    <th class="head1">密码</th>
-                    <th class="head0">注册时间</th>
-                    <th class="head1">角色名称</th>
+                    <th class="head0">求购ID</th>
+                    <th class="head1">求购者ID</th>
+                    <th class="head0">商品ID</th>
+                    <th class="head1">数量</th>
+                    <th class="head0">价格</th>
+                    <th class="head1">状态</th>
+                    <th class="head0">添加时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["username"]); ?></td>
-                        <td><?php echo ($vol["email"]); ?></td>
-                        <td><?php echo ($vol["phone"]); ?></td>
-                        <td><?php echo ($vol["password"]); ?></td>
-                        <td><?php echo ($vol["reg_time"]); ?></td>
-                        <!--<td><?php echo ($vol["role_id"]); ?></td>-->
-                        <td><?php if($vol["role_id"] == 1): ?>超级管理员
-                            <?php elseif($vol["role_id"] ==2): ?>审核员
-                            <?php else: ?>&nbsp<?php endif; ?>
-                        </td>
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                        <td><?php echo ($vol["gwid"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["gid"]); ?></td>
+                        <td><?php echo ($vol["num"]); ?></td>
+                        <td><?php echo ($vol["price"]); ?></td>
+                        <td><?php echo ($vol["status"]); ?></td>
+                        <td><?php echo (date("Y-m-d H:i:s",$vol["addtime"])); ?></td>
+                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gwid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gwid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
+            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
+
+
 
         </div><!--contentwrapper-->
         
@@ -217,15 +242,15 @@
             //去除末尾多余的逗号
 //            ids = ids.substring(0,ids.length-1);
             //console.log(ids);
-            window.location.href = '/index.php/Admin/User/del/id/' + id;
+            window.location.href = '/index.php/Admin/Goodswant/del/id/' + id;
         });
 
         //给编辑按钮绑定点击事件
-        jQuery(document).on('click',".edit",function(){
+        jQuery('.edit').on('click',function(){
             //事件的处理程序
             id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
             //alert(id);
-            window.location.href = '/index.php/Admin/User/edit/id/' + id;
+            window.location.href = '/index.php/Admin/Goodswant/edit/id/' + id;
         });
     });
    </script>

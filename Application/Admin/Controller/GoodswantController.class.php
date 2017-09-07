@@ -4,7 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明类并且继承父类
-class GoodsController extends CommonController{
+class GoodswantController extends CommonController{
 
 
 	#add方法，展示模版文件
@@ -43,9 +43,10 @@ class GoodsController extends CommonController{
 		 }
 //		dump($post);die;
 		#添加addtime字段
-		// $post['addtime'] = time();
+		 $post['addtime'] = time();
+//		dump($post);die;
 		#写入数据表
-		$model = M('Goods');
+		$model = M('Goods_want');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
@@ -60,7 +61,7 @@ class GoodsController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('Goods');
+		$model = M('Goods_want');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
 //		dump($data);die;
@@ -103,12 +104,12 @@ class GoodsController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Goods');
+        $model = M('Goods_want');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'gid'   =>  $id,
+            'gwid'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
@@ -130,7 +131,7 @@ class GoodsController extends CommonController{
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Goods');
+	 	$model = M('Goods_want');
 	 	#查询操作
 	 	$data = $model -> find($id);
 //		 dump($data);
@@ -170,8 +171,8 @@ class GoodsController extends CommonController{
 //	 		}
 //	 	}
 	 	#写入到数据表
-	 	$model = M('Goods');
-		 if($post['gid']){
+	 	$model = M('Goods_want');
+		 if($post['gwid']){
 			 $rst = $model -> save($post);
 		 }else{
 			 echo '123';
