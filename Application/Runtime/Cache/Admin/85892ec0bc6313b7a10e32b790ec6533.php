@@ -101,31 +101,46 @@
 
 </div><!--header-->
 </html>
-   <!--包含导航文件-->    <!DOCTYPE html>
+   <!--包含导航文件-->    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>商城左侧栏</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#user" class="editor">用户管理</a>
+        <li><a href="#goods" class="editor">商品管理</a>
             <span class="arrow"></span>
-            <ul id="user">
-                <li><a href="<?php echo U('User/showList');?>">用户列表</a></li>
-                <li><a href="<?php echo U('User/add');?>">添加用户</a></li>
+            <ul id="goods">
+                <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
+                <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
             </ul>
         </li>
 
-        <li><a href="#index" class="editor">banner管理</a>
+        <li><a href="#goodsattr" class="error">商品详情</a>
             <span class="arrow"></span>
-            <ul id="index">
-                <li><a href="forms.html">列表展示</a></li>
-                <li><a href="wizard.html">添加banner</a></li>
+            <ul id="goodsattr">
+                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
+                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
             </ul>
         </li>
 
+        <li><a href="#goodssell" class="error">出售管理</a>
+            <span class="arrow"></span>
+            <ul id="goodssell">
+                <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
+                <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#goodswant" class="error">求购管理</a>
+            <span class="arrow"></span>
+            <ul id="goodswant">
+                <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
+                <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
+            </ul>
+        </li>
         <li><a href="#addons" class="addons">其他页面</a>
             <span class="arrow"></span>
             <ul id="addons">
@@ -140,6 +155,6 @@
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--首页左侧栏-->
+</div><!--商城左侧栏-->
 </body>
-</html>  <!--包含左侧栏文件-->    <div class="centercontent">        <div class="pageheader">            <h1 class="pagetitle">添加用户</h1>            <span class="pagedesc">操作后台用户的管理模块，该窗口添加新的用户</span>        </div><!--pageheader-->        <div id="contentwrapper" class="contentwrapper">        	<div id="basicform" class="subcontent">                    <div class="contenttitle2">                        <h3>用户详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/User/addOk" method="post" enctype="multipart/form-data">                        <p>                        	<label>用户名</label>                            <span class="field"><input type="text" name="username" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>邮箱</label>                            <span class="field"><input type="text" name="email" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>手机号</label>                            <span class="field"><input type="text" name="phone" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>密码</label>                            <span class="field"><input type="text" name="password" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>头像</label>                            <span class="field">                                <input type="file" name="picurl" />                            </span>                        </p>                        <p>                            <label>昵称</label>                            <span class="field"><input type="text" name="nickname" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>注册时间</label>                            <span class="field"><input type="text" name="reg_time" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>角色ID</label>                            <span class="field"><input type="text" name="role_id" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>创建时间</label>                            <span class="field"><input type="text" name="ctime" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>修改时间</label>                            <span class="field"><input type="text" name="mtime" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                    </form>            </div><!--subcontent--> -->        </div><!--contentwrapper-->	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    jQuery.noConflict();    jQuery(document).ready(function($){        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")        });    });</script></html>
+</html>   <!--包含商城左侧栏文件-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">添加详情</h1>            <span class="pagedesc">操作后台用户的管理模块，该窗口添加新的用户</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>详情列表</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/Goodsattr/addOk" method="post" >                    	                        <p>                        	<label>本父级ID</label>                            <span class="field"><input type="text" name="good_name" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>商品描述名称</label>                            <span class="field"><input type="text" name="ga_name" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>描述类型</label>                            <span class="formwrapper">                                <select data-placeholder="请选择比赛机制" name="ga_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">游戏类型</option>                                    <option value="2">商品分类</option>                                    <option value="3">商品等级</option>                                    <option value="4">商品部位</option>                                    <option value="5">商品外观</option>                                </select>                            </span>                        </p>                       <p>                            <label>创建时间</label>                            <span class="field"><input type="text" name="ctime" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>修改时间</label>                            <span class="field"><input type="text" name="mtime" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                                                <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                    </form>            </div><!--subcontent--> -->                </div><!--contentwrapper-->        	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    jQuery.noConflict();    jQuery(document).ready(function($){        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")        });    });</script></html>
