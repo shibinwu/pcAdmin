@@ -188,16 +188,6 @@
         jQuery('.del').on('click',function(){
             //事件处理程序
             id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
-//            console.log(id);
-            //遍历jQuery对象
-            //需要将id拼凑成1,2,3,4形式
-//            var ids = '';
-//            for(var i = 0;i < id.length;i++){
-//                ids += id[i].value + ',';
-//            }
-            //去除末尾多余的逗号
-//            ids = ids.substring(0,ids.length-1);
-            //console.log(ids);
             window.location.href = '__CONTROLLER__/del/id/' + id;
         });
 

@@ -136,20 +136,43 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="#formsub" class="editor">职业赛事</a>
+            <li><a href="#formsub" class="editor">登录信息</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
-                    <li><a href="forms.html">中国区</a></li>
-                    <li><a href="wizard.html">美洲区</a></li>
-                    <li><a href="editor.html">欧洲区</a></li>
+                    <li><a href="forms.html">信息列表</a></li>
+                    <li><a href="wizard.html">添加信息</a></li>
                 </ul>
             </li>
 
-            <li><a href="#race" class="error">胜率预测</a>
+            <li><a href="#race" class="error">会员详情</a>
                 <span class="arrow"></span>
                 <ul id="race">
-                    <li><a href="<?php echo U('Team/showList');?>">赛事列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加赛事</a></li>
+                    <li><a href="<?php echo U('Team/showList');?>">详情列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加详情</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#team" class="error">会员评论</a>
+                <span class="arrow"></span>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">评论列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加评论</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#team" class="error">会员资产</a>
+                <span class="arrow"></span>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">资产列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#friend" class="error">我的好友</a>
+                <span class="arrow"></span>
+                <ul id="friend">
+                    <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                    <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
                 </ul>
             </li>
 
@@ -556,7 +579,7 @@
         jQuery('.exit').click(function () {
             window.location.href = "/index.php/Admin/Public/logout";
         });
-        jQuery(".headermenu>li").eq(2).addClass("current").siblings().removeClass("current")
+        jQuery(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
     });
 </script>
 </html>

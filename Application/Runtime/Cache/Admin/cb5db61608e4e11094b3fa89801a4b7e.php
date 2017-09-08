@@ -136,23 +136,37 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="#formsub" class="editor">职业赛事</a>
+            <li><a href="#guess" class="editor">竞猜比赛管理</a>
                 <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">中国区</a></li>
-                    <li><a href="wizard.html">美洲区</a></li>
-                    <li><a href="editor.html">欧洲区</a></li>
+                <ul id="guess">
+                    <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                    <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
                 </ul>
             </li>
 
-            <li><a href="#race" class="error">胜率预测</a>
+            <li><a href="#guessdata" class="error">竞猜比赛数据</a>
                 <span class="arrow"></span>
-                <ul id="race">
-                    <li><a href="<?php echo U('Team/showList');?>">赛事列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加赛事</a></li>
+                <ul id="guessdata">
+                    <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
+                    <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
                 </ul>
             </li>
 
+            <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+                <span class="arrow"></span>
+                <ul id="guessteam">
+                    <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
+                    <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#guessuser" class="error">竞猜用户管理</a>
+                <span class="arrow"></span>
+                <ul id="guessuser">
+                    <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
+                    <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
+                </ul>
+            </li>
             <li><a href="#addons" class="addons">其他页面</a>
                 <span class="arrow"></span>
                 <ul id="addons">
@@ -556,7 +570,7 @@
         jQuery('.exit').click(function () {
             window.location.href = "/index.php/Admin/Public/logout";
         });
-        jQuery(".headermenu>li").eq(2).addClass("current").siblings().removeClass("current")
+        jQuery(".headermenu>li").eq(3).addClass("current").siblings().removeClass("current")
     });
 </script>
 </html>

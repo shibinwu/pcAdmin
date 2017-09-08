@@ -136,22 +136,14 @@
 
     <div class="vernav2 iconmenu">
         <ul>
-            <li><a href="#formsub" class="editor">职业赛事</a>
+            <li><a href="#formsub" class="editor">新闻中心</a>
                 <span class="arrow"></span>
                 <ul id="formsub">
-                    <li><a href="forms.html">中国区</a></li>
-                    <li><a href="wizard.html">美洲区</a></li>
-                    <li><a href="editor.html">欧洲区</a></li>
+                    <li><a href="forms.html">新闻列表</a></li>
+                    <li><a href="wizard.html">添加新闻</a></li>
                 </ul>
             </li>
 
-            <li><a href="#race" class="error">胜率预测</a>
-                <span class="arrow"></span>
-                <ul id="race">
-                    <li><a href="<?php echo U('Team/showList');?>">赛事列表</a></li>
-                    <li><a href="<?php echo U('Team/add');?>">添加赛事</a></li>
-                </ul>
-            </li>
 
             <li><a href="#addons" class="addons">其他页面</a>
                 <span class="arrow"></span>
@@ -556,7 +548,7 @@
         jQuery('.exit').click(function () {
             window.location.href = "/index.php/Admin/Public/logout";
         });
-        jQuery(".headermenu>li").eq(2).addClass("current").siblings().removeClass("current")
+        jQuery(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")
     });
 </script>
 </html>
