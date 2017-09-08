@@ -1,0 +1,9 @@
+[ 2017-09-08T10:55:35+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-09-08T10:56:18+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-09-08T10:56:22+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
