@@ -3,4 +3,5 @@
 Conf/*
 config.php
 Runtime/Cache/Admin/*
+.user.ini
 
