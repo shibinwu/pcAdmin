@@ -25,86 +25,6 @@
 
 <body class="withvernav">
 <div class="bodywrapper">
-<<<<<<< HEAD
-    <div class="topheader">
-        <div class="left">
-            <h1 class="logo">Wnv.<span>Admin</span></h1>
-            <span class="slogan">后台管理系统</span>
-            
-            <div class="search">
-            	<form action="" method="post">
-                	<input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
-                    <button class="submitbutton"></button>
-                </form>
-            </div><!--search-->
-            
-            <br clear="all" />
-            
-        </div><!--left-->
-        
-        <div class="right">
-        	<!--<div class="notification">
-                <a class="count" href="notifications.html"><span>9</span></a>
-        	</div>
-			-->
-            <div class="userinfo">
-            	<img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
-                <span>Juan Dela Cruz</span>
-            </div><!--userinfo-->
-            
-            <div class="userinfodrop">            	<div class="avatar">
-                	<a href=""><img src="/Public/Admin/images/thumbs/avatarbig.png" alt="" /></a>
-                    <div class="changetheme">
-                    	Change theme: <br />
-                    	<a class="default"></a>
-                        <a class="blueline"></a>
-                        <a class="greenline"></a>
-                        <a class="contrast"></a>
-                        <a class="custombg"></a>
-                    </div>
-                </div><!--avatar-->
-<div class="userdata">
-                	<h4>Juan Dela Cruz</h4>
-                    <span class="email">youremail@yourdomain.com</span>
-                    <ul>
-                    	<li><a href="editprofile.html">Edit Profile</a></li>
-                        <li><a href="accountsettings.html">Account Settings</a></li>
-                        <li><a href="help.html">Help</a></li>
-                        <li><a href="index.html">Sign Out</a></li>
-                    </ul>
-                </div><!--userdata-->
-            </div><!--userinfodrop-->
-        </div><!--right-->
-    </div><!--topheader-->
-    
-    
-    <div class="header">
-    	<ul class="headermenu">
-            <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-            <li class="current"><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        </ul>
-        
-        <div class="headerwidget">
-        	<div class="earnings">
-            	<div class="one_half">
-                	<h4>Today's Earnings</h4>
-                    <h2>$640.01</h2>
-                </div><!--one_half-->
-                <div class="one_half last alignright">
-                	<h4>Current Rate</h4>
-                    <h2>53%</h2>
-                </div><!--one_half last-->
-            </div><!--earnings-->
-        </div><!--headerwidget-->
-        
-    </div><!--header-->
-=======
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -211,7 +131,6 @@
 </div><!--header-->
 </html>
  <!--包含导航栏文件-->
->>>>>>> c57c9c3d876af5f7a0bbf6980c02c591f11acb92
 
    <!DOCTYPE html>
 <html lang="en">
@@ -326,20 +245,10 @@
                             <?php else: endif; ?>
                         </td>
 
-<<<<<<< HEAD
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
-            </table>
-            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
-
-
-=======
                         <td class="center" url="/index.php/Admin/Goods"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
->>>>>>> c57c9c3d876af5f7a0bbf6980c02c591f11acb92
 
         </div><!--contentwrapper-->
         
@@ -349,44 +258,6 @@
 </div><!--bodywrapper-->
 
 </body>
-<<<<<<< HEAD
-<script type="text/javascript">
-
-
-    //jQuery代码
-    jQuery(function(){
-        //DOM动态修改分页的显示内容
-        document.getElementById("dyntable_first").innerHTML = "首页";
-        document.getElementById("dyntable_previous").innerHTML = "上一页";
-        document.getElementById("dyntable_next").innerHTML = "下一页";
-        document.getElementById("dyntable_last").innerHTML = "末页";
-        //给删除按钮绑定点击事件
-        jQuery('.del').on('click',function(){
-            //事件处理程序
-            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
-//            console.log(id);
-            //遍历jQuery对象
-            //需要将id拼凑成1,2,3,4形式
-//            var ids = '';
-//            for(var i = 0;i < id.length;i++){
-//                ids += id[i].value + ',';
-//            }
-            //去除末尾多余的逗号
-//            ids = ids.substring(0,ids.length-1);
-            //console.log(ids);
-            window.location.href = '/index.php/Admin/Goods/del/id/' + id;
-        });
-
-        //给编辑按钮绑定点击事件
-        jQuery('.edit').on('click',function(){
-            //事件的处理程序
-            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
-            //alert(id);
-            window.location.href = '/index.php/Admin/Goods/edit/id/' + id;
-        });
-    });
-   </script>
-=======
 <script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
     //解决$方法不能用的问题
@@ -398,5 +269,4 @@
         });
     });
 </script>
->>>>>>> c57c9c3d876af5f7a0bbf6980c02c591f11acb92
 </html>
