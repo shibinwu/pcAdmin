@@ -108,15 +108,16 @@
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="battle.html"><span class="icon icon-speech"></span>对战中心</a></li>
-        <li><a href="bigdata.html"><span class="icon icon-message"></span>大数据</a></li>
-        <li><a href="guess.html"><span class="icon icon-pencil"></span>竞猜</a></li>
-        <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
+
 
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
@@ -132,7 +133,8 @@
     <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
-</html>   <!--包含导航文件-->
+</html>
+   <!--包含导航文件-->
 
     <div class="vernav2 iconmenu">
         <ul>

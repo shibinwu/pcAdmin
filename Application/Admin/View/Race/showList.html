@@ -34,85 +34,70 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">Tables</h1>
+            <h1 class="pagetitle">赛事列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
 
-                <div class="contenttitle2">
-                	<h3>Table with Action</h3>
-                </div><!--contenttitle-->
-                <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
-                    <button class="radius3">Apply Filter</button>
-                </div><!--tableoptions-->	
-                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 8%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 7%" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">联赛名称</th>
+                    <th class="head1">主办方姓名</th>
+                    <th class="head0">主办方电话</th>
+                    <th class="head1">主办方QQ</th>
+                    <th class="head0">赛事类型</th>
+                    <th class="head1">赛事方式</th>
+                    <th class="head0">赛事LOGO</th>
+                    <th class="head1">赛事开始时间</th>
+                    <th class="head0">奖金</th>
+                    <th class="head1">操作</th>
+                    <!--<th class="head0">游戏模式</th>-->
+                    <!--<th class="head0">报名方式</th>-->
+                    <!--<th class="head0">比赛区域</th>-->
+                    <!--<th class="head0">报名人数</th>-->
+                    <!--<th class="head0">报名费</th>-->
+                    <!--<th class="head0">赛程阶段</th>-->
+                    <!--<th class="head0">主办方</th>-->
+                    <!--<th class="head0">报名流程</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <volist name='data' id='vol'>
                     <tr>
-                        <th class="head0">联赛名称</th>
-                        <th class="head1">主办方姓名</th>
-                        <th class="head0">主办方电话</th>
-                        <th class="head1">主办方QQ</th>
-                        <th class="head0">赛事类型</th>
-                        <th class="head1">赛事方式</th>
-                        <th class="head0">赛事LOGO</th>
-                        <th class="head1">赛事开始时间</th>
-                        <th class="head0">奖金</th>
-                        <th class="head1">操作</th>
-                        <!--<th class="head0">游戏模式</th>-->
-                        <!--<th class="head0">报名方式</th>-->
-                        <!--<th class="head0">比赛区域</th>-->
-                        <!--<th class="head0">报名人数</th>-->
-                        <!--<th class="head0">报名费</th>-->
-                        <!--<th class="head0">赛程阶段</th>-->
-                        <!--<th class="head0">主办方</th>-->
-                        <!--<th class="head0">报名流程</th>-->
+                        <td>{$vol.rname}</td>
+                        <td>{$vol.sponsor_name}</td>
+                        <td>{$vol.sponsor_phone}</td>
+                        <td>{$vol.sponsor_qq}</td>
+                        <td>{$vol.types}</td>
+                        <td>{$vol.game_type}</td>
+                        <td>{$vol.picurl}</td>
+                        <td>{$vol.race_start_time}</td>
+                        <td>{$vol.bonus}</td>
+                        <!--<td>{$vol.race_mode}</td>-->
+                        <!--<td>{$vol.join_mode}</td>-->
+                        <!--<td>{$vol.game_area}</td>-->
+                        <!--<td>{$vol.signed_num}</td>-->
+                        <!--<td>{$vol.join_cost}</td>-->
+                        <!--<td>{$vol.rice_stage}</td>-->
+                        <!--<td>{$vol.rice_sponsor}</td>-->
+                        <!--<td>{$vol.raceprocess}</td>-->
+                        <!--<td class="center">4</td>-->
+                        <!--<td class="center">X</td>-->
+                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <volist name='data' id='vol'>
-                        <tr>
-                            <td>{$vol.rname}</td>
-                            <td>{$vol.sponsor_name}</td>
-                            <td>{$vol.sponsor_phone}</td>
-                            <td>{$vol.sponsor_qq}</td>
-                            <td>{$vol.types}</td>
-                            <td>{$vol.game_type}</td>
-                            <td>{$vol.picurl}</td>
-                            <td>{$vol.race_start_time}</td>
-                            <td>{$vol.bonus}</td>
-                            <!--<td>{$vol.race_mode}</td>-->
-                            <!--<td>{$vol.join_mode}</td>-->
-                            <!--<td>{$vol.game_area}</td>-->
-                            <!--<td>{$vol.signed_num}</td>-->
-                            <!--<td>{$vol.join_cost}</td>-->
-                            <!--<td>{$vol.rice_stage}</td>-->
-                            <!--<td>{$vol.rice_sponsor}</td>-->
-                            <!--<td>{$vol.raceprocess}</td>-->
-                            <!--<td class="center">4</td>-->
-                            <!--<td class="center">X</td>-->
-                            <td class="center"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
-                        </tr>
-                    </volist>
-
-                    </tbody>
-                </table>
+                </volist>
+                </tbody>
+            </table>
 
         </div><!--contentwrapper-->
         
@@ -122,39 +107,15 @@
 </div><!--bodywrapper-->
 
 </body>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
-
-    //jQuery代码
-    jQuery(function(){
-        //给删除按钮绑定点击事件
-        jQuery('.del').on('click',function(){
-            //事件处理程序
-            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
-//            console.log(id);
-            //遍历jQuery对象
-            //需要将id拼凑成1,2,3,4形式
-//            var ids = '';
-//            for(var i = 0;i < id.length;i++){
-//                ids += id[i].value + ',';
-//            }
-            //去除末尾多余的逗号
-//            ids = ids.substring(0,ids.length-1);
-            //console.log(ids);
-            window.location.href = '__CONTROLLER__/del/id/' + id;
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
         });
-
-        //给编辑按钮绑定点击事件
-        jQuery('.edit').on('click',function(){
-            //事件的处理程序
-            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
-            //alert(id);
-            window.location.href = '__CONTROLLER__/edit/id/' + id;
-        });
-        jQuery('.exit').click(function () {
-            window.location.href = "/index.php/Admin/Public/logout";
-        });
-        jQuery(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
-
     });
-   </script>
+</script>
 </html>
