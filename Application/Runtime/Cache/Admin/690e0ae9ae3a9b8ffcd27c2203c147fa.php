@@ -108,7 +108,7 @@
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>" attr=""><span class="icon icon-flatscreen"></span>首页</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
         <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
         <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
         <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
@@ -117,16 +117,7 @@
         <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
-    <script>
-        var lis=jQuery(".headermenu>li>a");
-        console.log(location.href)
-        for(var i=0;i<lis.length;i++){
-            if(location.href){
-                jQuery(".headermenu>li").removeClass("current");
-                jQuery(this).parents("li").addClass("current");
-            }
-        }
-    </script>
+
 
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
@@ -143,13 +134,7 @@
 
 </div><!--header-->
 </html>
-<script>
-    jQuery.noConflict();
-    jQuery(document).ready(function($){
-
-    })
-
-</script>   <!--包含导航文件-->
+   <!--包含导航文件-->
 
     <div class="vernav2 iconmenu">
         <ul>

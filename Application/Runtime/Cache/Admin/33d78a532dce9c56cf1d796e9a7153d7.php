@@ -117,12 +117,7 @@
         <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
-    <!--<script>-->
-        <!--var lis=jQuery(".headermenu>li>a");-->
-        <!--console.log(location.href)-->
-        <!--for(var i=0;i<lis.length;i++)<?php echo --> <!--if(location.href){--> <!--jQuery(".headermenu>li").removeClass("current");--> <!--jQuery(this).parents("li").addClass("current");--> <!--;?>-->
-        <!--}-->
-    <!--</script>-->
+
 
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
