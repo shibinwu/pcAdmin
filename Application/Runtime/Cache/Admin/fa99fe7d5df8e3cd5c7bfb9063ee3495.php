@@ -118,6 +118,7 @@
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
 
+
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
             <!--<div class="one_half">-->
@@ -132,7 +133,8 @@
     <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
-</html>   <!--包含导航文件-->
+</html>
+   <!--包含导航文件-->
 
 
     <!DOCTYPE html>

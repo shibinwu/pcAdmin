@@ -92,7 +92,7 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>  <!--包含头文件-->
+</html> <!--包含头文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -223,56 +223,59 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">详情ID</th>
-                    <th class="head1">姓名</th>
-                    <th class="head0">手机号</th>
-                    <th class="head1">QQ</th>
-                    <th class="head0">开始时间</th>
-                    <th class="head1">结束时间</th>
-                    <th class="head0">报名开始时间</th>
-                    <th class="head1">报名结束时间</th>
-                    <th class="head1">赛区ID</th>
-                    <th class="head1">报名费用</th>
-                    <th class="head1">队伍个数</th>
-                    <th class="head1">联系方式</th>
-                    <th class="head0">简介</th>
+                    <th class="head0">战队ID</th>
+                    <th class="head1">战队成员ID</th>
+                    <th class="head0">战队国家ID</th>
+                    <th class="head1">did</th>
+                    <th class="head0">战队名字</th>
+                    <th class="head1">战队简称</th>
+                    <th class="head0">战队头像</th>
+                    <th class="head1">战队简介</th>
+                    <th class="head1">添加时间</th>
+                    <th class="head1">战队状态</th>
+                    <th class="head1">修改时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["rid"]); ?></td>
-                        <td><?php echo ($vol["owner_name"]); ?></td>
-                        <td><?php echo ($vol["phone"]); ?></td>
-                        <td><?php echo ($vol["qq"]); ?></td>
-                        <td><?php echo ($vol["start_time"]); ?></td>
-                        <td><?php echo ($vol["end_time"]); ?></td>
-                        <td><?php echo ($vol["join_start_time"]); ?></td>
-                        <td><?php echo ($vol["join_end_time"]); ?></td>
+                        <td><?php echo ($vol["tid"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["cid"]); ?></td>
                         <td><?php echo ($vol["did"]); ?></td>
-                        <td><?php echo ($vol["join_cost"]); ?></td>
-                        <td><?php echo ($vol["expect_joins"]); ?></td>
-                        <td><?php if($vol["contact"] == 1): ?>手机
-                            <?php elseif($vol["contact"] ==2): ?>微信
-                            <?php elseif($vol["contact"] ==3): ?>qq
+                        <td><?php echo ($vol["team_name"]); ?></td>
+                        <td><?php echo ($vol["team_shortname"]); ?></td>
+                        <td><?php echo ($vol["picurl"]); ?></td>
+                        <td><?php echo ($vol["team_desc"]); ?></td>
+                        <!--<td><?php echo ($vol["allow_join"]); ?></td>-->
+                        <td><?php echo ($vol["addtime"]); ?></td>
+                        <td><?php if($vol["status"] == 1): ?>正常
+                            <?php elseif($vol["status"] ==2): ?>解散
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td><?php echo ($vol["desc"]); ?></td>
-                        <td class="center" url="/index.php/Admin/Racedetail"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        <td><?php echo ($vol["mtime"]); ?></td>
+                        <td class="center" url="/index.php/Admin/Team"><a href="javascript:;" data-id="<?php echo ($vol["tid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["tid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
             <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
 
-
-
         </div><!--contentwrapper-->
 
     </div><!-- centercontent -->
-
 
 </div><!--bodywrapper-->
 
 </body>
 <script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
+<script type="text/javascript">
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
+        });
+    });
+</script>
 </html>

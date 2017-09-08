@@ -75,7 +75,7 @@
                             <elseif condition='$vol.role_id ==2'/>审核员
                             <else/>&nbsp</if>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
+                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
@@ -84,9 +84,19 @@
         </div><!--contentwrapper-->
 
 	</div><!-- centercontent -->
-    
+
 </div><!--bodywrapper-->
 
 </body>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
+<script type="text/javascript">
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+        });
+    });
+</script>
 </html>

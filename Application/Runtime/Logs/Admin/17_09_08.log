@@ -115,3 +115,30 @@ ERR: 非法操作:index
 [ 2017-09-08T15:02:09+08:00 ] 127.0.0.1 /index.php/Admin/Race/index.html
 ERR: 非法操作:index
 
+[ 2017-09-08T16:46:12+08:00 ] 127.0.0.1 /index.php/Admin/Index/forms.html
+ERR: 非法操作:forms
+
+[ 2017-09-08T16:48:16+08:00 ] 127.0.0.1 /index.php/Admin/Index/newsfeed.html
+ERR: 非法操作:newsfeed
+
+[ 2017-09-08T17:26:52+08:00 ] 127.0.0.1 /index.php/Admin/Guess/undefined/edit/id/2
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:27:00+08:00 ] 127.0.0.1 /index.php/Admin/Guess/undefined/edit/id/5
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:40:35+08:00 ] 127.0.0.1 /index.php/Admin/Guessuser/undefined/edit/id/27
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:42:30+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/undefined/edit/id/4
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:42:45+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/undefined/edit/id/2
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:43:26+08:00 ] 127.0.0.1 /index.php/Admin/Guessdata/undefined/edit/id/2
+ERR: 非法操作:undefined
+
+[ 2017-09-08T17:54:07+08:00 ] 127.0.0.1 /index.php/Admin/Goodssell/undefined/edit/id/2
+ERR: 非法操作:undefined
+

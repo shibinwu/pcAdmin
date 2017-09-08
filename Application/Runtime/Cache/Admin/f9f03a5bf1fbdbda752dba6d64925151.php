@@ -115,6 +115,7 @@
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
 
+
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
             <!--<div class="one_half">-->
@@ -129,7 +130,8 @@
     <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
-</html>   <!--包含导航文件-->
+</html>
+   <!--包含导航文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -216,7 +218,7 @@
                             <?php elseif($vol["role_id"] ==2): ?>审核员
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                        <td class="center" url="/index.php/Admin/User"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -225,9 +227,18 @@
 
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
 
 </body>
-<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
+<script type="text/javascript">
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+        });
+    });
+</script>
 </html>

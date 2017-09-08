@@ -11,7 +11,7 @@
             document.getElementById("dyntable_previous").innerHTML = "上一页";
             document.getElementById("dyntable_next").innerHTML = "下一页";
             document.getElementById("dyntable_last").innerHTML = "末页";
-            var url = '/index.php/Admin/User';
+            var url = $(".center").attr('url');
             //给删除按钮绑定点击事件
             $('.del').on('click',function(){
                 //事件处理程序
@@ -29,8 +29,7 @@
             $('.exit').click(function () {
                 window.location.href = "/index.php/Admin/Public/logout";
             });
-            //给所选li元素添加class="current"属性，显示箭头效果
-            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+
         });
     });
 

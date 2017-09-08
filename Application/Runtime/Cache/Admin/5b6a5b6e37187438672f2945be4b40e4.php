@@ -104,15 +104,16 @@
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="index.html"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="battle.html"><span class="icon icon-speech"></span>对战中心</a></li>
-        <li><a href="bigdata.html"><span class="icon icon-message"></span>大数据</a></li>
-        <li><a href="guess.html"><span class="icon icon-pencil"></span>竞猜</a></li>
-        <li><a href="mall.html"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="news.html"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="active.html"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="member.html"><span class="icon icon-chart"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
+
 
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
@@ -128,7 +129,8 @@
     <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
-</html> <!--包含导航文件-->
+</html>
+ <!--包含导航文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -203,83 +205,68 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">Tables</h1>
+            <h1 class="pagetitle">赛事列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
 
-                <div class="contenttitle2">
-                	<h3>Table with Action</h3>
-                </div><!--contenttitle-->
-                <div class="tableoptions">
-                	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
-                    <select class="radius3">
-                    	<option value="">Show All</option>
-                        <option value="">Rendering Engine</option>
-                        <option value="">Platform</option>
-                    </select> &nbsp;
-                    <button class="radius3">Apply Filter</button>
-                </div><!--tableoptions-->	
-                <table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
-                    <colgroup>
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 8%" />
-                        <col class="con1" style="width: 8%" />
-                        <col class="con0" style="width: 7%" />
-                        <col class="con1" style="width: 7%" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="head0">联赛名称</th>
-                        <th class="head1">主办方姓名</th>
-                        <th class="head0">主办方电话</th>
-                        <th class="head1">主办方QQ</th>
-                        <th class="head0">赛事类型</th>
-                        <th class="head1">赛事方式</th>
-                        <th class="head0">赛事LOGO</th>
-                        <th class="head1">赛事开始时间</th>
-                        <th class="head0">奖金</th>
-                        <th class="head1">操作</th>
-                        <!--<th class="head0">游戏模式</th>-->
-                        <!--<th class="head0">报名方式</th>-->
-                        <!--<th class="head0">比赛区域</th>-->
-                        <!--<th class="head0">报名人数</th>-->
-                        <!--<th class="head0">报名费</th>-->
-                        <!--<th class="head0">赛程阶段</th>-->
-                        <!--<th class="head0">主办方</th>-->
-                        <!--<th class="head0">报名流程</th>-->
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                            <td><?php echo ($vol["rname"]); ?></td>
-                            <td><?php echo ($vol["sponsor_name"]); ?></td>
-                            <td><?php echo ($vol["sponsor_phone"]); ?></td>
-                            <td><?php echo ($vol["sponsor_qq"]); ?></td>
-                            <td><?php echo ($vol["types"]); ?></td>
-                            <td><?php echo ($vol["game_type"]); ?></td>
-                            <td><?php echo ($vol["picurl"]); ?></td>
-                            <td><?php echo ($vol["race_start_time"]); ?></td>
-                            <td><?php echo ($vol["bonus"]); ?></td>
-                            <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
-                            <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
-                            <!--<td><?php echo ($vol["game_area"]); ?></td>-->
-                            <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
-                            <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
-                            <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
-                            <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
-                            <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
-                            <!--<td class="center">4</td>-->
-                            <!--<td class="center">X</td>-->
-                            <td class="center"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
-                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-
-                    </tbody>
-                </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">联赛名称</th>
+                    <th class="head1">主办方姓名</th>
+                    <th class="head0">主办方电话</th>
+                    <th class="head1">主办方QQ</th>
+                    <th class="head0">赛事类型</th>
+                    <th class="head1">赛事方式</th>
+                    <th class="head0">赛事LOGO</th>
+                    <th class="head1">赛事开始时间</th>
+                    <th class="head0">奖金</th>
+                    <th class="head1">操作</th>
+                    <!--<th class="head0">游戏模式</th>-->
+                    <!--<th class="head0">报名方式</th>-->
+                    <!--<th class="head0">比赛区域</th>-->
+                    <!--<th class="head0">报名人数</th>-->
+                    <!--<th class="head0">报名费</th>-->
+                    <!--<th class="head0">赛程阶段</th>-->
+                    <!--<th class="head0">主办方</th>-->
+                    <!--<th class="head0">报名流程</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["rname"]); ?></td>
+                        <td><?php echo ($vol["sponsor_name"]); ?></td>
+                        <td><?php echo ($vol["sponsor_phone"]); ?></td>
+                        <td><?php echo ($vol["sponsor_qq"]); ?></td>
+                        <td><?php echo ($vol["types"]); ?></td>
+                        <td><?php echo ($vol["game_type"]); ?></td>
+                        <td><?php echo ($vol["picurl"]); ?></td>
+                        <td><?php echo ($vol["race_start_time"]); ?></td>
+                        <td><?php echo ($vol["bonus"]); ?></td>
+                        <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
+                        <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
+                        <!--<td><?php echo ($vol["game_area"]); ?></td>-->
+                        <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
+                        <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
+                        <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
+                        <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
+                        <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
+                        <!--<td class="center">4</td>-->
+                        <!--<td class="center">X</td>-->
+                        <td class="center" url="/index.php/Admin/Race"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
 
         </div><!--contentwrapper-->
         
@@ -289,39 +276,15 @@
 </div><!--bodywrapper-->
 
 </body>
+<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
-
-    //jQuery代码
-    jQuery(function(){
-        //给删除按钮绑定点击事件
-        jQuery('.del').on('click',function(){
-            //事件处理程序
-            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
-//            console.log(id);
-            //遍历jQuery对象
-            //需要将id拼凑成1,2,3,4形式
-//            var ids = '';
-//            for(var i = 0;i < id.length;i++){
-//                ids += id[i].value + ',';
-//            }
-            //去除末尾多余的逗号
-//            ids = ids.substring(0,ids.length-1);
-            //console.log(ids);
-            window.location.href = '/index.php/Admin/Race/del/id/' + id;
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
         });
-
-        //给编辑按钮绑定点击事件
-        jQuery('.edit').on('click',function(){
-            //事件的处理程序
-            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
-            //alert(id);
-            window.location.href = '/index.php/Admin/Race/edit/id/' + id;
-        });
-        jQuery('.exit').click(function () {
-            window.location.href = "/index.php/Admin/Public/logout";
-        });
-        jQuery(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
-
     });
-   </script>
+</script>
 </html>

@@ -118,6 +118,7 @@
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
     </ul>
 
+
     <!--<div class="headerwidget">-->
         <!--<div class="earnings">-->
             <!--<div class="one_half">-->
@@ -132,56 +133,66 @@
     <!--</div>&lt;!&ndash;headerwidget&ndash;&gt;-->
 
 </div><!--header-->
-</html>   <!--包含导航文件-->
+</html>
+   <!--包含导航文件-->
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
     <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#guess" class="editor">竞猜比赛管理</a>
-                <span class="arrow"></span>
-                <ul id="guess">
-                    <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
-                    <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
-                </ul>
-            </li>
+    <ul>
+        <li><a href="#guess" class="editor">竞猜比赛管理</a>
+            <span class="arrow"></span>
+            <ul id="guess">
+                <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#guessdata" class="error">竞猜比赛数据</a>
-                <span class="arrow"></span>
-                <ul id="guessdata">
-                    <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
-                    <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
-                </ul>
-            </li>
+        <li><a href="#guessdata" class="error">竞猜比赛数据</a>
+            <span class="arrow"></span>
+            <ul id="guessdata">
+                <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
+                <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#guessteam" class="error">竞猜队伍管理</a>
-                <span class="arrow"></span>
-                <ul id="guessteam">
-                    <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
-                    <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
-                </ul>
-            </li>
+        <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+            <span class="arrow"></span>
+            <ul id="guessteam">
+                <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
+                <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#guessuser" class="error">竞猜用户管理</a>
-                <span class="arrow"></span>
-                <ul id="guessuser">
-                    <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
-                    <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
-                </ul>
-            </li>
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu-->
+        <li><a href="#guessuser" class="error">竞猜用户管理</a>
+            <span class="arrow"></span>
+            <ul id="guessuser">
+                <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
+                <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
+            </ul>
+        </li>
+        <li><a href="#addons" class="addons">其他页面</a>
+            <span class="arrow"></span>
+            <ul id="addons">
+                <li><a href="newsfeed.html">新闻订阅</a></li>
+                <li><a href="profile.html">资料页面</a></li>
+                <li><a href="productlist.html">产品列表</a></li>
+                <li><a href="photo.html">图片视频分享</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="invoice.html">购物车</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--竞猜左侧栏-->
+</body>
+</html>  <!--包含左侧栏-->
 
     <div class="centercontent">
 

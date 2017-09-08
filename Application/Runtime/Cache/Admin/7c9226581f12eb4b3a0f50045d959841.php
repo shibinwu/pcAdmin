@@ -1,26 +1,26 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-    <link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
-    <!--[if IE 9]>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
+<!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
-    <![endif]-->
-    <!--[if IE 8]>
+<![endif]-->
+<!--[if IE 8]>
     <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
-    <![endif]-->
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
+<![endif]-->
 </head>
 
 <body class="withvernav">
@@ -93,7 +93,7 @@
 </div><!--topheader-->
 </body>
 </html>  <!--包含头文件-->
-
+    
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,81 +135,69 @@
     <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
-	<ul>
-		<li><a href="#formsub" class="editor">游戏管理</a>
-			<span class="arrow"></span>
-			<ul id="formsub">
-				<li><a href="forms.html">游戏类型</a></li>
-				<li><a href="wizard.html">饰品</a></li>
-				<li><a href="editor.html">英雄</a></li>
-			</ul>
-		</li>
+    <ul>
+        <li><a href="#guess" class="editor">竞猜比赛管理</a>
+            <span class="arrow"></span>
+            <ul id="guess">
+                <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#race" class="error">赛事管理</a>
-			<span class="arrow"></span>
-			<ul id="race">
-				<li class="arrow">
-					<a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
-				<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
-			</ul>
-		</li>
+        <li><a href="#guessdata" class="error">竞猜比赛数据</a>
+            <span class="arrow"></span>
+            <ul id="guessdata">
+                <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
+                <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#racedetail" class="error">赛事详情</a>
-			<span class="arrow"></span>
-			<ul id="racedetail">
-				<li class="arrow">
-					<a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
-				<li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
-			</ul>
-		</li>
+        <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+            <span class="arrow"></span>
+            <ul id="guessteam">
+                <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
+                <li><a href="<?php echo U('Guessteam/add');?>">添加队伍</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#team" class="error">战队管理</a>
-			<span class="arrow"></span>
-			<ul id="team">
-				<li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
-				<li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
-			</ul>
-		</li>
-
-		<li><a href="#teammember" class="error">战队成员</a>
-			<span class="arrow"></span>
-			<ul id="teammember">
-				<li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
-				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
-			</ul>
-		</li>
-
-		<li><a href="#addons" class="addons">其他页面</a>
-			<span class="arrow"></span>
-			<ul id="addons">
-				<li><a href="newsfeed.html">新闻订阅</a></li>
-				<li><a href="profile.html">资料页面</a></li>
-				<li><a href="productlist.html">产品列表</a></li>
-				<li><a href="photo.html">图片视频分享</a></li>
-				<li><a href="gallery.html">相册</a></li>
-				<li><a href="invoice.html">购物车</a></li>
-			</ul>
-		</li>
-	</ul>
-	<a class="togglemenu"></a>
-	<br /><br />
-</div><!--对战中心左侧栏-->
+        <li><a href="#guessuser" class="error">竞猜用户管理</a>
+            <span class="arrow"></span>
+            <ul id="guessuser">
+                <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
+                <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
+            </ul>
+        </li>
+        <li><a href="#addons" class="addons">其他页面</a>
+            <span class="arrow"></span>
+            <ul id="addons">
+                <li><a href="newsfeed.html">新闻订阅</a></li>
+                <li><a href="profile.html">资料页面</a></li>
+                <li><a href="productlist.html">产品列表</a></li>
+                <li><a href="photo.html">图片视频分享</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="invoice.html">购物车</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--竞猜左侧栏-->
 </body>
-</html>  <!--包含对战中心左侧栏文件-->
-
+</html>  <!--包含左侧栏-->
+        
     <div class="centercontent tables">
-
+    
         <div class="pageheader notab">
-            <h1 class="pagetitle">赛事详情</h1>
+            <h1 class="pagetitle">竞猜列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
-
+            
         </div><!--pageheader-->
-
+        
         <div id="contentwrapper" class="contentwrapper">
 
 
@@ -223,56 +211,58 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">详情ID</th>
-                    <th class="head1">姓名</th>
-                    <th class="head0">手机号</th>
-                    <th class="head1">QQ</th>
-                    <th class="head0">开始时间</th>
-                    <th class="head1">结束时间</th>
-                    <th class="head0">报名开始时间</th>
-                    <th class="head1">报名结束时间</th>
-                    <th class="head1">赛区ID</th>
-                    <th class="head1">报名费用</th>
-                    <th class="head1">队伍个数</th>
-                    <th class="head1">联系方式</th>
-                    <th class="head0">简介</th>
-                    <th class="head1">操作</th>
+                    <th class="head0">比赛名称</th>
+                    <th class="head1">左边队伍ID</th>
+                    <th class="head0">右边队伍ID</th>
+                    <th class="head1">比赛机制</th>
+                    <th class="head0">比赛类型</th>
+                    <th class="head1">竞猜类型</th>
+                    <th class="head0">竞猜状态</th>
+                    <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["rid"]); ?></td>
-                        <td><?php echo ($vol["owner_name"]); ?></td>
-                        <td><?php echo ($vol["phone"]); ?></td>
-                        <td><?php echo ($vol["qq"]); ?></td>
-                        <td><?php echo ($vol["start_time"]); ?></td>
-                        <td><?php echo ($vol["end_time"]); ?></td>
-                        <td><?php echo ($vol["join_start_time"]); ?></td>
-                        <td><?php echo ($vol["join_end_time"]); ?></td>
-                        <td><?php echo ($vol["did"]); ?></td>
-                        <td><?php echo ($vol["join_cost"]); ?></td>
-                        <td><?php echo ($vol["expect_joins"]); ?></td>
-                        <td><?php if($vol["contact"] == 1): ?>手机
-                            <?php elseif($vol["contact"] ==2): ?>微信
-                            <?php elseif($vol["contact"] ==3): ?>qq
-                            <?php else: ?>&nbsp<?php endif; ?>
+                        <td><?php echo ($vol["g_name"]); ?></td>
+                        <td><?php echo ($vol["g_leftid"]); ?></td>
+                        <td><?php echo ($vol["g_rightid"]); ?></td>
+                        <td><?php if($vol["mechanism"] == 1): ?>BO1
+                            <?php elseif($vol["mechanism"] ==2): ?>BO2
+                            <?php elseif($vol["mechanism"] ==3): ?>BO3
+                            <?php elseif($vol["mechanism"] ==4): ?>BO4
+                            <?php else: ?>BO5<?php endif; ?>
                         </td>
-                        <td><?php echo ($vol["desc"]); ?></td>
-                        <td class="center" url="/index.php/Admin/Racedetail"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        <td><?php if($vol["guesstype"] == 1): ?>CSGO
+                            <?php elseif($vol["guesstype"] ==2): ?>DOTA
+                            <?php else: ?>体育赛事<?php endif; ?>
+                        </td>
+                        <td><?php if($vol["type"] == 1): ?>猜输赢<?php else: ?>让分局<?php endif; ?></td>
+                        <td><?php if($vol["status"] == 1): ?>未开始
+                            <?php elseif($vol["status"] ==2): ?>进行中
+                            <?php else: ?>已结束<?php endif; ?>
+                        </td>
+                        <td class="center" url="/index.php/Admin/Guess"><a href="javascript:;" data-id="<?php echo ($vol["g_id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["g_id"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
-            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
-
-
 
         </div><!--contentwrapper-->
+        
+	</div><!-- centercontent -->
 
-    </div><!-- centercontent -->
-
-
+    
 </div><!--bodywrapper-->
 
 </body>
 <script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
+<script type="text/javascript">
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(3).addClass("current").siblings().removeClass("current")
+        });
+    });
+</script>
 </html>
