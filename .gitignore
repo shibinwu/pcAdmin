@@ -2,3 +2,4 @@
 .idea
 Conf/*
 config.php
+Runtime/Cache/Admin/*
