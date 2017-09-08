@@ -44,6 +44,7 @@ ADD COLUMN `role_id`  tinyint(3) NOT NULL DEFAULT 2 COMMENT '权限管理字段'
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `role_id`;
 
 ALTER TABLE `race_detail`
+
 MODIFY COLUMN `rid`  int(11) NOT NULL AUTO_INCREMENT COMMENT '杯赛管理员真实姓名' FIRST ,
 ADD PRIMARY KEY (`rid`);
 
