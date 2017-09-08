@@ -2,3 +2,7 @@
 .idea
 Conf/*
 config.php
+<<<<<<< HEAD
+=======
+Runtime/Cache/Admin/*
+>>>>>>> 2b4eed99d3ca6abb3d4ad46bb0426bb9a755e40c
