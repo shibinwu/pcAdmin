@@ -48,6 +48,10 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -57,9 +61,10 @@
                     <th class="head1">主办方QQ</th>
                     <th class="head0">赛事类型</th>
                     <th class="head1">赛事方式</th>
-                    <th class="head0">赛事LOGO</th>
                     <th class="head1">赛事开始时间</th>
                     <th class="head0">奖金</th>
+                    <th class="head1">审核状态</th>
+                    <th class="head0">审核时间</th>
                     <th class="head1">操作</th>
                     <!--<th class="head0">游戏模式</th>-->
                     <!--<th class="head0">报名方式</th>-->
@@ -80,9 +85,16 @@
                         <td>{$vol.sponsor_qq}</td>
                         <td>{$vol.types}</td>
                         <td>{$vol.game_type}</td>
-                        <td>{$vol.picurl}</td>
                         <td>{$vol.race_start_time}</td>
                         <td>{$vol.bonus}</td>
+                        <td><if condition='$vol.checkstatus == 1'>通过
+                            <elseif condition='$vol.checkstatus ==2'/>审核中
+                            <elseif condition='$vol.checkstatus ==3'/>未通过
+                            <else/>&nbsp</if>
+                        </td>
+                        <!--<td>{$vol.checkstatus}</td>-->
+                        <td>{$vol.mtime|date="Y-m-d H:i:s",###}</td>
+
                         <!--<td>{$vol.race_mode}</td>-->
                         <!--<td>{$vol.join_mode}</td>-->
                         <!--<td>{$vol.game_area}</td>-->
@@ -93,7 +105,7 @@
                         <!--<td>{$vol.raceprocess}</td>-->
                         <!--<td class="center">4</td>-->
                         <!--<td class="center">X</td>-->
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.rid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
+                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.rid}" class="edit">审核</a> &nbsp; <a href="javascript:;" data-id="{$vol.rid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>

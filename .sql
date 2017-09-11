@@ -64,6 +64,10 @@ CREATE TABLE `admin_user_loginlog` (
 ALTER TABLE `admin_user_loginlog`
 CHANGE COLUMN `ctime` `last_login_time`  int(11) NULL DEFAULT NULL COMMENT '登录时间' AFTER `ip`;
 
+//默认为审核中(2)
+ALTER TABLE `race`
+MODIFY COLUMN `checkStatus`  tinyint(3) NULL DEFAULT 2 COMMENT '审核状态，1通过，2审核中，3未通过' AFTER `desc`;
+
 
 
 

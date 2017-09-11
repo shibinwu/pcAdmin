@@ -219,10 +219,6 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -232,10 +228,9 @@
                     <th class="head1">主办方QQ</th>
                     <th class="head0">赛事类型</th>
                     <th class="head1">赛事方式</th>
+                    <th class="head0">赛事LOGO</th>
                     <th class="head1">赛事开始时间</th>
                     <th class="head0">奖金</th>
-                    <th class="head1">审核状态</th>
-                    <th class="head0">审核时间</th>
                     <th class="head1">操作</th>
                     <!--<th class="head0">游戏模式</th>-->
                     <!--<th class="head0">报名方式</th>-->
@@ -255,16 +250,9 @@
                         <td><?php echo ($vol["sponsor_qq"]); ?></td>
                         <td><?php echo ($vol["types"]); ?></td>
                         <td><?php echo ($vol["game_type"]); ?></td>
+                        <td><?php echo ($vol["picurl"]); ?></td>
                         <td><?php echo ($vol["race_start_time"]); ?></td>
                         <td><?php echo ($vol["bonus"]); ?></td>
-                        <td><?php if($vol["checkstatus"] == 1): ?>通过
-                            <?php elseif($vol["checkstatus"] ==2): ?>审核中
-                            <?php elseif($vol["checkstatus"] ==3): ?>未通过
-                            <?php else: ?>&nbsp<?php endif; ?>
-                        </td>
-                        <!--<td><?php echo ($vol["checkstatus"]); ?></td>-->
-                        <td><?php echo (date("Y-m-d H:i:s",$vol["mtime"])); ?></td>
-
                         <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
                         <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
                         <!--<td><?php echo ($vol["game_area"]); ?></td>-->

@@ -10,3 +10,6 @@ ERR: 1062:Duplicate entry '4' for key 'PRIMARY'
 ERR: 1062:Duplicate entry '4' for key 'PRIMARY'
  [ SQL语句 ] : INSERT INTO `admin_user_loginlog` (`uid`,`ctime`,`ip`,`city`) VALUES ('4','1505105558','211.70.23.4','南通市')
 
+[ 2017-09-11T16:21:03+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/forms.html
+ERR: 非法操作:forms
+
