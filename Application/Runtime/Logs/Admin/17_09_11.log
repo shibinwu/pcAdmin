@@ -1,0 +1,12 @@
+[ 2017-09-11T12:30:55+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: 1062:Duplicate entry '0' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `admin_user_loginlog` () VALUES ()
+
+[ 2017-09-11T12:45:33+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: 1062:Duplicate entry '4' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `admin_user_loginlog` (`uid`,`ctime`,`city`) VALUES ('4',NULL,'南通市')
+
+[ 2017-09-11T12:52:38+08:00 ] 127.0.0.1 /index.php/Admin/Public/check.html
+ERR: 1062:Duplicate entry '4' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `admin_user_loginlog` (`uid`,`ctime`,`ip`,`city`) VALUES ('4','1505105558','211.70.23.4','南通市')
+
