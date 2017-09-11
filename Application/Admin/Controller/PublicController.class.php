@@ -80,17 +80,10 @@ class PublicController extends Controller{
 				$model = M('Admin_user_loginlog');
 				$model -> add($data);
 
-
-
-
 			}else{
 				#用户名或密码错误
 				$this -> error('用户名或密码错误',U('login'),3);
 			}
-		// }else{
-		// 	#验证码错误
-		// 	$this -> error('验证码错误...',U('login'),3);
-		// }
 	}
 
 	#用户退出
