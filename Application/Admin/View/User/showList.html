@@ -50,6 +50,9 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -57,9 +60,10 @@
                     <th class="head1">邮箱</th>
                     <th class="head0">手机号</th>
                     <th class="head1">密码</th>
-                    <th class="head0">注册时间</th>
-                    <th class="head1">角色名称</th>
-                    <th class="head0">操作</th>
+                    <th class="head0">角色名称</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,12 +73,12 @@
                         <td>{$vol.email}</td>
                         <td>{$vol.phone}</td>
                         <td>{$vol.password}</td>
-                        <td>{$vol.reg_time}</td>
-                        <!--<td>{$vol.role_id}</td>-->
                         <td><if condition='$vol.role_id == 1'>超级管理员
                             <elseif condition='$vol.role_id ==2'/>审核员
                             <else/>&nbsp</if>
                         </td>
+                        <td>{$vol.ctime}</td>
+                        <td>{$vol.mtime|date="Y-m-d H:i:s",###}</td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>

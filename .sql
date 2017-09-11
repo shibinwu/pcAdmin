@@ -44,11 +44,26 @@ ADD COLUMN `role_id`  tinyint(3) NOT NULL DEFAULT 2 COMMENT '权限管理字段'
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `role_id`;
 
 ALTER TABLE `race_detail`
-
 MODIFY COLUMN `rid`  int(11) NOT NULL AUTO_INCREMENT COMMENT '杯赛管理员真实姓名' FIRST ,
 ADD PRIMARY KEY (`rid`);
 
- 
+//2017/9/11   武建银
+ALTER TABLE `user`
+ADD COLUMN `ctime`  int(11) NULL DEFAULT NULL COMMENT '创建时间' AFTER `statu`,
+ADD COLUMN `mtime`  int(11) NULL DEFAULT NULL COMMENT '修改时间' AFTER `ctime`;
+
+
+//20170911 武建银
+CREATE TABLE `admin_user_loginlog` (
+  `uid` int(11) NOT NULL COMMENT '用户id',
+  `city` varchar(32) DEFAULT NULL COMMENT '用户登录城市',
+  `ip` char(15) DEFAULT NULL,
+  `ctime` int(11) DEFAULT NULL COMMENT '登录时间',
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='后台用户登录日志';
+
+ALTER TABLE `admin_user_loginlog`
+CHANGE COLUMN `ctime` `last_login_time`  int(11) NULL DEFAULT NULL COMMENT '登录时间' AFTER `ip`;
+
 
 
 
