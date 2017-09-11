@@ -13,3 +13,31 @@ ERR: 1062:Duplicate entry '4' for key 'PRIMARY'
 [ 2017-09-11T16:21:03+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/forms.html
 ERR: 非法操作:forms
 
+[ 2017-09-11T22:32:33+08:00 ] 127.0.0.1 /index.php/Admin/Racedetail/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `race_detail` WHERE ( statu = 1 ) 
+
+[ 2017-09-11T22:32:57+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods_attr` WHERE ( statu = 1 ) 
+
+[ 2017-09-11T22:34:07+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods_attr` WHERE ( statu = 1 ) 
+
+[ 2017-09-11T22:34:16+08:00 ] 127.0.0.1 /index.php/Admin/Goodsattr/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods_attr` WHERE ( statu = 1 ) 
+
+[ 2017-09-11T22:57:50+08:00 ] 127.0.0.1 /index.php/Admin/Goods/addOk
+ERR: 1364:Field 'icon' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `goods` (`good_name`,`price`,`stock`,`g_class`,`g_grand`,`g_position`,`g_part`,`guess`,`valuation`,`saled_num`,`gameOwner`,`heroOwner`,`oid`,`pid`,`ctime`,`mtime`) VALUES ('杠杠的','0','0','14','0','0','0','0','0','0','0','0','0','0','0','0')
+
+[ 2017-09-11T22:59:09+08:00 ] 127.0.0.1 /index.php/Admin/Goods/addOk
+ERR: 1364:Field 'icon' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `goods` (`good_name`,`price`,`stock`,`g_class`,`g_grand`,`g_position`,`g_part`,`guess`,`valuation`,`saled_num`,`gameOwner`,`heroOwner`,`oid`,`pid`,`ctime`,`mtime`) VALUES ('杠杠的','0','0','14','0','0','0','0','0','0','0','0','0','0','0','0')
+
+[ 2017-09-11T22:59:59+08:00 ] 127.0.0.1 /index.php/Admin/Goods/addOk
+ERR: 1364:Field 'icon' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `goods` (`good_name`,`price`,`stock`,`g_class`,`g_grand`,`g_position`,`g_part`,`guess`,`valuation`,`saled_num`,`gameOwner`,`heroOwner`,`oid`,`pid`,`ctime`,`mtime`) VALUES ('杠杠的','0','0','14','0','0','0','0','0','0','0','0','0','0','0','0')
+
