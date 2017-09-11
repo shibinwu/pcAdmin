@@ -3,6 +3,8 @@
 namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
+use Think\Model\UserModel;
+
 #声明类并且继承父类
 class PublicController extends Controller{
 
@@ -65,14 +67,24 @@ class PublicController extends Controller{
 //				dump($uid);die;
 				#提示
 				$this -> success('登录成功！',U('Index/index'),3);
+				// 加入登录日志
+				$data['ip'] = $clientIP = '211.70.23.4';
+				//todo 上线时候打开注释
+//				$clientIP = UserModel::getIP();
+				$taobaoIP = 'http://ip.taobao.com/service/getIpInfo.php?ip=' . $clientIP;
+				$IPinfo = json_decode(file_get_contents($taobaoIP));
+				$data['city'] = $city = $IPinfo->data->city;
+				$data['last_login_time'] = time();
+//				dump($date);die;
+
+				//TODO 把日志加入到数据表中
+				$model = M('Admin_user_loginlog');
+				$model -> add($data);
+
 			}else{
 				#用户名或密码错误
 				$this -> error('用户名或密码错误',U('login'),3);
 			}
-		// }else{
-		// 	#验证码错误
-		// 	$this -> error('验证码错误...',U('login'),3);
-		// }
 	}
 
 	#用户退出

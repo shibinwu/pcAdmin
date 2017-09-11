@@ -50,16 +50,20 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">用户名</th>
                     <th class="head1">邮箱</th>
                     <th class="head0">手机号</th>
-                    <th class="head1">密码</th>
-                    <th class="head0">注册时间</th>
-                    <th class="head1">角色名称</th>
-                    <th class="head0">操作</th>
+                    <!--<th class="head1">密码</th>-->
+                    <th class="head0">角色名称</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,12 +72,18 @@
                         <td>{$vol.username}</td>
                         <td>{$vol.email}</td>
                         <td>{$vol.phone}</td>
-                        <td>{$vol.password}</td>
-                        <td>{$vol.reg_time}</td>
-                        <!--<td>{$vol.role_id}</td>-->
+                        <!--<td>{$vol.password}</td>-->
                         <td><if condition='$vol.role_id == 1'>超级管理员
                             <elseif condition='$vol.role_id ==2'/>审核员
                             <else/>&nbsp</if>
+                        </td>
+                        <td><if condition='$vol.ctime == 0'>&nbsp
+                            <else/>
+                            {$vol.ctime|date="Y-m-d H:i:s",###}</if>
+                        </td>
+                        <td><if condition="$vol.mtime == 0">&nbsp
+                            <else/>
+                            {$vol.mtime|date="Y-m-d H:i:s",###}</if>
                         </td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>

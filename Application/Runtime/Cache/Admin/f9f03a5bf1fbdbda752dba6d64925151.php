@@ -194,16 +194,20 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">用户名</th>
                     <th class="head1">邮箱</th>
                     <th class="head0">手机号</th>
-                    <th class="head1">密码</th>
-                    <th class="head0">注册时间</th>
-                    <th class="head1">角色名称</th>
-                    <th class="head0">操作</th>
+                    <!--<th class="head1">密码</th>-->
+                    <th class="head0">角色名称</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -211,12 +215,18 @@
                         <td><?php echo ($vol["username"]); ?></td>
                         <td><?php echo ($vol["email"]); ?></td>
                         <td><?php echo ($vol["phone"]); ?></td>
-                        <td><?php echo ($vol["password"]); ?></td>
-                        <td><?php echo ($vol["reg_time"]); ?></td>
-                        <!--<td><?php echo ($vol["role_id"]); ?></td>-->
+                        <!--<td><?php echo ($vol["password"]); ?></td>-->
                         <td><?php if($vol["role_id"] == 1): ?>超级管理员
                             <?php elseif($vol["role_id"] ==2): ?>审核员
                             <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
+                        <td><?php if($vol["ctime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
+                        </td>
+                        <td><?php if($vol["mtime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["mtime"])); endif; ?>
                         </td>
                         <td class="center" url="/index.php/Admin/User"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>

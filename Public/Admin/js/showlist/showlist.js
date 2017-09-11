@@ -7,10 +7,10 @@
     jQuery(document).ready(function($){
         $(function(){
             //DOM动态修改分页的显示内容
-            document.getElementById("dyntable_first").innerHTML = "首页";
-            document.getElementById("dyntable_previous").innerHTML = "上一页";
-            document.getElementById("dyntable_next").innerHTML = "下一页";
-            document.getElementById("dyntable_last").innerHTML = "末页";
+            //document.getElementById("dyntable_first").innerHTML = "首页";
+            //document.getElementById("dyntable_previous").innerHTML = "上一页";
+            //document.getElementById("dyntable_next").innerHTML = "下一页";
+            //document.getElementById("dyntable_last").innerHTML = "末页";
             var url = $(".center").attr('url');
             //给删除按钮绑定点击事件
             $('.del').on('click',function(){

@@ -19,7 +19,7 @@ class RaceController extends CommonController{
 		$post = I('post.');
 //		dump($post);die;
 		#获取文件的数据
-		 $file = $_FILES['file'];
+		 $file = $_FILES['picurl'];
 		#配置上传信息
 		 $cfg = array(
 		 		//保存根路径
@@ -37,12 +37,12 @@ class RaceController extends CommonController{
 		 		#filename字段
 		 		$post['filename'] = $info['savename'];
 		 		#filepath字段
-		 		$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+		 		$post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
 //		dump($post);die;
 		#添加addtime字段
-		// $post['addtime'] = time();
+		$post['ctime'] = time();
 		#写入数据表
 		$model = M('Race');
 		$rst = $model -> add($post);
@@ -167,6 +167,9 @@ class RaceController extends CommonController{
 //	 			// unlink($path);
 //	 		}
 //	 	}
+//		 $post['ctime'] = time();
+		 $post['mtime'] = time();
+//		 dump($post);die;
 	 	#写入到数据表
 	 	$model = M('Race');
 	 	$rst = $model -> save($post);
@@ -174,10 +177,10 @@ class RaceController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('审核成功',U('showList'),3);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('审核失败',U('edit',array('id' => $post['id'])),3);
 	 	}
 	 }
 }
