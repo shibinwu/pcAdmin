@@ -30,7 +30,7 @@ class PublicController extends Controller{
 	public function check(){
 		#接收数据
 		$post = I('post.');
-//		dump($post);die;
+		// dump($post);die;
 		#验证验证码
 		// $verify = new \Think\Verify();//不需要传递配置
 		#验证
@@ -45,9 +45,10 @@ class PublicController extends Controller{
 			$map['username']= $post['username'];
 			$map['password']= $post['password'];
 			$data = $model -> where($post)->find();
+			// dump($data);die;
 			//打印最后一条sql语句
-//			$sql = $model->getLastSql();
-//			dump($sql);die();
+			// $sql = $model->getLastSql();
+			// dump($sql);die();
 
 //		dump($data);die;
 
