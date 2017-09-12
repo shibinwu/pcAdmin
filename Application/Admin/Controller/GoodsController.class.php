@@ -9,6 +9,12 @@ class GoodsController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
+		#实例化模型
+		$model = M('Goods_attr');
+		#查询属性信息
+		$data = $model -> select();
+		#传递给模板
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -31,7 +37,7 @@ class GoodsController extends CommonController{
 		#上传操作
 		 if($file['size'] > 0){
 		 	$info = $uplaod -> uploadOne($file);//一维数组
-//			 dump($info);die;
+			 // dump($info);die;
 		 	#判断返回结果
 		 	if($info){
 		 		#hasfile字段
@@ -39,22 +45,22 @@ class GoodsController extends CommonController{
 		 		#filename字段
 		 		$post['filename'] = $info['savename'];
 		 		#filepath字段
-		 		$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
-//		dump($post);die;
+		// dump($post);die;
 		#添加addtime字段
-		// $post['addtime'] = time();
+		 $post['ctime'] = time();
 		#写入数据表
 		$model = M('Goods');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加赛事成功',U('showList'),3);
+			$this -> success('添加商品成功',U('showList'),3);
 		}else{
 			#失败
-			$this -> error('添加赛事失败',U('add'),3);
+			$this -> error('添加商品失败',U('add'),3);
 		}
 	}
 
@@ -147,29 +153,30 @@ class GoodsController extends CommonController{
 	 	$post = I('post.');
 //	 	dump($post);die;
 	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
+	 	if($_FILES['icon']['size'] > 0){
+	 		#配置
+	 		$cfg = array(
+	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
+	 			);
+	 		#实例化
+	 		$upload = new \Think\Upload($cfg);
+	 		#上传操作
+	 		$info = $upload -> uploadOne($_FILES['icon']);
+	 		#判断上传结果
+	 		if($info){
+	 			#上传成功
+	 			#filepath字段
+	 			$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+	 			#filename字段
+	 			$post['filename'] = $info['savename'];
+	 			#hasfile字段
+	 			$post['hasfile'] = 1;
 //	 			// $yuanshi = $model -> find($post['id']);
 //	 			// $path = WORKING_PATH . $yuanshi['filepath'];
 //	 			// unlink($path);
-//	 		}
-//	 	}
+	 		}
+	 	}
+		 $post['mtime'] = time();
 	 	#写入到数据表
 	 	$model = M('Goods');
 		 if($post['gid']){

@@ -9,6 +9,12 @@ class GoodsattrController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
+		#实例化模型
+		$model = M('Goods_attr');
+		#查询属性信息
+		$data = $model -> select();
+		#传递给模板
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -43,17 +49,17 @@ class GoodsattrController extends CommonController{
 		 }
 //		dump($post);die;
 		#添加addtime字段
-		// $post['addtime'] = time();
+		 $post['ctime'] = time();
 		#写入数据表
 		$model = M('Goods_attr');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加赛事成功',U('showList'),3);
+			$this -> success('添加属性成功',U('showList'),3);
 		}else{
 			#失败
-			$this -> error('添加赛事失败',U('add'),3);
+			$this -> error('添加属性失败',U('add'),3);
 		}
 	}
 
