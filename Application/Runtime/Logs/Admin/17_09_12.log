@@ -1,6 +1,19 @@
+<<<<<<< HEAD
+[ 2017-09-12T09:56:00+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
+ERR: 1146:Table 'mg.admin_user_loginlog' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin_user_loginlog`
+
+[ 2017-09-12T10:00:36+08:00 ] 171.84.5.54 /index.php/Admin/Race/add.html
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/02656b28f8a7d682add60d1ded2a04a9.php
+
+[ 2017-09-12T10:32:29+08:00 ] 171.84.5.54 /index.php/Admin/Race/add.html
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/02656b28f8a7d682add60d1ded2a04a9.php
+
+=======
 [ 2017-09-12T13:26:37+08:00 ] 127.0.0.1 /index.php/Admin/Index/forms.html
 ERR: 非法操作:forms
 
+<<<<<<< HEAD
 [ 2017-09-12T16:28:43+08:00 ] 127.0.0.1 /index.php/Admin/Goods/edit/id/1
 ERR: 1146:Table 'db_wnv.goods_arrt' doesn't exist
  [ SQL语句 ] : SELECT t1.*,t2.name as ga_name FROM goods as t1,goods_arrt as t2 WHERE ( t1.g_class = t2.ga_id ) 
@@ -25,3 +38,6 @@ ERR: 1146:Table 'db_wnv.goods_arrt' doesn't exist
 ERR: 1146:Table 'db_wnv.good_attr' doesn't exist
  [ SQL语句 ] : SHOW COLUMNS FROM `good_attr`
 
+=======
+>>>>>>> 9e68b5cbb4cfa635b6f0056b899d59748e6672bd
+>>>>>>> b1eacc363a7899d428f468266d616ae3e0d2800e
