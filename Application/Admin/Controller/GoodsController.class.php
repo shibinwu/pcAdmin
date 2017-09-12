@@ -37,7 +37,7 @@ class GoodsController extends CommonController{
 		#上传操作
 		 if($file['size'] > 0){
 		 	$info = $uplaod -> uploadOne($file);//一维数组
-			 // dump($info);die;
+//			  dump($info);die;
 		 	#判断返回结果
 		 	if($info){
 		 		#hasfile字段
@@ -138,11 +138,23 @@ class GoodsController extends CommonController{
 
 	 	#实例化模型
 	 	$model = M('Goods');
+//		 $data = $model -> field('t1.*,t2.ga_name as name') -> table('goods as t1,goods_attr as t2') -> where('t1.g_class = t2.ga_id') -> select();
+
+		 //todo 商品分类
+		 $gtmodel = M('goods_attr');
+		 $class = $gtmodel->where('ga_id','>','0')->where('ga_type = 2')->select();
+		 $grand = $gtmodel->where('ga_id','>','0')->where('ga_type = 3')->select();
+		 $position = $gtmodel->where('ga_id','>','0')->where('ga_type = 4')->select();
+
+
 	 	#查询操作
 	 	$data = $model -> find($id);
-//		 dump($data);
+//		 dump($data);die;
 	 	#传递给模版
 	 	$this -> assign('data',$data);
+	 	$this -> assign('class',$class);
+	 	$this -> assign('grand',$grand);
+	 	$this -> assign('position',$position);
 	 	#展示模版
 	 	$this -> display();
 	 }
@@ -153,6 +165,7 @@ class GoodsController extends CommonController{
 	 	$post = I('post.');
 //	 	dump($post);die;
 	 	#判断是否有附件上传
+//		 dump($_FILES['icon']);die;
 	 	if($_FILES['icon']['size'] > 0){
 	 		#配置
 	 		$cfg = array(
@@ -162,6 +175,7 @@ class GoodsController extends CommonController{
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
 	 		$info = $upload -> uploadOne($_FILES['icon']);
+//			dump($info);die;
 	 		#判断上传结果
 	 		if($info){
 	 			#上传成功
@@ -178,6 +192,7 @@ class GoodsController extends CommonController{
 	 	}
 		 $post['mtime'] = time();
 	 	#写入到数据表
+//		 dump($post);die;
 	 	$model = M('Goods');
 		 if($post['gid']){
 			 $rst = $model -> save($post);
