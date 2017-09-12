@@ -1,0 +1,10 @@
+[ 2017-09-12T09:56:00+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
+ERR: 1146:Table 'mg.admin_user_loginlog' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `admin_user_loginlog`
+
+[ 2017-09-12T10:00:36+08:00 ] 171.84.5.54 /index.php/Admin/Race/add.html
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/02656b28f8a7d682add60d1ded2a04a9.php
+
+[ 2017-09-12T10:32:29+08:00 ] 171.84.5.54 /index.php/Admin/Race/add.html
+ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/02656b28f8a7d682add60d1ded2a04a9.php
+
