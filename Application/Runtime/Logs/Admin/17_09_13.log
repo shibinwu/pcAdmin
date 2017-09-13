@@ -26,3 +26,7 @@ ERR: 1054:Unknown column 'statu' in 'where clause'
 [ 2017-09-13T12:52:42+08:00 ] 127.0.0.1 /index.php/Admin/Index/%7B%EF%BC%9AU('Task/add')%7D
 ERR: 非法操作:{：U('Task
 
+[ 2017-09-13T16:46:40+08:00 ] 171.84.5.54 /index.php/Admin/Task/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `task` WHERE ( statu = 1 ) 
+
