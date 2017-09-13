@@ -93,7 +93,7 @@
 </div><!--topheader-->
 </body>
 </html>  <!--包含头文件-->
-    
+
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,6 +112,7 @@
         <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
         <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
         <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
     </ul>
 
 
@@ -130,48 +131,26 @@
 
 </div><!--header-->
 </html>
- <!--包含导航栏文件-->
+ <!--包含导航文件-->
 
-   <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>商城左侧栏</title>
+    <title>Title</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#goods" class="editor">商品管理</a>
+        <li><a href="#task" class="editor">任务管理</a>
             <span class="arrow"></span>
-            <ul id="goods">
-                <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
-                <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
+            <ul id="task">
+                <li><a href="<?php echo U('Task/showList');?>">任务列表</a></li>
+                <li><a href="<?php echo U('Task/add');?>">添加任务</a></li>
             </ul>
         </li>
 
-        <li><a href="#goodsattr" class="error">商品详情</a>
-            <span class="arrow"></span>
-            <ul id="goodsattr">
-                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
-                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
-            </ul>
-        </li>
 
-        <li><a href="#goodssell" class="error">出售管理</a>
-            <span class="arrow"></span>
-            <ul id="goodssell">
-                <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
-                <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#goodswant" class="error">求购管理</a>
-            <span class="arrow"></span>
-            <ul id="goodswant">
-                <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
-                <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
-            </ul>
-        </li>
         <li><a href="#addons" class="addons">其他页面</a>
             <span class="arrow"></span>
             <ul id="addons">
@@ -186,20 +165,19 @@
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--商城左侧栏-->
+</div><!--任务管理左侧栏-->
 </body>
-</html>   <!--包含商城左侧栏文件-->
+</html>  <!--包含任务管理左侧栏文件-->
         
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品列表</h1>
+            <h1 class="pagetitle">任务列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
-
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -208,44 +186,52 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
-                    <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
-                    <th class="head0">操作</th>
+                    <th class="head0">任务ID</th>
+                    <th class="head1">任务名称</th>
+                    <th class="head0">任务类型</th>
+                    <th class="head1">人物奖励物品</th>
+                    <th class="head0">任务奖励数量</th>
+                    <th class="head1">任务跳转链接</th>
+                    <th class="head1">任务指引提示</th>
+                    <th class="head0">完成任务需要的阶段数</th>
+                    <th class="head1">操作</th>
+                    <!--<th class="head0">游戏模式</th>-->
+                    <!--<th class="head0">报名方式</th>-->
+                    <!--<th class="head0">比赛区域</th>-->
+                    <!--<th class="head0">报名人数</th>-->
+                    <!--<th class="head0">报名费</th>-->
+                    <!--<th class="head0">赛程阶段</th>-->
+                    <!--<th class="head0">主办方</th>-->
+                    <!--<th class="head0">报名流程</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["good_name"]); ?></td>
-                        <td><?php echo ($vol["price"]); ?></td>
-                        <td><?php echo ($vol["stock"]); ?></td>
-                        <td><?php if($vol["g_part"] == 1): ?>推荐区
-                            <?php elseif($vol["g_part"] ==2): ?>打折区
-                            <?php elseif($vol["g_part"] ==3): ?>人气区
-                            <?php elseif($vol["g_part"] ==4): ?>土豪区
-                            <?php elseif($vol["g_part"] ==5): ?>求购区
+                        <td><?php echo ($vol["id"]); ?></td>
+                        <td><?php echo ($vol["task_name"]); ?></td>
+                        <td><?php if($vol["task_type"] == 1): ?>新手任务
+                            <?php elseif($vol["task_type"] ==2): ?>活动任务
+                            <?php elseif($vol["task_type"] ==3): ?>每日任务
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td><?php if($vol["guess"] == 1): ?>可竞猜
-                            <?php elseif($vol["guess"] ==2): ?>不可竞猜
+                        <td><?php if($vol["reward_type"] == 1): ?>积分
+                            <?php elseif($vol["reward_type"] == 2): ?>P豆
+                            <?php elseif($vol["reward_type"] ==3): ?>V豆
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td><?php echo ($vol["valuation"]); ?></td>
-                        <td><?php echo ($vol["saled_num"]); ?></td>
-                        <td><?php if($vol["gameowner"] == 1): ?>dota2
-                            <?php elseif($vol["gameowner"] == 2): ?>csgo
-                            <?php else: endif; ?>
-                        </td>
+                        <td><?php echo ($vol["reward_num"]); ?></td>
+                        <td><?php echo ($vol["task_url"]); ?></td>
+                        <td><?php echo ($vol["task_guide"]); ?></td>
+                        <td><?php echo ($vol["task_stage"]); ?></td>
 
-                        <td class="center" url="/index.php/Admin/Goods"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
+                        <td class="center" url="/index.php/Admin/Task"><a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -263,39 +249,10 @@
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
-        //默认选中效果，箭头指向
+        //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(8).addClass("current").siblings().removeClass("current")
         });
     });
-
-    function Foo(){
-        var i = 0;
-        return function (){
-            console.log(i++);
-        }
-    }
-
-    var f1 = Foo(),
-        f2 = Foo();
-
-    f1();
-    f1();
-
-    var fullname = '张三';
-    var obj ={
-        fullname:'李四',
-        prop: {
-            fullname: '王五',
-            getFullname: function () {
-                return this.fullname;
-            }
-        }
-    };
-
-    console.log(obj.prop.getFullname());
-    var test = obj.prop.getFullname;
-    console.log(test());
-    console.log(test.call(obj.prop));
 </script>
 </html>
