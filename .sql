@@ -71,6 +71,12 @@ MODIFY COLUMN `checkStatus`  tinyint(3) NULL DEFAULT 2 COMMENT '审核状态，1
 ALTER TABLE `task`
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `ctime`;
 
+ALTER TABLE `news`
+CHANGE COLUMN `is_del` `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `type_id`;
+
+ALTER TABLE `news_type`
+CHANGE COLUMN `is_del` `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `news_type`;
+
 
 
 

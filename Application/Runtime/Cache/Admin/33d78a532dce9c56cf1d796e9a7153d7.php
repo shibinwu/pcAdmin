@@ -137,32 +137,38 @@
 </html>
    <!--包含导航文件-->
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
     <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#formsub" class="editor">新闻中心</a>
-                <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">新闻列表</a></li>
-                    <li><a href="wizard.html">添加新闻</a></li>
-                </ul>
-            </li>
+    <ul>
+        <li><a href="#news" class="editor">新闻中心</a>
+            <span class="arrow"></span>
+            <ul id="news">
+                <li><a href="<?php echo U('News/showList');?>">新闻列表</a></li>
+                <li><a href="<?php echo U('News/add');?>">添加新闻</a></li>
+            </ul>
+        </li>
 
 
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu-->
+        <li><a href="#newstype" class="addons">新闻类型</a>
+            <span class="arrow"></span>
+            <ul id="newstype">
+                <li><a href="<?php echo U('Newstype/showList');?>">类型列表</a></li>
+                <li><a href="<?php echo U('Newstype/add');?>">添加类型</a></li>
+
+            </ul>
+        </li>
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--新闻中心左侧栏文件-->
+</body>
+</html><!--包含新闻中心左侧栏文件-->
 
     <div class="centercontent">
 
