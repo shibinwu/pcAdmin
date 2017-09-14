@@ -34,7 +34,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">任务列表</h1>
+            <h1 class="pagetitle">新闻列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -63,35 +63,24 @@
                     <th class="head1">阅读量</th>
                     <th class="head1">新闻类型</th>
                     <th class="head1">操作</th>
-                    <!--<th class="head0">游戏模式</th>-->
-                    <!--<th class="head0">报名方式</th>-->
-                    <!--<th class="head0">比赛区域</th>-->
-                    <!--<th class="head0">报名人数</th>-->
-                    <!--<th class="head0">报名费</th>-->
-                    <!--<th class="head0">赛程阶段</th>-->
-                    <!--<th class="head0">主办方</th>-->
-                    <!--<th class="head0">报名流程</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.task_name}</td>
-                        <td><if condition='$vol.task_type == 1'>新手任务
-                            <elseif condition='$vol.task_type ==2'/>活动任务
-                            <elseif condition='$vol.task_type ==3'/>每日任务
-                            <else/>&nbsp</if>
+                        <td>{$vol.title}</td>
+                        <td>{$vol.contents}</td>
+                        <td>{$vol.user_id}</td>
+                        <td>{$vol.tag}</td>
+                        <td>{$vol.browsernum}</td>
+                        <td>
+                            <volist name="datas" id="vo">
+                                <if condition='$vol[type_id] == $vo[id]'>
+                                    {$vo.type_name}
+                                </if>
+                            </volist>
                         </td>
-                        <td><if condition='$vol.reward_type == 1'>积分
-                            <elseif condition='$vol.reward_type == 2'/>P豆
-                            <elseif condition='$vol.reward_type ==3'/>V豆
-                            <else/>&nbsp</if>
-                        </td>
-                        <td>{$vol.reward_num}</td>
-                        <td>{$vol.task_url}</td>
-                        <td>{$vol.task_guide}</td>
-                        <td>{$vol.task_stage}</td>
 
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="del">删除</a></td>
                     </tr>
