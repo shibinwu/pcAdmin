@@ -58,11 +58,8 @@ CREATE TABLE `admin_user_loginlog` (
   `uid` int(11) NOT NULL COMMENT '用户id',
   `city` varchar(32) DEFAULT NULL COMMENT '用户登录城市',
   `ip` char(15) DEFAULT NULL,
-  `ctime` int(11) DEFAULT NULL COMMENT '登录时间',
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='后台用户登录日志';
-
-ALTER TABLE `admin_user_loginlog`
-CHANGE COLUMN `ctime` `last_login_time`  int(11) NULL DEFAULT NULL COMMENT '登录时间' AFTER `ip`;
+  `last_login_time` int(11) DEFAULT NULL COMMENT '登录时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='后台用户登录日志';
 
 //默认为审核中(2)
 ALTER TABLE `race`
