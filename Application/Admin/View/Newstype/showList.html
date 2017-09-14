@@ -34,7 +34,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">任务列表</h1>
+            <h1 class="pagetitle">新闻类型列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
             
         </div><!--pageheader-->
@@ -47,53 +47,23 @@
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">任务ID</th>
-                    <th class="head1">任务名称</th>
-                    <th class="head0">任务类型</th>
-                    <th class="head1">人物奖励物品</th>
-                    <th class="head0">任务奖励数量</th>
-                    <th class="head1">任务跳转链接</th>
-                    <th class="head1">任务指引提示</th>
-                    <th class="head0">完成任务需要的阶段数</th>
-                    <th class="head1">操作</th>
-                    <!--<th class="head0">游戏模式</th>-->
-                    <!--<th class="head0">报名方式</th>-->
-                    <!--<th class="head0">比赛区域</th>-->
-                    <!--<th class="head0">报名人数</th>-->
-                    <!--<th class="head0">报名费</th>-->
-                    <!--<th class="head0">赛程阶段</th>-->
-                    <!--<th class="head0">主办方</th>-->
-                    <!--<th class="head0">报名流程</th>-->
+                    <th class="head0">新闻类型ID</th>
+                    <th class="head1">新闻类型名称</th>
+                    <th class="head0">创建时间</th>
+                    <th class="head1">修改时间</th>
+                    <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.task_name}</td>
-                        <td><if condition='$vol.task_type == 1'>新手任务
-                            <elseif condition='$vol.task_type ==2'/>活动任务
-                            <elseif condition='$vol.task_type ==3'/>每日任务
-                            <else/>&nbsp</if>
-                        </td>
-                        <td><if condition='$vol.reward_type == 1'>积分
-                            <elseif condition='$vol.reward_type == 2'/>P豆
-                            <elseif condition='$vol.reward_type ==3'/>V豆
-                            <else/>&nbsp</if>
-                        </td>
-                        <td>{$vol.reward_num}</td>
-                        <td>{$vol.task_url}</td>
-                        <td>{$vol.task_guide}</td>
-                        <td>{$vol.task_stage}</td>
-
+                        <td>{$vol.type_name}</td>
+                        <td>{$vol.ctime|date='Y-m-d H:i:s',###}</td>
+                        <td>{$vol.mtime|date='Y-m-d H:i:s',###}</td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="del">删除</a></td>
                     </tr>
                 </volist>

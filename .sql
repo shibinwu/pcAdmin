@@ -77,6 +77,16 @@ CHANGE COLUMN `is_del` `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删
 ALTER TABLE `news_type`
 CHANGE COLUMN `is_del` `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `news_type`;
 
+CREATE TABLE `news_type` (
+  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT COMMENT '新闻类型id',
+  `type_name` varchar(20) DEFAULT '' COMMENT '新闻类型名称',
+  `statu` tinyint(3) NOT NULL DEFAULT '1' COMMENT '逻辑删除字段',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='新闻类型表';
 
+ALTER TABLE `news_type`
+DROP COLUMN `ctime`,
+ADD COLUMN `ctime`  int(11) NULL COMMENT '创建时间' AFTER `type_name`,
+ADD COLUMN `mtime`  int(11) NULL COMMENT '修改时间' AFTER `ctime`;
 
 
