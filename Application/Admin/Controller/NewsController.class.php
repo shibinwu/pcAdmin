@@ -50,7 +50,7 @@ class NewsController extends CommonController{
 //		 }
 		// dump($post);die;
 		#添加addtime字段
-		 $post['addtime'] = time();
+		 $post['ctime'] = time();
 		#写入数据表
 		$model = M('News');
 		$rst = $model -> add($post);
@@ -113,12 +113,12 @@ class NewsController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Goods');
+        $model = M('News');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'gid'   =>  $id,
+            'id'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
