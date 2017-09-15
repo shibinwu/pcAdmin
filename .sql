@@ -82,7 +82,6 @@ CREATE TABLE `news_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='新闻类型表';
 
 ALTER TABLE `news_type`
-DROP COLUMN `ctime`,
 ADD COLUMN `ctime`  int(11) NULL COMMENT '创建时间' AFTER `type_name`,
 ADD COLUMN `mtime`  int(11) NULL COMMENT '修改时间' AFTER `ctime`;
 
