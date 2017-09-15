@@ -69,7 +69,7 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.title}</td>
+                        <td>{$vol.title|msubstr=0,10}</td>
                         <td>{$vol.contents|msubstr=0,25}</td>
                         <td>{$vol.user_id}</td>
                         <td>{$vol.tag}</td>

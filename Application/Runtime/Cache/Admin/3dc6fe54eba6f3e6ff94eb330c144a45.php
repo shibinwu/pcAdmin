@@ -203,7 +203,7 @@
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
                         <td><?php echo ($vol["id"]); ?></td>
-                        <td><?php echo ($vol["title"]); ?></td>
+                        <td><?php echo (msubstr($vol["title"],0,10)); ?></td>
                         <td><?php echo (msubstr($vol["contents"],0,25)); ?></td>
                         <td><?php echo ($vol["user_id"]); ?></td>
                         <td><?php echo ($vol["tag"]); ?></td>
