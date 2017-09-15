@@ -45,7 +45,7 @@
                 <colgroup>
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" />
+                    <col class="con0" style="width: 35%" />
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
@@ -70,7 +70,7 @@
                     <tr>
                         <td>{$vol.id}</td>
                         <td>{$vol.title}</td>
-                        <td>{$vol.contents}</td>
+                        <td>{$vol.contents|msubstr=0,25}</td>
                         <td>{$vol.user_id}</td>
                         <td>{$vol.tag}</td>
                         <td>{$vol.browsernum}</td>
