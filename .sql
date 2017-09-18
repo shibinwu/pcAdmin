@@ -86,6 +86,12 @@ DROP COLUMN `ctime`,
 ADD COLUMN `ctime`  int(11) NULL COMMENT '创建时间' AFTER `type_name`,
 ADD COLUMN `mtime`  int(11) NULL COMMENT '修改时间' AFTER `ctime`;
 
+//2017/09/18  武建银
 ALTER TABLE `news_message`
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `disagree`;
 
+ALTER TABLE `users`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `level`;
+
+ALTER TABLE `user_detail`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `homepage_limit`;
