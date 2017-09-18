@@ -95,3 +95,6 @@ ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' A
 
 ALTER TABLE `user_detail`
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `homepage_limit`;
+
+ALTER TABLE `user_message`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `mtime`;
