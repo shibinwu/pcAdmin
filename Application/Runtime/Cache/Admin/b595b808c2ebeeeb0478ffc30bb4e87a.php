@@ -149,16 +149,8 @@
         <li><a href="#user" class="editor">用户管理</a>
             <span class="arrow"></span>
             <ul id="user">
-                <li><a href="<?php echo U('Rbac/showList');?>">用户列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#role" class="editor">角色管理</a>
-            <span class="arrow"></span>
-            <ul id="role">
-                <li><a href="<?php echo U('User/showList');?>">角色列表</a></li>
-                <li><a href="<?php echo U('User/add');?>">添加角色</a></li>
+                <li><a href="<?php echo U('User/showList');?>">用户列表</a></li>
+                <li><a href="<?php echo U('User/add');?>">添加用户</a></li>
             </ul>
         </li>
 

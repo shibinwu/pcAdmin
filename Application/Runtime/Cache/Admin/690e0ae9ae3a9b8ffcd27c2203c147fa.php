@@ -137,74 +137,63 @@
 </html>
    <!--包含导航文件-->
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
     <div class="vernav2 iconmenu">
-    <ul>
-        <li><a href="#user" class="editor">登录信息</a>
-            <span class="arrow"></span>
-            <ul id="user">
-                <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
-                <!--<li><a href="<?php echo U('Member/add');?>">添加信息</a></li>-->
-            </ul>
-        </li>
+        <ul>
+            <li><a href="#formsub" class="editor">登录信息</a>
+                <span class="arrow"></span>
+                <ul id="formsub">
+                    <li><a href="forms.html">信息列表</a></li>
+                    <li><a href="wizard.html">添加信息</a></li>
+                </ul>
+            </li>
 
-        <li><a href="#detail" class="error">会员详情</a>
-            <span class="arrow"></span>
-            <ul id="detail">
-                <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
-                <!--<li><a href="<?php echo U('Team/add');?>">添加详情</a></li>-->
-            </ul>
-        </li>
+            <li><a href="#race" class="error">会员详情</a>
+                <span class="arrow"></span>
+                <ul id="race">
+                    <li><a href="<?php echo U('Team/showList');?>">详情列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加详情</a></li>
+                </ul>
+            </li>
 
-        <li><a href="#message" class="error">会员评论</a>
-            <span class="arrow"></span>
-            <ul id="message">
-                <li><a href="<?php echo U('Membermessage/showList');?>">评论列表</a></li>
-                <!--<li><a href="<?php echo U('Team/add');?>">添加评论</a></li>-->
-            </ul>
-        </li>
+            <li><a href="#team" class="error">会员评论</a>
+                <span class="arrow"></span>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">评论列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加评论</a></li>
+                </ul>
+            </li>
 
-        <li><a href="#team" class="error">会员资产</a>
-            <span class="arrow"></span>
-            <ul id="team">
-                <li><a href="<?php echo U('Team/showList');?>">资产列表</a></li>
-                <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
-            </ul>
-        </li>
+            <li><a href="#team" class="error">会员资产</a>
+                <span class="arrow"></span>
+                <ul id="team">
+                    <li><a href="<?php echo U('Team/showList');?>">资产列表</a></li>
+                    <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
+                </ul>
+            </li>
 
-        <li><a href="#friend" class="error">我的好友</a>
-            <span class="arrow"></span>
-            <ul id="friend">
-                <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
-                <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
-            </ul>
-        </li>
+            <li><a href="#friend" class="error">我的好友</a>
+                <span class="arrow"></span>
+                <ul id="friend">
+                    <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                    <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+                </ul>
+            </li>
 
-        <li><a href="#addons" class="addons">其他页面</a>
-            <span class="arrow"></span>
-            <ul id="addons">
-                <li><a href="newsfeed.html">新闻订阅</a></li>
-                <li><a href="profile.html">资料页面</a></li>
-                <li><a href="productlist.html">产品列表</a></li>
-                <li><a href="photo.html">图片视频分享</a></li>
-                <li><a href="gallery.html">相册</a></li>
-                <li><a href="invoice.html">购物车</a></li>
-            </ul>
-        </li>
-    </ul>
-    <a class="togglemenu"></a>
-    <br /><br />
-</div><!--leftmenu-->
-</body>
-</html>  <!--包含会员左侧栏-->
-
-
+            <li><a href="#addons" class="addons">其他页面</a>
+                <span class="arrow"></span>
+                <ul id="addons">
+                    <li><a href="newsfeed.html">新闻订阅</a></li>
+                    <li><a href="profile.html">资料页面</a></li>
+                    <li><a href="productlist.html">产品列表</a></li>
+                    <li><a href="photo.html">图片视频分享</a></li>
+                    <li><a href="gallery.html">相册</a></li>
+                    <li><a href="invoice.html">购物车</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="togglemenu"></a>
+        <br /><br />
+    </div><!--leftmenu-->
 
     <div class="centercontent">
 
