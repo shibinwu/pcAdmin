@@ -163,6 +163,14 @@
 
             </ul>
         </li>
+
+        <li><a href="#newsmessage" class="editor">新闻评论</a>
+            <span class="arrow"></span>
+            <ul id="newsmessage">
+                <li><a href="<?php echo U('Newsmessage/showList');?>">评论列表</a></li>
+                <li><a href="<?php echo U('Newsmessage/add');?>">添加评论</a></li>
+            </ul>
+        </li>
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
