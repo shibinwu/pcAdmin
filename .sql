@@ -86,4 +86,6 @@ DROP COLUMN `ctime`,
 ADD COLUMN `ctime`  int(11) NULL COMMENT '创建时间' AFTER `type_name`,
 ADD COLUMN `mtime`  int(11) NULL COMMENT '修改时间' AFTER `ctime`;
 
+ALTER TABLE `news_message`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `disagree`;
 
