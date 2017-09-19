@@ -4,6 +4,7 @@ namespace Admin\Controller;
 
 #引入父类元素
 use Think\Controller;
+use Org\Util\Rbac;
 
 #声明并且继承父类
 class CommonController extends Controller
@@ -27,22 +28,35 @@ class CommonController extends Controller
             echo $script;
             exit;
         }
-        #获取当前访问的控制器名和方法名
-        $controller = strtolower(CONTROLLER_NAME);
-        $action = strtolower(ACTION_NAME);
-        //echo $controller . '/' . $action;
-        #获取权限的数组
-        $auths = C('RBAC_ROLES_AUTHS');
-        #获取当前用户的权限信息
-        $auth = $auths[session('role_id')];//dump($auth);die;
-        #判断是否有权限(排除管理员)
-        if (session('role_id') != 1) {
-            if (!in_array($controller . '/' . $action, $auth) && !in_array($controller . '/*', $auth)) {
-                $this->error('您没有操作权限', U('Index/index'), 3);
-                exit;
-            }
+
+
+        $notAuth = in_array(CONTROLLER_NAME,explode(',',C('NOT_AUTH_MODULE')))
+            || in_array(ACTION_NAME,C('NOT_AUTH_ACTION'));
+        if(C('USER_AUTH_TYPE') && !$notAuth) {
+            //var_dump(Rbac::AccessDecision());
+            Rbac::AccessDecision() || $this->error('没有访问权限',U('Admin/Index/index'));
         }
-    }
+
+
+
+
+
+//        #获取当前访问的控制器名和方法名
+//        $controller = strtolower(CONTROLLER_NAME);
+//        $action = strtolower(ACTION_NAME);
+//        //echo $controller . '/' . $action;
+//        #获取权限的数组
+//        $auths = C('RBAC_ROLES_AUTHS');
+//        #获取当前用户的权限信息
+//        $auth = $auths[session('role_id')];//dump($auth);die;
+//        #判断是否有权限(排除管理员)
+//        if (session('role_id') != 1) {
+//            if (!in_array($controller . '/' . $action, $auth) && !in_array($controller . '/*', $auth)) {
+//                $this->error('您没有操作权限', U('Index/index'), 3);
+//                exit;
+//            }
+//        }
+//    }
 
 //    public function header()
 //    {
@@ -52,5 +66,5 @@ class CommonController extends Controller
 //        #查询操作
 //        $data = $model->find($id);
 //        return $data;
-//    }
+    }
 }

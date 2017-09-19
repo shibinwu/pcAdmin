@@ -4,6 +4,7 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 use Think\Model\UserModel;
+use Org\Util\Rbac;
 
 #声明类并且继承父类
 class PublicController extends Controller{
@@ -54,6 +55,7 @@ class PublicController extends Controller{
 
 //		dump($data);die;
 
+
 			#判断用户是否存在
 			if($data){
 				#会话控制记录用户登录信息
@@ -65,8 +67,15 @@ class PublicController extends Controller{
 				session('nickname',$data['nickname']);//记录用户昵称
 //				$uid = session('uid');
 //				dump($uid);die;
+				//判断是否是超级管理员
+
 				#提示
 				$this -> success('登录成功！',U('Index/index'),3);
+				if($_SESSION['username'] == C('RBAC_SUPERADMIN')) {
+					session(c('ADMIN_AUTH_KEY'),true);
+				}
+				//读取用户权限
+				Rbac::saveAccessList();
 				// 加入登录日志
 				$data['ip'] = $clientIP = '211.70.23.4';
 				//todo 上线时候打开注释
