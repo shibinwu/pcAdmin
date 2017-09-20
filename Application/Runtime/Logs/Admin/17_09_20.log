@@ -1,6 +1,25 @@
+<<<<<<< HEAD
+[ 2017-09-20T11:22:57+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as role, as user, as access , as node where user.user_id='' and user.role_id=rol' at line 1
+ [ SQL语句 ] : select node.id,node.name from  as role, as user, as access , as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1
+
+[ 2017-09-20T11:23:07+08:00 ] 171.84.5.54 /index.php/Admin/Rbac/node_list.html
+ERR: 1146:Table 'mg.node' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `node`
+
+[ 2017-09-20T18:51:09+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as role, as user, as access , as node where user.user_id='' and user.role_id=rol' at line 1
+ [ SQL语句 ] : select node.id,node.name from  as role, as user, as access , as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1
+
+[ 2017-09-20T18:51:21+08:00 ] 171.84.5.54 /index.php/Admin/Rbac/role_list.html
+ERR: 1146:Table 'mg.role' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `role`
+
+=======
 [ 2017-09-20T10:43:09+08:00 ] 127.0.0.1 /index.php/Admin/Index/forms.html
 ERR: 非法操作:forms
 
+<<<<<<< HEAD
 [ 2017-09-20T12:19:16+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
 ERR: 1146:Table 'db_wnv.user_relation' doesn't exist
  [ SQL语句 ] : SHOW COLUMNS FROM `user_relation`
@@ -315,3 +334,6 @@ ERR: Think\Model:saveAll方法不存在！
 ERR: 1062:Duplicate entry '25' for key 'PRIMARY'
  [ SQL语句 ] : INSERT INTO `user` (`username`,`uid`,`email`,`phone`,`password`,`nickname`,`mtime`) VALUES ('a','25','','','','','1505901913')
 
+=======
+>>>>>>> b0d785f1e62719beca5919a39b973491ab55f7e2
+>>>>>>> 16465300aae1eaf59a83935243af5a1aa53d9dc3
