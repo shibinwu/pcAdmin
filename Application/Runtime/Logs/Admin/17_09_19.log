@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ 2017-09-19T19:16:15+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
 ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as role, as user, as access , as node where user.user_id='' and user.role_id=rol' at line 1
  [ SQL语句 ] : select node.id,node.name from  as role, as user, as access , as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1
@@ -10,3 +11,61 @@ ERR: 1146:Table 'mg.role' doesn't exist
 ERR: 1146:Table 'mg.node' doesn't exist
  [ SQL语句 ] : SHOW COLUMNS FROM `node`
 
+=======
+[ 2017-09-19T10:46:43+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/add_role.html
+ERR: 模板不存在:./Application/Admin/View/Rbac/add_role.html
+
+[ 2017-09-19T10:59:57+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/role_list.html
+ERR: 模板不存在:./Application/Admin/View/Rbac/role_list.html
+
+[ 2017-09-19T11:05:57+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:21+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:24+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:34+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/edit/id/1
+ERR: 模板不存在:./Application/Admin/View/Rbac/edit.html
+
+[ 2017-09-19T14:22:29+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/access
+ERR: 模板不存在:./Application/Admin/View/Rbac/access.html
+
+[ 2017-09-19T14:22:31+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/access
+ERR: 模板不存在:./Application/Admin/View/Rbac/access.html
+
+[ 2017-09-19T15:39:13+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: 1146:Table 'db_wnv.user_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user_relation`
+
+[ 2017-09-19T15:42:32+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: 1146:Table 'db_wnv.user_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user_relation`
+
+[ 2017-09-19T15:43:43+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: Think\Model:relation方法不存在！
+
+[ 2017-09-19T15:44:54+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: Think\Model:relation方法不存在！
+
+[ 2017-09-19T16:29:29+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/edit/id/24
+ERR: 模板不存在:./Application/Admin/View/Rbac/edit.html
+
+[ 2017-09-19T18:00:17+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:24+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+>>>>>>> b0d785f1e62719beca5919a39b973491ab55f7e2
