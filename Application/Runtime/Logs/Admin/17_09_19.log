@@ -1,0 +1,56 @@
+[ 2017-09-19T10:46:43+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/add_role.html
+ERR: 模板不存在:./Application/Admin/View/Rbac/add_role.html
+
+[ 2017-09-19T10:59:57+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/role_list.html
+ERR: 模板不存在:./Application/Admin/View/Rbac/role_list.html
+
+[ 2017-09-19T11:05:57+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:21+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:24+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/show_list.html
+ERR: 非法操作:show_list
+
+[ 2017-09-19T11:08:34+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/edit/id/1
+ERR: 模板不存在:./Application/Admin/View/Rbac/edit.html
+
+[ 2017-09-19T14:22:29+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/access
+ERR: 模板不存在:./Application/Admin/View/Rbac/access.html
+
+[ 2017-09-19T14:22:31+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/access
+ERR: 模板不存在:./Application/Admin/View/Rbac/access.html
+
+[ 2017-09-19T15:39:13+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: 1146:Table 'db_wnv.user_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user_relation`
+
+[ 2017-09-19T15:42:32+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: 1146:Table 'db_wnv.user_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user_relation`
+
+[ 2017-09-19T15:43:43+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: Think\Model:relation方法不存在！
+
+[ 2017-09-19T15:44:54+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/user_list.html
+ERR: Think\Model:relation方法不存在！
+
+[ 2017-09-19T16:29:29+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/edit/id/24
+ERR: 模板不存在:./Application/Admin/View/Rbac/edit.html
+
+[ 2017-09-19T18:00:17+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:20+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+
+[ 2017-09-19T18:07:24+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/addOk
+ERR: 非法操作:addOk
+

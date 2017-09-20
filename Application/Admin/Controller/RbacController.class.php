@@ -154,7 +154,7 @@ class RbacController extends CommonController{
         }
         #添加ctime字段
         $post['ctime'] = time();
-        dump($post);die;
+
         $uid = M('User')->add($post);
         $rold = array();
         if($uid) {
@@ -164,53 +164,14 @@ class RbacController extends CommonController{
                     'user_id'=>$uid
                 );
             }
+
+//            dump($role);die;
             M('role_user')->addAll($role);
             $this->success('添加成功', U('user_list','',''));
         } else {
             $this->error('添加失败');
         }
 
-
-        #接收数据
-        $post = I('post.');
-//        dump($post);die;
-        #获取文件的数据
-        $file = $_FILES['picurl'];
-//        dump($file);die;
-        #配置上传信息
-        $cfg = array(
-            //保存根路径
-            'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
-        );
-        #实例化上传类
-        $uplaod = new \Think\Upload($cfg);
-        #上传操作
-        if($file['size'] > 0){
-            $info = $uplaod -> uploadOne($file);//一维数组
-            #判断返回结果
-            if($info){
-                #hasfile字段
-                $post['hasfile'] = 1;
-                #filename字段
-                $post['filename'] = $info['savename'];
-                #filepath字段
-                $post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-            }
-        }
-//		dump($post);die;
-        #添加ctime字段
-        $post['ctime'] = time();
-        #写入数据表
-        $model = M('User');
-        $rst = $model -> add($post);
-        #判断返回值
-        if($rst){
-            #成功
-            $this -> success('添加用户成功',U('showList'),2);
-        }else{
-            #失败
-            $this -> error('添加用户不正确，请重新修改',U('add'),2);
-        }
     }
 
     //用户列表
