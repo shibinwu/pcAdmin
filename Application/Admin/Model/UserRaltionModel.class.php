@@ -3,9 +3,11 @@
  * 用户与角色关联模型
  */
 namespace Admin\Model;
-use Think\Model\RelationModel;
 
-class UserRelationModel extends RelationModel{
+use Think\Model;
+
+class UserRaltionModel extends Model\RelationModel
+{
     //定义主表名称
     protected $tableName = 'user';
     //定义关联关系

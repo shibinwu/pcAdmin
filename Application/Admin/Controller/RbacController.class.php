@@ -2,7 +2,13 @@
 #声明命名空间
 namespace Admin\Controller;
 #引入父类元素
+//use Admin\Model\UserModel;
+use Admin\Model\UserTest;
+use Admin\Model\UserTestModel;
 use Think\Controller;
+use Think\Model\RelationModel;
+use Think\Model\UserModel;
+
 #声明类并且继承父类
 class RbacController extends CommonController{
 
@@ -165,7 +171,7 @@ class RbacController extends CommonController{
                 );
             }
 
-//            dump($role);die;
+            dump($role);die;
             M('role_user')->addAll($role);
             $this->success('添加成功', U('user_list','',''));
         } else {
@@ -176,10 +182,15 @@ class RbacController extends CommonController{
 
     //用户列表
     public function user_list() {
-        $this->user = D('User')->field('password', true)->select();
+
+        $model = D('UserRaltion');
+//        dump($model);die();
+        $this->user = $model->field('password', true)->relation(true)->select();
+//        dump($this->user);die();
         //P(D('UserRelation')->getLastSql());
         //p($this->user);
         //die;
+//        dump($this->user);die;
         $this->display();
     }
 
@@ -213,13 +224,18 @@ class RbacController extends CommonController{
 
     #edit方法
     public function edit(){
-        #接收数据
+        #接收数据s
         $id = I('get.id');
+
 //        dump($id);die;
         #实例化模型
-        $model = M('User');
+        $model = D('UserRaltion');
         #查询操作
-        $data = $model -> find($id);
+        $data = $model->field('password', true)->relation(true)->find($id);
+//        $data['password'] = I('post.password','','md5');
+        $this->role = M('Role')->select();
+//        $this->roles = M('Role_user')->select();
+//        dump($this->role);die;
         #传递给模版
         $this -> assign('data',$data);
         #展示模版
@@ -229,13 +245,14 @@ class RbacController extends CommonController{
 
 
     #editOk方法
-    public function editOk(){
+    public function editOk()
+    {
         #接收post数据
         $post = I('post.');
 //       $file = $_FILES['picurl'];
 //	 	dump($file);die;
         #判断是否有附件上传
-        if($_FILES['picurl']['size'] > 0){
+        if ($_FILES['picurl']['size'] > 0) {
             #配置
             $cfg = array(
                 'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
@@ -243,10 +260,10 @@ class RbacController extends CommonController{
             #实例化
             $upload = new \Think\Upload($cfg);
             #上传操作
-            $info = $upload -> uploadOne($_FILES['picurl']);
+            $info = $upload->uploadOne($_FILES['picurl']);
 //            dump($info);die;
             #判断上传结果
-            if($info){
+            if ($info) {
                 #上传成功
                 #filepath字段
                 $post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
@@ -263,17 +280,22 @@ class RbacController extends CommonController{
         #添加mtime字段
         $post['mtime'] = time();
 //        dump($post);die;
-        #写入到数据表
-        $model = M('User');
-        $rst = $model -> save($post);
-//	 	dump($rst);die;
-        #判断返回结果
-        if($rst){
-            #成功
-            $this -> success('编辑成功',U('showList'),2);
-        }else{
-            #失败
-            $this -> error('编辑失败',U('edit',array('id' => $post['id'])),2);
+        $uid = M('User')->save($post);
+        $rold = array();
+        if ($uid) {
+            foreach ($_POST['role_id'] as $v) {
+                $role[] = array(
+                    'role_id' => $v,
+                    'user_id' => $post['uid']
+                );
+            }
+
+//            dump($role);
+//            die;
+            M('role_user')->addAll($role);
+            $this->success('添加成功', U('user_list', '', ''));
+        } else {
+            $this->error('添加失败');
         }
     }
 }

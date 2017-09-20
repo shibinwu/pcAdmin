@@ -220,7 +220,6 @@
                     <th class="head0">用户名</th>
                     <th class="head1">邮箱</th>
                     <th class="head0">手机号</th>
-                    <!--<th class="head1">密码</th>-->
                     <th class="head0">角色名称</th>
                     <th class="head1">创建时间</th>
                     <th class="head0">修改时间</th>
@@ -233,10 +232,13 @@
                         <td><?php echo ($vol["email"]); ?></td>
                         <td><?php echo ($vol["phone"]); ?></td>
                         <!--<td><?php echo ($vol["password"]); ?></td>-->
-                        <td><?php if($vol["role_id"] == 1): ?>超级管理员
-                            <?php elseif($vol["role_id"] ==2): ?>审核员
-                            <?php else: ?>&nbsp<?php endif; ?>
+                        <td>
+                            <?php if($vol['username'] == C('RBAC_SUPERADMIN')): ?>超级管理员
+                                <?php else: ?>
+
+                                    <?php if(is_array($vol["role"])): foreach($vol["role"] as $key=>$value): echo ($value["name"]); ?>(<?php echo ($value["remark"]); ?>)<?php endforeach; endif; endif; ?>
                         </td>
+
                         <td><?php if($vol["ctime"] == 0): ?>&nbsp
                             <?php else: ?>
                             <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>

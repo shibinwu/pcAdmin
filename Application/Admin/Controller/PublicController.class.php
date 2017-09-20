@@ -45,10 +45,10 @@ class PublicController extends Controller{
 			#删除验证码元素
 			// unset($post['captcha']);
 			#查询
-			$map['username']= $post['username'];
-			$map['password']= $post['password'];
+//			$map['username']= $post['username'];
+			$post['password']= md5($post['password']);
 			$data = $model -> where($post)->find();
-			// dump($data);die;
+//			 dump($data);die;
 			//打印最后一条sql语句
 			// $sql = $model->getLastSql();
 			// dump($sql);die();
