@@ -92,7 +92,8 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>  <!--包含头文件-->
+</html>   <!--包含网页头文件-->
+
 
     <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +132,7 @@
 
 </div><!--header-->
 </html>
- <!--包含导航文件-->
+   <!--包含导航文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -142,94 +143,117 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#news" class="editor">新闻中心</a>
+        <li><a href="#user" class="editor">用户管理</a>
             <span class="arrow"></span>
-            <ul id="news">
-                <li><a href="<?php echo U('News/showList');?>">新闻列表</a></li>
-                <li><a href="<?php echo U('News/add');?>">添加新闻</a></li>
+            <ul id="user">
+                <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_user');?>">添加用户</a></li>
             </ul>
         </li>
 
-
-        <li><a href="#newstype" class="addons">新闻类型</a>
+        <li><a href="#role" class="editor">角色管理</a>
             <span class="arrow"></span>
-            <ul id="newstype">
-                <li><a href="<?php echo U('Newstype/showList');?>">类型列表</a></li>
-                <li><a href="<?php echo U('Newstype/add');?>">添加类型</a></li>
-
+            <ul id="role">
+                <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
             </ul>
         </li>
 
-        <li><a href="#newsmessage" class="editor">新闻评论</a>
+        <li><a href="#node" class="editor">节点管理</a>
             <span class="arrow"></span>
-            <ul id="newsmessage">
-                <li><a href="<?php echo U('Newsmessage/showList');?>">评论列表</a></li>
-                <li><a href="<?php echo U('Newsmessage/add');?>">添加评论</a></li>
+            <ul id="node">
+                <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_node');?>">添加模块</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#index" class="editor">banner管理</a>
+            <span class="arrow"></span>
+            <ul id="index">
+                <li><a href="forms.html">列表展示</a></li>
+                <li><a href="wizard.html">添加banner</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#addons" class="addons">其他页面</a>
+            <span class="arrow"></span>
+            <ul id="addons">
+                <li><a href="newsfeed.html">新闻订阅</a></li>
+                <li><a href="profile.html">资料页面</a></li>
+                <li><a href="productlist.html">产品列表</a></li>
+                <li><a href="photo.html">图片视频分享</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="invoice.html">购物车</a></li>
             </ul>
         </li>
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--新闻中心左侧栏文件-->
+</div><!--首页左侧栏-->
 </body>
-</html>  <!--包含新闻中心左侧栏文件-->
-        
+</html>  <!--包含左侧栏文件-->
+
     <div class="centercontent tables">
-    
+
         <div class="pageheader notab">
-            <h1 class="pagetitle">新闻列表</h1>
+            <h1 class="pagetitle">用户列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
-            
+
         </div><!--pageheader-->
-        
+
         <div id="contentwrapper" class="contentwrapper">
+
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" style="width: 35%" />
-                    <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">新闻ID</th>
-                    <th class="head1">新闻标题</th>
-                    <th class="head0">新闻内容</th>
-                    <th class="head1">用户ID</th>
-                    <th class="head0">标签</th>
-                    <th class="head1">阅读量</th>
-                    <th class="head1">新闻类型</th>
+                    <th class="head0">用户名</th>
+                    <th class="head1">邮箱</th>
+                    <th class="head0">手机号</th>
+                    <!--<th class="head1">密码</th>-->
+                    <th class="head0">角色名称</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["id"]); ?></td>
-                        <td><?php echo (msubstr($vol["title"],0,10)); ?></td>
-                        <td><?php echo (msubstr($vol["contents"],0,25)); ?></td>
-                        <td><?php echo ($vol["user_id"]); ?></td>
-                        <td><?php echo ($vol["tag"]); ?></td>
-                        <td><?php echo ($vol["browsernum"]); ?></td>
-                        <td>
-                            <?php if(is_array($datas)): $i = 0; $__LIST__ = $datas;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vol[type_id] == $vo[id]): echo ($vo["type_name"]); endif; endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($user)): $i = 0; $__LIST__ = $user;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["username"]); ?></td>
+                        <td><?php echo ($vol["email"]); ?></td>
+                        <td><?php echo ($vol["phone"]); ?></td>
+                        <!--<td><?php echo ($vol["password"]); ?></td>-->
+                        <td><?php if($vol["role_id"] == 1): ?>超级管理员
+                            <?php elseif($vol["role_id"] ==2): ?>审核员
+                            <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-
-                        <td class="center" url="/index.php/Admin/News"><a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="del">删除</a></td>
+                        <td><?php if($vol["ctime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
+                        </td>
+                        <td><?php if($vol["mtime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["mtime"])); endif; ?>
+                        </td>
+                        <td class="center" url="/index.php/Admin/Rbac"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
 
         </div><!--contentwrapper-->
-        
+
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
 
 </body>
@@ -240,7 +264,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
         });
     });
 </script>

@@ -1,0 +1,12 @@
+[ 2017-09-19T19:16:15+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as role, as user, as access , as node where user.user_id='' and user.role_id=rol' at line 1
+ [ SQL语句 ] : select node.id,node.name from  as role, as user, as access , as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1
+
+[ 2017-09-19T19:16:31+08:00 ] 171.84.5.54 /index.php/Admin/Rbac/role_list.html
+ERR: 1146:Table 'mg.role' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `role`
+
+[ 2017-09-19T19:16:56+08:00 ] 171.84.5.54 /index.php/Admin/Rbac/node_list.html
+ERR: 1146:Table 'mg.node' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `node`
+
