@@ -138,3 +138,10 @@ CREATE TABLE IF NOT EXISTS `role_user` (
   KEY `group_id` (`role_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `banner`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `mtime`;
+
+ALTER TABLE `banner`
+MODIFY COLUMN `bn_pic`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'banner图像' AFTER `bnid`;

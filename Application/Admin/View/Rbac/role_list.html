@@ -91,6 +91,24 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
+            //给删除按钮绑定点击事件
+            $('.del').on('click',function(){
+                //事件处理程序
+                id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+                window.location.href = url + '/del/id/' + id;
+            });
+            //给编辑按钮绑定点击事件(用document解决分页后不能点击的bug)
+            $(document).on('click',".edit",function(){
+                //事件的处理程序
+                id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+                //alert(id);
+                window.location.href = url +'/edit/id/' + id;
+            });
+            //给退出按钮绑定点击事件
+            $('.exit').click(function () {
+                window.location.href = "/index.php/Admin/Public/logout";
+            });
+
             $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
         });
     });

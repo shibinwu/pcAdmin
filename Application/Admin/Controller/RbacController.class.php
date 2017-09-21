@@ -201,23 +201,23 @@ class RbacController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('User');
+        $model = M('Role');
         #删除操作
-//        $rst = $model -> delete($id);
+        $rst = $model -> delete($id);
         #软删除
-        $data = array(
-            'uid'   =>  $id,
-            'statu'  => '0'
-        );
-        $rst =$model -> save($data);
+//        $data = array(
+//            'uid'   =>  $id,
+//            'statu'  => '0'
+//        );
+//        $rst =$model -> save($data);
 //        dump($rst);die;
         #判断返回值
         if($rst){
             #删除成功
-            $this -> success('删除成功',U('showList'),3);
+            $this -> success('删除成功',U('role_list'),3);
         }else{
             #删除失败
-            $this -> error('删除失败',U('showList'),3);
+            $this -> error('删除失败',U('role_list'),3);
         }
     }
 
@@ -292,7 +292,7 @@ class RbacController extends CommonController{
 
 //            dump($role);
 //            die;
-            M('role_user')->addAll($role);
+            M('role_user')->save($role);
             $this->success('添加成功', U('user_list', '', ''));
         } else {
             $this->error('添加失败');

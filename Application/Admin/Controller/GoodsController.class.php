@@ -48,7 +48,7 @@ class GoodsController extends CommonController{
 		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
-		// dump($post);die;
+//		 dump($post);die;
 		#添加addtime字段
 		 $post['ctime'] = time();
 		#写入数据表

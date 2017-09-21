@@ -1,0 +1,19 @@
+[ 2017-09-21T11:09:18+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/showList.html
+ERR: 非法操作:showList
+
+[ 2017-09-21T11:09:25+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/showList.html
+ERR: 非法操作:showList
+
+[ 2017-09-21T11:12:57+08:00 ] 127.0.0.1 /index.php/Admin/Rbac/showList.html
+ERR: 非法操作:showList
+
+[ 2017-09-21T14:02:52+08:00 ] 127.0.0.1 /index.php/Admin/Banner/showList.html
+ERR: 无法加载控制器:Banner
+
+[ 2017-09-21T14:15:54+08:00 ] 127.0.0.1 /index.php/Admin/Banner/showList.html
+ERR: 模板不存在:./Application/Admin/View/Banner/showList.html
+
+[ 2017-09-21T16:10:56+08:00 ] 127.0.0.1 /index.php/Admin/Banner/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `banner` WHERE ( statu = 1 ) 
+
