@@ -145,50 +145,73 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#user" class="editor">用户管理</a>
+        <li><a href="#task" class="editor">任务管理</a>
+            <span class="arrow"></span>
+            <ul id="task">
+                <li><a href="<?php echo U('Task/showList');?>">任务列表</a></li>
+                <li><a href="<?php echo U('Task/add');?>">添加任务</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#user" class="editor">登录信息</a>
             <span class="arrow"></span>
             <ul id="user">
-                <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_user');?>">添加用户</a></li>
+                <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
+                <!--<li><a href="<?php echo U('Member/add');?>">添加信息</a></li>-->
             </ul>
         </li>
 
-        <li><a href="#role" class="editor">角色管理</a>
+        <li><a href="#detail" class="error">会员详情</a>
             <span class="arrow"></span>
-            <ul id="role">
-                <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
+            <ul id="detail">
+                <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加详情</a></li>-->
             </ul>
         </li>
 
-        <li><a href="#node" class="editor">节点管理</a>
+        <li><a href="#team" class="error">会员评论</a>
             <span class="arrow"></span>
-            <ul id="node">
-                <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_node');?>">添加模块</a></li>
+            <ul id="team">
+                <li><a href="<?php echo U('Team/showList');?>">评论列表</a></li>
+                <li><a href="<?php echo U('Team/add');?>">添加评论</a></li>
             </ul>
         </li>
 
-        <li><a href="#banner" class="editor">banner管理</a>
+        <li><a href="#property" class="error">会员资产</a>
             <span class="arrow"></span>
-            <ul id="banner">
-                <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
-                <li><a href="<?php echo U('Banner/add');?>">添加banner</a></li>
+            <ul id="property">
+                <li><a href="<?php echo U('Memberproperty/showList');?>">资产列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加资产</a></li>-->
             </ul>
         </li>
+
+        <li><a href="#friend" class="error">我的好友</a>
+            <span class="arrow"></span>
+            <ul id="friend">
+                <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+            </ul>
+        </li>
+        <li><a href="#mytask" class="error">我的任务</a>
+            <span class="arrow"></span>
+            <ul id="mytask">
+                <li><a href="<?php echo U('Membertask/showList');?>">任务列表</a></li>
+                <!--<li><a href="<?php echo U('Membertask/add');?>">添加好友</a></li>-->
+            </ul>
+        </li>
+
 
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--首页左侧栏-->
+</div><!--leftmenu-->
 </body>
 </html>  <!--包含左侧栏文件-->
 
     <div class="centercontent tables">
 
         <div class="pageheader notab">
-            <h1 class="pagetitle">用户列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
+            <h1 class="pagetitle">资产列表</h1>
 
         </div><!--pageheader-->
 
@@ -208,28 +231,33 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">用户名</th>
-                    <th class="head1">邮箱</th>
-                    <th class="head0">手机号</th>
-                    <th class="head0">角色名称</th>
+                    <th class="head0">ID</th>
+                    <th class="head1">用户ID</th>
+                    <th class="head0">P豆</th>
+                    <th class="head0">V豆</th>
+                    <th class="head0">积分</th>
+                    <th class="head0">来源</th>
+                    <th class="head0">资产状态</th>
                     <th class="head1">创建时间</th>
                     <th class="head0">修改时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(is_array($user)): $i = 0; $__LIST__ = $user;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["username"]); ?></td>
-                        <td><?php echo ($vol["email"]); ?></td>
-                        <td><?php echo ($vol["phone"]); ?></td>
-                        <!--<td><?php echo ($vol["password"]); ?></td>-->
-                        <td>
-                            <?php if($vol['username'] == C('RBAC_SUPERADMIN')): ?>超级管理员
-                                <?php else: ?>
-
-                                    <?php if(is_array($vol["role"])): foreach($vol["role"] as $key=>$value): echo ($value["name"]); ?>(<?php echo ($value["remark"]); ?>)<?php endforeach; endif; endif; ?>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["id"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["property_p"]); ?></td>
+                        <td><?php echo ($vol["property_v"]); ?></td>
+                        <td><?php echo ($vol["score"]); ?></td>
+                        <td><?php if($vol["type"] == 1): ?>签到
+                            <?php elseif($vol["type"] ==2): ?>充值
+                            <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-
+                        <td><?php if($vol["status"] == 1): ?>充值增加
+                            <?php elseif($vol["status"] ==2): ?>消费减少
+                            <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
                         <td><?php if($vol["ctime"] == 0): ?>&nbsp
                             <?php else: ?>
                             <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
@@ -238,7 +266,7 @@
                             <?php else: ?>
                             <?php echo (date("Y-m-d H:i:s",$vol["mtime"])); endif; ?>
                         </td>
-                        <td class="center" url="/index.php/Admin/Rbac"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
+                        <td class="center" url="/index.php/Admin/Memberproperty"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -257,7 +285,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
         });
     });
 </script>

@@ -145,3 +145,9 @@ ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' A
 
 ALTER TABLE `banner`
 MODIFY COLUMN `bn_pic`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'banner图像' AFTER `bnid`;
+
+ALTER TABLE `user_task`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `ctime`;
+
+ALTER TABLE `user_property`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `mtime`;

@@ -25,156 +25,24 @@
 
 <body class="withvernav">
 <div class="bodywrapper">
-    <div class="topheader">
-        <div class="left">
-            <h1 class="logo">Wnv.<span>Admin</span></h1>
-            <span class="slogan">后台管理系统</span>
-            
-            <div class="search">
-            	<form action="" method="post">
-                	<input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
-                    <button class="submitbutton"></button>
-                </form>
-            </div><!--search-->
-            
-            <br clear="all" />
-            
-        </div><!--left-->
-        
-        <div class="right">
-        	<!--<div class="notification">
-                <a class="count" href="notifications.html"><span>9</span></a>
-        	</div>
-			-->
-            <div class="userinfo">
-            	<img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
-                <span>Juan Dela Cruz</span>
-            </div><!--userinfo-->
-            
-            <div class="userinfodrop">            	<div class="avatar">
-                	<a href=""><img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png" alt="" /></a>
-                    <div class="changetheme">
-                    	Change theme: <br />
-                    	<a class="default"></a>
-                        <a class="blueline"></a>
-                        <a class="greenline"></a>
-                        <a class="contrast"></a>
-                        <a class="custombg"></a>
-                    </div>
-                </div><!--avatar-->
-<div class="userdata">
-                	<h4>Juan Dela Cruz</h4>
-                    <span class="email">youremail@yourdomain.com</span>
-                    <ul>
-                    	<li><a href="editprofile.html">Edit Profile</a></li>
-                        <li><a href="accountsettings.html">Account Settings</a></li>
-                        <li><a href="help.html">Help</a></li>
-                        <li><a href="index.html">Sign Out</a></li>
-                    </ul>
-                </div><!--userdata-->
-            </div><!--userinfodrop-->
-        </div><!--right-->
-    </div><!--topheader-->
-    
-    
-    <div class="header">
-    	<ul class="headermenu">
-            <li><a href="{:U('Index/index')}"><span class="icon icon-flatscreen"></span>首页</a></li>
-            <li><a href="{:U('Index/battle')}"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-            <li><a href="{:U('Index/bigdata')}"><span class="icon icon-pencil"></span>大数据</a></li>
-            <li><a href="{:U('Index/guess')}"><span class="icon icon-message"></span>竞猜</a></li>
-            <li><a href="{:U('Index/mall')}"><span class="icon icon-chart"></span>商城</a></li>
-            <li><a href="{:U('Index/news')}"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-            <li><a href="{:U('Index/active')}"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-            <li class="current"><a href="{:U('Index/member')}"><span class="icon icon-chart"></span>会员管理</a></li>
-        </ul>
-        
-        <div class="headerwidget">
-        	<div class="earnings">
-            	<div class="one_half">
-                	<h4>Today's Earnings</h4>
-                    <h2>$640.01</h2>
-                </div><!--one_half-->
-                <div class="one_half last alignright">
-                	<h4>Current Rate</h4>
-                    <h2>53%</h2>
-                </div><!--one_half last-->
-            </div><!--earnings-->
-        </div><!--headerwidget-->
-        
-    </div><!--header-->
+    <include file = 'Test/topheader' />
 
-    <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#formsub" class="editor">登录信息</a>
-                <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">信息列表</a></li>
-                    <li><a href="wizard.html">添加信息</a></li>
-                </ul>
-            </li>
 
-            <li><a href="#race" class="error">会员详情</a>
-                <span class="arrow"></span>
-                <ul id="race">
-                    <li><a href="{:U('Team/showList')}">详情列表</a></li>
-                    <li><a href="{:U('Team/add')}">添加详情</a></li>
-                </ul>
-            </li>
+        <include file = 'Test/header' />
 
-            <li><a href="#team" class="error">会员评论</a>
-                <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="{:U('Team/showList')}">评论列表</a></li>
-                    <li><a href="{:U('Team/add')}">添加评论</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#team" class="error">会员资产</a>
-                <span class="arrow"></span>
-                <ul id="team">
-                    <li><a href="{:U('Team/showList')}">资产列表</a></li>
-                    <li><a href="{:U('Team/add')}">添加资产</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#friend" class="error">我的好友</a>
-                <span class="arrow"></span>
-                <ul id="friend">
-                    <li><a href="{:U('Friend/showList')}">好友列表</a></li>
-                    <li><a href="{:U('Friend/add')}">添加好友</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu-->
+        <include file = 'Test/leftmember' />
         
     <div class="centercontent tables">
     
         <div class="pageheader notab">
             <h1 class="pagetitle">好友列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
+            <!--<span class="pagedesc"></span>-->
             
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
 
-                <div class="contenttitle2">
-                	<h3>好友列表</h3>
-                </div><!--contenttitle-->
+
                 <div class="tableoptions">
                 	<button class="deletebutton radius3" title="table2">Delete Selected</button> &nbsp;
                     <select class="radius3">
