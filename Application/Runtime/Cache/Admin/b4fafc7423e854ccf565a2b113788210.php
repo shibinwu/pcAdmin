@@ -99,20 +99,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/Public/Admin/css/font_424100_bdb2xt0k59g4x6r/iconfont.css">
 </head>
 <body>
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="iconfont icon-xitongguanli"></span>系统管理</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="iconfont icon-duizhan"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="iconfont icon-dashuju"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="iconfont icon-jingcai"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="iconfont icon-store"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="iconfont icon-zixun"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="iconfont icon-huodongzhongxin"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="iconfont icon-wode"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/task');?>"><span class="iconfont icon-chart"></span>任务管理</a></li>
     </ul>
 
 
@@ -166,25 +167,14 @@
             </ul>
         </li>
 
-        <li><a href="#index" class="editor">banner管理</a>
+        <li><a href="#banner" class="editor">banner管理</a>
             <span class="arrow"></span>
-            <ul id="index">
-                <li><a href="forms.html">列表展示</a></li>
-                <li><a href="wizard.html">添加banner</a></li>
+            <ul id="banner">
+                <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
+                <li><a href="<?php echo U('Banner/add');?>">添加banner</a></li>
             </ul>
         </li>
 
-        <li><a href="#addons" class="addons">其他页面</a>
-            <span class="arrow"></span>
-            <ul id="addons">
-                <li><a href="newsfeed.html">新闻订阅</a></li>
-                <li><a href="profile.html">资料页面</a></li>
-                <li><a href="productlist.html">产品列表</a></li>
-                <li><a href="photo.html">图片视频分享</a></li>
-                <li><a href="gallery.html">相册</a></li>
-                <li><a href="invoice.html">购物车</a></li>
-            </ul>
-        </li>
     </ul>
     <a class="togglemenu"></a>
     <br /><br />

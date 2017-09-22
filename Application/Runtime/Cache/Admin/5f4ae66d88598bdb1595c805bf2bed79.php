@@ -100,20 +100,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/Public/Admin/css/font_424100_bdb2xt0k59g4x6r/iconfont.css">
 </head>
 <body>
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>系统管理</a></li>
-        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="iconfont icon-xitongguanli"></span>系统管理</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="iconfont icon-duizhan"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="iconfont icon-dashuju"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="iconfont icon-jingcai"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="iconfont icon-store"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="iconfont icon-zixun"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="iconfont icon-huodongzhongxin"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="iconfont icon-wode"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/task');?>"><span class="iconfont icon-chart"></span>任务管理</a></li>
     </ul>
 
 
@@ -181,150 +182,7 @@
             </ul>
         </div><!--pageheader-->
         
-        <div id="contentwrapper" class="contentwrapper">
-             
-             <div id="inbox" class="subcontent">
-             
-                <div class="msghead">
-                    <ul class="msghead_menu">
-                        <li><a class="reportspam">Report Spam</a></li>
-                        <li class="marginleft5 dropdown" id="actions">
-                            <a class="dropdown_label" href="#actions">
-                            Actions
-                            <span class="arrow"></span>
-                            </a>
-                            <ul>
-                                <li><a href="">Mark as Read</a></li>
-                                <li><a href="">Mark as Unread</a></li>
-                                <li><a href="">Move to Folder</a></li>
-                                <li><a href="">Add Star</a></li>
-                            </ul>
-                        </li>
-                        <li class="marginleft5"><a class="msgtrash" title="Trash"></a></li>
-                    	<li class="right"><a class="next"></a></li>
-                        <li class="right"><a class="prev prev_disabled"></a></li>
-                        <li class="right"><span class="pageinfo">1-10 of 2,139</span></li>
-                    </ul>
-                    <span class="clearall"></span>
-                </div><!--msghead-->
-                
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable mailinbox">
-                    <colgroup>
-                        <col class="con1" width="4%"/>
-                        <col class="con0" width="4%" />
-                        <col class="con1" width="15%"/>
-                        <col class="con0" width="63%"/>
-                        <col class="con1" width="4%"/>
-                        <col class="con1" width="10%"/>
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th width="20" class="head1 aligncenter"><input type="checkbox" name="checkall" class="checkall" /></th>
-                        <th class="head0">&nbsp;</th>
-                        <th class="head1">Sender</th>
-                        <th class="head0">Subject</th>
-                        <th class="head1 attachement">&nbsp;</th>
-                        <th class="head0">Date</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th class="head1 aligncenter"><input type="checkbox" name="checkall" class="checkall2" /></th>
-                            <th class="head0"></th>
-                            <th class="head1">Sender</th>
-                            <th class="head0">Subject</th>
-                            <th class="head1 attachement">&nbsp;</th>
-                            <th class="head0">Date</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr class="unread">
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Hiccup Haddock</td>
-                            <td><a href="" class="title">Ut enim ad minim veniam, quis nostrud exercitation</a></td>
-                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
-                            <td class="date">July 1</td>
-                        </tr>
-                        <tr class="unread">
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>themepixels</td>
-                            <td><a href="" class="title">Ullamco laboris nisi ut aliquip ex ea commodo consequat. </a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 30</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Puss in Boots</td>
-                            <td><a href="" class="title">Sed ut perspiciatis unde omnis iste natus error</a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 28</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Humpty Dumpty</td>
-                            <td><a href="" class="title">Sit voluptatem accusantium doloremque laudantium</a></td>
-                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
-                            <td class="date">June 20</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar starred"></a></td>
-                            <td>themepixels</td>
-                            <td><a href="" class="title">Totam rem aperiam, eaque ipsa quae ab illo inventore</a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 19</td>
-                        </tr>
-                        <tr class="unread">
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Hiccup Haddock</td>
-                            <td><a href="" class="title">Ut enim ad minim veniam, quis nostrud exercitation</a></td>
-                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
-                            <td class="date">July 1</td>
-                        </tr>
-                        <tr class="unread">
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>themepixels</td>
-                            <td><a href="" class="title">Ullamco laboris nisi ut aliquip ex ea commodo consequat. </a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 30</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Puss in Boots</td>
-                            <td><a href="" class="title">Sed ut perspiciatis unde omnis iste natus error</a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 28</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar"></a></td>
-                            <td>Humpty Dumpty</td>
-                            <td><a href="" class="title">Sit voluptatem accusantium doloremque laudantium</a></td>
-                            <td class="attachment"><img src="/Public/Admin/images/icons/attachment.png" alt="" /></td>
-                            <td class="date">June 20</td>
-                        </tr>
-                        <tr>
-                            <td class="aligncenter"><input type="checkbox" name="" /></td>
-                            <td class="star"><a class="msgstar starred"></a></td>
-                            <td>themepixels</td>
-                            <td><a href="" class="title">Totam rem aperiam, eaque ipsa quae ab illo inventore</a></td>
-                            <td class="attachment"></td>
-                            <td class="date">June 19</td>
-                        </tr>
 
-                    </tbody>
-                </table>             
-             </div>
-             <div id="compose" class="subcontent" style="display: none">&nbsp;</div>
-        </div><!--contentwrapper-->
-    
     </div><!--centercontent-->
     
     

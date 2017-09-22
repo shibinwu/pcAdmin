@@ -299,14 +299,7 @@ body.withmenucoll2 { background-position: 35px 0; } /* with menu style 2 in coll
 	padding: 17px 10px;
 }
 .headermenu li a { min-width: 80px; text-align: center; }
-.headermenu li a span { opacity: 0.5; }
-.headermenu li a span.icon { height: 30px; display: block; margin-bottom: 10px; }
-
-.headermenu li a span.icon-flatscreen { background: url(../images/icons/flatscreen.white.png) no-repeat center center; }
-.headermenu li a span.icon-pencil { background: url(../images/icons/pencil.white.png) no-repeat center center; }
-.headermenu li a span.icon-speech { background: url(../images/icons/speech.white.png) no-repeat center center; }
-.headermenu li a span.icon-message { background: url(../images/icons/message.white.png) no-repeat center center; }
-.headermenu li a span.icon-chart { background: url(../images/icons/chart.white.png) no-repeat center center; }
+.headermenu li a span { opacity: 0.5; height: 30px; display: block; margin-bottom: 10px;font-size: 26px }
 .headermenu li a:hover { 
 	background: url(../images/default/bghover.png) no-repeat center bottom; -moz-box-shadow: inset 0 1px 0 #4f627e; 
 	-webkit-box-shadow: inset 0 1px 0 #4f627e; box-shadow: inset 0 1px 0 #4f627e;
