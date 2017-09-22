@@ -3,26 +3,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>控制台页面_AmaAdmin后台管理系统模板 - 源码之家</title>
+    <title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
     <link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
     <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
     <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.slimscroll.js"></script>
     <script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/custom/dashboard.js"></script>
-    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
     <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
     <![endif]-->
     <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
     <![endif]-->
     <!--[if lt IE 9]>
-    <script src="js/plugins/css3-mediaqueries.js"></script>
+    <script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
     <![endif]-->
 </head>
 
@@ -33,7 +30,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--<link rel="stylesheet" href="/Public/Admin/css/style.blueline.css">-->
 </head>
 <body>
     <div class="topheader">
@@ -96,8 +92,7 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>   <!--包含网页头文件-->
-
+</html>  <!--包含头文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -137,140 +132,131 @@
 
 </div><!--header-->
 </html>
-   <!--包含导航文件-->
+  <!--包含导航栏文件-->
 
     <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
-    <ul>
-        <li><a href="#news" class="editor">新闻中心</a>
-            <span class="arrow"></span>
-            <ul id="news">
-                <li><a href="<?php echo U('News/showList');?>">新闻列表</a></li>
-                <li><a href="<?php echo U('News/add');?>">添加新闻</a></li>
-            </ul>
-        </li>
+	<ul>
 
+		<li><a href="#race" class="error">赛事管理</a>
+			<span class="arrow"></span>
+			<ul id="race">
+				<li class="arrow">
+					<a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
+				<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
+			</ul>
+		</li>
 
-        <li><a href="#newstype" class="addons">新闻类型</a>
-            <span class="arrow"></span>
-            <ul id="newstype">
-                <li><a href="<?php echo U('Newstype/showList');?>">类型列表</a></li>
-                <li><a href="<?php echo U('Newstype/add');?>">添加类型</a></li>
+		<li><a href="#racedetail" class="error">赛事详情</a>
+			<span class="arrow"></span>
+			<ul id="racedetail">
+				<li class="arrow">
+					<a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
+				<li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
+			</ul>
+		</li>
 
-            </ul>
-        </li>
+		<li><a href="#team" class="error">战队管理</a>
+			<span class="arrow"></span>
+			<ul id="team">
+				<li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
+				<li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
+			</ul>
+		</li>
 
-        <li><a href="#newsmessage" class="editor">新闻评论</a>
-            <span class="arrow"></span>
-            <ul id="newsmessage">
-                <li><a href="<?php echo U('Newsmessage/showList');?>">评论列表</a></li>
-                <li><a href="<?php echo U('Newsmessage/add');?>">添加评论</a></li>
-            </ul>
-        </li>
-    </ul>
-    <a class="togglemenu"></a>
-    <br /><br />
-</div><!--新闻中心左侧栏文件-->
+		<li><a href="#teammember" class="tables">战队成员</a>
+			<span class="arrow"></span>
+			<ul id="teammember">
+				<li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
+				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+	<a class="togglemenu"></a>
+	<br /><br />
+</div><!--对战中心左侧栏-->
 </body>
-</html><!--包含新闻中心左侧栏文件-->
+</html>  <!--包含对战中心左侧栏文件-->
 
-    <!DOCTYPE html>
-<html lang="en">
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.alerts.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>-->
-<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.pie.js"></script>
-<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
-<!--<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>-->
-<script type="text/javascript" src="/Public/Admin/js/custom/charts.js"></script>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div class="centercontent">
+    <div class="centercontent tables">
 
-    <!--<div class="pageheader">-->
-    <!--<h1 class="pagetitle">Messages</h1>-->
-    <!--<span class="pagedesc">The content below are loaded using ajax</span>-->
+        <div class="pageheader notab">
+            <h1 class="pagetitle">成员列表</h1>
+            <span class="pagedesc">This is a sample description of a page</span>
 
-    <!--<ul class="hornav">-->
+        </div><!--pageheader-->
 
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash;pageheader&ndash;&gt;-->
-    <!--<img src="/Public/Admin/images/bg/1.jpg"/>-->
-    <!--<img src="<?php echo ($data["picurl"]); ?>" alt=""/>-->
-    <div class="contentwrapper">
+        <div id="contentwrapper" class="contentwrapper">
 
-        <div id="charts" class="subcontent">
 
-            <div class="one_half">
-                <!--<div class="contenttitle2">-->
-                    <!--<h3>Simple Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="realtime" style="height:300px;"></div>
-            </div><!--one_half-->
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">成员ID</th>
+                    <th class="head1">战队ID</th>
+                    <th class="head0">用户ID</th>
+                    <th class="head1">担任职务</th>
+                    <th class="head0">状态</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head1">修改时间</th>
+                    <th class="head1">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["tmid"]); ?></td>
+                        <td><?php echo ($vol["tid"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php if($vol["role"] == manager): ?>经理
+                            <?php elseif($vol["role"] == leader): ?>领队
+                            <?php elseif($vol["role"] == coach): ?>教练
+                            <?php elseif($vol["role"] == captain): ?>队长
+                            <?php elseif($vol["role"] == member): ?>队员
+                            <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
+                        <td><?php if($vol["status"] == 0): ?>等待确认
+                            <?php elseif($vol["status"] == 1): ?>正式队员
+                            <?php elseif($vol["status"] == 2): ?>拒绝
+                            <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
+                        <td><?php echo ($vol["addtime"]); ?></td>
+                        <td><?php echo (date('Y-m-d H:i:s',$vol["mtime"])); ?></td>
+                        <td class="center" url="/index.php/Admin/Teammember"><a href="javascript:;" data-id="<?php echo ($vol["tmid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["tmid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
+            <!--<?php if($vol["pid"] == 0): ?>顶级部门<?php else: echo ($vol["parentName"]); endif; ?>-->
 
-            <div class="one_half last">
-                <!--<div class="contenttitle2">-->
-                    <!--<h3>Bar Graph</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="piechart" style="height:300px;"></div>
-            </div><!--one_half last-->
+        </div><!--contentwrapper-->
 
-            <br clear="all" /><br />
+    </div><!-- centercontent -->
 
-            <div class="one_half">
-                <!--<div class="contenttitle2">-->
-                <!--<h3>Real Time Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="chartplace" style="height:300px;"></div>
-                <br />
-                <small>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</small>
-            </div><!--one_half-->
-
-            <div class="one_half last">
-                <!--<div class="contenttitle2">-->
-                <!--<h3>Pie Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="bargraph" style="height: 300px;"></div>
-            </div><!--one_half last-->
-
-            <br clear="all" />
-
-        </div><!--#charts-->
-
-        <div id="statistics" class="subcontent">
-            &nbsp;
-        </div><!--#statistics-->
-    </div><!--contentwrapper-->
-
-</div><!-- 后台默认显示主内容 -->
-</body>
-</html>
-</div>
+</div><!--bodywrapper-->
 
 </body>
-<!--js代码关于退出操作-->
+<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
-    jQuery(function() {
-        jQuery('.exit').click(function () {
-            window.location.href = "/index.php/Admin/Public/logout";
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
         });
-        jQuery(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")
     });
 </script>
 </html>

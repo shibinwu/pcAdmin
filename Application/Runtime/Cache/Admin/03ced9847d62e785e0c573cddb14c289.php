@@ -70,20 +70,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/Public/Admin/css/font_424100_bdb2xt0k59g4x6r/iconfont.css">
 </head>
 <body>
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="iconfont icon-xitongguanli"></span>系统管理</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="iconfont icon-duizhan"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="iconfont icon-dashuju"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="iconfont icon-jingcai"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="iconfont icon-store"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="iconfont icon-zixun"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="iconfont icon-huodongzhongxin"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="iconfont icon-wode"></span>会员管理</a></li>
+        <li><a href="<?php echo U('Index/task');?>"><span class="iconfont icon-chart"></span>任务管理</a></li>
     </ul>
 
 
@@ -119,21 +120,50 @@
             </ul>
         </li>
 
-
-        <li><a href="#addons" class="addons">其他页面</a>
+        <li><a href="#user" class="editor">登录信息</a>
             <span class="arrow"></span>
-            <ul id="addons">
-                <li><a href="newsfeed.html">新闻订阅</a></li>
-                <li><a href="profile.html">资料页面</a></li>
-                <li><a href="productlist.html">产品列表</a></li>
-                <li><a href="photo.html">图片视频分享</a></li>
-                <li><a href="gallery.html">相册</a></li>
-                <li><a href="invoice.html">购物车</a></li>
+            <ul id="user">
+                <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
+                <!--<li><a href="<?php echo U('Member/add');?>">添加信息</a></li>-->
             </ul>
         </li>
+
+        <li><a href="#detail" class="error">会员详情</a>
+            <span class="arrow"></span>
+            <ul id="detail">
+                <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加详情</a></li>-->
+            </ul>
+        </li>
+
+        <li><a href="#team" class="error">会员评论</a>
+            <span class="arrow"></span>
+            <ul id="team">
+                <li><a href="<?php echo U('Team/showList');?>">评论列表</a></li>
+                <li><a href="<?php echo U('Team/add');?>">添加评论</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#team" class="error">会员资产</a>
+            <span class="arrow"></span>
+            <ul id="team">
+                <li><a href="<?php echo U('Team/showList');?>">资产列表</a></li>
+                <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#friend" class="error">我的好友</a>
+            <span class="arrow"></span>
+            <ul id="friend">
+                <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+            </ul>
+        </li>
+
+
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--任务管理左侧栏-->
+</div><!--leftmenu-->
 </body>
-</html>  <!--包含任务管理的左侧栏-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">添加任务</h1>            <span class="pagedesc">这是关于CSGO的世锦赛，保证以下信息的真实性</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>任务详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/Task/addOk" method="post" >                    	                        <p>                        	<label>任务名称</label>                            <span class="field"><input type="text" name="task_name" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务类型</label>                            <span class="formwrapper">                                <select data-placeholder="选择任务类型" name="task_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">新手任务</option>                                    <option value="2">活动任务</option>                                    <option value="3">每日任务</option>                                </select>                            </span>                        </p>                        <p>                            <label>任务奖励物品</label>                            <span class="formwrapper">                                <select data-placeholder="选择奖励物品" name="reward_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">积分</option>                                    <option value="2">P豆</option>                                    <option value="3">V豆</option>                                </select>                            </span>                        </p>                        <p>                            <label>任务奖励数量</label>                            <span class="field"><input type="text" name="reward_num" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务跳转链接</label>                            <span class="field"><input type="text" name="task_url" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务指引提示</label>                            <span class="field"><input type="text" name="task_guide" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>完成任务需要的阶段数</label>                            <span class="field"><input type="text" name="task_stage"  class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                                                                    </form>                 </div><!--subcontent--> -->                </div><!--contentwrapper-->        	</div><!-- centercontent -->        </div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(8).addClass("current").siblings().removeClass("current")        });    });</script></html>
+</html>  <!--包含任务管理的左侧栏-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">添加任务</h1>            <span class="pagedesc">这是关于CSGO的世锦赛，保证以下信息的真实性</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>任务详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/Task/addOk" method="post" >                    	                        <p>                        	<label>任务名称</label>                            <span class="field"><input type="text" name="task_name" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务类型</label>                            <span class="formwrapper">                                <select data-placeholder="选择任务类型" name="task_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">新手任务</option>                                    <option value="2">活动任务</option>                                    <option value="3">每日任务</option>                                </select>                            </span>                        </p>                        <p>                            <label>任务奖励物品</label>                            <span class="formwrapper">                                <select data-placeholder="选择奖励物品" name="reward_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">积分</option>                                    <option value="2">P豆</option>                                    <option value="3">V豆</option>                                </select>                            </span>                        </p>                        <p>                            <label>任务奖励数量</label>                            <span class="field"><input type="text" name="reward_num" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务跳转链接</label>                            <span class="field"><input type="text" name="task_url" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>任务指引提示</label>                            <span class="field"><input type="text" name="task_guide" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>完成任务需要的阶段数</label>                            <span class="field"><input type="text" name="task_stage"  class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                                                                    </form>                 </div><!--subcontent--> -->                </div><!--contentwrapper-->        	</div><!-- centercontent -->        </div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")        });    });</script></html>
