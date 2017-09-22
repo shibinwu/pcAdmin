@@ -1,29 +1,26 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>控制台页面_AmaAdmin后台管理系统模板 - 源码之家</title>
-    <link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.slimscroll.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
-    <script type="text/javascript" src="/Public/Admin/js/custom/dashboard.js"></script>
-    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
-    <!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
-    <![endif]-->
-    <!--[if IE 8]>
-    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/plugins/css3-mediaqueries.js"></script>
-    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
+<link rel="stylesheet" href="/Public/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/custom/tables.js"></script>
+<!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/>
+<![endif]-->
+<!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
+<![endif]-->
 </head>
 
 <body class="withvernav">
@@ -209,102 +206,79 @@
     <br /><br />
 </div><!--leftmenu-->
 </body>
-</html>  <!--包含会员左侧栏-->
+</html>  <!--包含左侧栏文件-->
+
+    <div class="centercontent tables">
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">资产列表</h1>
+
+        </div><!--pageheader-->
+
+        <div id="contentwrapper" class="contentwrapper">
 
 
-    <!DOCTYPE html>
-<html lang="en">
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.alerts.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>-->
-<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.pie.js"></script>
-<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
-<!--<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>-->
-<!--<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>-->
-<script type="text/javascript" src="/Public/Admin/js/custom/charts.js"></script>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <div class="centercontent">
+            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <colgroup>
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th class="head0">MID</th>
+                    <th class="head1">竞猜ID</th>
+                    <th class="head0">发表评论者ID</th>
+                    <th class="head0">评论内容</th>
+                    <th class="head0">支持</th>
+                    <th class="head0">反对</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
+                    <th class="head1">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                        <td><?php echo ($vol["mid"]); ?></td>
+                        <td><?php echo ($vol["g_id"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["message"]); ?></td>
+                        <td><?php echo ($vol["like"]); ?></td>
+                        <td><?php echo ($vol["nolike"]); ?></td>
+                        <td><?php if($vol["ctime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
+                        </td>
+                        <td><?php if($vol["mtime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["mtime"])); endif; ?>
+                        </td>
+                        <td class="center" url="/index.php/Admin/Membermessage"><a href="javascript:;" data-id="<?php echo ($vol["mid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["mid"]); ?>" class="del">删除</a></td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
 
-    <!--<div class="pageheader">-->
-    <!--<h1 class="pagetitle">Messages</h1>-->
-    <!--<span class="pagedesc">The content below are loaded using ajax</span>-->
+        </div><!--contentwrapper-->
 
-    <!--<ul class="hornav">-->
-
-    <!--</ul>-->
-    <!--</div>&lt;!&ndash;pageheader&ndash;&gt;-->
-    <!--<img src="/Public/Admin/images/bg/1.jpg"/>-->
-    <!--<img src="<?php echo ($data["picurl"]); ?>" alt=""/>-->
-    <div class="contentwrapper">
-
-        <div id="charts" class="subcontent">
-
-            <div class="one_half">
-                <!--<div class="contenttitle2">-->
-                    <!--<h3>Simple Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="realtime" style="height:300px;"></div>
-            </div><!--one_half-->
-
-            <div class="one_half last">
-                <!--<div class="contenttitle2">-->
-                    <!--<h3>Bar Graph</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="piechart" style="height:300px;"></div>
-            </div><!--one_half last-->
-
-            <br clear="all" /><br />
-
-            <div class="one_half">
-                <!--<div class="contenttitle2">-->
-                <!--<h3>Real Time Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="chartplace" style="height:300px;"></div>
-                <br />
-                <small>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</small>
-            </div><!--one_half-->
-
-            <div class="one_half last">
-                <!--<div class="contenttitle2">-->
-                <!--<h3>Pie Chart</h3>-->
-                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
-                <!--<br />-->
-                <div id="bargraph" style="height: 300px;"></div>
-            </div><!--one_half last-->
-
-            <br clear="all" />
-
-        </div><!--#charts-->
-
-        <div id="statistics" class="subcontent">
-            &nbsp;
-        </div><!--#statistics-->
-    </div><!--contentwrapper-->
-
-</div><!-- 后台默认显示主内容 -->
-</body>
-</html>
-
+	</div><!-- centercontent -->
 
 </div><!--bodywrapper-->
 
 </body>
-<!--js代码关于退出操作-->
+<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
-    jQuery(function() {
-        jQuery('.exit').click(function () {
-            window.location.href = "/index.php/Admin/Public/logout";
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //提交或清空方法
+        $(function(){
+            $(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
         });
-        jQuery(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
     });
 </script>
 </html>
