@@ -9,9 +9,12 @@
 <script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>
 <script type="text/javascript" src="/Public/Admin/js/plugins/jquery.alerts.js"></script>
-<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
 <script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>
-<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>
+<!--<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>-->
+<script type="text/javascript" src="/Public/Admin/js/custom/charts.js"></script>
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
 <![endif]-->
@@ -170,23 +173,91 @@
         <br /><br />
     </div><!--leftmenu-->
     
+    <!DOCTYPE html>
+<html lang="en">
+<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>-->
+<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>-->
+<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.cookie.js"></script>-->
+<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.alerts.js"></script>-->
+<!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.min.js"></script>-->
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/jquery.flot.resize.min.js"></script>
+<!--<script type="text/javascript" src="/Public/Admin/js/custom/general.js"></script>-->
+<!--<script type="text/javascript" src="/Public/Admin/js/custom/messages.js"></script>-->
+<script type="text/javascript" src="/Public/Admin/js/custom/charts.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
     <div class="centercontent">
-    
-        <div class="pageheader">
-            <h1 class="pagetitle">Messages</h1>
-            <span class="pagedesc">The content below are loaded using ajax</span>
-            
-            <ul class="hornav">
-                <li class="current"><a href="#inbox">Inbox</a></li>
-                <li><a href="#compose">Compose New</a></li>
-            </ul>
-        </div><!--pageheader-->
-        
 
-    </div><!--centercontent-->
+    <!--<div class="pageheader">-->
+    <!--<h1 class="pagetitle">Messages</h1>-->
+    <!--<span class="pagedesc">The content below are loaded using ajax</span>-->
+
+    <!--<ul class="hornav">-->
+
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash;pageheader&ndash;&gt;-->
+    <!--<img src="/Public/Admin/images/bg/1.jpg"/>-->
+    <!--<img src="<?php echo ($data["picurl"]); ?>" alt=""/>-->
+    <div class="contentwrapper">
+
+        <div id="charts" class="subcontent">
+
+            <div class="one_half">
+                <!--<div class="contenttitle2">-->
+                    <!--<h3>Simple Chart</h3>-->
+                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
+                <!--<br />-->
+                <div id="realtime" style="height:300px;"></div>
+            </div><!--one_half-->
+
+            <div class="one_half last">
+                <!--<div class="contenttitle2">-->
+                    <!--<h3>Bar Graph</h3>-->
+                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
+                <!--<br />-->
+                <div id="piechart" style="height:300px;"></div>
+            </div><!--one_half last-->
+
+            <br clear="all" /><br />
+
+            <div class="one_half">
+                <!--<div class="contenttitle2">-->
+                <!--<h3>Real Time Chart</h3>-->
+                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
+                <!--<br />-->
+                <div id="chartplace" style="height:300px;"></div>
+                <br />
+                <small>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</small>
+            </div><!--one_half-->
+
+            <div class="one_half last">
+                <!--<div class="contenttitle2">-->
+                <!--<h3>Pie Chart</h3>-->
+                <!--</div>&lt;!&ndash;contenttitle&ndash;&gt;-->
+                <!--<br />-->
+                <div id="bargraph" style="height: 300px;"></div>
+            </div><!--one_half last-->
+
+            <br clear="all" />
+
+        </div><!--#charts-->
+
+        <div id="statistics" class="subcontent">
+            &nbsp;
+        </div><!--#statistics-->
+    </div><!--contentwrapper-->
+
+</div><!-- 后台默认显示主内容 -->
+</body>
+</html>
     
     
 </div><!--bodywrapper-->
+
 
 </body>
 <!--js代码关于退出操作-->
