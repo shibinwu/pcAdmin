@@ -151,3 +151,6 @@ ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' A
 
 ALTER TABLE `user_property`
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `mtime`;
+
+ALTER TABLE `rolls`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' AFTER `mtime`;

@@ -168,19 +168,19 @@
             </ul>
         </li>
 
-        <li><a href="#team" class="error">会员评论</a>
+        <li><a href="#message" class="error">会员评论</a>
             <span class="arrow"></span>
-            <ul id="team">
-                <li><a href="<?php echo U('Team/showList');?>">评论列表</a></li>
-                <li><a href="<?php echo U('Team/add');?>">添加评论</a></li>
+            <ul id="message">
+                <li><a href="<?php echo U('Membermessage/showList');?>">评论列表</a></li>
+                <!--<li><a href="<?php echo U('Membermessage/add');?>">添加评论</a></li>-->
             </ul>
         </li>
 
-        <li><a href="#team" class="error">会员资产</a>
+        <li><a href="#property" class="error">会员资产</a>
             <span class="arrow"></span>
-            <ul id="team">
-                <li><a href="<?php echo U('Team/showList');?>">资产列表</a></li>
-                <li><a href="<?php echo U('Team/add');?>">添加资产</a></li>
+            <ul id="property">
+                <li><a href="<?php echo U('Memberproperty/showList');?>">资产列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加资产</a></li>-->
             </ul>
         </li>
 
@@ -189,6 +189,13 @@
             <ul id="friend">
                 <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
                 <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+            </ul>
+        </li>
+        <li><a href="#mytask" class="error">我的任务</a>
+            <span class="arrow"></span>
+            <ul id="mytask">
+                <li><a href="<?php echo U('Membertask/showList');?>">任务列表</a></li>
+                <!--<li><a href="<?php echo U('Membertask/add');?>">添加好友</a></li>-->
             </ul>
         </li>
 
