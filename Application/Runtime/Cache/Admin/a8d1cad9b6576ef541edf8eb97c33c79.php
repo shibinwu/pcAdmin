@@ -93,7 +93,8 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>  <!--包含头文件-->
+</html>   <!--包含网页头文件-->
+
 
     <!DOCTYPE html>
 <html lang="en">
@@ -133,68 +134,66 @@
 
 </div><!--header-->
 </html>
- <!--包含导航文件-->
+   <!--包含导航文件-->
 
     <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
-	<ul>
+    <ul>
+        <li><a href="#user" class="editor">用户管理</a>
+            <span class="arrow"></span>
+            <ul id="user">
+                <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_user');?>">添加用户</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#race" class="error">赛事管理</a>
-			<span class="arrow"></span>
-			<ul id="race">
-				<li class="arrow">
-					<a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
-				<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
-			</ul>
-		</li>
+        <li><a href="#role" class="editor">角色管理</a>
+            <span class="arrow"></span>
+            <ul id="role">
+                <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#racedetail" class="error">赛事详情</a>
-			<span class="arrow"></span>
-			<ul id="racedetail">
-				<li class="arrow">
-					<a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
-				<li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
-			</ul>
-		</li>
+        <li><a href="#node" class="editor">节点管理</a>
+            <span class="arrow"></span>
+            <ul id="node">
+                <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
+                <li><a href="<?php echo U('Rbac/add_node');?>">添加模块</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#team" class="error">战队管理</a>
-			<span class="arrow"></span>
-			<ul id="team">
-				<li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
-				<li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
-			</ul>
-		</li>
+        <li><a href="#banner" class="editor">banner管理</a>
+            <span class="arrow"></span>
+            <ul id="banner">
+                <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
+                <li><a href="<?php echo U('Banner/add');?>">添加banner</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#teammember" class="tables">战队成员</a>
-			<span class="arrow"></span>
-			<ul id="teammember">
-				<li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
-				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
-			</ul>
-		</li>
-
-	</ul>
-	<a class="togglemenu"></a>
-	<br /><br />
-</div><!--对战中心左侧栏-->
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--首页左侧栏-->
 </body>
-</html>  <!--包含对战中心左侧栏文件-->
-        
+</html>  <!--包含左侧栏文件-->
+
     <div class="centercontent tables">
-    
+
         <div class="pageheader notab">
-            <h1 class="pagetitle">赛事列表</h1>
+            <h1 class="pagetitle">活动列表</h1>
             <span class="pagedesc">This is a sample description of a page</span>
-            
+
         </div><!--pageheader-->
-        
+
         <div id="contentwrapper" class="contentwrapper">
+
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -206,69 +205,49 @@
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">联赛名称</th>
-                    <th class="head1">主办方姓名</th>
-                    <th class="head0">主办方电话</th>
-                    <th class="head1">主办方QQ</th>
-                    <th class="head0">赛事类型</th>
-                    <th class="head1">赛事方式</th>
-                    <th class="head1">赛事开始时间</th>
-                    <th class="head0">奖金</th>
-                    <th class="head1">审核状态</th>
-                    <th class="head0">审核时间</th>
+                    <th class="head0">序号ID</th>
+                    <th class="head1">活动创建者ID</th>
+                    <th class="head0">活动内容</th>
+                    <th class="head0">腾讯微博</th>
+                    <th class="head0">新浪微博</th>
+                    <th class="head1">活动开始时间</th>
+                    <th class="head1">活动结束时间</th>
+                    <th class="head1">活动参加者ID</th>
+                    <th class="head1">创建时间</th>
+                    <th class="head0">修改时间</th>
                     <th class="head1">操作</th>
-                    <!--<th class="head0">游戏模式</th>-->
-                    <!--<th class="head0">报名方式</th>-->
-                    <!--<th class="head0">比赛区域</th>-->
-                    <!--<th class="head0">报名人数</th>-->
-                    <!--<th class="head0">报名费</th>-->
-                    <!--<th class="head0">赛程阶段</th>-->
-                    <!--<th class="head0">主办方</th>-->
-                    <!--<th class="head0">报名流程</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["rname"]); ?></td>
-                        <td><?php echo ($vol["sponsor_name"]); ?></td>
-                        <td><?php echo ($vol["sponsor_phone"]); ?></td>
-                        <td><?php echo ($vol["sponsor_qq"]); ?></td>
-                        <td><?php echo ($vol["types"]); ?></td>
-                        <td><?php echo ($vol["game_type"]); ?></td>
-                        <td><?php echo ($vol["race_start_time"]); ?></td>
-                        <td><?php echo ($vol["bonus"]); ?></td>
-                        <td><?php if($vol["checkstatus"] == 1): ?>通过
-                            <?php elseif($vol["checkstatus"] ==2): ?>审核中
-                            <?php elseif($vol["checkstatus"] ==3): ?>未通过
-                            <?php else: ?>&nbsp<?php endif; ?>
+                        <td><?php echo ($vol["id"]); ?></td>
+                        <td><?php echo ($vol["uid"]); ?></td>
+                        <td><?php echo ($vol["content"]); ?></td>
+                        <td><?php echo ($vol["tencent_weibo"]); ?></td>
+                        <td><?php echo ($vol["sina_weibo"]); ?></td>
+                        <td><?php echo (date("Y-m-d H:i:s",$vol["starttime"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i:s",$vol["endtime"])); ?></td>
+                        <td><?php echo ($vol["user_roll"]); ?></td>
+                        <td><?php if($vol["ctime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
                         </td>
-                        <!--<td><?php echo ($vol["checkstatus"]); ?></td>-->
-                        <td><?php echo (date("Y-m-d H:i:s",$vol["mtime"])); ?></td>
-
-                        <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
-                        <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
-                        <!--<td><?php echo ($vol["game_area"]); ?></td>-->
-                        <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
-                        <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
-                        <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
-                        <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
-                        <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
-                        <!--<td class="center">4</td>-->
-                        <!--<td class="center">X</td>-->
-                        <td class="center" url="/index.php/Admin/Race"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">审核</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        <td><?php if($vol["mtime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["mtime"])); endif; ?>
+                        </td>
+                        <td class="center" url="/index.php/Admin/Rolls"><a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["uid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
 
         </div><!--contentwrapper-->
-        
+
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
 
 </body>
@@ -279,7 +258,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
         });
     });
 </script>

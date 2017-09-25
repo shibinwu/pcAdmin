@@ -139,41 +139,57 @@
 </html>
    <!--包含导航文件-->
 
-    <div class="vernav2 iconmenu">
-        <ul>
-            <li><a href="#formsub" class="editor">roll饰品</a>
-                <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">饰品列表</a></li>
-                    <li><a href="wizard.html">添加饰品</a></li>
-                </ul>
-            </li>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商城左侧栏</title>
+</head>
+<body>
+<div class="vernav2 iconmenu">
+    <ul>
+        <li><a href="#rolls" class="editor">活动管理</a>
+            <span class="arrow"></span>
+            <ul id="rolls">
+                <li><a href="<?php echo U('Rolls/showList');?>">活动列表</a></li>
+                <!--<li><a href="wizard.html">添加活动</a></li>-->
+            </ul>
+        </li>
+        <li><a href="#formsub" class="editor">roll饰品</a>
+            <span class="arrow"></span>
+            <ul id="formsub">
+                <li><a href="forms.html">饰品列表</a></li>
+                <li><a href="wizard.html">添加饰品</a></li>
+            </ul>
+        </li>
 
-            <li><a href="#formsub" class="editor">积分管理</a>
-                <span class="arrow"></span>
-                <ul id="formsub">
-                    <li><a href="forms.html">积分列表</a></li>
-                    <li><a href="wizard.html">添加积分</a></li>
-                </ul>
-            </li>
+        <li><a href="#formsub" class="editor">积分管理</a>
+            <span class="arrow"></span>
+            <ul id="formsub">
+                <li><a href="forms.html">积分列表</a></li>
+                <li><a href="wizard.html">添加积分</a></li>
+            </ul>
+        </li>
 
 
-            <li><a href="#addons" class="addons">其他页面</a>
-                <span class="arrow"></span>
-                <ul id="addons">
-                    <li><a href="newsfeed.html">新闻订阅</a></li>
-                    <li><a href="profile.html">资料页面</a></li>
-                    <li><a href="productlist.html">产品列表</a></li>
-                    <li><a href="photo.html">图片视频分享</a></li>
-                    <li><a href="gallery.html">相册</a></li>
-                    <li><a href="invoice.html">购物车</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a class="togglemenu"></a>
-        <br /><br />
-    </div><!--leftmenu-->
-    
+        <li><a href="#addons" class="addons">其他页面</a>
+            <span class="arrow"></span>
+            <ul id="addons">
+                <li><a href="newsfeed.html">新闻订阅</a></li>
+                <li><a href="profile.html">资料页面</a></li>
+                <li><a href="productlist.html">产品列表</a></li>
+                <li><a href="photo.html">图片视频分享</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="invoice.html">购物车</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--活动左侧栏-->
+</body>
+</html>  <!--包含活动左侧栏-->
+
     <!DOCTYPE html>
 <html lang="en">
 <!--<script type="text/javascript" src="/Public/Admin/js/plugins/jquery-1.7.min.js"></script>-->
@@ -254,9 +270,8 @@
 
 </div><!-- 后台默认显示主内容 -->
 </body>
-</html>
-    
-    
+</html> <!--包含内容主体-->
+
 </div><!--bodywrapper-->
 
 
