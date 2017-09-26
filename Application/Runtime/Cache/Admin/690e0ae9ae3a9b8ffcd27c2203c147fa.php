@@ -148,7 +148,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#task" class="editor">任务管理</a>
+        <li><a href="#task" class="calendar">任务管理</a>
             <span class="arrow"></span>
             <ul id="task">
                 <li><a href="<?php echo U('Task/showList');?>">任务列表</a></li>
@@ -156,7 +156,7 @@
             </ul>
         </li>
 
-        <li><a href="#user" class="editor">登录信息</a>
+        <li><a href="#user" class="typo">登录信息</a>
             <span class="arrow"></span>
             <ul id="user">
                 <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
@@ -164,7 +164,7 @@
             </ul>
         </li>
 
-        <li><a href="#detail" class="error">会员详情</a>
+        <li><a href="#detail" class="elements">会员详情</a>
             <span class="arrow"></span>
             <ul id="detail">
                 <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
@@ -172,7 +172,7 @@
             </ul>
         </li>
 
-        <li><a href="#message" class="error">会员评论</a>
+        <li><a href="#message" class="editor">会员评论</a>
             <span class="arrow"></span>
             <ul id="message">
                 <li><a href="<?php echo U('Membermessage/showList');?>">评论列表</a></li>
@@ -180,7 +180,7 @@
             </ul>
         </li>
 
-        <li><a href="#property" class="error">会员资产</a>
+        <li><a href="#property" class="drafts">会员资产</a>
             <span class="arrow"></span>
             <ul id="property">
                 <li><a href="<?php echo U('Memberproperty/showList');?>">资产列表</a></li>
@@ -188,7 +188,7 @@
             </ul>
         </li>
 
-        <li><a href="#friend" class="error">我的好友</a>
+        <li><a href="#friend" class="addons">我的好友</a>
             <span class="arrow"></span>
             <ul id="friend">
                 <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>

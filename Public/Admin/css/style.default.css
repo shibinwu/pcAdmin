@@ -1215,7 +1215,7 @@ form label.error { float: none; color: #f00; font-size: 11px; display: block; te
 
 
 .colorselector { 
-	display: inline-block; height: 28px; width: 28x; vertical-align: middle; 
+	display: inline-block; height: 28px; width: 28px; vertical-align: middle;
 	position: relative; vertical-align: middle; margin-left: 5px; 
 }
 .colorselector span { 

@@ -148,7 +148,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#news" class="editor">新闻中心</a>
+        <li><a href="#news" class="calendar">新闻中心</a>
             <span class="arrow"></span>
             <ul id="news">
                 <li><a href="<?php echo U('News/showList');?>">新闻列表</a></li>
@@ -157,7 +157,7 @@
         </li>
 
 
-        <li><a href="#newstype" class="addons">新闻类型</a>
+        <li><a href="#newstype" class="widgets">新闻类型</a>
             <span class="arrow"></span>
             <ul id="newstype">
                 <li><a href="<?php echo U('Newstype/showList');?>">类型列表</a></li>
