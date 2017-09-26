@@ -17,6 +17,42 @@
     <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie9.css"/><![endif]-->
     <link rel="stylesheet" media="screen" href="/Public/Admin/css/style.ie8.css"/>
     <script src="/Public/Admin/js/plugins/css3-mediaqueries.js"></script>
+    <style type="text/css">
+        div a#return{
+            background:#BEEBEE;
+            line-height:30px;
+            font-size:20px;
+            margin-left:1060px;
+        }
+
+        .app p{
+            background:#BDEBEE;
+            font-size: 20px;
+            line-height: 40px;
+            margin: 10px;
+
+        }
+
+        .app p strong{
+            margin-left: 5px;
+        }
+
+        dl.controller{
+            background:#BDEBEE;
+            font-size: 16px;
+            line-height: 30px;
+            margin: 10px;
+        }
+
+        dl.controller dt strong{
+            margin-left: 10px;
+        }
+
+        span.method{
+            margin-left: 20px;
+        }
+    </style>
+
 </head>
 <body class="withvernav">
 <div class="bodywrapper">
@@ -179,18 +215,18 @@
 </html>  <!--包含系统管理左侧栏文件-->
     <div class="centercontent tables">
         <div class="pageheader notab">
-            <h1 class="pagetitle">角色列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
+            <h1 class="pagetitle">权限列表</h1>
+            
         </div><!--pageheader-->
         <div id="wrap">
             <a id="return" href="<?php echo U('role_list','','');?>">返回</a>
             <form action="<?php echo U('access_handle');?>" method="post">
                 <table class="table">
-                    <?php if(is_array($node)): foreach($node as $key=>$app): ?><div class="app">
+                    <?php if(is_array($node)): foreach($node as $key=>$app): ?><div class="app  " >
                             <p>
                                 <strong><?php echo ($app["title"]); ?></strong>
                                 <input type="checkbox" name="access[]" value="<?php echo ($app["id"]); ?>_1" level="1" <?php if($app['access'] == 1): ?>checked="checked"<?php endif; ?>>
-                            </p>
+                            </p >
                             <?php if(is_array($app["child"])): foreach($app["child"] as $key=>$controller): ?><div class="app_child">
                                     <dl class="controller">
                                         <dt>
