@@ -180,6 +180,14 @@
             </ul>
         </li>
 
+        <li><a href="#replay" class="editor">评论回复</a>
+            <span class="arrow"></span>
+            <ul id="replay">
+                <li><a href="<?php echo U('Replay/showList');?>">评论回复列表</a></li>
+                <!--<li><a href="<?php echo U('Replay/add');?>">添加评论</a></li>-->
+            </ul>
+        </li>
+
         <li><a href="#property" class="drafts">会员资产</a>
             <span class="arrow"></span>
             <ul id="property">

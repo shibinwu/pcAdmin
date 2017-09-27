@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ 2017-09-27T11:09:37+08:00 ] 171.84.5.54 /index.php/Admin/Public/check.html
 ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as role, as user, as access , as node where user.user_id='' and user.role_id=rol' at line 1
  [ SQL语句 ] : select node.id,node.name from  as role, as user, as access , as node where user.user_id='' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1
@@ -5,3 +6,27 @@ ERR: 1064:You have an error in your SQL syntax; check the manual that correspond
 [ 2017-09-27T11:09:40+08:00 ] 171.84.5.54 /index.php/Admin/Index/index.html
 ERR: _STORAGE_WRITE_ERROR_:./Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php
 
+=======
+[ 2017-09-27T10:26:12+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 无法加载控制器:Replay
+
+[ 2017-09-27T10:31:40+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `user_replay_message` WHERE ( statu = 1 ) 
+
+[ 2017-09-27T10:31:54+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `user_replay_message` WHERE ( statu = 1 ) 
+
+[ 2017-09-27T10:32:55+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `user_replay_message` WHERE ( statu = 1 ) 
+
+[ 2017-09-27T10:33:03+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 1054:Unknown column 'statu' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `user_replay_message` WHERE ( statu = 1 ) 
+
+[ 2017-09-27T10:35:42+08:00 ] 127.0.0.1 /index.php/Admin/Replay/showList.html
+ERR: 模板不存在:./Application/Admin/View/Replay/showList.html
+
+>>>>>>> 7532f0ea78ccc606a274c40262264ceaa7ccf16c
