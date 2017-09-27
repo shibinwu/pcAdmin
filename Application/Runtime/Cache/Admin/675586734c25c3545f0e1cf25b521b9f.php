@@ -93,7 +93,8 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>  <!--包含头文件-->
+</html>   <!--包含网页头文件-->
+
 
     <!DOCTYPE html>
 <html lang="en">
@@ -133,68 +134,97 @@
 
 </div><!--header-->
 </html>
- <!--包含导航文件-->
+   <!--包含导航文件-->
 
     <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
-	<ul>
+    <ul>
+        <li><a href="#task" class="calendar">任务管理</a>
+            <span class="arrow"></span>
+            <ul id="task">
+                <li><a href="<?php echo U('Task/showList');?>">任务列表</a></li>
+                <li><a href="<?php echo U('Task/add');?>">添加任务</a></li>
+            </ul>
+        </li>
 
-		<li><a href="#race" class="addons">赛事管理</a>
-			<span class="arrow"></span>
-			<ul id="race">
-				<li class="arrow">
-					<a href="<?php echo U('Race/showList');?>">赛事列表</a></li>
-				<li><a href="<?php echo U('Race/add');?>">添加赛事</a></li>
-			</ul>
-		</li>
+        <li><a href="#user" class="typo">登录信息</a>
+            <span class="arrow"></span>
+            <ul id="user">
+                <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
+                <!--<li><a href="<?php echo U('Member/add');?>">添加信息</a></li>-->
+            </ul>
+        </li>
 
-		<li><a href="#racedetail" class="elements">赛事详情</a>
-			<span class="arrow"></span>
-			<ul id="racedetail">
-				<li class="arrow">
-					<a href="<?php echo U('Racedetail/showList');?>">详情列表</a></li>
-				<li><a href="<?php echo U('Racedetail/add');?>">添加详情</a></li>
-			</ul>
-		</li>
+        <li><a href="#detail" class="elements">会员详情</a>
+            <span class="arrow"></span>
+            <ul id="detail">
+                <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加详情</a></li>-->
+            </ul>
+        </li>
 
-		<li><a href="#team" class="typo">战队管理</a>
-			<span class="arrow"></span>
-			<ul id="team">
-				<li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
-				<li><a href="<?php echo U('Team/add');?>">添加战队</a></li>
-			</ul>
-		</li>
+        <li><a href="#message" class="editor">会员评论</a>
+            <span class="arrow"></span>
+            <ul id="message">
+                <li><a href="<?php echo U('Membermessage/showList');?>">评论列表</a></li>
+                <!--<li><a href="<?php echo U('Membermessage/add');?>">添加评论</a></li>-->
+            </ul>
+        </li>
 
-		<li><a href="#teammember" class="tables">战队成员</a>
-			<span class="arrow"></span>
-			<ul id="teammember">
-				<li><a href="<?php echo U('Teammember/showList');?>">成员列表</a></li>
-				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
-			</ul>
-		</li>
+        <li><a href="#replay" class="editor">评论回复</a>
+            <span class="arrow"></span>
+            <ul id="replay">
+                <li><a href="<?php echo U('Replay/showList');?>">评论回复列表</a></li>
+                <!--<li><a href="<?php echo U('Replay/add');?>">添加评论</a></li>-->
+            </ul>
+        </li>
 
-	</ul>
-	<a class="togglemenu"></a>
-	<br /><br />
-</div><!--对战中心左侧栏-->
+        <li><a href="#property" class="drafts">会员资产</a>
+            <span class="arrow"></span>
+            <ul id="property">
+                <li><a href="<?php echo U('Memberproperty/showList');?>">资产列表</a></li>
+                <!--<li><a href="<?php echo U('Team/add');?>">添加资产</a></li>-->
+            </ul>
+        </li>
+
+        <li><a href="#friend" class="addons">我的好友</a>
+            <span class="arrow"></span>
+            <ul id="friend">
+                <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
+                <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
+            </ul>
+        </li>
+        <li><a href="#mytask" class="error">我的任务</a>
+            <span class="arrow"></span>
+            <ul id="mytask">
+                <li><a href="<?php echo U('Membertask/showList');?>">任务列表</a></li>
+                <!--<li><a href="<?php echo U('Membertask/add');?>">添加好友</a></li>-->
+            </ul>
+        </li>
+
+
+    </ul>
+    <a class="togglemenu"></a>
+    <br /><br />
+</div><!--leftmenu-->
 </body>
-</html>  <!--包含对战中心左侧栏文件-->
-        
+</html>  <!--包含左侧栏文件-->
+
     <div class="centercontent tables">
-    
+
         <div class="pageheader notab">
-            <h1 class="pagetitle">赛事列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
+            <h1 class="pagetitle">资产列表</h1>
+
         </div><!--pageheader-->
-        
+
         <div id="contentwrapper" class="contentwrapper">
+
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -204,71 +234,36 @@
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">联赛名称</th>
-                    <th class="head1">主办方姓名</th>
-                    <th class="head0">主办方电话</th>
-                    <th class="head1">主办方QQ</th>
-                    <th class="head0">赛事类型</th>
-                    <th class="head1">赛事方式</th>
-                    <th class="head1">赛事开始时间</th>
-                    <th class="head0">奖金</th>
-                    <th class="head1">审核状态</th>
-                    <th class="head0">审核时间</th>
+                    <th class="head0">HMID</th>
+                    <th class="head1">评论ID</th>
+                    <th class="head0">回复评论者ID</th>
+                    <th class="head0">回复内容</th>
+                    <th class="head1">创建时间</th>
                     <th class="head1">操作</th>
-                    <!--<th class="head0">游戏模式</th>-->
-                    <!--<th class="head0">报名方式</th>-->
-                    <!--<th class="head0">比赛区域</th>-->
-                    <!--<th class="head0">报名人数</th>-->
-                    <!--<th class="head0">报名费</th>-->
-                    <!--<th class="head0">赛程阶段</th>-->
-                    <!--<th class="head0">主办方</th>-->
-                    <!--<th class="head0">报名流程</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["rname"]); ?></td>
-                        <td><?php echo ($vol["sponsor_name"]); ?></td>
-                        <td><?php echo ($vol["sponsor_phone"]); ?></td>
-                        <td><?php echo ($vol["sponsor_qq"]); ?></td>
-                        <td><?php echo ($vol["types"]); ?></td>
-                        <td><?php echo ($vol["game_type"]); ?></td>
-                        <td><?php echo ($vol["race_start_time"]); ?></td>
-                        <td><?php echo ($vol["bonus"]); ?></td>
-                        <td><?php if($vol["checkstatus"] == 1): ?>通过
-                            <?php elseif($vol["checkstatus"] ==2): ?>审核中
-                            <?php elseif($vol["checkstatus"] ==3): ?>未通过
-                            <?php else: ?>&nbsp<?php endif; ?>
+                        <td><?php echo ($vol["hmid"]); ?></td>
+                        <td><?php echo ($vol["mid"]); ?></td>
+                        <td><?php echo ($vol["ruid"]); ?></td>
+                        <td><?php echo ($vol["replay_msg"]); ?></td>
+                        <td><?php if($vol["ctime"] == 0): ?>&nbsp
+                            <?php else: ?>
+                            <?php echo (date("Y-m-d H:i:s",$vol["ctime"])); endif; ?>
                         </td>
-                        <!--<td><?php echo ($vol["checkstatus"]); ?></td>-->
-                        <td><?php echo (date("Y-m-d H:i:s",$vol["mtime"])); ?></td>
-
-                        <!--<td><?php echo ($vol["race_mode"]); ?></td>-->
-                        <!--<td><?php echo ($vol["join_mode"]); ?></td>-->
-                        <!--<td><?php echo ($vol["game_area"]); ?></td>-->
-                        <!--<td><?php echo ($vol["signed_num"]); ?></td>-->
-                        <!--<td><?php echo ($vol["join_cost"]); ?></td>-->
-                        <!--<td><?php echo ($vol["rice_stage"]); ?></td>-->
-                        <!--<td><?php echo ($vol["rice_sponsor"]); ?></td>-->
-                        <!--<td><?php echo ($vol["raceprocess"]); ?></td>-->
-                        <!--<td class="center">4</td>-->
-                        <!--<td class="center">X</td>-->
-                        <td class="center" url="/index.php/Admin/Race"><a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="edit">审核</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["rid"]); ?>" class="del">删除</a></td>
+                        <td class="center" url="/index.php/Admin/Replay"><a href="javascript:;" data-id="<?php echo ($vol["mid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["mid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
 
         </div><!--contentwrapper-->
-        
+
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
 
 </body>
@@ -279,7 +274,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(1).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
         });
     });
 </script>
