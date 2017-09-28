@@ -30,6 +30,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<link rel="stylesheet" href="/Public/Admin/css/style.blueline.css">-->
 </head>
 <body>
     <div class="topheader">
@@ -144,7 +145,7 @@
     <div class="vernav2 iconmenu">
 	<ul>
 
-		<li><a href="#race" class="error">赛事管理</a>
+		<li><a href="#race" class="addons">赛事管理</a>
 			<span class="arrow"></span>
 			<ul id="race">
 				<li class="arrow">
@@ -153,7 +154,7 @@
 			</ul>
 		</li>
 
-		<li><a href="#racedetail" class="error">赛事详情</a>
+		<li><a href="#racedetail" class="elements">赛事详情</a>
 			<span class="arrow"></span>
 			<ul id="racedetail">
 				<li class="arrow">
@@ -162,7 +163,7 @@
 			</ul>
 		</li>
 
-		<li><a href="#team" class="error">战队管理</a>
+		<li><a href="#team" class="typo">战队管理</a>
 			<span class="arrow"></span>
 			<ul id="team">
 				<li><a href="<?php echo U('Team/showList');?>">战队列表</a></li>
@@ -177,7 +178,7 @@
 				<li><a href="<?php echo U('Teammember/add');?>">添加成员</a></li>
 			</ul>
 		</li>
-		
+
 	</ul>
 	<a class="togglemenu"></a>
 	<br /><br />

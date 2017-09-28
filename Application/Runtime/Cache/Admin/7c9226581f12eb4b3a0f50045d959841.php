@@ -144,7 +144,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#guess" class="editor">竞猜比赛管理</a>
+        <li><a href="#guess" class="addons">竞猜比赛管理</a>
             <span class="arrow"></span>
             <ul id="guess">
                 <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
@@ -152,7 +152,7 @@
             </ul>
         </li>
 
-        <li><a href="#guessdata" class="error">竞猜比赛数据</a>
+        <li><a href="#guessdata" class="trash">竞猜比赛数据</a>
             <span class="arrow"></span>
             <ul id="guessdata">
                 <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
@@ -160,7 +160,7 @@
             </ul>
         </li>
 
-        <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+        <li><a href="#guessteam" class="support">竞猜队伍管理</a>
             <span class="arrow"></span>
             <ul id="guessteam">
                 <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
@@ -168,7 +168,7 @@
             </ul>
         </li>
 
-        <li><a href="#guessuser" class="error">竞猜用户管理</a>
+        <li><a href="#guessuser" class="drafts">竞猜用户管理</a>
             <span class="arrow"></span>
             <ul id="guessuser">
                 <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>

@@ -175,7 +175,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#user" class="editor">用户管理</a>
+        <li><a href="#user" class="error">用户管理</a>
             <span class="arrow"></span>
             <ul id="user">
                 <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
@@ -183,7 +183,7 @@
             </ul>
         </li>
 
-        <li><a href="#role" class="editor">角色管理</a>
+        <li><a href="#role" class="addons">角色管理</a>
             <span class="arrow"></span>
             <ul id="role">
                 <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
@@ -191,7 +191,7 @@
             </ul>
         </li>
 
-        <li><a href="#node" class="editor">节点管理</a>
+        <li><a href="#node" class="tables">节点管理</a>
             <span class="arrow"></span>
             <ul id="node">
                 <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
@@ -199,7 +199,7 @@
             </ul>
         </li>
 
-        <li><a href="#banner" class="editor">banner管理</a>
+        <li><a href="#banner" class="gallery">banner管理</a>
             <span class="arrow"></span>
             <ul id="banner">
                 <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
@@ -216,7 +216,7 @@
     <div class="centercontent tables">
         <div class="pageheader notab">
             <h1 class="pagetitle">权限列表</h1>
-            
+
         </div><!--pageheader-->
         <div id="wrap">
             <a id="return" href="<?php echo U('role_list','','');?>">返回</a>

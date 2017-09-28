@@ -41,6 +41,24 @@ class RaceController extends CommonController{
 		 	}
 		 }
 //		dump($post);die;
+		#转换比赛时间和加入时间为时间戳
+		$time1 = strtotime($post['race_start_time']);
+		$time2 = strtotime($post['race_end_time']);
+		if($time2){
+			$post['race_time'] = $time1 . "-" . $time2;
+		}else{
+			$post['race_time'] = $time1;
+		}
+
+		$time3 = strtotime($post['join_start_time']);
+		$time4 = strtotime($post['join_end_time']);
+		if($time4){
+			$post['join_time'] = $time3 . "-" . $time4;
+		}else{
+			$post['join_time'] = $time3;
+		}
+
+//		dump($post);die;
 		#添加addtime字段
 		$post['ctime'] = time();
 		#写入数据表
@@ -69,32 +87,6 @@ class RaceController extends CommonController{
 		$this -> display();
 	}
 
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){

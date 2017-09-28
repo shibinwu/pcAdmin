@@ -104,50 +104,50 @@
 
 </div><!--header-->
 </html>
-   <!--包含导航文件-->    <!DOCTYPE html>
+   <!--包含导航文件-->    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>商城左侧栏</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#user" class="error">用户管理</a>
+        <li><a href="#goods" class="drafts">商品管理</a>
             <span class="arrow"></span>
-            <ul id="user">
-                <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_user');?>">添加用户</a></li>
+            <ul id="goods">
+                <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
+                <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
             </ul>
         </li>
 
-        <li><a href="#role" class="addons">角色管理</a>
+        <li><a href="#goodsattr" class="elements">商品详情</a>
             <span class="arrow"></span>
-            <ul id="role">
-                <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
+            <ul id="goodsattr">
+                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
+                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
             </ul>
         </li>
 
-        <li><a href="#node" class="tables">节点管理</a>
+        <li><a href="#goodssell" class="sent">出售管理</a>
             <span class="arrow"></span>
-            <ul id="node">
-                <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_node');?>">添加模块</a></li>
+            <ul id="goodssell">
+                <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
+                <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
             </ul>
         </li>
 
-        <li><a href="#banner" class="gallery">banner管理</a>
+        <li><a href="#goodswant" class="inbox">求购管理</a>
             <span class="arrow"></span>
-            <ul id="banner">
-                <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
-                <li><a href="<?php echo U('Banner/add');?>">添加banner</a></li>
+            <ul id="goodswant">
+                <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
+                <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
             </ul>
         </li>
 
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--首页左侧栏-->
+</div><!--商城左侧栏-->
 </body>
-</html>  <!--包含左侧栏文件-->    <div class="centercontent">        <div class="pageheader">            <h1 class="pagetitle">添加用户</h1>            <span class="pagedesc">操作后台用户的管理模块，该窗口添加新的用户</span>        </div><!--pageheader-->        <div id="contentwrapper" class="contentwrapper">        	<div id="basicform" class="subcontent">                    <div class="contenttitle2">                        <h3>用户详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/Rbac/add_user_handle" method="post" enctype="multipart/form-data">                        <p>                        	<label>用户名</label>                            <span class="field"><input type="text" name="username" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>邮箱</label>                            <span class="field"><input type="text" name="email" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>手机号</label>                            <span class="field"><input type="text" name="phone" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>密码</label>                            <span class="field"><input type="text" name="password" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>头像</label>                            <span class="field">                                <input type="file" name="picurl" />                            </span>                        </p>                        <p>                            <label>昵称</label>                            <span class="field"><input type="text" name="nickname" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>所属角色</label>                            <span class="formwrapper">                                <select name="role_id[]" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value="">请选择用户角色</option>                                    <?php if(is_array($role)): $i = 0; $__LIST__ = $role;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["id"]); ?>"><?php echo ($vol["name"]); ?>(<?php echo ($vol["remark"]); ?>)</option><?php endforeach; endif; else: echo "" ;endif; ?>                                </select>                            </span>                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                    </form>            </div><!--subcontent--> -->        </div><!--contentwrapper-->	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    jQuery.noConflict();    jQuery(document).ready(function($){        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")        });    });</script></html>
+</html>   <!--包含商城左侧栏文件-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">添加详情</h1>            <span class="pagedesc">操作后台用户的管理模块，该窗口添加新的用户</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>详情列表</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="/index.php/Admin/Goodsattr/addOk" method="post" >                        <p>                            <label>所属游戏</label>                            <span class="formwrapper">                                <select  name="pgaid" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value="&nbsp">请选择游戏类型</option>                                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i; if($vol["ga_type"] == 1): ?><option value="<?php echo ($vol["ga_id"]); ?>"><?php echo ($vol["ga_name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>                                </select>                            </span>                        </p>                        <p>                            <label>商品属性名称</label>                            <span class="field"><input type="text" name="ga_name" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>属性类型</label>                            <span class="formwrapper">                                <select data-placeholder="请选择属性类型" name="ga_type" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <option value="1">游戏类型</option>                                    <option value="2">商品分类</option>                                    <option value="3">商品等级</option>                                    <option value="4">商品部位</option>                                    <option value="5">商品外观</option>                                </select>                            </span>                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2">确认提交</button>                            <input type="reset" class="reset radius2" value="清空列表" />                        </p>                    </form>            </div><!--subcontent--> -->                </div><!--contentwrapper-->        	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    jQuery.noConflict();    jQuery(document).ready(function($){        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")        });    });</script></html>

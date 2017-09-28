@@ -93,8 +93,7 @@
     </div><!--right-->
 </div><!--topheader-->
 </body>
-</html>   <!--包含网页头文件-->
-
+</html>  <!--包含头文件-->
 
     <!DOCTYPE html>
 <html lang="en">
@@ -134,95 +133,64 @@
 
 </div><!--header-->
 </html>
-   <!--包含导航文件-->
+ <!--包含导航栏文件-->
 
     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>商城左侧栏</title>
 </head>
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#task" class="calendar">任务管理</a>
+        <li><a href="#goods" class="drafts">商品管理</a>
             <span class="arrow"></span>
-            <ul id="task">
-                <li><a href="<?php echo U('Task/showList');?>">任务列表</a></li>
-                <li><a href="<?php echo U('Task/add');?>">添加任务</a></li>
+            <ul id="goods">
+                <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
+                <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
             </ul>
         </li>
 
-        <li><a href="#user" class="typo">登录信息</a>
+        <li><a href="#goodsattr" class="elements">商品详情</a>
             <span class="arrow"></span>
-            <ul id="user">
-                <li><a href="<?php echo U('Member/showList');?>">信息列表</a></li>
-                <!--<li><a href="<?php echo U('Member/add');?>">添加信息</a></li>-->
+            <ul id="goodsattr">
+                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
+                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
             </ul>
         </li>
 
-        <li><a href="#detail" class="elements">会员详情</a>
+        <li><a href="#goodssell" class="sent">出售管理</a>
             <span class="arrow"></span>
-            <ul id="detail">
-                <li><a href="<?php echo U('Memberdetail/showList');?>">详情列表</a></li>
-                <!--<li><a href="<?php echo U('Team/add');?>">添加详情</a></li>-->
+            <ul id="goodssell">
+                <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
+                <li><a href="<?php echo U('Goodssell/add');?>">添加出售</a></li>
             </ul>
         </li>
 
-        <li><a href="#message" class="editor">会员评论</a>
+        <li><a href="#goodswant" class="inbox">求购管理</a>
             <span class="arrow"></span>
-            <ul id="message">
-                <li><a href="<?php echo U('Membermessage/showList');?>">评论列表</a></li>
-                <!--<li><a href="<?php echo U('Membermessage/add');?>">添加评论</a></li>-->
+            <ul id="goodswant">
+                <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>
+                <li><a href="<?php echo U('Goodswant/add');?>">添加求购</a></li>
             </ul>
         </li>
-
-        <li><a href="#replay" class="editor">评论回复</a>
-            <span class="arrow"></span>
-            <ul id="replay">
-                <li><a href="<?php echo U('Replay/showList');?>">评论回复列表</a></li>
-                <!--<li><a href="<?php echo U('Replay/add');?>">添加评论</a></li>-->
-            </ul>
-        </li>
-
-        <li><a href="#property" class="drafts">会员资产</a>
-            <span class="arrow"></span>
-            <ul id="property">
-                <li><a href="<?php echo U('Memberproperty/showList');?>">资产列表</a></li>
-                <!--<li><a href="<?php echo U('Team/add');?>">添加资产</a></li>-->
-            </ul>
-        </li>
-
-        <li><a href="#friend" class="addons">我的好友</a>
-            <span class="arrow"></span>
-            <ul id="friend">
-                <li><a href="<?php echo U('Friend/showList');?>">好友列表</a></li>
-                <li><a href="<?php echo U('Friend/add');?>">添加好友</a></li>
-            </ul>
-        </li>
-        <li><a href="#mytask" class="error">我的任务</a>
-            <span class="arrow"></span>
-            <ul id="mytask">
-                <li><a href="<?php echo U('Membertask/showList');?>">任务列表</a></li>
-                <!--<li><a href="<?php echo U('Membertask/add');?>">添加好友</a></li>-->
-            </ul>
-        </li>
-
 
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--leftmenu-->
+</div><!--商城左侧栏-->
 </body>
-</html>  <!--包含左侧栏文件-->
-
+</html>   <!--包含商城左侧栏文件-->
+        
     <div class="centercontent tables">
-
+    
         <div class="pageheader notab">
-            <h1 class="pagetitle">任务列表</h1>
-
+            <h1 class="pagetitle">求购列表</h1>
+            <span class="pagedesc">This is a sample description of a page</span>
+            
         </div><!--pageheader-->
-
+        
         <div id="contentwrapper" class="contentwrapper">
 
 
@@ -233,45 +201,38 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">ID</th>
-                    <th class="head1">用户id</th>
-                    <th class="head0">任务id</th>
-                    <th class="head0">任务奖励物品</th>
-                    <th class="head0">物品奖励数量</th>
-                    <th class="head0">用户完成任务阶段</th>
-                    <th class="head0">完成时间</th>
-                    <th class="head1">操作</th>
+                    <th class="head0">求购ID</th>
+                    <th class="head1">求购者ID</th>
+                    <th class="head0">商品ID</th>
+                    <th class="head1">数量</th>
+                    <th class="head0">价格</th>
+                    <th class="head1">状态</th>
+                    <th class="head0">添加时间</th>
+                    <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["id"]); ?></td>
+                        <td><?php echo ($vol["gwid"]); ?></td>
                         <td><?php echo ($vol["uid"]); ?></td>
-                        <td><?php echo ($vol["task_id"]); ?></td>
-                        <td><?php if($vol["reward_type"] == 1): ?>积分
-                            <?php elseif($vol["reward_type"] ==2): ?>P豆
-                            <?php elseif($vol["reward_type"] ==3): ?>V豆
-                            <?php else: ?>&nbsp<?php endif; ?>
-                        </td>
-                        <!--<td><?php echo ($vol["reward_type"]); ?></td>-->
-                        <td><?php echo ($vol["reward_num"]); ?></td>
-                        <td><?php echo ($vol["user_task_stage"]); ?></td>
-                        <td><?php echo ($vol["ctime"]); ?></td>
-                        <td class="center" url="/index.php/Admin/Membertask"><a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="del">删除</a></td>
+                        <td><?php echo ($vol["gid"]); ?></td>
+                        <td><?php echo ($vol["num"]); ?></td>
+                        <td><?php echo ($vol["price"]); ?></td>
+                        <td><?php echo ($vol["status"]); ?></td>
+                        <td><?php echo (date("Y-m-d H:i:s",$vol["addtime"])); ?></td>
+                        <td class="center" url="/index.php/Admin/Goodswant"><a href="javascript:;" data-id="<?php echo ($vol["gwid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gwid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
 
         </div><!--contentwrapper-->
-
+        
 	</div><!-- centercontent -->
 
+    
 </div><!--bodywrapper-->
 
 </body>
@@ -280,9 +241,9 @@
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
-        //提交或清空方法
+        //默认选中效果，箭头指向
         $(function(){
-            $(".headermenu>li").eq(7).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
 </script>
