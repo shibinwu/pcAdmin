@@ -92,7 +92,7 @@
                             <else/>
                             {$vol.mtime|date="Y-m-d H:i:s",###}</if>
                         </td>
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
+                        <td class="center" url="__CONTROLLER__"><a href="{:U('Rbac/reset')}?id={$vol.uid}">重置密码</a>&nbsp;&nbsp;<a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>

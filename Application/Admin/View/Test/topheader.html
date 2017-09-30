@@ -44,9 +44,9 @@
             <div class="avatar">
                 <a href="">
                     <if condition = "$Think.session.picurl eq ''">
-                        <img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                        <img src="__PUBLIC__/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <else/>
-                        <img src="{$Think.session.picurl}" width="80px" alt="" />
+                        <img src="{$Think.session.picurl}" width="80px" height="100px" alt="" />
                     </if>
                 </a>
                 <div class="changetheme">
@@ -62,8 +62,8 @@
                 <h4>{$Think.session.nickname}</h4>
                 <span class="email">{$Think.session.email}</span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="{:U('User/edit')}?id={$Think.session.uid}">账号设置</a></li>
+                    <li><a href="{:U('Rbac/reset')}?id={$Think.session.uid}">密码重置</a></li>
+                    <li><a href="{:U('Rbac/edit')}?id={$Think.session.uid}">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>

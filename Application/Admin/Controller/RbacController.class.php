@@ -224,7 +224,7 @@ class RbacController extends CommonController{
 
     #edit方法
     public function edit(){
-        #接收数据s
+        #接收数据
         $id = I('get.id');
 
 //        dump($id);die;
@@ -279,7 +279,6 @@ class RbacController extends CommonController{
 //        dump($post);die;
         #添加mtime字段
         $post['mtime'] = time();
-//        dump($post);die;
         $uid = M('User')->save($post);
         $rold = array();
         if ($uid) {
@@ -289,13 +288,26 @@ class RbacController extends CommonController{
                     'user_id' => $post['uid']
                 );
             }
-
-//            dump($role);
-//            die;
             M('role_user')->save($role);
             $this->success('添加成功', U('user_list', '', ''));
         } else {
             $this->error('添加失败');
+        }
+    }
+
+    #密码重置
+    public function reset(){
+        #接受数据
+        $id = I('get.id');
+        #实例化模型
+        $model = M('User');
+        #查询操作
+        $data = $model->find($id);
+        $data['password']  =  'e10adc3949ba59abbe56e057f20f883e';
+        if(M('User')->save($data)) {
+            $this->success('密码重置成功',U('user_list','',''));
+        } else {
+            $this->error('密码重置失败');
         }
     }
 }
