@@ -58,7 +58,8 @@ class RaceController extends CommonController{
 			$post['join_time'] = $time3;
 		}
 
-//		dump($post);die;
+
+		dump($post);die;
 		#添加addtime字段
 		$post['ctime'] = time();
 		#写入数据表
@@ -124,8 +125,10 @@ class RaceController extends CommonController{
 	 	$model = M('Race');
 	 	#查询操作
 	 	$data = $model -> find($id);
+		$racetime = explode('-',$data['race_time']);
 	 	#传递给模版
 	 	$this -> assign('data',$data);
+	 	$this -> assign('racetime',$racetime);
 	 	#展示模版
 	 	$this -> display();
 	 }
@@ -134,33 +137,50 @@ class RaceController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
+		 #转换比赛时间和加入时间为时间戳
+		 $time1 = strtotime($post['race_start_time']);
+		 $time2 = strtotime($post['race_end_time']);
+		 if($time2){
+			 $post['race_time'] = $time1 . "-" . $time2;
+		 }else{
+			 $post['race_time'] = $time1;
+		 }
+
+		 $time3 = strtotime($post['join_start_time']);
+		 $time4 = strtotime($post['join_end_time']);
+		 if($time4){
+			 $post['join_time'] = $time3 . "-" . $time4;
+		 }else{
+			 $post['join_time'] = $time3;
+		 }
 //	 	dump($post);die;
 	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
+	 	if($_FILES['picurl']['size'] > 0){
+	 		#配置
+	 		$cfg = array(
+	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
+	 			);
+	 		#实例化
+	 		$upload = new \Think\Upload($cfg);
+	 		#上传操作
+	 		$info = $upload -> uploadOne($_FILES['picurl']);
+	 		#判断上传结果
+	 		if($info){
+	 			#上传成功
+	 			#filepath字段
+	 			$post['picurl'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+	 			#filename字段
+	 			$post['filename'] = $info['savename'];
+	 			#hasfile字段
+	 			$post['hasfile'] = 1;
+	 			// $yuanshi = $model -> find($post['id']);
+	 			// $path = WORKING_PATH . $yuanshi['filepath'];
+	 			// unlink($path);
+	 		}
+	 	}
 //		 $post['ctime'] = time();
-		 $post['mtime'] = time();
+	    $post['mtime'] = time();
+		$post['contact'] = substr($post['contact'],3);
 //		 dump($post);die;
 	 	#写入到数据表
 	 	$model = M('Race');
