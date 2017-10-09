@@ -171,7 +171,7 @@ class RbacController extends CommonController{
                 );
             }
 
-            dump($role);die;
+//            dump($role);die;
             M('role_user')->addAll($role);
             $this->success('添加成功', U('user_list','',''));
         } else {
