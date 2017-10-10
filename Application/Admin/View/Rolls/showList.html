@@ -30,7 +30,7 @@
 
     <include file = 'Test/header' />   <!--包含导航文件-->
 
-    <include file = 'Test/leftindex' />  <!--包含左侧栏文件-->
+    <include file = 'Test/leftactive' />  <!--包含左侧栏文件-->
 
     <div class="centercontent tables">
 
@@ -108,7 +108,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(6).addClass("current").siblings().removeClass("current")
         });
     });
 </script>
