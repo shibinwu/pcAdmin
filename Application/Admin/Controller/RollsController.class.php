@@ -52,15 +52,15 @@ class RollsController extends CommonController{
 		#添加addtime字段
 		 $post['ctime'] = time();
 		#写入数据表
-		$model = M('Goods');
+		$model = M('Rolls');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加商品成功',U('showList'),3);
+			$this -> success('添加活动成功',U('showList'),3);
 		}else{
 			#失败
-			$this -> error('添加商品失败',U('add'),3);
+			$this -> error('添加活动失败',U('add'),3);
 		}
 	}
 
