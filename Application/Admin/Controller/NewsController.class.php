@@ -168,15 +168,16 @@ class NewsController extends CommonController{
 	 		#实例化
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
-	 		$info = $upload -> uploadOne($_FILES['img']);
-//			dump($info);die;
+//	 		$info = $upload -> uploadOne($_FILES['img']);
+//			var_dump($_FILES['img']);die();
 	 		#判断上传结果
-	 		if($info){
+	 		if($_FILES['img']){
 	 			#上传成功
 	 			#filepath字段
-	 			$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+//	 			$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+	 			$post['img'] = UPLOAD_ROOT_PATH . $_FILES['img']['name'];
 	 			#filename字段
-	 			$post['filename'] = $info['savename'];
+//	 			$post['filename'] = $info['savename'];
 	 			#hasfile字段
 	 			$post['hasfile'] = 1;
 //	 			// $yuanshi = $model -> find($post['id']);
