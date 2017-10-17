@@ -24,7 +24,8 @@ define('APP_PATH','./Application/');
 define('BUILD_DIR_SECURE', false);
 
 #定义上传路径的常量
-define('WORKING_PATH',str_replace('\\','/',__DIR__));
+//define('WORKING_PATH',str_replace('\\','/',__DIR__));
+define('WORKING_PATH','../../../t.codechm.com/pc/public/');
 //define('UPLOAD_ROOT_PATH', '/Public/Upload/');
 define('UPLOAD_ROOT_PATH', './upload/');
 
