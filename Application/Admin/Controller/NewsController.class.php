@@ -25,29 +25,29 @@ class NewsController extends CommonController{
 		$post = I('post.');
 		dump($post);die;
 		#获取文件的数据
-//		 $file = $_FILES['icon'];
-////		dump($_FILES);die;
-//		#配置上传信息
-//		 $cfg = array(
-//		 		//保存根路径
-//		 		'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
-//		 	);
-//		#实例化上传类
-//		 $uplaod = new \Think\Upload($cfg);
-//		#上传操作
-//		 if($file['size'] > 0){
-//		 	$info = $uplaod -> uploadOne($file);//一维数组
-////			  dump($info);die;
-//		 	#判断返回结果
-//		 	if($info){
-//		 		#hasfile字段
-//		 		$post['hasfile'] = 1;
-//		 		#filename字段
-//		 		$post['filename'] = $info['savename'];
-//		 		#filepath字段
-//		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//		 	}
-//		 }
+		 $file = $_FILES['img'];
+//		dump($_FILES);die;
+		#配置上传信息
+		 $cfg = array(
+		 		//保存根路径
+		 		'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
+		 	);
+		#实例化上传类
+		 $uplaod = new \Think\Upload($cfg);
+		#上传操作
+		 if($file['size'] > 0){
+		 	$info = $uplaod -> uploadOne($file);//一维数组
+//			  dump($info);die;
+		 	#判断返回结果
+		 	if($info){
+		 		#hasfile字段
+		 		$post['hasfile'] = 1;
+		 		#filename字段
+		 		$post['filename'] = $info['savename'];
+		 		#filepath字段
+		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+		 	}
+		 }
 		// dump($post);die;
 		#添加addtime字段
 		 $post['ctime'] = time();
@@ -160,7 +160,7 @@ class NewsController extends CommonController{
 //	 	dump($post);die;
 	 	#判断是否有附件上传
 //		 dump($_FILES['icon']);die;
-	 	if($_FILES['icon']['size'] > 0){
+	 	if($_FILES['img']['size'] > 0){
 	 		#配置
 	 		$cfg = array(
 	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
@@ -168,13 +168,13 @@ class NewsController extends CommonController{
 	 		#实例化
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
-	 		$info = $upload -> uploadOne($_FILES['icon']);
+	 		$info = $upload -> uploadOne($_FILES['img']);
 //			dump($info);die;
 	 		#判断上传结果
 	 		if($info){
 	 			#上传成功
 	 			#filepath字段
-	 			$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+	 			$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 	 			#filename字段
 	 			$post['filename'] = $info['savename'];
 	 			#hasfile字段
