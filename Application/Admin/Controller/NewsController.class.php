@@ -176,6 +176,7 @@ class NewsController extends CommonController{
 	 			#filepath字段
 //	 			$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 	 			$post['img'] = UPLOAD_ROOT_PATH . $_FILES['img']['name'];
+	 			$post['img'] = substr($post['img'],0,strlen($post['img'])-4).'.png';
 	 			#filename字段
 //	 			$post['filename'] = $info['savename'];
 	 			#hasfile字段
