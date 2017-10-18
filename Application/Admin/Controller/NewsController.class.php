@@ -165,6 +165,7 @@ class NewsController extends CommonController{
 	 		$cfg = array(
 	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
 	 			);
+//			dump($cfg);die();
 	 		#实例化
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
@@ -176,6 +177,7 @@ class NewsController extends CommonController{
 	 			#filepath字段
 //	 			$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 	 			$post['img'] = UPLOAD_ROOT_PATH . $_FILES['img']['name'];
+//				dump($post['img']);die();
 	 			$post['img'] = substr($post['img'],0,strlen($post['img'])-4).'.png';
 	 			#filename字段
 //	 			$post['filename'] = $info['savename'];
