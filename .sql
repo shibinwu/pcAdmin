@@ -163,3 +163,6 @@ ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '逻辑删除字段' A
 2017/10/18  武建银
 ALTER TABLE `guess_team`
 ADD COLUMN `gtType`  varchar(56) NULL COMMENT '竞猜队伍类型，所属游戏' AFTER `gtPic`;
+
+ALTER TABLE `guess_team`
+MODIFY COLUMN `gtId`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜团队Id' FIRST ;
