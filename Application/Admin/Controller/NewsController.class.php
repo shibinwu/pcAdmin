@@ -166,12 +166,13 @@ class NewsController extends CommonController{
 			 //保存根路径
 				 'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
 		 );
+//		 dump($cfg);die();
 		 #实例化上传类
 		 $uplaod = new \Think\Upload($cfg);
 		 #上传操作
 		 if($file['size'] > 0){
 			 $info = $uplaod -> uploadOne($file);//一维数组
-//			  dump($info);die;
+			  dump($info);die;
 			 #判断返回结果
 			 if($info){
 				 #hasfile字段
