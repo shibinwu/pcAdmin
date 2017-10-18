@@ -162,7 +162,7 @@ class GuessteamController extends CommonController
         $post = I('post.');
 //	 	dump($post);die;
         #判断是否有附件上传
-        if ($_FILES['gtPic']['size'] > 0) {
+        if ($_FILES['gtpic']['size'] > 0) {
             #配置
             $cfg = array(
                 'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
@@ -170,7 +170,7 @@ class GuessteamController extends CommonController
             #实例化
             $upload = new \Think\Upload($cfg);
             #上传操作
-            $info = $upload->uploadOne($_FILES['gtPic']);
+            $info = $upload->uploadOne($_FILES['gtpic']);
             #判断上传结果
             if ($info) {
                 #上传成功
