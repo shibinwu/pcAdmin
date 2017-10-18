@@ -185,6 +185,7 @@ class GuessteamController extends CommonController
                 // unlink($path);
             }
         }
+        $post['mtime'] = time();
         #写入到数据表
         $model = M('Guess_team');
         if ($post['gtId']) {
