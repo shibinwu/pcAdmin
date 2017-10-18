@@ -23,7 +23,6 @@ class NewsController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-		dump($post);die;
 		#获取文件的数据
 		 $file = $_FILES['img'];
 //		dump($_FILES);die;
