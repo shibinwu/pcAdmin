@@ -148,7 +148,7 @@ class GuessteamController extends CommonController
         #查询操作
         $data = $model->find($id);
 
-        $data['gtpic'] = 'http://t.codechm.com'.WORKING_PATH . $data['gtpic'];
+        $data['gtpic'] = 'http://t.codechm.com'. $data['gtpic'];
         #传递给模版
         $this->assign('data', $data);
         #展示模版
