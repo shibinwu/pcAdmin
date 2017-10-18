@@ -36,6 +36,7 @@ class NewsController extends CommonController{
 		#上传操作
 		 if($file['size'] > 0){
 		 	$info = $uplaod -> uploadOne($file);//一维数组
+
 //			  dump($info);die;
 		 	#判断返回结果
 		 	if($info){
