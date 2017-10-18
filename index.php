@@ -25,7 +25,7 @@ define('BUILD_DIR_SECURE', false);
 
 #定义上传路径的常量
 //define('WORKING_PATH',str_replace('\\','/',__DIR__));
-define('WORKING_PATH','/wwwroot/t.codechm.com/pc/public/');
+define('WORKING_PATH','/www/wwwroot/t.codechm.com/pc/public/');
 //define('WORKING_PATH','/t.codechm.com/pc/public/');
 //define('WORKING_PATH',str_ireplace(str_replace("/","\\",$_SERVER['PHP_SELF']),'',__FILE__)."\\");
 //define('UPLOAD_ROOT_PATH', '/Public/Upload/');
