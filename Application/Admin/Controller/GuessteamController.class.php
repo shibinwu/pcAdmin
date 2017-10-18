@@ -9,6 +9,13 @@ class GuessteamController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
+
+		#实例化模型
+		$model = M('Goods_attr');
+		#查询属性信息
+		$data = $model -> select();
+		#传递给模板
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -19,7 +26,7 @@ class GuessteamController extends CommonController{
 		$post = I('post.');
 //		dump($post);die;
 		#获取文件的数据
-		 $file = $_FILES['file'];
+		 $file = $_FILES['gtPic'];
 		#配置上传信息
 		 $cfg = array(
 		 		//保存根路径
@@ -37,22 +44,22 @@ class GuessteamController extends CommonController{
 		 		#filename字段
 		 		$post['filename'] = $info['savename'];
 		 		#filepath字段
-		 		$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+		 		$post['gtPic'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
 //		dump($post);die;
 		#添加addtime字段
-		// $post['addtime'] = time();
+		 $post['ctime'] = time();
 		#写入数据表
 		$model = M('Guess_team');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加赛事成功',U('showList'),3);
+			$this -> success('添加竞猜队伍成功',U('showList'),1);
 		}else{
 			#失败
-			$this -> error('添加赛事失败',U('add'),3);
+			$this -> error('添加精彩队伍失败',U('add'),1);
 		}
 	}
 

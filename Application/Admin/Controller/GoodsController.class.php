@@ -26,7 +26,7 @@ class GoodsController extends CommonController{
 //		dump($post);die;
 		#获取文件的数据
 		 $file = $_FILES['icon'];
-//		dump($_FILES);die;
+//		dump($file);die;
 		#配置上传信息
 		 $cfg = array(
 		 		//保存根路径
