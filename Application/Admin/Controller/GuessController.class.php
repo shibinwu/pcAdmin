@@ -9,6 +9,13 @@ class GuessController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
+		#实例化模型
+		$model = M('Guess_team');
+		#查询属性信息
+		$data = $model -> select();
+//		var_dump($data);die();
+		#传递给模板
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -17,42 +24,24 @@ class GuessController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-//		dump($post);die;
-		#获取文件的数据
-		 $file = $_FILES['file'];
-		#配置上传信息
-		 $cfg = array(
-		 		//保存根路径
-		 		'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
-		 	);
-		#实例化上传类
-		 $uplaod = new \Think\Upload($cfg);
-		#上传操作
-		 if($file['size'] > 0){
-		 	$info = $uplaod -> uploadOne($file);//一维数组
-		 	#判断返回结果
-		 	if($info){
-		 		#hasfile字段
-		 		$post['hasfile'] = 1;
-		 		#filename字段
-		 		$post['filename'] = $info['savename'];
-		 		#filepath字段
-		 		$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-		 	}
-		 }
-//		dump($post);die;
+
 		#添加addtime字段
-		// $post['addtime'] = time();
+		 $post['ctime'] = time();
+
+
+		$time = strtotime($post['starttime']);
+		$post['starttime'] = $time;
+
 		#写入数据表
 		$model = M('Guess');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加赛事成功',U('showList'),3);
+			$this -> success('添加竞猜赛事成功',U('showList'),1);
 		}else{
 			#失败
-			$this -> error('添加赛事失败',U('add'),3);
+			$this -> error('添加竞猜赛事失败',U('add'),1);
 		}
 	}
 

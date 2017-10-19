@@ -166,3 +166,7 @@ ADD COLUMN `gtType`  varchar(56) NULL COMMENT '竞猜队伍类型，所属游戏
 
 ALTER TABLE `guess_team`
 MODIFY COLUMN `gtId`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜团队Id' FIRST ;
+
+ALTER TABLE `guess`
+MODIFY COLUMN `g_id`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜id' FIRST ,
+MODIFY COLUMN `status`  int(2) NULL DEFAULT 1 COMMENT '竞猜状态，1为未开始，2为进行中，3为结束' AFTER `type`;
