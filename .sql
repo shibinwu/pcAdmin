@@ -170,3 +170,10 @@ MODIFY COLUMN `gtId`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜团队Id' F
 ALTER TABLE `guess`
 MODIFY COLUMN `g_id`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜id' FIRST ,
 MODIFY COLUMN `status`  int(2) NULL DEFAULT 1 COMMENT '竞猜状态，1为未开始，2为进行中，3为结束' AFTER `type`;
+
+ALTER TABLE `guess_data`
+MODIFY COLUMN `dgid`  int(11) NOT NULL AUTO_INCREMENT COMMENT '竞猜数据id' FIRST ,
+MODIFY COLUMN `status`  tinyint(2) NULL DEFAULT 1 COMMENT '比赛当前局状态，1未开始，2进行中，3结束' AFTER `rate`;
+
+ALTER TABLE `guess_data`
+ADD COLUMN `start_time`  int(2) NULL AFTER `rate`;
