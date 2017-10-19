@@ -29,7 +29,11 @@ class GuessdataController extends CommonController{
 		$post['stime'] = $time1;
 		#添加addtime字段
 		$post['ctime'] = time();
-//		var_dump($post);die();
+		$gid = $post['gid'];
+		$guessMolde = M("Guess");
+		$guess = $guessMolde->find($gid);
+		$post['ltid'] = $guess['g_leftid'];
+		$post['rtid'] = $guess['g_rightid'];
 		#写入数据表
 		$model = M('Guess_data');
 		$rst = $model -> add($post);
@@ -81,7 +85,6 @@ class GuessdataController extends CommonController{
             $this -> error('删除失败',U('showList'),3);
         }
     }
-
     #edit方法
 	 public function edit(){
 	 	#接收数据
