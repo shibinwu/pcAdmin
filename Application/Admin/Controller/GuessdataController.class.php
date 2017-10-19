@@ -25,10 +25,11 @@ class GuessdataController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-		$time1 = strtotime($post['start_time']);
-		$post['start_time'] = $time1;
+		$time1 = strtotime($post['stime']);
+		$post['stime'] = $time1;
 		#添加addtime字段
 		$post['ctime'] = time();
+//		var_dump($post);die();
 		#写入数据表
 		$model = M('Guess_data');
 		$rst = $model -> add($post);
@@ -107,9 +108,10 @@ class GuessdataController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-	 	$post['start_time'] = strtotime($post['start_time']);
+	 	$post['stime'] = strtotime($post['stime']);
 	 	#添加mtime字段
 	 	$post['mtime'] = time();
+//		 dump($post);die();
 	 	#写入到数据表
 	 	$model = M('Guess_data');
 		 if($post['dgid']){
