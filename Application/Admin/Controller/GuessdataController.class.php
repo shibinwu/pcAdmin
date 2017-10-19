@@ -12,9 +12,9 @@ class GuessdataController extends CommonController{
 		$model1 = M('Guess');
 		$model2 = M('Guess_team');
 		#查询属性信息
-		$data1 = $model1 -> select();
-		$data2 = $model2 -> select();
-//		var_dump($data);die();
+		$data1 = $model1 -> where('statu = 1')->select();
+		$data2 = $model2 -> where('statu = 1') -> select();
+//		var_dump($data1);die();
 		#传递给模板
 		$this -> assign('data1',$data1);
 		$this -> assign('data2',$data2);
@@ -93,8 +93,8 @@ class GuessdataController extends CommonController{
 	 	$data = $model -> find($id);
 //		 dump($data);die();
 	 	$data1 = $model1 -> select();
-		 $data2 = $model2 -> select();
-//		 dump($data);
+		 $data2 = $model2 -> where('statu = 1')->select() ;
+//		 dump($data2);die();
 	 	#传递给模版
 	 	$this -> assign('data',$data);
 	 	$this -> assign('data1',$data1);
