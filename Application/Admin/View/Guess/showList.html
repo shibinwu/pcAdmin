@@ -49,15 +49,20 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">比赛名称</th>
-                    <th class="head1">左边队伍ID</th>
-                    <th class="head0">右边队伍ID</th>
+                    <th class="head1">左边队伍</th>
+                    <th class="head0">右边队伍</th>
                     <th class="head1">比赛机制</th>
                     <th class="head0">比赛类型</th>
                     <th class="head1">竞猜类型</th>
+                    <th class="head0">比赛开始时间</th>
                     <th class="head0">竞猜状态</th>
                     <th class="head0">操作</th>
                 </tr>
@@ -79,6 +84,7 @@
                             <else/>体育赛事</if>
                         </td>
                         <td><if condition='$vol.type == 1'>猜输赢<else/>让分局</if></td>
+                        <td>{$vol[starttime] | date='Y-m-d H:i:s', ###}</td>
                         <td><if condition='$vol.status == 1'>未开始
                             <elseif condition='$vol.status ==2'/>进行中
                             <else/>已结束</if>

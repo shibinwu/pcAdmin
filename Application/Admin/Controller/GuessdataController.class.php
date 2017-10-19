@@ -81,19 +81,20 @@ class GuessdataController extends CommonController{
         }
     }
 
-
     #edit方法
 	 public function edit(){
 	 	#接收数据
 	 	$id = I('get.id');
-
 	 	#实例化模型
 	 	$model = M('Guess_data');
+	 	$model1 = M('Gusee_team');
 	 	#查询操作
 	 	$data = $model -> find($id);
+	 	$data1 = $model1 -> select();
 //		 dump($data);
 	 	#传递给模版
 	 	$this -> assign('data',$data);
+	 	$this -> assign('data1',$data1);
 	 	#展示模版
 	 	$this -> display();
 	 }

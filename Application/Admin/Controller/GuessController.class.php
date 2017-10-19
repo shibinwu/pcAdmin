@@ -49,41 +49,17 @@ class GuessController extends CommonController{
 	public function showList(){
 		#获取数据
 		$model = M('Guess');
+		$model1 = M('Guess_team');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
+		$data1 = $model1 -> select();
+//		dump($data1);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
+		$this -> assign('data1',$data1);
 		#展示模版
 		$this -> display();
 	}
-
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){
@@ -111,19 +87,20 @@ class GuessController extends CommonController{
         }
     }
 
-
     #edit方法
 	 public function edit(){
 	 	#接收数据
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Guess');
-	 	#查询操作
-	 	$data = $model -> find($id);
-//		 dump($data);
-	 	#传递给模版
-	 	$this -> assign('data',$data);
+		$model = M('Guess');
+	 	$model1 = M('Guess_team');
+		#查询操作
+		$data = $model -> find($id);
+	 	$data1 = $model1 -> select();
+		#传递给模版
+		$this -> assign('data',$data);
+	 	$this -> assign('data1',$data1);
 	 	#展示模版
 	 	$this -> display();
 	 }
@@ -132,31 +109,8 @@ class GuessController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
+	 	$post['starttime'] = strtotime($post['starttime']);
 //	 	dump($post);die;
-	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
 	 	#写入到数据表
 	 	$model = M('Guess');
 		 if($post['g_id']){
