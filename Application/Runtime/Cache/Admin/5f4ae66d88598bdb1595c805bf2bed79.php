@@ -70,9 +70,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -87,8 +87,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -152,7 +152,7 @@
             <span class="arrow"></span>
             <ul id="rolls">
                 <li><a href="<?php echo U('Rolls/showList');?>">活动列表</a></li>
-                <!--<li><a href="wizard.html">添加活动</a></li>-->
+                <li><a href="<?php echo U('Rolls/add');?>">添加活动</a></li>
             </ul>
         </li>
         <li><a href="#formsub" class="tables">roll饰品</a>
@@ -163,13 +163,6 @@
             </ul>
         </li>
 
-        <li><a href="#formsub" class="addons">积分管理</a>
-            <span class="arrow"></span>
-            <ul id="formsub">
-                <li><a href="forms.html">积分列表</a></li>
-                <li><a href="wizard.html">添加积分</a></li>
-            </ul>
-        </li>
 
     </ul>
     <a class="togglemenu"></a>

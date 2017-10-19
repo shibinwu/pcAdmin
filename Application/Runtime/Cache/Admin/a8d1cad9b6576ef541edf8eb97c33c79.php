@@ -66,9 +66,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -83,8 +83,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -140,47 +140,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>商城左侧栏</title>
 </head>
 <body>
-    <div class="vernav2 iconmenu">
+<div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#user" class="error">用户管理</a>
+        <li><a href="#rolls" class="support">活动管理</a>
             <span class="arrow"></span>
-            <ul id="user">
-                <li><a href="<?php echo U('Rbac/user_list');?>">用户列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_user');?>">添加用户</a></li>
+            <ul id="rolls">
+                <li><a href="<?php echo U('Rolls/showList');?>">活动列表</a></li>
+                <li><a href="<?php echo U('Rolls/add');?>">添加活动</a></li>
+            </ul>
+        </li>
+        <li><a href="#formsub" class="tables">roll饰品</a>
+            <span class="arrow"></span>
+            <ul id="formsub">
+                <li><a href="forms.html">饰品列表</a></li>
+                <li><a href="wizard.html">添加饰品</a></li>
             </ul>
         </li>
 
-        <li><a href="#role" class="addons">角色管理</a>
-            <span class="arrow"></span>
-            <ul id="role">
-                <li><a href="<?php echo U('Rbac/role_list');?>">角色列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_role');?>">添加角色</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#node" class="tables">节点管理</a>
-            <span class="arrow"></span>
-            <ul id="node">
-                <li><a href="<?php echo U('Rbac/node_list');?>">节点列表</a></li>
-                <li><a href="<?php echo U('Rbac/add_node');?>">添加模块</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#banner" class="gallery">banner管理</a>
-            <span class="arrow"></span>
-            <ul id="banner">
-                <li><a href="<?php echo U('Banner/showList');?>">列表展示</a></li>
-                <li><a href="<?php echo U('Banner/add');?>">添加banner</a></li>
-            </ul>
-        </li>
 
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
-</div><!--首页左侧栏-->
+</div><!--活动左侧栏-->
 </body>
 </html>  <!--包含左侧栏文件-->
 
@@ -258,7 +242,7 @@
     jQuery(document).ready(function($){
         //提交或清空方法
         $(function(){
-            $(".headermenu>li").eq(0).addClass("current").siblings().removeClass("current")
+            $(".headermenu>li").eq(6).addClass("current").siblings().removeClass("current")
         });
     });
 </script>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<link rel="stylesheet" href="/Public/Admin/css/style.blueline.css">-->
 </head>
 <body>
     <div class="topheader">
@@ -38,9 +39,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -55,8 +56,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -70,20 +71,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/Public/Admin/css/font_424100_bdb2xt0k59g4x6r/iconfont.css">
 </head>
 <body>
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>首页</a></li>
-        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="iconfont icon-xitongguanli"></span>系统管理</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="iconfont icon-duizhan"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="iconfont icon-dashuju"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="iconfont icon-jingcai"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="iconfont icon-store"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="iconfont icon-zixun"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="iconfont icon-huodongzhongxin"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="iconfont icon-wode"></span>会员管理</a></li>
+        <!--<li><a href="<?php echo U('Index/task');?>"><span class="iconfont icon-chart"></span>任务管理</a></li>-->
     </ul>
 
 
@@ -111,7 +113,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#news" class="editor">新闻中心</a>
+        <li><a href="#news" class="calendar">新闻中心</a>
             <span class="arrow"></span>
             <ul id="news">
                 <li><a href="<?php echo U('News/showList');?>">新闻列表</a></li>
@@ -120,7 +122,7 @@
         </li>
 
 
-        <li><a href="#newstype" class="addons">新闻类型</a>
+        <li><a href="#newstype" class="widgets">新闻类型</a>
             <span class="arrow"></span>
             <ul id="newstype">
                 <li><a href="<?php echo U('Newstype/showList');?>">类型列表</a></li>
@@ -128,9 +130,17 @@
 
             </ul>
         </li>
+
+        <li><a href="#newsmessage" class="editor">新闻评论</a>
+            <span class="arrow"></span>
+            <ul id="newsmessage">
+                <li><a href="<?php echo U('Newsmessage/showList');?>">评论列表</a></li>
+                <li><a href="<?php echo U('Newsmessage/add');?>">添加评论</a></li>
+            </ul>
+        </li>
     </ul>
     <a class="togglemenu"></a>
     <br /><br />
 </div><!--新闻中心左侧栏文件-->
 </body>
-</html>  <!--包含新闻中心左侧栏文件-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">新闻编辑</h1>            <span class="pagedesc">这是关于CSGO的世锦赛，保证以下信息的真实性</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>新闻详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="<?php echo U('editOk');?>" method="post">                    	                        <p>                        	<label>新闻标题</label>                            <span class="field"><input type="text" name="title" value="<?php echo ($data["title"]); ?>" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">                        <p>                            <label>用户ID</label>                            <span class="field"><input type="text" name="user_id" class="smallinput" value="<?php echo (session('uid')); ?>" readonly="readonly"/></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>新闻类型</label>                            <span class="formwrapper">                                <select data-placeholder="选择任务类型" name="type_id" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <?php if(is_array($datas)): $i = 0; $__LIST__ = $datas;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["id"]); ?>" <?php if($data[id]==$vol[id]): ?>selected="selected"<?php endif; ?>><?php echo ($vol["type_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>                                </select>                            </span>                        </p>                        <p>                            <label>标签</label>                            <span class="field"><input type="text" name="tag" value="<?php echo ($data["tag"]); ?>" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>新闻内容：</label>                            <span class="field" ><script name='contents'  cols="80" rows="5" class="longinput" type="text/plain" id="myEditor" style="width:666px;height:240px;">                            </script></span>                        </p>                        <!--编辑器内容用Js展示，用隐藏域传给JS-->                        <input type="hidden" value="<?php echo ($data["contents"]); ?>" id="inputcontent"/>                        <p class="stdformbutton">                        	<button class="submit radius2" id="btnSubmit">确认提交</button>                            <input type="reset" class="reset radius2" id="btnReset" value="刷新列表" />                        </p>                                                                    </form>                 </div><!--subcontent-->                </div><!--contentwrapper-->        	</div><!-- centercontent -->        </div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //实例化编辑器        var ue = UE.getEditor('myEditor');        //对编辑器的操作最好在编辑器ready之后再做        ue.ready(function() {            //设置编辑器的内容            var content = $("#inputcontent").val();            ue.setContent(content);        });        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){//                window.location.href = "/index.php/Admin/Race/showlist";                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")        });    });</script></html>
+</html>  <!--包含新闻中心左侧栏文件-->            <div class="centercontent">            <div class="pageheader">            <h1 class="pagetitle">新闻编辑</h1>            <span class="pagedesc">这是关于CSGO的世锦赛，保证以下信息的真实性</span>        </div><!--pageheader-->                <div id="contentwrapper" class="contentwrapper">        	        	<div id="basicform" class="subcontent">                                                    <div class="contenttitle2">                        <h3>新闻详情</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="<?php echo U('editOk');?>" method="post" enctype="multipart/form-data">                    	                        <p>                        	<label>新闻标题</label>                            <span class="field"><input type="text" name="title" value="<?php echo ($data["title"]); ?>" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">                        <p>                            <label>用户ID</label>                            <span class="field"><input type="text" name="user_id" class="smallinput" value="<?php echo (session('uid')); ?>" readonly="readonly"/></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>新闻类型</label>                            <span class="formwrapper">                                <select data-placeholder="选择任务类型" name="type_id" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value=""></option>                                    <?php if(is_array($datas)): $i = 0; $__LIST__ = $datas;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["id"]); ?>" <?php if($data[type_id]==$vol[id]): ?>selected="selected"<?php endif; ?>><?php echo ($vol["type_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>                                </select>                            </span>                        </p>                        <p>                            <label>标签</label>                            <span class="field"><input type="text" name="tag" value="<?php echo ($data["tag"]); ?>" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <?php if($data["img"] == ''): ?><p>                                <label>上传图片</label>                                <span class="field">                                    <input type="file" name="img" />                                </span>                            </p>                            <?php else: ?>                            <p>                                <label>新闻图片</label>                                <span class="field">                                    <img src="<?php echo ($data["img"]); ?>" alt="" height="100px"/>                                    <!--<input type="file" name="icon" />-->                                </span>                            </p>                            <p>                                <label>更换图片</label>                                <span class="field">                                <!--<img src="<?php echo ($data["icon"]); ?>" alt=""/>-->                                    <input type="file" name="img" />                                </span>                            </p><?php endif; ?>                        <p>                            <label>新闻内容：</label>                            <span class="field" ><script name='contents'  cols="80" rows="5" class="longinput" type="text/plain" id="myEditor" style="width:666px;height:240px;">                            </script></span>                        </p>                        <!--编辑器内容用Js展示，用隐藏域传给JS-->                        <input type="hidden" value="<?php echo ($data["contents"]); ?>" id="inputcontent"/>                        <p class="stdformbutton">                        	<button class="submit radius2" id="btnSubmit">确认提交</button>                            <input type="reset" class="reset radius2" id="btnReset" value="刷新列表" />                        </p>                                                                    </form>                 </div><!--subcontent-->                </div><!--contentwrapper-->        	</div><!-- centercontent -->        </div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //实例化编辑器        var ue = UE.getEditor('myEditor');        //对编辑器的操作最好在编辑器ready之后再做        ue.ready(function() {            //设置编辑器的内容            var content = $("#inputcontent").val();            ue.setContent(content);        });        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){//                window.location.href = "/index.php/Admin/Race/showlist";                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(5).addClass("current").siblings().removeClass("current")        });    });</script></html>

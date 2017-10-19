@@ -66,9 +66,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -83,8 +83,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -244,6 +244,7 @@
                     <th class="head0">P豆</th>
                     <th class="head0">V豆</th>
                     <th class="head0">积分</th>
+                    <th class="head0">经验值</th>
                     <th class="head0">来源</th>
                     <th class="head0">资产状态</th>
                     <th class="head1">创建时间</th>
@@ -258,6 +259,7 @@
                         <td><?php echo ($vol["property_p"]); ?></td>
                         <td><?php echo ($vol["property_v"]); ?></td>
                         <td><?php echo ($vol["score"]); ?></td>
+                        <td><?php echo ($vol["express_num"]); ?></td>
                         <td><?php if($vol["type"] == 1): ?>签到
                             <?php elseif($vol["type"] ==2): ?>充值
                             <?php else: ?>&nbsp<?php endif; ?>

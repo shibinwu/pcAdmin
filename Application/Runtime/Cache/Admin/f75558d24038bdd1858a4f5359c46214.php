@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<link rel="stylesheet" href="/Public/Admin/css/style.blueline.css">-->
 </head>
 <body>
     <div class="topheader">
@@ -38,9 +39,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -55,8 +56,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -70,20 +71,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/Public/Admin/css/font_424100_bdb2xt0k59g4x6r/iconfont.css">
 </head>
 <body>
 
     </body><div class="header">
     <ul class="headermenu">
-        <li><a href="<?php echo U('Index/index');?>"><span class="icon icon-flatscreen"></span>系统管理</a></li>
-        <li><a href="<?php echo U('Index/battle');?>"><span class="icon icon-flatscreen"></span>对战中心</a></li>
-        <li><a href="<?php echo U('Index/bigdata');?>"><span class="icon icon-pencil"></span>大数据</a></li>
-        <li><a href="<?php echo U('Index/guess');?>"><span class="icon icon-message"></span>竞猜</a></li>
-        <li><a href="<?php echo U('Index/mall');?>"><span class="icon icon-chart"></span>商城</a></li>
-        <li><a href="<?php echo U('Index/news');?>"><span class="icon icon-flatscreen"></span>咨讯</a></li>
-        <li><a href="<?php echo U('Index/active');?>"><span class="icon icon-flatscreen"></span>活动管理</a></li>
-        <li><a href="<?php echo U('Index/member');?>"><span class="icon icon-chart"></span>会员管理</a></li>
-        <li><a href="<?php echo U('Index/task');?>"><span class="icon icon-chart"></span>任务管理</a></li>
+        <li><a href="<?php echo U('Index/index');?>"><span class="iconfont icon-xitongguanli"></span>系统管理</a></li>
+        <li><a href="<?php echo U('Index/battle');?>"><span class="iconfont icon-duizhan"></span>对战中心</a></li>
+        <li><a href="<?php echo U('Index/bigdata');?>"><span class="iconfont icon-dashuju"></span>大数据</a></li>
+        <li><a href="<?php echo U('Index/guess');?>"><span class="iconfont icon-jingcai"></span>竞猜</a></li>
+        <li><a href="<?php echo U('Index/mall');?>"><span class="iconfont icon-store"></span>商城</a></li>
+        <li><a href="<?php echo U('Index/news');?>"><span class="iconfont icon-zixun"></span>咨讯</a></li>
+        <li><a href="<?php echo U('Index/active');?>"><span class="iconfont icon-huodongzhongxin"></span>活动管理</a></li>
+        <li><a href="<?php echo U('Index/member');?>"><span class="iconfont icon-wode"></span>会员管理</a></li>
+        <!--<li><a href="<?php echo U('Index/task');?>"><span class="iconfont icon-chart"></span>任务管理</a></li>-->
     </ul>
 
 
@@ -111,15 +113,15 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#guess" class="editor">竞猜比赛管理</a>
+        <li class="current"><a href="#guess" class="addons">竞猜比赛管理</a>
             <span class="arrow"></span>
             <ul id="guess">
-                <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                <li class="current"><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
                 <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
             </ul>
         </li>
 
-        <li><a href="#guessdata" class="error">竞猜比赛数据</a>
+        <li><a href="#guessdata" class="trash">竞猜比赛数据</a>
             <span class="arrow"></span>
             <ul id="guessdata">
                 <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
@@ -127,7 +129,7 @@
             </ul>
         </li>
 
-        <li><a href="#guessteam" class="error">竞猜队伍管理</a>
+        <li><a href="#guessteam" class="support">竞猜队伍管理</a>
             <span class="arrow"></span>
             <ul id="guessteam">
                 <li><a href="<?php echo U('Guessteam/showList');?>">队伍列表</a></li>
@@ -135,22 +137,11 @@
             </ul>
         </li>
 
-        <li><a href="#guessuser" class="error">竞猜用户管理</a>
+        <li><a href="#guessuser" class="drafts">竞猜用户管理</a>
             <span class="arrow"></span>
             <ul id="guessuser">
                 <li><a href="<?php echo U('Guessuser/showList');?>">用户列表</a></li>
                 <li><a href="<?php echo U('Guessuser/add');?>">添加用户</a></li>
-            </ul>
-        </li>
-        <li><a href="#addons" class="addons">其他页面</a>
-            <span class="arrow"></span>
-            <ul id="addons">
-                <li><a href="newsfeed.html">新闻订阅</a></li>
-                <li><a href="profile.html">资料页面</a></li>
-                <li><a href="productlist.html">产品列表</a></li>
-                <li><a href="photo.html">图片视频分享</a></li>
-                <li><a href="gallery.html">相册</a></li>
-                <li><a href="invoice.html">购物车</a></li>
             </ul>
         </li>
     </ul>
@@ -158,4 +149,4 @@
     <br /><br />
 </div><!--竞猜左侧栏-->
 </body>
-</html>  <!--包含左侧栏-->    <div class="centercontent">        <div class="pageheader">            <h1 class="pagetitle">竞猜编辑</h1>            <span class="pagedesc">修改竞猜信息</span>           <!--  <ul class="hornav">                <li class="current"><a href="#basicform">Basic</a></li>                <li><a href="#validation">Validation</a></li>            </ul> -->        </div><!--pageheader-->        <div id="contentwrapper" class="contentwrapper">        	<div id="basicform" class="subcontent">                    <div class="contenttitle2">                        <h3>编辑竞猜</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="<?php echo U('editOk');?>" method="post">                        <p>                            <label>竞猜队伍名称</label>                            <span class="field"><input type="text" name="gtName" value="<?php echo ($data["gtname"]); ?>" class="smallinput" /></span>                            <input type="hidden" name="gtId" value="<?php echo ($data["gtid"]); ?>">                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>队伍头像</label>                            <span class="field">                                <input type="file" name="gtPic" />                            </span>                        </p>                        <label>创建时间</label>                        <span class="field"><input type="text" name="ctime" class="smallinput" /></span>                        <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p>                            <label>修改时间</label>                            <span class="field"><input type="text" name="mtime" class="smallinput" /></span>                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <p class="stdformbutton">                        	<button class="submit radius2" id="btnSubmit">提交</button>                            <input type="reset" class="reset radius2" id="btnReset" value="清空" />                        </p>                    </form>            </div><!--subcontent--> -->        </div><!--contentwrapper-->	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(3).addClass("current").siblings().removeClass("current")        });    });</script></html>
+</html>  <!--包含左侧栏-->    <div class="centercontent">        <div class="pageheader">            <h1 class="pagetitle">竞猜队伍编辑</h1>            <span class="pagedesc">修改竞猜队伍的信息</span>                    </div><!--pageheader-->        <div id="contentwrapper" class="contentwrapper">        	<div id="basicform" class="subcontent">                    <div class="contenttitle2">                        <h3>编辑竞猜队伍</h3>                    </div><!--contenttitle-->                    <form class="stdform" action="<?php echo U('editOk');?>" method="post" enctype="multipart/form-data">                        <p>                            <label>竞猜队伍名称</label>                            <span class="field"><input type="text" name="gtName" value="<?php echo ($data["gtname"]); ?>" class="smallinput" /></span>                            <input type="hidden" name="gtId" value="<?php echo ($data["gtid"]); ?>">                            <!-- <small class="desc">Small description of this field.</small> -->                        </p>                        <?php if($data["gtpic"] == ''): ?><p>                                <label>上传图片</label>                                <span class="field">                                     <img src="<?php echo ($data["gtpic"]); ?>" alt="" height="100px"/>                                    <input type="file" name="gtPic" />                                </span>                            </p>                            <?php else: ?>                            <p>                                <label>竞猜队伍头像</label>                                <span class="field">                                    <img src="<?php echo ($data["gtpic"]); ?>" alt="" height="100px"/>                                    <!--<input type="file" name="icon" />-->                                </span>                            </p>                            <p>                                <label>更换图片</label>                                <span class="field">                                <!--<img src="<?php echo ($data["icon"]); ?>" alt=""/>-->                                    <input type="file" name="gtpic" />                                </span>                            </p><?php endif; ?>                        <p>                            <label>竞猜队伍类型</label>                            <span class="formwrapper">                                <select data-placeholder="请选择竞猜队伍类型" name="gtType" class="chzn-select" style="width:350px;" tabindex="2">                                    <option value="1" <?php if($data["gtType"] == 1 ): ?>selected="selected"<?php endif; ?>>dota2</option>                                    <option value="2" <?php if($data["gtType"] == 2 ): ?>selected="selected"<?php endif; ?>>csgo</option>                                </select>                            </span>                        </p>                                                <p class="stdformbutton">                        	<button class="submit radius2" id="btnSubmit">提交</button>                            <input type="reset" class="reset radius2" id="btnReset" value="清空" />                        </p>                    </form>            </div><!--subcontent-->        </div><!--contentwrapper-->	</div><!-- centercontent --></div><!--bodywrapper--></body><script type="text/javascript">    //解决$方法不能用的问题    jQuery.noConflict();    jQuery(document).ready(function($){        //提交或清空方法        $(function(){            $('#btnSubmit').on('click',function(){                $('form').submit();            });            $('#btnReset').on('click',function(){                $('form')[0].reset();            });            $('.exit').click(function () {                window.location.href = "/index.php/Admin/Public/logout";            });            $(".headermenu>li").eq(3).addClass("current").siblings().removeClass("current")        });    });</script></html>

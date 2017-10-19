@@ -66,9 +66,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -83,8 +83,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -144,7 +144,7 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#goods" class="editor">商品管理</a>
+        <li><a href="#goods" class="drafts">商品管理</a>
             <span class="arrow"></span>
             <ul id="goods">
                 <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
@@ -152,7 +152,7 @@
             </ul>
         </li>
 
-        <li><a href="#goodsattr" class="error">商品详情</a>
+        <li><a href="#goodsattr" class="elements">商品详情</a>
             <span class="arrow"></span>
             <ul id="goodsattr">
                 <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
@@ -160,7 +160,7 @@
             </ul>
         </li>
 
-        <li><a href="#goodssell" class="error">出售管理</a>
+        <li><a href="#goodssell" class="sent">出售管理</a>
             <span class="arrow"></span>
             <ul id="goodssell">
                 <li><a href="<?php echo U('Goodssell/showList');?>">出售列表</a></li>
@@ -168,7 +168,7 @@
             </ul>
         </li>
 
-        <li><a href="#goodswant" class="error">求购管理</a>
+        <li><a href="#goodswant" class="inbox">求购管理</a>
             <span class="arrow"></span>
             <ul id="goodswant">
                 <li><a href="<?php echo U('Goodswant/showList');?>">求购列表</a></li>

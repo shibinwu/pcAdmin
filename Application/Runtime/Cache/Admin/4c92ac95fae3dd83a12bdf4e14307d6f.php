@@ -66,9 +66,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -83,8 +83,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -243,12 +243,12 @@
                     <th class="head0">id</th>
                     <th class="head1">性别</th>
                     <th class="head0">省份证号码</th>
-                    <th class="head0">姓名</th>
+                    <th class="head1">姓名</th>
                     <th class="head0">微信</th>
-                    <th class="head0">积分</th>
+                    <th class="head1">积分</th>
                     <th class="head0">经验值</th>
                     <th class="head1">省/市/区县</th>
-                    <th class="head1">操作</th>
+                    <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -257,7 +257,7 @@
                         <td><?php echo ($vol["sex"]); ?></td>
                         <td><?php echo ($vol["id_number"]); ?></td>
                         <td><?php echo ($vol["name"]); ?></td>
-                        <td><?php echo ($vol["weixin"]); ?></td>
+                        <td><?php echo ($vol["wexin"]); ?></td>
                         <td><?php echo ($vol["balance_integral"]); ?></td>
                         <td><?php echo ($vol["exp"]); ?></td>
                         <td><?php echo ($vol["region"]); ?></td>

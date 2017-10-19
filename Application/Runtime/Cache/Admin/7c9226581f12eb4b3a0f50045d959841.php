@@ -66,9 +66,9 @@
         <div class="userinfodrop">
             <div class="avatar">
                 <a href="">
-                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" alt="" />
+                    <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -83,8 +83,8 @@
                 <h4><?php echo (session('nickname')); ?></h4>
                 <span class="email"><?php echo (session('email')); ?></span>
                 <ul>
-                    <!--<li><a href="editprofile.html">编辑资料</a></li>-->
-                    <li><a href="<?php echo U('User/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
+                    <li><a href="<?php echo U('Rbac/reset');?>?id=<?php echo (session('uid')); ?>">密码重置</a></li>
+                    <li><a href="<?php echo U('Rbac/edit');?>?id=<?php echo (session('uid')); ?>">账号设置</a></li>
                     <li><a href="help.html">帮助</a></li>
                     <li><a href="javascript:;" class="exit">退出</a></li>
                 </ul>
@@ -144,10 +144,10 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
-        <li><a href="#guess" class="addons">竞猜比赛管理</a>
+        <li class="current"><a href="#guess" class="addons">竞猜比赛管理</a>
             <span class="arrow"></span>
             <ul id="guess">
-                <li><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
+                <li class="current"><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
                 <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
             </ul>
         </li>
@@ -200,15 +200,20 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">比赛名称</th>
-                    <th class="head1">左边队伍ID</th>
-                    <th class="head0">右边队伍ID</th>
+                    <th class="head1">左边队伍</th>
+                    <th class="head0">右边队伍</th>
                     <th class="head1">比赛机制</th>
                     <th class="head0">比赛类型</th>
                     <th class="head1">竞猜类型</th>
+                    <th class="head0">比赛开始时间</th>
                     <th class="head0">竞猜状态</th>
                     <th class="head0">操作</th>
                 </tr>
@@ -229,6 +234,7 @@
                             <?php else: ?>体育赛事<?php endif; ?>
                         </td>
                         <td><?php if($vol["type"] == 1): ?>猜输赢<?php else: ?>让分局<?php endif; ?></td>
+                        <td><?php echo (date('Y-m-d H:i:s', $vol[starttime] )); ?></td>
                         <td><?php if($vol["status"] == 1): ?>未开始
                             <?php elseif($vol["status"] ==2): ?>进行中
                             <?php else: ?>已结束<?php endif; ?>
