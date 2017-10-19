@@ -71,8 +71,19 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.g_name}</td>
-                        <td>{$vol.g_leftid}</td>
-                        <td>{$vol.g_rightid}</td>
+                        <!--<td>{$vol.g_leftid}</td>-->
+                        <td>
+                            <volist name='data1' id='vol1'>
+                                <if condition="$vol[g_leftid] == $vol1[gtid]">{$vol1.gtname}</if>
+                            </volist>
+                        </td>
+
+                        <td>
+                            <volist name='data1' id='vol1'>
+                                <if condition="$vol[g_rightid] == $vol1[gtid]">{$vol1.gtname}</if>
+                            </volist>
+                        </td>
+                        <!--<td>{$vol.g_rightid}</td>-->
                         <td><if condition='$vol.mechanism == 1'>BO1
                             <elseif condition='$vol.mechanism ==2'/>BO2
                             <elseif condition='$vol.mechanism ==3'/>BO3
