@@ -87,14 +87,18 @@ class GuessdataController extends CommonController{
 	 	$id = I('get.id');
 	 	#实例化模型
 	 	$model = M('Guess_data');
-	 	$model1 = M('Gusee_team');
+	 	$model1 = M('Guess_team');
+		 $model2 = M('Guess');
 	 	#查询操作
 	 	$data = $model -> find($id);
+//		 dump($data);die();
 	 	$data1 = $model1 -> select();
+		 $data2 = $model2 -> select();
 //		 dump($data);
 	 	#传递给模版
 	 	$this -> assign('data',$data);
 	 	$this -> assign('data1',$data1);
+		 $this -> assign('data2',$data2);
 	 	#展示模版
 	 	$this -> display();
 	 }
@@ -103,31 +107,9 @@ class GuessdataController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-//	 	dump($post);die;
-	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
+	 	$post['start_time'] = strtotime($post['start_time']);
+	 	#添加mtime字段
+	 	$post['mtime'] = time();
 	 	#写入到数据表
 	 	$model = M('Guess_data');
 		 if($post['dgid']){

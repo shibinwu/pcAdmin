@@ -110,7 +110,8 @@ class GuessController extends CommonController{
 	 	#接收post数据
 	 	$post = I('post.');
 	 	$post['starttime'] = strtotime($post['starttime']);
-//	 	dump($post);die;
+	 	#添加mtime字段
+	 	$post['mtime'] = time();
 	 	#写入到数据表
 	 	$model = M('Guess');
 		 if($post['g_id']){
