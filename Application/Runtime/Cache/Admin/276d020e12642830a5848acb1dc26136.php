@@ -113,19 +113,27 @@
 <body>
     <div class="vernav2 iconmenu">
     <ul>
+<<<<<<< HEAD
         <li class="current"><a href="#guess" class="addons">竞猜比赛管理</a>
             <span class="arrow"></span>
             <ul id="guess">
                 <li class="current"><a href="<?php echo U('Guess/showList');?>">竞猜比赛列表</a></li>
                 <li><a href="<?php echo U('Guess/add');?>">添加竞猜比赛</a></li>
+=======
+        <li><a href="#guess" class="addons">比赛管理</a>
+            <span class="arrow"></span>
+            <ul id="guess">
+                <li><a href="<?php echo U('Guess/showList');?>">比赛列表</a></li>
+                <li><a href="<?php echo U('Guess/add');?>">竞猜比赛</a></li>
+>>>>>>> 0c7d396048b8529ebfb663c1b97e4fd7b31a4214
             </ul>
         </li>
 
-        <li><a href="#guessdata" class="trash">竞猜比赛数据</a>
+        <li><a href="#guessdata" class="trash">竞猜数据</a>
             <span class="arrow"></span>
             <ul id="guessdata">
                 <li><a href="<?php echo U('Guessdata/showList');?>">数据列表</a></li>
-                <li><a href="<?php echo U('Guessdata/add');?>">添加比赛数据</a></li>
+                <li><a href="<?php echo U('Guessdata/add');?>">添加数据</a></li>
             </ul>
         </li>
 
