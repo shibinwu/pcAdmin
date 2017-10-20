@@ -132,4 +132,26 @@ class GuessdataController extends CommonController{
 	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
 	 	}
 	 }
+
+	#end(结算)方法
+	public function end(){
+		#接收数据
+		$id = I('get.id');
+		#实例化模型
+		$model = M('Guess_data');
+		$model1 = M('Guess_team');
+		$model2 = M('Guess');
+		#查询操作
+		$data = $model -> find($id);
+//		 dump($data);die();
+		$data1 = $model1 -> select();
+		$data2 = $model2 -> where('statu = 1')->select() ;
+//		 dump($data2);die();
+		#传递给模版
+		$this -> assign('data',$data);
+		$this -> assign('data1',$data1);
+		$this -> assign('data2',$data2);
+		#展示模版
+		$this -> display();
+	}
 }
