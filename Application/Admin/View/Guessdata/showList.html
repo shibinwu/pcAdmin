@@ -54,8 +54,8 @@
                 <tr>
                     <!--<th class="head0">竞猜数据ID</th>-->
                     <!--<th class="head1">竞猜比赛ID</th>-->
-                    <th class="head0">竞猜左边边队伍ID</th>
-                    <th class="head0">竞猜右边边队伍ID</th>
+                    <!--<th class="head0">竞猜左边边队伍ID</th>-->
+                    <!--<th class="head0">竞猜右边边队伍ID</th>-->
                     <th class="head0">竞猜队伍左边支持率</th>
                     <th class="head0">竞猜队伍右边支持率</th>
                     <th class="head0">让分局中让分队伍的ID</th>
@@ -65,6 +65,7 @@
                     <th class="head1">竞猜类型</th>
                     <th class="head1">比率</th>
                     <th class="head0">比赛当前局状态</th>
+                    <th class="head0">开始时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
@@ -73,8 +74,8 @@
                     <tr>
                         <!--<td>{$vol.dgid}</td>-->
                         <!--<td>{$vol.gid}</td>-->
-                        <td>{$vol.ltid}</td>
-                        <td>{$vol.rtid}</td>
+                        <!--<td>{$vol.ltid}</td>-->
+                        <!--<td>{$vol.rtid}</td>-->
                         <td>{$vol.lrate}</td>
                         <td>{$vol.rrate}</td>
                         <td>{$vol.gtid}</td>
@@ -94,6 +95,7 @@
                             <elseif condition='$vol.status ==2'/>进行中
                             <else/>已结束</if>
                         </td>
+                        <td>{$vol[stime] | date='Y-m-d H:i:s', ###}</td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.dgid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.dgid}" class="del">删除</a></td>
                     </tr>
                 </volist>
@@ -114,6 +116,7 @@
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
+
         //提交或清空方法
         $(function(){
             $(".headermenu>li").eq(3).addClass("current").siblings().removeClass("current")
