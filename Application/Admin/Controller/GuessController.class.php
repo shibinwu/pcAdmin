@@ -109,7 +109,7 @@ class GuessController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-	 	$post['starttime'] = strtotime($post['starttime']);
+	 	$post['stime'] = strtotime($post['stime']);
 	 	#添加mtime字段
 	 	$post['mtime'] = time();
 	 	#写入到数据表
