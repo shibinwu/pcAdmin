@@ -95,7 +95,7 @@
                             <else/>体育赛事</if>
                         </td>
                         <td><if condition='$vol.type == 1'>猜输赢<else/>让分局</if></td>
-                        <td>{$vol[starttime] | date='Y-m-d H:i:s', ###}</td>
+                        <td>{$vol[stime] | date='Y-m-d H:i:s', ###}</td>
                         <td><if condition='$vol.status == 1'>未开始
                             <elseif condition='$vol.status ==2'/>进行中
                             <else/>已结束</if>
