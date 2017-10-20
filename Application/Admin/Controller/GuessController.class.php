@@ -29,8 +29,8 @@ class GuessController extends CommonController{
 		 $post['ctime'] = time();
 
 
-		$time = strtotime($post['starttime']);
-		$post['starttime'] = $time;
+		$time = strtotime($post['stime']);
+		$post['stime'] = $time;
 
 		#写入数据表
 		$model = M('Guess');
