@@ -105,11 +105,8 @@ class GuessdataController extends CommonController
         $model2 = M('Guess');
         #查询操作
         $data = $model->find($id);
-        $data = $data["dgid"];
-//		 dump($data);die();
         $data1 = $model1->select();
         $data2 = $model2->where('statu = 1')->select();
-//		 dump($data2);die();
         #传递给模版
         $this->assign('data', $data);
         $this->assign('data1', $data1);
