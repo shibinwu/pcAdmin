@@ -125,6 +125,12 @@ class GuessdataController extends CommonController
         $post['stime'] = strtotime($post['stime']);
         #添加mtime字段
         $post['mtime'] = time();
+        $gid = $post['gid'];
+        $guessMolde = M("Guess");
+        $guess = $guessMolde->find($gid);
+        $post['ltid'] = $guess['g_leftid'];
+        $post['rtid'] = $guess['g_rightid'];
+
 
         //判断是否是添加比赛结束的状态
         //todo 以后需要系统接入接口判断
@@ -136,7 +142,6 @@ class GuessdataController extends CommonController
                 'type' => 3
             ];
             //todo 测试用，上线的时候需要去除
-            $post['wtid'] = 2;
             $tmp = [];
             $userguesslists = $userGuessDataModel->where($condition)->select();
             foreach ($userguesslists as $index => $userguesslist) {
@@ -183,26 +188,4 @@ class GuessdataController extends CommonController
         }
     }
 
-    #end(结算)方法
-    public function end()
-    {
-        #接收数据
-        $id = I('get.id');
-        #实例化模型
-        $model = M('Guess_data');
-        $model1 = M('Guess_team');
-        $model2 = M('Guess');
-        #查询操作
-        $data = $model->find($id);
-//		 dump($data);die();
-        $data1 = $model1->select();
-        $data2 = $model2->where('statu = 1')->select();
-//		 dump($data2);die();
-        #传递给模版
-        $this->assign('data', $data);
-        $this->assign('data1', $data1);
-        $this->assign('data2', $data2);
-        #展示模版
-        $this->display();
-    }
 }
