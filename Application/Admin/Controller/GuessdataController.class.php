@@ -105,6 +105,7 @@ class GuessdataController extends CommonController
         $model2 = M('Guess');
         #查询操作
         $data = $model->find($id);
+        $data = $data["dgid"];
 //		 dump($data);die();
         $data1 = $model1->select();
         $data2 = $model2->where('statu = 1')->select();
@@ -186,6 +187,24 @@ class GuessdataController extends CommonController
                 $this->error('编辑失败', U('edit', array('id' => $post['id'])), 3);
             }
         }
+    }
+
+    #根据赛事名称，显示相应的队伍
+    public function relate (){
+        #获取数据
+        $model1 = M('Guess');
+        $model2 = M('Guess_team');
+        #根据赛事获取对应队伍id
+        $data1 =  $model1 -> find(2);
+        $data2 = $model2 -> select();
+        $right = $data2["g_rightid"];
+        $left  = $data2["g_leftid"];
+
+        #根据对应id获取对应的队伍名称
+        if($right == $model2["gtid"])
+        dump($data1);die();
+
+
     }
 
 }
