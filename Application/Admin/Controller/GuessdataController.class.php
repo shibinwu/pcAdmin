@@ -8,7 +8,6 @@ use Think\Controller;
 #声明类并且继承父类
 class GuessdataController extends CommonController
 {
-
     #add方法，展示模版文件
     public function add()
     {
@@ -25,7 +24,6 @@ class GuessdataController extends CommonController
         #展示模版
         $this->display();
     }
-
     #addOk方法，接收数据保存数据
     public function addOk()
     {
@@ -40,6 +38,7 @@ class GuessdataController extends CommonController
         $guess = $guessMolde->find($gid);
         $post['ltid'] = $guess['g_leftid'];
         $post['rtid'] = $guess['g_rightid'];
+//        dump($post);die();
         #写入数据表
         $model = M('Guess_data');
         $rst = $model->add($post);
@@ -52,7 +51,6 @@ class GuessdataController extends CommonController
             $this->error('添加竞猜数据失败', U('add'), 1);
         }
     }
-
     #showList方法，获取数据展示数据
     public function showList()
     {
@@ -66,13 +64,11 @@ class GuessdataController extends CommonController
         #展示模版
         $this->display();
     }
-
     #del方法，实现删除
     public function del()
     {
         #接收参数
         $id = I('get.id');
-//        dump($id);die;
         #实例化模型
         $model = M('Guess_data');
         #删除操作
@@ -83,7 +79,6 @@ class GuessdataController extends CommonController
             'statu' => '0'
         );
         $rst = $model->save($data);
-//        dump($rst);die;
         #判断返回值
         if ($rst) {
             #删除成功
@@ -107,10 +102,19 @@ class GuessdataController extends CommonController
         $data = $model->find($id);
         $data1 = $model1->select();
         $data2 = $model2->where('statu = 1')->select();
+
+        //取出比赛的双方队伍
+        $tmp = [];
+        foreach ($data1 as $index => $item) {
+            $tmp[$item['gtid']] = $item;
+        }
+        $names[$data['ltid']] = $tmp[$data['ltid']]['gtname'];
+        $names[$data['rtid']] = $tmp[$data['rtid']]['gtname'];
         #传递给模版
         $this->assign('data', $data);
         $this->assign('data1', $data1);
         $this->assign('data2', $data2);
+        $this->assign('names', $names);
         #展示模版
         $this->display();
     }
@@ -187,21 +191,22 @@ class GuessdataController extends CommonController
     }
 
     #根据赛事名称，显示相应的队伍
-    public function relate (){
+    public function relate()
+    {
+        $id = $_GET['id'];
         #获取数据
-        $model1 = M('Guess');
+        $model1 = M('Guess_data');
         $model2 = M('Guess_team');
         #根据赛事获取对应队伍id
-        $data1 =  $model1 -> find(2);
-        $data2 = $model2 -> select();
-        $right = $data2["g_rightid"];
-        $left  = $data2["g_leftid"];
-
-        #根据对应id获取对应的队伍名称
-        if($right == $model2["gtid"])
-        dump($data1);die();
-
-
+        $data1 = $model1->find($id);
+        $data2 = $model2->select();
+        //取出比赛的双方队伍
+        $tmp = [];
+        foreach ($data2 as $index => $item) {
+            $tmp[$item['gtid']] = $item;
+        }
+        $names[$data1['ltid']] = $tmp[$data1['ltid']]['gtname'];
+        $names[$data1['rtid']] = $tmp[$data1['rtid']]['gtname'];
+        $this->ajaxReturn ($names);
     }
-
 }
