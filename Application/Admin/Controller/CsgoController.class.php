@@ -4,20 +4,11 @@ namespace Admin\Controller;
 #引入父类元素
 use Think\Controller;
 #声明类并且继承父类
-class GoodsController extends CommonController{
+class CsgoController extends CommonController{
 
 
 	#add方法，展示模版文件
 	public function add(){
-		//DOTA 一级属性
-		$data_one = M('Goods_attr')->where('pgaid=2')-> select();
-		$this -> assign('data_one',$data_one);
-		// var_dump($data_one);exit;
-		//CSGO 一级属性
-		$csgo_one = M('Goods_attr')->where('pgaid=1')-> select();
-		$this -> assign('csgo_one',$csgo_one);
-		
-		
 		#实例化模型
 		$model = M('Goods_attr');
 		#查询属性信息
@@ -122,10 +113,12 @@ class GoodsController extends CommonController{
 //		 $data = $model -> field('t1.*,t2.ga_name as name') -> table('goods as t1,goods_attr as t2') -> where('t1.g_class = t2.ga_id') -> select();
 
 		 //todo 商品分类
+		// 1外观，2品质，3类别，4种类，5稀有度
 		 $gtmodel = M('goods_attr');
-		 $class = $gtmodel->where('ga_id','>','0')->where('ga_type = 2')->select();
-		 $grand = $gtmodel->where('ga_id','>','0')->where('ga_type = 3')->select();
-		 $position = $gtmodel->where('ga_id','>','0')->where('ga_type = 4')->select();
+		 $class1 = $gtmodel->where('ga_id','>','0')->where('ga_type = 1')->select();
+		 $class2 = $gtmodel->where('ga_id','>','0')->where('ga_type = 2')->select();
+		 $class3 = $gtmodel->where('ga_id','>','0')->where('ga_type = 3')->select();
+		 $class4 = $gtmodel->where('ga_id','>','0')->where('ga_type = 4')->select();
 
 	 	#查询操作
 	 	$data = $model -> find($id);

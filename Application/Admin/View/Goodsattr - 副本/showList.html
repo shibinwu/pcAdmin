@@ -54,28 +54,30 @@
                 <tr>
                     <!--<th class="head0">商品描述id</th>-->
                     <!--<th class="head1">本父级ID</th>-->
-                    <th class="head0">ID</th>
-                    <th class="head0">属性名称</th>
-                    <th class="head1">游戏</th>
+                    <th class="head0">商品描述名称</th>
                     <th class="head1">描述类型</th>
+                    <th class="head0">创建时间</th>
+                    <th class="head1">修改时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.ga_id}</td>
-						<td>{$vol.ga_name}</td>
-                        <td><if condition='$vol.pgaid == 1'>CSGO<else/>DOTA2</if></td>
-                        
+                        <!--<td>{$vol.ga_id}</td>-->
+                        <!--<td>{$vol.pgaid}</td>-->
+                        <td>{$vol.ga_name}</td>
                         <!--<td>{$vol.ga_type}</td>-->
-                        <td><if condition='$vol.ga_type == 5'>外观
-                            <elseif condition='$vol.ga_type ==3'/>品质
-                            <elseif condition='$vol.ga_type ==6'/>类别
-                            <elseif condition='$vol.ga_type ==7'/>种类
-                            <elseif condition='$vol.ga_type ==9'/>稀有度
+                        <td><if condition='$vol.ga_type == 1'>游戏类型
+                            <elseif condition='$vol.ga_type ==2'/>商品分类
+                            <elseif condition='$vol.ga_type ==3'/>商品等级
+                            <elseif condition='$vol.ga_type ==4'/>商品部位
+                            <elseif condition='$vol.ga_type ==5'/>商品外观
                             <else/>&nbsp</if>
                         </td>
+
+                        <td>{$vol[ctime] | date='Y-m-d  H:i:s',###}</td>
+                        <td>{$vol[mtime] | date='Y-m-d H:i:s',###}</td>
 
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.ga_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.ga_id}" class="del">删除</a></td>
                     </tr>

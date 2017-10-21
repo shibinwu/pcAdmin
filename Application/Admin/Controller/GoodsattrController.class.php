@@ -41,7 +41,7 @@ class GoodsattrController extends CommonController{
 		#获取数据
 		$model = M('Goods_attr');
 		#查询
-		$data = $model -> where('statu = 1') -> select();
+		$data = $model -> where('statu = 1 and pgaid>0') -> select();
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版

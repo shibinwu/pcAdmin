@@ -26,16 +26,15 @@
 <body class="withvernav">
 <div class="bodywrapper">
     <include file = 'Test/topheader' />  <!--包含头文件-->
-
+    
     <include file = 'Test/header' /> <!--包含导航栏文件-->
 
-    <include file = 'Test/leftmall' />   <!--包含商城左侧栏文件-->
+   <include file = 'Test/leftmall' />   <!--包含商城左侧栏文件-->
         
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品属性列表</h1>
-            <span class="pagedesc">本页面为商品属性列表的详情展示</span>
+            <h1 class="pagetitle">DOTA2 英雄列表</h1>
             
         </div><!--pageheader-->
         
@@ -52,39 +51,29 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <!--<th class="head0">商品描述id</th>-->
-                    <!--<th class="head1">本父级ID</th>-->
                     <th class="head0">ID</th>
-                    <th class="head0">属性名称</th>
-                    <th class="head1">游戏</th>
-                    <th class="head1">描述类型</th>
+                    <th class="head1">名字</th>
+                    <th class="head0">图片</th>
+                    <th class="head1">力量\敏捷\智力</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.ga_id}</td>
-						<td>{$vol.ga_name}</td>
-                        <td><if condition='$vol.pgaid == 1'>CSGO<else/>DOTA2</if></td>
+                        <td>{$vol.hid}</td>
+                        <td>{$vol.hname}</td>
+                        <td><img width="60" height="40" src="{$vol.hicon}"/></td>
+                        <td>{$vol.class}</td>
                         
-                        <!--<td>{$vol.ga_type}</td>-->
-                        <td><if condition='$vol.ga_type == 5'>外观
-                            <elseif condition='$vol.ga_type ==3'/>品质
-                            <elseif condition='$vol.ga_type ==6'/>类别
-                            <elseif condition='$vol.ga_type ==7'/>种类
-                            <elseif condition='$vol.ga_type ==9'/>稀有度
-                            <else/>&nbsp</if>
-                        </td>
 
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.ga_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.ga_id}" class="del">删除</a></td>
+                        <td class="center" url="__CONTROLLER__">
+							<a href="javascript:;" data-id="{$vol.hid}" class="edit">编辑</a> &nbsp; 
+							<a href="javascript:;" data-id="{$vol.hid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
-            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
-
-
 
         </div><!--contentwrapper-->
         
@@ -104,5 +93,34 @@
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
+
+    function Foo(){
+        var i = 0;
+        return function (){
+            console.log(i++);
+        }
+    }
+
+    var f1 = Foo(),
+        f2 = Foo();
+
+    f1();
+    f1();
+
+    var fullname = '张三';
+    var obj ={
+        fullname:'李四',
+        prop: {
+            fullname: '王五',
+            getFullname: function () {
+                return this.fullname;
+            }
+        }
+    };
+
+    console.log(obj.prop.getFullname());
+    var test = obj.prop.getFullname;
+    console.log(test());
+    console.log(test.call(obj.prop));
 </script>
 </html>
