@@ -50,7 +50,7 @@ class GoodsController extends CommonController{
 		 }
 //		 dump($post);die;
 		#添加addtime字段
-		 $post['ctime'] = time();
+	 	$post['ctime'] = time();
 		#写入数据表
 		$model = M('Goods');
 		$rst = $model -> add($post);
@@ -76,33 +76,6 @@ class GoodsController extends CommonController{
 		#展示模版
 		$this -> display();
 	}
-
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){
@@ -130,7 +103,6 @@ class GoodsController extends CommonController{
         }
     }
 
-
     #edit方法
 	 public function edit(){
 	 	#接收数据
@@ -145,7 +117,6 @@ class GoodsController extends CommonController{
 		 $class = $gtmodel->where('ga_id','>','0')->where('ga_type = 2')->select();
 		 $grand = $gtmodel->where('ga_id','>','0')->where('ga_type = 3')->select();
 		 $position = $gtmodel->where('ga_id','>','0')->where('ga_type = 4')->select();
-
 
 	 	#查询操作
 	 	$data = $model -> find($id);
@@ -165,7 +136,6 @@ class GoodsController extends CommonController{
 	 	$post = I('post.');
 //	 	dump($post);die;
 	 	#判断是否有附件上传
-//		 dump($_FILES['icon']);die;
 	 	if($_FILES['icon']['size'] > 0){
 	 		#配置
 	 		$cfg = array(
@@ -185,12 +155,9 @@ class GoodsController extends CommonController{
 	 			$post['filename'] = $info['savename'];
 	 			#hasfile字段
 	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
 	 		}
 	 	}
-		 $post['mtime'] = time();
+	 	$post['mtime'] = time();
 	 	#写入到数据表
 //		 dump($post);die;
 	 	$model = M('Goods');
