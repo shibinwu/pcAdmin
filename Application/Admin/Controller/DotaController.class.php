@@ -8,12 +8,6 @@ class DotaController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
-		#实例化模型
-		$model = M('Goods_attr');
-		#查询属性信息
-		$data = $model -> select();
-		#传递给模板
-		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -22,11 +16,8 @@ class DotaController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-//		dump($post);die;
 		#获取文件的数据
 		 $file = $_FILES['hicon'];
-		 
-		// dump($_FILES);die;
 		#配置上传信息
 		 $cfg = array(
 		 		//保存根路径
@@ -48,11 +39,10 @@ class DotaController extends CommonController{
 		 		$post['hicon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
-//		 dump($post);die;
 		#添加addtime字段
 	 	$post['ctime'] = time();
 		#写入数据表
-		$model = M('hero');
+		$model = M('dota_hero');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
@@ -106,7 +96,6 @@ class DotaController extends CommonController{
 	 	$this -> assign('data',M('dota_hero') -> find(I('get.id')));
 	 	$this -> display();
 	 }
-
 	 #editOk方法
 	 public function editOk(){
 	 	#接收post数据
@@ -121,7 +110,6 @@ class DotaController extends CommonController{
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
 	 		$info = $upload -> uploadOne($_FILES['hicon']);
-//			dump($info);die;
 	 		#判断上传结果
 	 		if($info){
 	 			#上传成功
