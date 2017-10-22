@@ -67,10 +67,9 @@ class DotaController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('hero');
+		$model = M('dota_hero');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版
@@ -83,17 +82,15 @@ class DotaController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('hero');
+        $model = M('dota_hero');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'hid'   =>  $id,
+            'dhid'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
-		// $model->get
-//        dump($rst);die;
         #判断返回值
         if($rst){
             #删除成功
@@ -106,7 +103,7 @@ class DotaController extends CommonController{
 
     #edit方法
 	 public function edit(){
-	 	$this -> assign('data',M('hero') -> find(I('get.id')));
+	 	$this -> assign('data',M('dota_hero') -> find(I('get.id')));
 	 	$this -> display();
 	 }
 
@@ -114,7 +111,6 @@ class DotaController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-//	 	dump($post);die;
 	 	#判断是否有附件上传
 	 	if($_FILES['hicon']['size'] > 0){
 	 		#配置
@@ -139,9 +135,8 @@ class DotaController extends CommonController{
 	 	}
 	 	$post['mtime'] = time();
 	 	#写入到数据表
-//		 dump($post);die;
-	 	$model = M('hero');
-		 if($post['hid']){
+	 	$model = M('dota_hero');
+		 if($post['dhid']){
 			 $rst = $model -> save($post);
 		 }else{
 			 echo '123';
@@ -153,7 +148,7 @@ class DotaController extends CommonController{
 	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),1);
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['dhid'])),1);
 	 	}
 	 }
 }

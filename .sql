@@ -177,3 +177,7 @@ MODIFY COLUMN `status`  tinyint(2) NULL DEFAULT 1 COMMENT '比赛当前局状态
 
 ALTER TABLE `guess_data`
 ADD COLUMN `start_time`  int(2) NULL AFTER `rate`;
+
+2017/10/22 wujianyin
+ALTER TABLE `dota_hero`
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '1 正常 0 删除' AFTER `mtime`;

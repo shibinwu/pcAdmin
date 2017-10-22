@@ -35,7 +35,6 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">DOTA2 英雄列表</h1>
-            
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -48,6 +47,7 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -55,31 +55,30 @@
                     <th class="head1">名字</th>
                     <th class="head0">图片</th>
                     <th class="head1">力量\敏捷\智力</th>
+                    <th class="head0">创建时间</th>
+                    <th class="head1">创建时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.hid}</td>
+                        <td>{$vol.dhid}</td>
                         <td>{$vol.hname}</td>
                         <td><img width="60" height="40" src="{$vol.hicon}"/></td>
-                        <td>{$vol.class}</td>
-                        
-
+                        <td>{$vol.type}</td>
+                        <td>{$vol[ctime] |date='Y-m-d H:i:s',###}</td>
+                        <td>{$vol[mtime] |date='Y-m-d H:i:s',###}</td>
                         <td class="center" url="__CONTROLLER__">
-							<a href="javascript:;" data-id="{$vol.hid}" class="edit">编辑</a> &nbsp; 
-							<a href="javascript:;" data-id="{$vol.hid}" class="del">删除</a></td>
+							<a href="javascript:;" data-id="{$vol.dhid}" class="edit">编辑</a> &nbsp;
+							<a href="javascript:;" data-id="{$vol.dhid}" class="del">删除</a>
+                        </td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
-
         </div><!--contentwrapper-->
-        
 	</div><!-- centercontent -->
-
-    
 </div><!--bodywrapper-->
 
 </body>
@@ -93,34 +92,5 @@
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
-
-    function Foo(){
-        var i = 0;
-        return function (){
-            console.log(i++);
-        }
-    }
-
-    var f1 = Foo(),
-        f2 = Foo();
-
-    f1();
-    f1();
-
-    var fullname = '张三';
-    var obj ={
-        fullname:'李四',
-        prop: {
-            fullname: '王五',
-            getFullname: function () {
-                return this.fullname;
-            }
-        }
-    };
-
-    console.log(obj.prop.getFullname());
-    var test = obj.prop.getFullname;
-    console.log(test());
-    console.log(test.call(obj.prop));
 </script>
 </html>
