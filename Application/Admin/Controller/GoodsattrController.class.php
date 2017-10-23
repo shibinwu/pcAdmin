@@ -50,16 +50,25 @@ class GoodsattrController extends CommonController{
 	}
 
 	#showList方法，获取数据展示数据
-	public function showList(){
+	public function dotaList(){
 		#获取数据
-		$model1 = M('Dota_attr');
-		$model2 = M('Csgo_attr');
+		$model = M('Dota_attr');
 		#查询
-		$data1 = $model1 -> where('statu = 1 and id>0') -> select();
-		$data2 = $model2 -> where('statu = 1 and id>0') -> select();
+		$data = $model -> where('statu = 1 and id>0') -> select();
 		#传递变量给模版
-		$this -> assign('data1',$data1);
-		$this -> assign('data2',$data2);
+		$this -> assign('data',$data);
+		#展示模版
+		$this -> display();
+	}
+
+	#showList方法，获取数据展示数据
+	public function csgoList(){
+		#获取数据
+		$model = M('Csgo_attr');
+		#查询
+		$data = $model -> where('statu = 1 and id>0') -> select();
+		#传递变量给模版
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}

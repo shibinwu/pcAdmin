@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数据表格页面_AmaAdmin后台管理系统模板 - 源码之家</title>
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/style.default.css" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/general.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/custom/tables.js"></script>
+<!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie9.css"/>
+<![endif]-->
+<!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="__PUBLIC__/Admin/css/style.ie8.css"/>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+    <include file = 'Test/topheader' />  <!--包含头文件-->
+
+    <include file = 'Test/header' /> <!--包含导航栏文件-->
+
+    <include file = 'Test/leftmall' />   <!--包含商城左侧栏文件-->
+        
+    <div class="centercontent tables">
+    
+        <div class="pageheader notab">
+            <h1 class="pagetitle">武器属性列表</h1>
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper">
+
+
+            <div id="basicform" class="subcontent" >
+
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable " id="dyntable">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head0">ID</th>
+                        <th class="head1">属性名称</th>
+                        <th class="head0">属性类型</th>
+                        <th class="head1">属性颜色</th>
+                        <th class="head0">创建时间</th>
+                        <th class="head1">修改时间</th>
+                        <th class="head0">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name='data' id='vol'>
+                        <tr>
+                            <td>{$vol.id}</td>
+                            <td>{$vol.name}</td>
+                            <td><if condition='$vol.type == 1'>品质
+                                <elseif condition='$vol.type ==2'/>稀有度
+                                <elseif condition='$vol.type ==3'/>种类
+                                <elseif condition='$vol.type ==4'/>部位
+                                <else/>&nbsp</if>
+                            </td>
+                            <td><input type="color" value="{$vol.color}" disabled></td>
+                            <td>{$vol[ctime] |date='Y-m-d H:i:s',### }</td>
+                            <td>{$vol[mtime] |date='Y-m-d H:i:s',### }</td>
+
+                            <td class="center"><a href="javascript:;" data-id="{$vol.id}" class="csgoEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="csgoDel">删除</a></td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+
+            </div><!--subcontent-->
+
+        </div><!--contentwrapper-->
+
+	</div><!-- centercontent -->
+
+    
+</div><!--bodywrapper-->
+
+</body>
+<script type="text/javascript">
+    //解决$方法不能用的问题
+    jQuery.noConflict();
+    jQuery(document).ready(function($){
+        //给dota删除按钮绑定点击事件
+        $('.dotaDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/dotaDel/id/' + id;
+        });
+        //给csgo删除按钮绑定点击事件
+        $('.csgoDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/csgoDel/id/' + id;
+        });
+        //给编辑按钮绑定点击事件(用document解决分页后不能点击的bug)
+        $(document).on('click',".dotaEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/dotaEdit/id/' + id;
+        });
+        $(document).on('click',".csgoEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/csgoEdit/id/' + id;
+        });
+        //给退出按钮绑定点击事件
+        $('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
+        //默认选中效果，箭头指向
+        $(function(){
+            $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
+        });
+    });
+</script>
+</html>

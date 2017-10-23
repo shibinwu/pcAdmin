@@ -34,18 +34,15 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">属性列表</h1>
-            <ul class="hornav">
-                <li class="current"><a href="#basicform">DOTA</a></li>
-                <li><a href="#validation">CSGO</a></li>
-            </ul>
+            <h1 class="pagetitle">英雄属性列表</h1>
+
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
 
             <div id="basicform" class="subcontent">
 
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable " id="dyntable">
                     <colgroup>
                         <col class="con0" />
                         <col class="con1" />
@@ -66,21 +63,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <volist name='data1' id='vol1'>
+                    <volist name='data' id='vol'>
                         <tr>
-                            <td>{$vol1.id}</td>
-                            <td>{$vol1.name}</td>
-                            <td><if condition='$vol1.type == 1'>品质
-                                <elseif condition='$vol1.type ==2'/>稀有度
-                                <elseif condition='$vol1.type ==3'/>种类
-                                <elseif condition='$vol1.type ==4'/>部位
+                            <td>{$vol.id}</td>
+                            <td>{$vol.name}</td>
+                            <td><if condition='$vol.type == 1'>品质
+                                <elseif condition='$vol.type ==2'/>稀有度
+                                <elseif condition='$vol.type ==3'/>种类
+                                <elseif condition='$vol.type ==4'/>部位
                                 <else/>&nbsp</if>
                             </td>
-                            <td><input type="color" value="{$vol1.color}" disabled></td>
-                            <td>{$vol1[ctime] |date='Y-m-d H:i:s',### }</td>
-                            <td>{$vol1[mtime] |date='Y-m-d H:i:s',### }</td>
+                            <td><input type="color" value="{$vol.color}" disabled></td>
+                            <td>{$vol[ctime] |date='Y-m-d H:i:s',### }</td>
+                            <td>{$vol[mtime] |date='Y-m-d H:i:s',### }</td>
 
-                            <td class="center"><a href="javascript:;" data-id="{$vol1.id}" class="dotaEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol1.id}" class="dotaDel">删除</a></td>
+                            <td class="center"><a href="javascript:;" data-id="{$vol.id}" class="dotaEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="dotaDel">删除</a></td>
                         </tr>
                     </volist>
                     </tbody>
@@ -90,51 +87,6 @@
 
             </div><!--subcontent-->
 
-            <div id="validation" class="subcontent" style="display: none">
-
-                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable1">
-                    <colgroup>
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                        <col class="con1" />
-                        <col class="con0" />
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th class="head0">ID</th>
-                        <th class="head1">属性名称</th>
-                        <th class="head0">属性类型</th>
-                        <th class="head1">属性颜色</th>
-                        <th class="head0">创建时间</th>
-                        <th class="head1">修改时间</th>
-                        <th class="head0">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <volist name='data2' id='vol2'>
-                        <tr>
-                            <td>{$vol2.id}</td>
-                            <td>{$vol2.name}</td>
-                            <td><if condition='$vol2.type == 1'>品质
-                                <elseif condition='$vol2.type ==2'/>稀有度
-                                <elseif condition='$vol2.type ==3'/>种类
-                                <elseif condition='$vol2.type ==4'/>部位
-                                <else/>&nbsp</if>
-                            </td>
-                            <td><input type="color" value="{$vol2.color}" disabled></td>
-                            <td>{$vol2[ctime] |date='Y-m-d H:i:s',### }</td>
-                            <td>{$vol2[mtime] |date='Y-m-d H:i:s',### }</td>
-
-                            <td class="center"><a href="javascript:;" data-id="{$vol2.id}" class="csgoEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol2.id}" class="csgoDel">删除</a></td>
-                        </tr>
-                    </volist>
-                    </tbody>
-                </table>
-
-            </div><!--subcontent-->
 
         </div><!--contentwrapper-->
 
