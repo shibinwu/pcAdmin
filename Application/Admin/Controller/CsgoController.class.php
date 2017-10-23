@@ -60,8 +60,6 @@ class CsgoController extends CommonController{
 		$model = M('Csgo_gun');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-		//上线时打开
-		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版
