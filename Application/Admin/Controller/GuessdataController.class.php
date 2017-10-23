@@ -56,11 +56,21 @@ class GuessdataController extends CommonController
     {
         #获取数据
         $model = M('Guess_data');
+        $model1 = M('Guess');
         #查询
         $data = $model->where('statu = 1')->select();
-//		dump($data);die;
+        $data1 = $model1->select();
+
+        foreach($data1 as $index=>$item){
+            $tmp[$item['g_id']] = $item;
+        }
+        foreach($data as $index=>$value){
+            $data[$index]['gname'] = $tmp[$value['gid']]['g_name'];
+        }
+//        dump($data);die();
         #传递变量给模版
         $this->assign('data', $data);
+//        $this->assign('data1', $data1);
         #展示模版
         $this->display();
     }
