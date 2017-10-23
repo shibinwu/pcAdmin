@@ -97,6 +97,8 @@ class CsgoController extends CommonController{
 	 	$model = M('Csgo_gun');
 	 	#查询操作
 	 	$data = $model -> find($id);
+		 //上线时打开
+        $data['gtpic'] = 'http://t.codechm.com/'. $data['gtpic'];
 	 	#传递给模版
 	 	$this -> assign('data',$data);
 	 	#展示模版
@@ -107,6 +109,7 @@ class CsgoController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
+
 //	 	dump($post);die;
 	 	#判断是否有附件上传
 	 	if($_FILES['icon']['size'] > 0){
