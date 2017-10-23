@@ -184,3 +184,14 @@ ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '1 正常 0 删除' AF
 
 ALTER TABLE `csgo_gun`
 ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '1 正常 0 删除' AFTER `mtime`;
+
+2017/10/23 wujianyin
+ALTER TABLE `csgo_attr`
+ADD COLUMN `ctime`  int(11) NOT NULL COMMENT '创建时间' AFTER `color`,
+ADD COLUMN `mtime`  int(11) NOT NULL COMMENT '修改时间' AFTER `ctime`,
+ADD COLUMN `statu`  tinyint(3) NOT NULL DEFAULT 1 COMMENT '1 正常 0 删除' AFTER `mtime`;
+
+ALTER TABLE `dota_attr`
+ADD COLUMN `ctime`  int(11) NOT NULL COMMENT '创建时间' AFTER `color`,
+ADD COLUMN `mtime`  int(11) NOT NULL COMMENT '修改时间' AFTER `ctime`,
+ADD COLUMN `statu`  tinyint(3) NOT NULL COMMENT '1 正常 0 删除' AFTER `mtime`;

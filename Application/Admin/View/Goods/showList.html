@@ -112,33 +112,5 @@
         });
     });
 
-    function Foo(){
-        var i = 0;
-        return function (){
-            console.log(i++);
-        }
-    }
-
-    var f1 = Foo(),
-        f2 = Foo();
-
-    f1();
-    f1();
-
-    var fullname = '张三';
-    var obj ={
-        fullname:'李四',
-        prop: {
-            fullname: '王五',
-            getFullname: function () {
-                return this.fullname;
-            }
-        }
-    };
-
-    console.log(obj.prop.getFullname());
-    var test = obj.prop.getFullname;
-    console.log(test());
-    console.log(test.call(obj.prop));
 </script>
 </html>

@@ -34,71 +34,150 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品属性列表</h1>
-            <span class="pagedesc">本页面为商品属性列表的详情展示</span>
-            
+            <h1 class="pagetitle">属性列表</h1>
+            <ul class="hornav">
+                <li class="current"><a href="#basicform">DOTA</a></li>
+                <li><a href="#validation">CSGO</a></li>
+            </ul>
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
 
+            <div id="basicform" class="subcontent">
 
-            <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
-                <colgroup>
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
-                    <col class="con0" />
-                </colgroup>
-                <thead>
-                <tr>
-                    <!--<th class="head0">商品描述id</th>-->
-                    <!--<th class="head1">本父级ID</th>-->
-                    <th class="head0">ID</th>
-                    <th class="head0">属性名称</th>
-                    <th class="head1">游戏</th>
-                    <th class="head1">描述类型</th>
-                    <th class="head0">操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <volist name='data' id='vol'>
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dotatable">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
                     <tr>
-                        <td>{$vol.ga_id}</td>
-						<td>{$vol.ga_name}</td>
-                        <td><if condition='$vol.pgaid == 1'>CSGO<else/>DOTA2</if></td>
-                        
-                        <!--<td>{$vol.ga_type}</td>-->
-                        <td><if condition='$vol.ga_type == 5'>外观
-                            <elseif condition='$vol.ga_type ==3'/>品质
-                            <elseif condition='$vol.ga_type ==6'/>类别
-                            <elseif condition='$vol.ga_type ==7'/>种类
-                            <elseif condition='$vol.ga_type ==9'/>稀有度
-                            <else/>&nbsp</if>
-                        </td>
-
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.ga_id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.ga_id}" class="del">删除</a></td>
+                        <th class="head0">ID</th>
+                        <th class="head1">属性名称</th>
+                        <th class="head0">属性类型</th>
+                        <th class="head1">属性颜色</th>
+                        <th class="head0">创建时间</th>
+                        <th class="head1">修改时间</th>
+                        <th class="head0">操作</th>
                     </tr>
-                </volist>
-                </tbody>
-            </table>
-            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
+                    </thead>
+                    <tbody>
+                    <volist name='data1' id='vol1'>
+                        <tr>
+                            <td>{$vol1.id}</td>
+                            <td>{$vol1.name}</td>
+                            <td><if condition='$vol1.type == 1'>品质
+                                <elseif condition='$vol1.type ==2'/>稀有度
+                                <elseif condition='$vol1.type ==3'/>种类
+                                <elseif condition='$vol1.type ==4'/>部位
+                                <else/>&nbsp</if>
+                            </td>
+                            <td><input type="color" value="{$vol1.color}" disabled></td>
+                            <td>{$vol1[ctime] |date='Y-m-d H:i:s',### }</td>
+                            <td>{$vol1[mtime] |date='Y-m-d H:i:s',### }</td>
 
+                            <td class="center"><a href="javascript:;" data-id="{$vol1.id}" class="dotaEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol1.id}" class="dotaDel">删除</a></td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
 
+                <br />
+
+            </div><!--subcontent-->
+
+            <div id="validation" class="subcontent" style="display: none">
+
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="csgotable">
+                    <colgroup>
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="head0">ID</th>
+                        <th class="head1">属性名称</th>
+                        <th class="head0">属性类型</th>
+                        <th class="head1">属性颜色</th>
+                        <th class="head0">创建时间</th>
+                        <th class="head1">修改时间</th>
+                        <th class="head0">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name='data2' id='vol2'>
+                        <tr>
+                            <td>{$vol2.id}</td>
+                            <td>{$vol2.name}</td>
+                            <td><if condition='$vol2.type == 1'>品质
+                                <elseif condition='$vol2.type ==2'/>稀有度
+                                <elseif condition='$vol2.type ==3'/>种类
+                                <elseif condition='$vol2.type ==4'/>部位
+                                <else/>&nbsp</if>
+                            </td>
+                            <td><input type="color" value="{$vol2.color}" disabled></td>
+                            <td>{$vol2[ctime] |date='Y-m-d H:i:s',### }</td>
+                            <td>{$vol2[mtime] |date='Y-m-d H:i:s',### }</td>
+
+                            <td class="center"><a href="javascript:;" data-id="{$vol2.id}" class="csgoEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol2.id}" class="csgoDel">删除</a></td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+
+            </div><!--subcontent-->
 
         </div><!--contentwrapper-->
-        
+
 	</div><!-- centercontent -->
 
     
 </div><!--bodywrapper-->
 
 </body>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
+        //给dota删除按钮绑定点击事件
+        $('.dotaDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/dotaDel/id/' + id;
+        });
+        //给csgo删除按钮绑定点击事件
+        $('.csgoDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/csgoDel/id/' + id;
+        });
+        //给编辑按钮绑定点击事件(用document解决分页后不能点击的bug)
+        $(document).on('click',".dotaEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/dotaEdit/id/' + id;
+        });
+        $(document).on('click',".csgoEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/csgoEdit/id/' + id;
+        });
+        //给退出按钮绑定点击事件
+        $('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
         //默认选中效果，箭头指向
         $(function(){
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
