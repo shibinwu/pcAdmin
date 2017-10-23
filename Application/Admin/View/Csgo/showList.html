@@ -34,9 +34,7 @@
     <div class="centercontent tables">
     
         <div class="pageheader notab">
-            <h1 class="pagetitle">商品列表</h1>
-            <span class="pagedesc">该页面是商品列表信息，展示所有商品的详细信息</span>
-            
+            <h1 class="pagetitle">CSGO 武器列表</h1>
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -49,55 +47,38 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
-                    <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
+                    <th class="head0">ID</th>
+                    <th class="head1">名字</th>
+                    <th class="head0">图片</th>
+                    <th class="head1">武器类型</th>
+                    <th class="head0">创建时间</th>
+                    <th class="head1">创建时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.good_name}</td>
-                        <td>{$vol.price}</td>
-                        <td>{$vol.stock}</td>
-                        <td><if condition='$vol.g_part == 1'>推荐区
-                            <elseif condition='$vol.g_part ==2'/>打折区
-                            <elseif condition='$vol.g_part ==3'/>人气区
-                            <elseif condition='$vol.g_part ==4'/>土豪区
-                            <elseif condition='$vol.g_part ==5'/>求购区
-                            <else/>&nbsp</if>
+                        <td>{$vol.id}</td>
+                        <td>{$vol.name}</td>
+                        <td><img width="60" height="40" src="{$vol.icon}"/></td>
+                        <td>{$vol.type}</td>
+                        <td>{$vol[ctime] |date='Y-m-d H:i:s',###}</td>
+                        <td>{$vol[mtime] |date='Y-m-d H:i:s',###}</td>
+                        <td class="center" url="__CONTROLLER__">
+							<a href="javascript:;" data-id="{$vol.id}" class="edit">编辑</a> &nbsp;
+							<a href="javascript:;" data-id="{$vol.id}" class="del">删除</a>
                         </td>
-                        <td><if condition='$vol.guess == 1'>可竞猜
-                            <elseif condition='$vol.guess ==2'/>不可竞猜
-                            <else/>&nbsp</if>
-                        </td>
-                        <td>{$vol.valuation}</td>
-                        <td>{$vol.saled_num}</td>
-                        <td><if condition='$vol.gameowner == 1'>dota2
-                            <elseif condition='$vol.gameowner == 2'/>csgo
-                            <else/></if>
-                        </td>
-
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
-
         </div><!--contentwrapper-->
-        
 	</div><!-- centercontent -->
-
-    
 </div><!--bodywrapper-->
 
 </body>
@@ -111,34 +92,5 @@
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
-
-    function Foo(){
-        var i = 0;
-        return function (){
-            console.log(i++);
-        }
-    }
-
-    var f1 = Foo(),
-        f2 = Foo();
-
-    f1();
-    f1();
-
-    var fullname = '张三';
-    var obj ={
-        fullname:'李四',
-        prop: {
-            fullname: '王五',
-            getFullname: function () {
-                return this.fullname;
-            }
-        }
-    };
-
-    console.log(obj.prop.getFullname());
-    var test = obj.prop.getFullname;
-    console.log(test());
-    console.log(test.call(obj.prop));
 </script>
 </html>
