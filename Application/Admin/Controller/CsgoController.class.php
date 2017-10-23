@@ -98,7 +98,7 @@ class CsgoController extends CommonController{
 	 	#查询操作
 	 	$data = $model -> find($id);
 		 //上线时打开
-        $data['gtpic'] = 'http://t.codechm.com/'. $data['gtpic'];
+        $data['icon'] = 'http://t.codechm.com/'. $data['icon'];
 	 	#传递给模版
 	 	$this -> assign('data',$data);
 	 	#展示模版
