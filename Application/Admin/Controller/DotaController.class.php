@@ -93,7 +93,10 @@ class DotaController extends CommonController{
 
     #edit方法
 	 public function edit(){
-	 	$this -> assign('data',M('dota_hero') -> find(I('get.id')));
+	 	$data = M('dota_hero') -> find(I('get.id'));
+	 	//上线时打开
+	 	$data['hicon'] = 'http://t.codechm.com/'. $data['hicon'];
+	 	$this -> assign('data',$data);
 	 	$this -> display();
 	 }
 	 #editOk方法
