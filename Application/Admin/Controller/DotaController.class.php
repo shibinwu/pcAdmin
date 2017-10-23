@@ -47,10 +47,10 @@ class DotaController extends CommonController{
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加商品成功',U('showList'),1);
+			$this -> success('添加英雄成功',U('showList'),1);
 		}else{
 			#失败
-			$this -> error('添加商品失败',U('add'),1);
+			$this -> error('添加英雄失败',U('add'),1);
 		}
 	}
 
