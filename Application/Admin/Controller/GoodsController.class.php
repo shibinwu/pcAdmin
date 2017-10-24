@@ -175,6 +175,8 @@ class GoodsController extends CommonController{
 		$model = M('Goods_new');
 		#查询操作
 		$data = $model->find($id);
+		//上线时打开
+		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
 		#传递给模版
 		$this->assign('data', $data);
 
@@ -204,6 +206,8 @@ class GoodsController extends CommonController{
 		$model = M('Goods_new');
 		#查询操作
 		$data = $model->find($id);
+		//上线时打开
+		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
 //		dump($data);die();
 		#传递给模版
 		$this -> assign('data', $data);
