@@ -35,8 +35,7 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">商品列表</h1>
-            <span class="pagedesc">该页面是商品列表信息，展示所有商品的详细信息</span>
-            
+
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -49,44 +48,55 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
+                    <th class="head0">ID</th>
+                    <th class="head1">商品名称</th>
+                    <th class="head0">商品图片</th>
+                    <th class="head1">游戏</th>
+                    <!--<th class="head0">英雄/武器</th>-->
+                    <!--<th class="head1">属性名称</th>-->
+                    <th class="head0">市场估价</th>
+                    <th class="head1">库存</th>
+                    <th class="head0">售卖区</th>
+                    <th class="head1">可否竞猜</th>
                     <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
-                    <th class="head0">操作</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.good_name}</td>
-                        <td>{$vol.price}</td>
+                        <td>{$vol.id}</td>
+                        <td>{$vol.name}</td>
+                        <td><img width="60" height="40" src="http://t.codechm.com/{$vol['icon']}"/></td>
+                        <td><if condition='$vol.game_owner == 1'>dota
+                            <elseif condition='$vol.game_owner ==2'/>csgo
+                            <else/>&nbsp</if>
+                        </td>
+                        <!--<td>{$vol.game_owner}</td>-->
+                        <!--<td>{$vol.own_id}</td>-->
+                        <!--<td>{$vol.attr_ids}</td>-->
+                        <td>{$vol.valuation}</td>
                         <td>{$vol.stock}</td>
-                        <td><if condition='$vol.g_part == 1'>推荐区
-                            <elseif condition='$vol.g_part ==2'/>打折区
-                            <elseif condition='$vol.g_part ==3'/>人气区
-                            <elseif condition='$vol.g_part ==4'/>土豪区
-                            <elseif condition='$vol.g_part ==5'/>求购区
+                        <td><if condition='$vol.part == 1'>推荐区
+                            <elseif condition='$vol.part ==2'/>打折区
+                            <elseif condition='$vol.part ==3'/>人气区
+                            <elseif condition='$vol.part ==4'/>土豪区
+                            <elseif condition='$vol.part ==5'/>求购区
                             <else/>&nbsp</if>
                         </td>
                         <td><if condition='$vol.guess == 1'>可竞猜
-                            <elseif condition='$vol.guess ==2'/>不可竞猜
+                            <elseif condition='$vol.guess ==0'/>不可竞猜
                             <else/>&nbsp</if>
                         </td>
-                        <td>{$vol.valuation}</td>
                         <td>{$vol.saled_num}</td>
-                        <td><if condition='$vol.gameowner == 1'>dota2
-                            <elseif condition='$vol.gameowner == 2'/>csgo
-                            <else/></if>
-                        </td>
-
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gid}" class="del">删除</a></td>
                     </tr>
                 </volist>
