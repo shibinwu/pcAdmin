@@ -146,12 +146,12 @@ class GoodsController extends CommonController{
         $id = I('get.id');
 //        dump($id);die;
         #实例化模型
-        $model = M('Goods');
+        $model = M('Goods_new');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'gid'   =>  $id,
+            'id'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
@@ -159,45 +159,77 @@ class GoodsController extends CommonController{
         #判断返回值
         if($rst){
             #删除成功
-            $this -> success('删除成功',U('showList'),3);
+            $this -> success('删除成功',U('showList'),1);
         }else{
             #删除失败
-            $this -> error('删除失败',U('showList'),3);
+            $this -> error('删除失败',U('showList'),1);
         }
     }
 
-    #edit方法
-	 public function edit(){
-	 	#接收数据
-	 	$id = I('get.id');
+	#edit方法(dota)
+	public function dotaEdit()
+	{
+		#接收数据
+		$id = I('get.id');
+		#实例化模型
+		$model = M('Goods_new');
+		#查询操作
+		$data = $model->find($id);
+		#传递给模版
+		$this->assign('data', $data);
 
-	 	#实例化模型
-	 	$model = M('Goods');
-//		 $data = $model -> field('t1.*,t2.ga_name as name') -> table('goods as t1,goods_attr as t2') -> where('t1.g_class = t2.ga_id') -> select();
+		//获取DOTA属性id和名称
+		$dota_data = M('Dota_attr')->select();
+		foreach($dota_data as $index=>$item){
+			$dota_attr[$item['id']] = $item;
+		}
+		//获取DOTA英雄id和名称
+		$hero_model = M('Dota_hero');
+		$hero_data = $hero_model -> select();
+		foreach($hero_data as $index=>$item){
+			$hero_attr[$item['id']] = $item;
+		}
+		$this -> assign('dota_attr',$dota_attr);
+		$this -> assign('hero_attr',$hero_attr);
+		#展示模版
+		$this->display();
+	}
 
-		 //todo 商品分类
-		 $gtmodel = M('goods_attr');
-		 $class = $gtmodel->where('ga_id','>','0')->where('ga_type = 2')->select();
-		 $grand = $gtmodel->where('ga_id','>','0')->where('ga_type = 3')->select();
-		 $position = $gtmodel->where('ga_id','>','0')->where('ga_type = 4')->select();
-
-	 	#查询操作
-	 	$data = $model -> find($id);
-//		 dump($data);die;
-	 	#传递给模版
-	 	$this -> assign('data',$data);
-	 	$this -> assign('class',$class);
-	 	$this -> assign('grand',$grand);
-	 	$this -> assign('position',$position);
-	 	#展示模版
-	 	$this -> display();
-	 }
+	#edit方法(csgo)
+	public function csgoEdit()
+	{
+		#接收数据
+		$id = I('get.id');
+		#实例化模型
+		$model = M('Goods_new');
+		#查询操作
+		$data = $model->find($id);
+//		dump($data);die();
+		#传递给模版
+		$this -> assign('data', $data);
+		//获取CSGO属性id和名称
+		$csgo_data = M('Csgo_attr')->select();
+		foreach($csgo_data as $index=>$item){
+			$csgo_attr[$item['id']] = $item;
+		}
+		//获取CSGO武器id和名称
+		$gun_model = M('Csgo_gun');
+		$gun_data = $gun_model -> select();
+		foreach($gun_data as $index=>$item){
+			$gun_attr[$item['id']] = $item;
+		}
+		$this -> assign('csgo_attr',$csgo_attr);
+		$this -> assign('gun_attr',$gun_attr);
+		#展示模版
+		#展示模版
+		$this->display();
+	}
 
 	 #editOk方法
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-//	 	dump($post);die;
+
 	 	#判断是否有附件上传
 	 	if($_FILES['icon']['size'] > 0){
 	 		#配置
@@ -222,9 +254,9 @@ class GoodsController extends CommonController{
 	 	}
 	 	$post['mtime'] = time();
 	 	#写入到数据表
-//		 dump($post);die;
-	 	$model = M('Goods');
-		 if($post['gid']){
+		 dump($post);die;
+	 	$model = M('Goods_new');
+		 if($post['id']){
 			 $rst = $model -> save($post);
 		 }else{
 			 echo '123';
@@ -233,10 +265,10 @@ class GoodsController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('编辑失败',U('showList'),1);
 	 	}
 	 }
 }

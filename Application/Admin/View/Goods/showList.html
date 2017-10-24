@@ -75,7 +75,7 @@
                     <tr>
                         <td>{$vol.id}</td>
                         <td>{$vol.name}</td>
-                        <td><img width="60" height="40" src="http://t.codechm.com/{$vol['icon']}"/></td>
+                        <td><img width="60" height="40" src="{$vol['icon']}"/></td>
                         <td><if condition='$vol.game_owner == 1'>dota
                             <elseif condition='$vol.game_owner ==2'/>csgo
                             <else/>&nbsp</if>
@@ -97,7 +97,18 @@
                             <else/>&nbsp</if>
                         </td>
                         <td>{$vol.saled_num}</td>
-                        <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gid}" class="del">删除</a></td>
+
+                        <td class="center">
+                            <if condition='$vol[game_owner] == 1'>
+                            <a href="javascript:;" data-id="{$vol.id}" class="dotaEdit">编辑</a> &nbsp;
+
+                            <else/>
+                            <a href="javascript:;" data-id="{$vol.id}" class="csgoEdit">编辑</a> &nbsp;
+
+                            </if>
+                            <a href="javascript:;" data-id="{$vol.id}" class="del">删除</a>
+                        </td>
+
                     </tr>
                 </volist>
                 </tbody>
@@ -111,16 +122,43 @@
 </div><!--bodywrapper-->
 
 </body>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
+        //给dota删除按钮绑定点击事件
+        $('.dotaDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/dotaDel/id/' + id;
+        });
+        //给csgo删除按钮绑定点击事件
+        $('.csgoDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '__CONTROLLER__' + '/csgoDel/id/' + id;
+        });
+        //给编辑按钮绑定点击事件(用document解决分页后不能点击的bug)
+        $(document).on('click',".dotaEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/dotaEdit/id/' + id;
+        });
+        $(document).on('click',".csgoEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '__CONTROLLER__'+'/csgoEdit/id/' + id;
+        });
+        //给退出按钮绑定点击事件
+        $('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
         //默认选中效果，箭头指向
         $(function(){
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
-
 </script>
 </html>
