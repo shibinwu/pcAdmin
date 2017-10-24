@@ -254,7 +254,7 @@ class GoodsController extends CommonController{
 	 	}
 	 	$post['mtime'] = time();
 	 	#写入到数据表
-		 dump($post);die;
+//		 dump($post);die;
 	 	$model = M('Goods_new');
 		 if($post['id']){
 			 $rst = $model -> save($post);
