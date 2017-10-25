@@ -23,10 +23,10 @@ class GoodsattrController extends CommonController{
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加成功',U('showList'),1);
+			$this -> success('添加成功',U('dotaList'),1);
 		}else{
 			#失败
-			$this -> error('添加失败',U('add'),1);
+			$this -> error('添加失败',U('dotaAdd'),1);
 		}
 	}
 
@@ -42,10 +42,10 @@ class GoodsattrController extends CommonController{
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加成功',U('showList'),1);
+			$this -> success('添加成功',U('csgoList'),1);
 		}else{
 			#失败
-			$this -> error('添加失败',U('add'),1);
+			$this -> error('添加失败',U('csgoAdd'),1);
 		}
 	}
 
