@@ -57,9 +57,6 @@
                         <th class="head0">ID</th>
                         <th class="head1">属性名称</th>
                         <th class="head0">属性类型</th>
-                        <th class="head1">属性颜色</th>
-                        <th class="head0">创建时间</th>
-                        <th class="head1">修改时间</th>
                         <th class="head0">操作</th>
                     </tr>
                     </thead>
@@ -67,16 +64,14 @@
                     <volist name='data' id='vol'>
                         <tr>
                             <td>{$vol.id}</td>
-                            <td>{$vol.name}</td>
+                            <td style="color:{$vol.color}">{$vol.name}</td>
                             <td><if condition='$vol.type == 1'>品质
                                 <elseif condition='$vol.type ==2'/>稀有度
                                 <elseif condition='$vol.type ==3'/>种类
                                 <elseif condition='$vol.type ==4'/>部位
                                 <else/>&nbsp</if>
                             </td>
-                            <td><input type="color" value="{$vol.color}" disabled></td>
-                            <td>{$vol[ctime] |date='Y-m-d H:i:s',### }</td>
-                            <td>{$vol[mtime] |date='Y-m-d H:i:s',### }</td>
+
 
                             <td class="center"><a href="javascript:;" data-id="{$vol.id}" class="csgoEdit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="csgoDel">删除</a></td>
                         </tr>

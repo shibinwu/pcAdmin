@@ -55,8 +55,6 @@
                     <th class="head1">名字</th>
                     <th class="head0">图片</th>
                     <th class="head1">力量\敏捷\智力</th>
-                    <th class="head0">创建时间</th>
-                    <th class="head1">创建时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
@@ -67,8 +65,6 @@
                         <td>{$vol.hname}</td>
                         <td><img width="60" height="40" src="http://t.codechm.com/{$vol['hicon']}"/></td>
                         <td>{$vol.type}</td>
-                        <td>{$vol[ctime] |date='Y-m-d H:i:s',###}</td>
-                        <td>{$vol[mtime] |date='Y-m-d H:i:s',###}</td>
                         <td class="center" url="__CONTROLLER__">
 							<a href="javascript:;" data-id="{$vol.dhid}" class="edit">编辑</a> &nbsp;
 							<a href="javascript:;" data-id="{$vol.dhid}" class="del">删除</a>

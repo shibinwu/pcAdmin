@@ -66,7 +66,12 @@ class GoodsController extends CommonController{
 		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
-//		 dump($post);die;
+		//处理商品属性的值
+		$arr = array($post['attr1'],$post['attr2'],$post['attr3'],$post['attr4']);
+		//去除数组空元素
+		$arr = array_filter($arr);
+		//把数组用，隔开变成字符串
+		$post['attr_ids'] = implode(",", $arr);
 		#添加addtime字段
 	 	$post['ctime'] = time();
 		#写入数据表
@@ -81,7 +86,6 @@ class GoodsController extends CommonController{
 			$this -> error('添加商品失败',U('add'),1);
 		}
 	}
-
 
 	#addOk方法，接收数据保存数据
 	public function csgoAdd(){
@@ -111,6 +115,12 @@ class GoodsController extends CommonController{
 			}
 		}
 //		 dump($post);die;
+		//处理商品属性的值
+		$arr = array($post['attr1'],$post['attr2'],$post['attr3'],$post['attr4']);
+		//去除数组空元素
+		$arr = array_filter($arr);
+		//把数组用，隔开变成字符串
+		$post['attr_ids'] = implode(",", $arr);
 		#添加addtime字段
 		$post['ctime'] = time();
 		#写入数据表
