@@ -192,7 +192,7 @@ class GoodsController extends CommonController{
 		#传递给模版
 		$this->assign('data', $data);
 		//获取DOTA属性id和名称
-		$dota_data = M('Dota_attr')->select();
+		$dota_data = M('Dota_attr')->field('id,name,type')->select();
 		foreach($dota_data as $index=>$item){
 			$dota_attr[$item['id']] = $item;
 		}
