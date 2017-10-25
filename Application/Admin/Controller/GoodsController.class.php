@@ -274,6 +274,10 @@ class GoodsController extends CommonController{
 	 			$post['hasfile'] = 1;
 	 		}
 	 	}
+	 	//处理商品属性的值
+	 	$arr = array($post['attr0'],$post['attr1'],$post['attr2'],$post['attr3']);
+	 	//把数组用，隔开变成字符串
+	 	$post['attr_ids'] = implode(",", $arr);
 	 	$post['mtime'] = time();
 	 	#写入到数据表
 //		 dump($post);die;
