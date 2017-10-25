@@ -67,9 +67,7 @@ class GoodsController extends CommonController{
 		 	}
 		 }
 		//处理商品属性的值
-		$arr = array($post['attr1'],$post['attr2'],$post['attr3'],$post['attr4']);
-		//去除数组空元素
-		$arr = array_filter($arr);
+		$arr = array($post['attr0'],$post['attr1'],$post['attr2'],$post['attr3']);
 		//把数组用，隔开变成字符串
 		$post['attr_ids'] = implode(",", $arr);
 		#添加addtime字段
@@ -116,9 +114,7 @@ class GoodsController extends CommonController{
 		}
 //		 dump($post);die;
 		//处理商品属性的值
-		$arr = array($post['attr1'],$post['attr2'],$post['attr3'],$post['attr4']);
-		//去除数组空元素
-		$arr = array_filter($arr);
+		$arr = array($post['attr0'],$post['attr1'],$post['attr2'],$post['attr3']);
 		//把数组用，隔开变成字符串
 		$post['attr_ids'] = implode(",", $arr);
 		#添加addtime字段
@@ -187,14 +183,20 @@ class GoodsController extends CommonController{
 		$data = $model->find($id);
 		//上线时打开
 		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
+		//把属性值分开写入模板显示（attr0,attr1,attr2,attr3）
+		$attr_ids =explode(',',$data['attr_ids']);
+		$this->assign('attr_ids', $attr_ids);
+		foreach($attr_ids as $index=>$item){
+			$data['attr'.$index] = $item;
+		}
 		#传递给模版
 		$this->assign('data', $data);
-
 		//获取DOTA属性id和名称
 		$dota_data = M('Dota_attr')->select();
 		foreach($dota_data as $index=>$item){
 			$dota_attr[$item['id']] = $item;
 		}
+//		dump($dota_attr);die();
 		//获取DOTA英雄id和名称
 		$hero_model = M('Dota_hero');
 		$hero_data = $hero_model -> select();
@@ -219,6 +221,12 @@ class GoodsController extends CommonController{
 		//上线时打开
 		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
 //		dump($data);die();
+		//把属性值分开写入模板显示（attr0,attr1,attr2,attr3）
+		$attr_ids =explode(',',$data['attr_ids']);
+		$this->assign('attr_ids', $attr_ids);
+		foreach($attr_ids as $index=>$item){
+			$data['attr'.$index] = $item;
+		}
 		#传递给模版
 		$this -> assign('data', $data);
 		//获取CSGO属性id和名称
