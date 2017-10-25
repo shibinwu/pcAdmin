@@ -35,8 +35,6 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">出售列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -49,33 +47,45 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con0" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th class="head0">出售ID</th>
-                    <th class="head1">商品ID</th>
-                    <th class="head0">用户ID</th>
+                    <th class="head0">所属游戏</th>
+                    <th class="head1">商品名称</th>
+                    <th class="head0">用户名称</th>
                     <th class="head1">商品价格</th>
                     <th class="head0">库存</th>
                     <th class="head1">状态</th>
-                    <th class="head0">添加时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <td>{$vol.gsid}</td>
-                        <td>{$vol.gid}</td>
-                        <td>{$vol.uid}</td>
+                        <td>{$vol.swid}</td>
+                        <td><if condition='$vol.gtype == 1'>CSGO
+                            <elseif condition='$vol.gtype ==2'/>DOTA
+                            <else/>&nbsp</if>
+                        </td>
+
+                        <td>
+                                {$vol.gid.name}
+                        </td>
+
+                        <td>
+                            {$vol.uid.name}
+                        </td>
                         <td>{$vol.price}</td>
-                        <td>{$vol.stock}</td>
+                        <td>{$vol.nums}</td>
                         <td><if condition='$vol.status == 1'>出售中
                             <elseif condition='$vol.status ==2'/>已取消
                             <elseif condition='$vol.status ==3'/>完成
                             <else/>&nbsp</if>
                         </td>
-                        <td>{$vol.addtime}</td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gsid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gsid}" class="del">删除</a></td>
                     </tr>
                 </volist>

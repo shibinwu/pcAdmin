@@ -60,12 +60,32 @@ class GoodssellController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('Goods_sell');
+		$model = M('Goods_sell_want');
+		$model1 = M('Goods_new');
+		$model2 = M('Users');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
+		$goods_data = $model1 -> field('id,name') -> select();
+		$users_data = $model2 -> field('id,name') -> select();
+        $temp = array();
+        $temps = array();
+		foreach($goods_data as $index=>$item){
+			$temp[$item['id']] = $item;
+		}
+		foreach($users_data as $index=>$item){
+			$temps[$item['id']] = $item;
+		}
+//        dump($temp[1]);die();
+		foreach($data as $index=>$value){
+			$data[$index]['gid'] = $temp[$value['gid']];
+			$data[$index]['uid'] = $temps[$value['uid']];
+		}
+
 //		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
+		$this -> assign('temp',$temp);
+		$this -> assign('temps',$temps);
 		#展示模版
 		$this -> display();
 	}
