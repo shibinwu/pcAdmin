@@ -38,7 +38,6 @@ class GuessdataController extends CommonController
         $guess = $guessMolde->find($gid);
         $post['ltid'] = $guess['g_leftid'];
         $post['rtid'] = $guess['g_rightid'];
-//        dump($post);die();
         #写入数据表
         $model = M('Guess_data');
         $rst = $model->add($post);
@@ -92,10 +91,10 @@ class GuessdataController extends CommonController
         #判断返回值
         if ($rst) {
             #删除成功
-            $this->success('删除成功', U('showList'), 3);
+            $this->success('删除成功', U('showList'), 1);
         } else {
             #删除失败
-            $this->error('删除失败', U('showList'), 3);
+            $this->error('删除失败', U('showList'), 1);
         }
     }
 
@@ -192,10 +191,10 @@ class GuessdataController extends CommonController
             #判断返回结果
             if ($rst) {
                 #成功
-                $this->success('编辑成功', U('showList'), 3);
+                $this->success('编辑成功', U('showList'), 1);
             } else {
                 #失败
-                $this->error('编辑失败', U('edit', array('id' => $post['id'])), 3);
+                $this->error('编辑失败', U('edit', array('id' => $post['id'])), 1);
             }
         }
     }
