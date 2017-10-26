@@ -80,7 +80,6 @@ class GoodssellController extends CommonController{
 			$data[$index]['gid'] = $temp[$value['gid']];
 			$data[$index]['uid'] = $temps[$value['uid']];
 		}
-
 		#传递变量给模版
 		$this -> assign('data',$data);
 		$this -> assign('temp',$temp);
@@ -88,33 +87,6 @@ class GoodssellController extends CommonController{
 		#展示模版
 		$this -> display();
 	}
-
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){
