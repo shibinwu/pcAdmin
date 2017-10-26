@@ -22,7 +22,6 @@
 	<script src="__PUBLIC__/Admin/js/plugins/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
-
 <body class="withvernav">
 <div class="bodywrapper">
     <include file = 'Test/topheader' />  <!--包含头文件-->
@@ -35,13 +34,8 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">竞猜列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
         </div><!--pageheader-->
-        
         <div id="contentwrapper" class="contentwrapper">
-
-
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
                     <col class="con0" />
@@ -63,7 +57,7 @@
                     <th class="head0">比赛类型</th>
                     <th class="head1">竞猜类型</th>
                     <th class="head0">比赛开始时间</th>
-                    <th class="head0">竞猜状态</th>
+                    <th class="head1">竞猜状态</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
@@ -71,19 +65,16 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.g_name}</td>
-                        <!--<td>{$vol.g_leftid}</td>-->
                         <td>
                             <volist name='data1' id='vol1'>
                                 <if condition="$vol[g_leftid] == $vol1[gtid]">{$vol1.gtname}</if>
                             </volist>
                         </td>
-
                         <td>
                             <volist name='data1' id='vol1'>
                                 <if condition="$vol[g_rightid] == $vol1[gtid]">{$vol1.gtname}</if>
                             </volist>
                         </td>
-                        <!--<td>{$vol.g_rightid}</td>-->
                         <td><if condition='$vol.mechanism == 1'>BO1
                             <elseif condition='$vol.mechanism ==2'/>BO2
                             <elseif condition='$vol.mechanism ==3'/>BO3
@@ -110,7 +101,6 @@
         
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
 
 </body>

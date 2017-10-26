@@ -5,33 +5,25 @@ namespace Admin\Controller;
 use Think\Controller;
 #声明类并且继承父类
 class GuessController extends CommonController{
-
-
 	#add方法，展示模版文件
 	public function add(){
 		#实例化模型
 		$model = M('Guess_team');
 		#查询属性信息
 		$data = $model -> select();
-//		var_dump($data);die();
 		#传递给模板
 		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
-
 	#addOk方法，接收数据保存数据
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-
 		#添加addtime字段
 		 $post['ctime'] = time();
-
-
 		$time = strtotime($post['stime']);
 		$post['stime'] = $time;
-
 		#写入数据表
 		$model = M('Guess');
 		$rst = $model -> add($post);
@@ -53,7 +45,6 @@ class GuessController extends CommonController{
 		#查询
 		$data = $model -> where('statu = 1') -> select();
 		$data1 = $model1 -> select();
-//		dump($data1);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		$this -> assign('data1',$data1);
@@ -65,7 +56,6 @@ class GuessController extends CommonController{
     public function del(){
         #接收参数
         $id = I('get.id');
-//        dump($id);die;
         #实例化模型
         $model = M('Guess');
         #删除操作
@@ -76,14 +66,13 @@ class GuessController extends CommonController{
             'statu'  => '0'
         );
         $rst =$model -> save($data);
-//        dump($rst);die;
         #判断返回值
         if($rst){
             #删除成功
-            $this -> success('删除成功',U('showList'),3);
+            $this -> success('删除成功',U('showList'),1);
         }else{
             #删除失败
-            $this -> error('删除失败',U('showList'),3);
+            $this -> error('删除失败',U('showList'),1);
         }
     }
 
@@ -123,10 +112,10 @@ class GuessController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),1);
 	 	}
 	 }
 }
