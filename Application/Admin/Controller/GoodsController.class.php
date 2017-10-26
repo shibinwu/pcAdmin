@@ -10,26 +10,26 @@ class GoodsController extends CommonController{
 	#add方法，展示模版文件
 	public function add(){
 		//获取DOTA属性id和名称
-		$dota_data = M('Dota_attr')->select();
+		$dota_data = M('Dota_attr')-> where('statu =1') -> select();
 		foreach($dota_data as $index=>$item){
 			$dota_attr[$item['id']] = $item;
 		}
 		//获取DOTA英雄id和名称
 		$hero_model = M('Dota_hero');
-		$hero_data = $hero_model -> select();
+		$hero_data = $hero_model -> where('statu =1') -> select();
 		foreach($hero_data as $index=>$item){
-			$hero_attr[$item['id']] = $item;
+			$hero_attr[$item['dhid']] = $item;
 		}
 		$this -> assign('dota_attr',$dota_attr);
 		$this -> assign('hero_attr',$hero_attr);
 		//获取CSGO属性id和名称
-		$csgo_data = M('Csgo_attr')->select();
+		$csgo_data = M('Csgo_attr') -> where('statu =1') -> select();
 		foreach($csgo_data as $index=>$item){
 			$csgo_attr[$item['id']] = $item;
 		}
 		//获取CSGO武器id和名称
 		$gun_model = M('Csgo_gun');
-		$gun_data = $gun_model -> select();
+		$gun_data = $gun_model -> where('statu =1') -> select();
 		foreach($gun_data as $index=>$item){
 			$gun_attr[$item['id']] = $item;
 		}
@@ -192,14 +192,14 @@ class GoodsController extends CommonController{
 		#传递给模版
 		$this->assign('data', $data);
 		//获取DOTA属性id和名称
-		$dota_data = M('Dota_attr')->field('id,name,type')->select();
+		$dota_data = M('Dota_attr')->field('id,name,type')->where('statu =1') -> select();
 		foreach($dota_data as $index=>$item){
 			$dota_attr[$item['id']] = $item;
 		}
 //		dump($dota_attr);die();
 		//获取DOTA英雄id和名称
 		$hero_model = M('Dota_hero');
-		$hero_data = $hero_model -> select();
+		$hero_data = $hero_model -> where('statu =1') -> select();
 		foreach($hero_data as $index=>$item){
 			$hero_attr[$item['id']] = $item;
 		}
@@ -230,13 +230,13 @@ class GoodsController extends CommonController{
 		#传递给模版
 		$this -> assign('data', $data);
 		//获取CSGO属性id和名称
-		$csgo_data = M('Csgo_attr')->select();
+		$csgo_data = M('Csgo_attr')-> where('statu =1') -> select();
 		foreach($csgo_data as $index=>$item){
 			$csgo_attr[$item['id']] = $item;
 		}
 		//获取CSGO武器id和名称
 		$gun_model = M('Csgo_gun');
-		$gun_data = $gun_model -> select();
+		$gun_data = $gun_model -> where('statu =1') -> select();
 		foreach($gun_data as $index=>$item){
 			$gun_attr[$item['id']] = $item;
 		}
