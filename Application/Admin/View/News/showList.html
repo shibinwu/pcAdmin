@@ -35,8 +35,6 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">新闻列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -58,7 +56,7 @@
                     <th class="head0">新闻ID</th>
                     <th class="head1">新闻标题</th>
                     <th class="head0">新闻内容</th>
-                    <th class="head1">用户ID</th>
+                    <th class="head1">用户名称</th>
                     <th class="head0">标签</th>
                     <th class="head1">阅读量</th>
                     <th class="head1">新闻类型</th>
@@ -71,17 +69,10 @@
                         <td>{$vol.id}</td>
                         <td>{$vol.title|msubstr=0,10}</td>
                         <td>{$vol.contents|msubstr=0,25}</td>
-                        <td>{$vol.user_id}</td>
+                        <td>{$vol.user_id.username}</td>
                         <td>{$vol.tag}</td>
                         <td>{$vol.browsernum}</td>
-                        <td>
-                            <volist name="datas" id="vo">
-                                <if condition='$vol[type_id] == $vo[id]'>
-                                    {$vo.type_name}
-                                </if>
-                            </volist>
-                        </td>
-
+                        <td>{$vol.type_id.type_name}</td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.id}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.id}" class="del">删除</a></td>
                     </tr>
                 </volist>

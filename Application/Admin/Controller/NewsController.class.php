@@ -69,43 +69,28 @@ class NewsController extends CommonController{
 		#获取数据
 		$model = M('News');
 		$models = M('News_type');
+		$model1 = M('User');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-		$datas = $models -> select();
-//		dump($datas);die;
+		$datas = $models -> field('id,type_name') -> select();
+		$data1 = $model1 -> field('uid,username') -> select();
+		foreach($data1 as $index=>$item){
+			$temp[$item['uid']] = $item;
+		}
+		foreach($datas as $index=>$item){
+			$temps[$item['id']] = $item;
+		}
+		foreach($data as $index=>$value){
+			$data[$index]['user_id'] = $temp[$value['user_id']];
+			$data[$index]['type_id'] = $temps[$value['type_id']];
+		}
+//		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		$this -> assign('datas',$datas);
 		#展示模版
 		$this -> display();
 	}
-
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){
