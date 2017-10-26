@@ -81,7 +81,6 @@ class GoodssellController extends CommonController{
 			$data[$index]['uid'] = $temps[$value['uid']];
 		}
 
-//		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		$this -> assign('temp',$temp);

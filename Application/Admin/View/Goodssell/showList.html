@@ -65,6 +65,7 @@
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
+                    <if condition="$vol.type == 0">
                     <tr>
                         <td>{$vol.swid}</td>
                         <td><if condition='$vol.gtype == 1'>CSGO
@@ -88,6 +89,7 @@
                         </td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gsid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gsid}" class="del">删除</a></td>
                     </tr>
+                    </if>
                 </volist>
                 </tbody>
             </table>
@@ -114,4 +116,5 @@
         });
     });
 </script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/footer.js"></script>
 </html>

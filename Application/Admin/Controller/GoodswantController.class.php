@@ -61,42 +61,36 @@ class GoodswantController extends CommonController{
 	#showList方法，获取数据展示数据
 	public function showList(){
 		#获取数据
-		$model = M('Goods_want');
+		$model = M('Goods_sell_want');
+		$model1 = M('Goods_new');
+		$model2 = M('Users');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
+		$goods_data = $model1 -> field('id,name') -> select();
+		$users_data = $model2 -> field('id,name') -> select();
+		$temp = array();
+		$temps = array();
+		foreach($goods_data as $index=>$item){
+			$temp[$item['id']] = $item;
+		}
+		foreach($users_data as $index=>$item){
+			$temps[$item['id']] = $item;
+		}
+//        dump($temp[1]);die();
+		foreach($data as $index=>$value){
+			$data[$index]['gid'] = $temp[$value['gid']];
+			$data[$index]['uid'] = $temps[$value['uid']];
+		}
+
 		#传递变量给模版
 		$this -> assign('data',$data);
+		$this -> assign('temp',$temp);
+		$this -> assign('temps',$temps);
 		#展示模版
 		$this -> display();
 	}
 
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
 
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){
