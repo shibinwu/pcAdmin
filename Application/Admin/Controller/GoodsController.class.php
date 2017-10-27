@@ -6,7 +6,6 @@ use Think\Controller;
 #声明类并且继承父类
 class GoodsController extends CommonController{
 
-
 	#add方法，展示模版文件
 	public function add(){
 		//获取DOTA属性id和名称
@@ -55,7 +54,6 @@ class GoodsController extends CommonController{
 		#上传操作
 		 if($file['size'] > 0){
 		 	$info = $uplaod -> uploadOne($file);//一维数组
-//			  dump($info);die;
 		 	#判断返回结果
 		 	if($info){
 		 		#hasfile字段
@@ -101,7 +99,6 @@ class GoodsController extends CommonController{
 		#上传操作
 		if($file['size'] > 0){
 			$info = $uplaod -> uploadOne($file);//一维数组
-//			  dump($info);die;
 			#判断返回结果
 			if($info){
 				#hasfile字段
@@ -112,7 +109,6 @@ class GoodsController extends CommonController{
 				$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 			}
 		}
-//		 dump($post);die;
 		//处理商品属性的值
 		$arr = array($post['attr0'],$post['attr1'],$post['attr2'],$post['attr3']);
 		//把数组用，隔开变成字符串
@@ -139,7 +135,6 @@ class GoodsController extends CommonController{
 
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版
@@ -150,7 +145,6 @@ class GoodsController extends CommonController{
     public function del(){
         #接收参数
         $id = I('get.id');
-//        dump($id);die;
         #实例化模型
         $model = M('Goods_new');
         #删除操作
@@ -161,7 +155,6 @@ class GoodsController extends CommonController{
             'statu'  => '0'
         );
         $rst =$model -> save($data);
-//        dump($rst);die;
         #判断返回值
         if($rst){
             #删除成功
@@ -222,7 +215,6 @@ class GoodsController extends CommonController{
 		$data = $model->find($id);
 		//上线时打开
 		$data['icon'] = 'http://t.codechm.com/'. $data['icon'];
-//		dump($data);die();
 		//把属性值分开写入模板显示（attr0,attr1,attr2,attr3）
 		$attr_ids =explode(',',$data['attr_ids']);
 		$this->assign('attr_ids', $attr_ids);
@@ -264,7 +256,6 @@ class GoodsController extends CommonController{
 	 		$upload = new \Think\Upload($cfg);
 	 		#上传操作
 	 		$info = $upload -> uploadOne($_FILES['icon']);
-//			dump($info);die;
 	 		#判断上传结果
 	 		if($info){
 	 			#上传成功
@@ -282,7 +273,6 @@ class GoodsController extends CommonController{
 	 	$post['attr_ids'] = implode(",", $arr);
 	 	$post['mtime'] = time();
 	 	#写入到数据表
-//		 dump($post);die;
 	 	$model = M('Goods_new');
 		 if($post['id']){
 			 $rst = $model -> save($post);
