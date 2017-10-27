@@ -75,7 +75,10 @@ class GuessteamController extends CommonController
         $model = M('Guess_team');
         #查询
         $data = $model->where('statu = 1')->select();
-//		dump($data);die;
+
+        foreach($data as $index=>$item){
+            $data[$index][str] =  substr($item['gtpic'], 0, 4);
+        }
         #传递变量给模版
         $this->assign('data', $data);
         #展示模版

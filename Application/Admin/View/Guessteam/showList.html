@@ -60,7 +60,12 @@
                     <tr>
                         <td>{$vol.gtid}</td>
                         <td>{$vol.gtname}</td>
-                        <td><img src="{$vol.gtpic}" width="60px" height="40px" alt=""></td>
+                        <if condition="$vol[str] == 'http'">
+                            <td><img src="{$vol.gtpic}" width="60px" height="40px" alt=""></td>
+
+                            <else/>
+                            <td><img src="http://t.codechm.com/{$vol.gtpic}" width="60px" height="40px" alt=""></td>
+                        </if>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gtid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gtid}" class="del">删除</a></td>
                     </tr>
                 </volist>
