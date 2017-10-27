@@ -10,7 +10,7 @@ class GoodssellController extends CommonController{
 	#add方法，展示模版文件
 	public function add(){
 		$model = M('Goods_new');
-		$data = $model -> select();
+		$data = $model -> field('id,name') -> select();
 		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
@@ -20,6 +20,9 @@ class GoodssellController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
+		$model = M('Goods_new');
+		$data = $model -> find($post['gid']);
+		$post['gtype'] = $data['game_owner'];
 		#添加addtime字段
 	 	$post['ctime'] = time();
 		#写入数据表
