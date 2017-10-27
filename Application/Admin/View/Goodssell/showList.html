@@ -72,14 +72,8 @@
                             <elseif condition='$vol.gtype ==2'/>DOTA
                             <else/>&nbsp</if>
                         </td>
-
-                        <td>
-                                {$vol.gid.name}
-                        </td>
-
-                        <td>
-                            {$vol.uid.name}
-                        </td>
+                        <td>{$vol.gid.name}</td>
+                        <td>{$vol.uid.name}</td>
                         <td>{$vol.price}</td>
                         <td>{$vol.nums}</td>
                         <td><if condition='$vol.status == 1'>出售中
@@ -95,15 +89,11 @@
             </table>
             <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
 
-
-
         </div><!--contentwrapper-->
         
 	</div><!-- centercontent -->
 
-    
 </div><!--bodywrapper-->
-
 </body>
 <script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
