@@ -73,7 +73,10 @@
                             <else/>&nbsp</if>
                         </td>
                         <td>{$vol.gid.name}</td>
-                        <td>{$vol.uid.name}</td>
+                        <td>
+                            <if condition='$vol.uid == 0'>wnv
+                                <else/>{$vol.uid.name}</if>
+                            </td>
                         <td>{$vol.price}</td>
                         <td>{$vol.nums}</td>
                         <td><if condition='$vol.status == 1'>出售中
