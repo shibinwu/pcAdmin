@@ -8,8 +8,6 @@ use Think\Controller;
 #声明类并且继承父类
 class GuessteamController extends CommonController
 {
-
-
     #add方法，展示模版文件
     public function add()
     {
@@ -112,7 +110,6 @@ class GuessteamController extends CommonController
         }
     }
 
-
     #edit方法
     public function edit()
     {
@@ -123,20 +120,22 @@ class GuessteamController extends CommonController
         $model = M('Guess_team');
         #查询操作
         $data = $model->find($id);
-        //上线时打开
-//        $data['gtpic'] = 'http://t.codechm.com/'. $data['gtpic'];
+        $str =substr($data['gtpic'],0,4);
+        if($str != 'http'){
+            //上线时打开
+        $data['gtpic'] = 'http://t.codechm.com/'. $data['gtpic'];
+        }
         #传递给模版
         $this->assign('data', $data);
         #展示模版
         $this->display();
     }
-
     #editOk方法
     public function editOk()
     {
         #接收post数据
         $post = I('post.');
-//	 	dump($post);die;
+
         #判断是否有附件上传
         if ($_FILES['gtpic']['size'] > 0) {
             #配置
