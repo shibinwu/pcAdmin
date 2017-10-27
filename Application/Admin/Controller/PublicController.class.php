@@ -33,29 +33,11 @@ class PublicController extends Controller{
 	public function check(){
 		#接收数据
 		$post = I('post.');
-		// dump($post);die;
-		#验证验证码
-		// $verify = new \Think\Verify();//不需要传递配置
-		#验证
-		// $rst = $verify -> check($post['captcha']);
-		#判断验证码是否正确
-		// if($rst){
 			#判断用户名和密码
 			$model = M('User');
-			#删除验证码元素
-			// unset($post['captcha']);
 			#查询
-//			$map['username']= $post['username'];
 			$post['password']= md5($post['password']);
 			$data = $model -> where($post)->find();
-//			 dump($data);die;
-			//打印最后一条sql语句
-			// $sql = $model->getLastSql();
-			// dump($sql);die();
-
-//		dump($data);die;
-
-
 			#判断用户是否存在
 			if($data){
 				#会话控制记录用户登录信息
@@ -65,12 +47,9 @@ class PublicController extends Controller{
 				session('picurl',$data['picurl']);//记录用户头像
 				session('email',$data['email']);//记录用户邮箱
 				session('nickname',$data['nickname']);//记录用户昵称
-//				$uid = session('uid');
-//				dump($uid);die;
 				//判断是否是超级管理员
-
 				#提示
-				$this -> success('登录成功！',U('Index/index'),3);
+				$this -> success('登录成功！',U('Index/index'),1);
 				if($_SESSION['username'] == C('RBAC_SUPERADMIN')) {
 					session(c('ADMIN_AUTH_KEY'),true);
 				}
@@ -85,14 +64,12 @@ class PublicController extends Controller{
 				$data['city'] = $city = $IPinfo->data->city;
 				$data['last_login_time'] = time();
 //				dump($date);die;
-
 				//TODO 把日志加入到数据表中
 				$model = M('Admin_user_loginlog');
 				$model -> add($data);
-
 			}else{
 				#用户名或密码错误
-				$this -> error('用户名或密码错误',U('login'),3);
+				$this -> error('用户名或密码错误',U('login'),1);
 			}
 	}
 
@@ -102,7 +79,7 @@ class PublicController extends Controller{
 		session(null);
 		if(!session('?uid')){
 			#清空成功
-			$this -> success('退出成功',U('login'),3);
+			$this -> success('退出成功',U('login'),1);
 		}
 	}
 
