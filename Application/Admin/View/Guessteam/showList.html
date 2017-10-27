@@ -35,12 +35,9 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">竞猜比赛队伍</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
-
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -52,39 +49,29 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <!--<th class="head0">竞猜数据ID</th>-->
                     <th class="head1">竞猜队伍ID</th>
-                    <th class="head0">竞猜竞猜队伍名称</th>
+                    <th class="head0">竞猜队伍名称</th>
                     <th class="head0">头像路径</th>
-                    <th class="head0">创建时间</th>
-                    <th class="head0">修改时间</th>
                     <th class="head0">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <!--<td>{$vol.dgid}</td>-->
-                        <!--<td>{$vol.gid}</td>-->
                         <td>{$vol.gtid}</td>
                         <td>{$vol.gtname}</td>
-                        <td>{$vol.gtpic}</td>
-                        <td>{$vol.ctime|date='Y-m-d H:i:s',###}</td>
-                        <td>{$vol.mtime|date='Y-m-d H:i:s',###}</td>
+                        <td><img src="{$vol.gtpic}" alt=""></td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.gtid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.gtid}" class="del">删除</a></td>
                     </tr>
                 </volist>
                 </tbody>
             </table>
-            <!--<if condition='$vol.pid == 0'>顶级部门<else/>{$vol.parentName}</if>-->
 
         </div><!--contentwrapper-->
         
 	</div><!-- centercontent -->
-
     
-</div><!--bodywrapper-->
-
+</div><!--bodywrapper-->k
 </body>
 <script type="text/javascript" src="__PUBLIC__/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
