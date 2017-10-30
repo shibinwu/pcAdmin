@@ -6,7 +6,6 @@ use Think\Controller;
 #声明类并且继承父类
 class NewsController extends CommonController{
 
-
 	#add方法，展示模版文件
 	public function add(){
 		#实例化模型
@@ -45,10 +44,10 @@ class NewsController extends CommonController{
 		 		#filename字段
 		 		$post['filename'] = $info['savename'];
 		 		#filepath字段
-		 		$post['icon'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
+		 		$post['img'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
 		 	}
 		 }
-		// dump($post);die;
+//		 dump($post);die;
 		#添加addtime字段
 		 $post['ctime'] = time();
 		#写入数据表
@@ -57,10 +56,10 @@ class NewsController extends CommonController{
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加新闻成功',U('showList'),3);
+			$this -> success('添加新闻成功',U('showList'),1);
 		}else{
 			#失败
-			$this -> error('添加新闻失败',U('add'),3);
+			$this -> error('添加新闻失败',U('add'),1);
 		}
 	}
 
@@ -111,10 +110,10 @@ class NewsController extends CommonController{
         #判断返回值
         if($rst){
             #删除成功
-            $this -> success('删除成功',U('showList'),3);
+            $this -> success('删除成功',U('showList'),1);
         }else{
             #删除失败
-            $this -> error('删除失败',U('showList'),3);
+            $this -> error('删除失败',U('showList'),1);
         }
     }
 
@@ -181,10 +180,10 @@ class NewsController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),1);
 	 	}
 	 }
 }
