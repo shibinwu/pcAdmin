@@ -60,41 +60,24 @@ class GuessuserController extends CommonController{
 	public function showList(){
 		#获取数据
 		$model = M('Guess_user_data');
+		$model1 = M('Users');
 		#查询
+		$data1 = $model1 -> field('id,name')->select();
 		$data = $model -> where('statu = 1') -> select();
+		foreach($data1 as $index=>$item){
+			$temp[$item['id']] = $item;
+		}
+
+		foreach($data as $index=>$value){
+			$data[$index]['userid'] = $temp[$value['userid']];
+		}
+
 //		dump($data);die;
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
-
-	#download方法，实现附件的下载
-	// public function download(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	$file = WORKING_PATH . $data['filepath'];
-	// 	header("Content-type: application/octet-stream");
-	// 	header('Content-Disposition: attachment; filename="' . basename($file) . '"');
-	// 	header("Content-Length: ". filesize($file));
-	// 	readfile($file);
-	// }
-
-	// #getContent方法，输出指定公文的内容
-	// public function getContent(){
-	// 	#接收id
-	// 	$id = I('get.id');
-	// 	#实例化
-	// 	$model = M('Doc');
-	// 	#查询
-	// 	$data = $model -> find($id);
-	// 	#输出内容
-	// 	echo htmlspecialchars_decode($data['content']);
-	// }
 
     #del方法，实现删除
     public function del(){

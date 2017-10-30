@@ -35,8 +35,6 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">竞猜用户数据</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -52,12 +50,8 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <!--<th class="head0">竞猜数据ID</th>-->
-                    <!--<th class="head1">竞猜比赛ID</th>-->
-                    <th class="head0">竞猜比赛数据的ID</th>
-                    <th class="head0">竞猜用户的ID</th>
-                    <th class="head0">竞猜队伍的ID</th>
-                    <th class="head0">竞猜商品ID</th>
+                    <th class="head1">ID</th>
+                    <th class="head0">竞猜用户</th>
                     <th class="head0">用户竞猜方式</th>
                     <th class="head0">商品数量</th>
                     <th class="head1">竞猜结果</th>
@@ -67,12 +61,8 @@
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
-                        <!--<td>{$vol.dgid}</td>-->
-                        <!--<td>{$vol.gid}</td>-->
-                        <td>{$vol.dgid}</td>
-                        <td>{$vol.userid}</td>
-                        <td>{$vol.gtid}</td>
-                        <td>{$vol.goodid}</td>
+                        <td>{$vol.duid}</td>
+                        <td>{$vol.userid.name}</td>
                         <td><if condition='$vol.type == 1'>dota饰品竞猜
                             <elseif condition='$vol.type ==2'/>csgo饰品竞猜
                             <else/>P豆竞猜</if>
