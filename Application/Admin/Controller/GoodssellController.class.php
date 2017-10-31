@@ -73,7 +73,6 @@ class GoodssellController extends CommonController{
     public function del(){
         #接收参数
         $id = I('get.id');
-//        dump($id);die;
         #实例化模型
         $model = M('Goods_sell');
         #删除操作
@@ -84,7 +83,6 @@ class GoodssellController extends CommonController{
             'statu'  => '0'
         );
         $rst =$model -> save($data);
-//        dump($rst);die;
         #判断返回值
         if($rst){
             #删除成功
@@ -94,7 +92,6 @@ class GoodssellController extends CommonController{
             $this -> error('删除失败',U('showList'),3);
         }
     }
-
 
     #edit方法
 	 public function edit(){
@@ -116,31 +113,6 @@ class GoodssellController extends CommonController{
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-//	 	dump($post);die;
-	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
 	 	#写入到数据表
 	 	$model = M('Goods_sell');
 		 if($post['gsid']){
