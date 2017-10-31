@@ -226,12 +226,11 @@ class RbacController extends CommonController{
     public function edit(){
         #接收数据
         $id = I('get.id');
-
-//        dump($id);die;
         #实例化模型
         $model = D('UserRaltion');
         #查询操作
         $data = $model->field('password', true)->relation(true)->find($id);
+//        dump($data);die();
 //        $data['password'] = I('post.password','','md5');
         $this->role = M('Role')->select();
 //        $this->roles = M('Role_user')->select();
@@ -280,7 +279,7 @@ class RbacController extends CommonController{
         #添加mtime字段
         $post['mtime'] = time();
         $uid = M('User')->save($post);
-        $rold = array();
+        $role = array();
         if ($uid) {
             foreach ($_POST['role_id'] as $v) {
                 $role[] = array(
@@ -289,9 +288,9 @@ class RbacController extends CommonController{
                 );
             }
             M('role_user')->save($role);
-            $this->success('添加成功', U('user_list', '', ''));
+            $this->success('修改成功', U('user_list', '', ''));
         } else {
-            $this->error('添加失败');
+            $this->error('修改失败');
         }
     }
 
