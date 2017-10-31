@@ -184,13 +184,7 @@ class RbacController extends CommonController{
     public function user_list() {
 
         $model = D('UserRaltion');
-//        dump($model);die();
         $this->user = $model->field('password', true)->relation(true)->select();
-//        dump($this->user);die();
-        //P(D('UserRelation')->getLastSql());
-        //p($this->user);
-        //die;
-//        dump($this->user);die;
         $this->display();
     }
 
@@ -199,7 +193,6 @@ class RbacController extends CommonController{
     public function del(){
         #接收参数
         $id = I('get.id');
-//        dump($id);die;
         #实例化模型
         $model = M('Role');
         #删除操作
@@ -221,7 +214,6 @@ class RbacController extends CommonController{
         }
     }
 
-
     #edit方法
     public function edit(){
         #接收数据
@@ -230,18 +222,12 @@ class RbacController extends CommonController{
         $model = D('UserRaltion');
         #查询操作
         $data = $model->field('password', true)->relation(true)->find($id);
-//        dump($data);die();
-//        $data['password'] = I('post.password','','md5');
         $this->role = M('Role')->select();
-//        $this->roles = M('Role_user')->select();
-//        dump($this->role);die;
         #传递给模版
         $this -> assign('data',$data);
         #展示模版
         $this -> display();
-//        $this->display('Test:topheader');
     }
-
 
     #editOk方法
     public function editOk()
@@ -270,9 +256,6 @@ class RbacController extends CommonController{
                 $post['filename'] = $info['savename'];
                 #hasfile字段
                 $post['hasfile'] = 1;
-                // $yuanshi = $model -> find($post['id']);
-                // $path = WORKING_PATH . $yuanshi['filepath'];
-                // unlink($path);
             }
         }
 //        dump($post);die;
