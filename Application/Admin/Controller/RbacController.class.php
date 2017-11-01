@@ -259,17 +259,25 @@ class RbacController extends CommonController{
 //        dump($post);die;
         #添加mtime字段
         $post['mtime'] = time();
-        $uid = M('User')->save($post);
+        M('User')->save($post);
         $role = array();
-        if ($uid) {
+        //判断是否有角色信息提交
+        if ($_POST['role_id'][0]) {
+
             foreach ($_POST['role_id'] as $v) {
                 $role[] = array(
                     'role_id' => $v,
                     'user_id' => $post['uid']
                 );
             }
-//            dump($role);die();
-            if($role[0]['user_id']){
+            //查询数据库role_user表把所有已存在user_id写到一个数组
+            $user = M('Role_user') -> field('user_id') ->select();
+            $users = array();
+            foreach($user as $index=>$item){
+                $users[] = $item['user_id'];
+            }
+            //判断提交的角色信息是否已存在（存在修改，不存在添加）
+            if(in_array($role[0]['user_id'],$users)){
 
                 M('role_user')->where('user_id = ' .$role[0]['user_id']) -> save($role[0]);
             }else{
