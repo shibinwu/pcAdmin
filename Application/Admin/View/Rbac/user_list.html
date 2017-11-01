@@ -58,8 +58,8 @@
                     <th class="head0">邮箱</th>
                     <th class="head1">手机号</th>
                     <th class="head0">角色名称</th>
-                    <th class="head1">创建时间</th>
-                    <th class="head0">修改时间</th>
+                    <!--<th class="head1">创建时间</th>-->
+                    <!--<th class="head0">修改时间</th>-->
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
@@ -81,14 +81,14 @@
                             </if>
                         </td>
 
-                        <td><if condition='$vol.ctime == 0'>&nbsp
-                            <else/>
-                            {$vol.ctime|date="Y-m-d H:i:s",###}</if>
-                        </td>
-                        <td><if condition="$vol.mtime == 0">&nbsp
-                            <else/>
-                            {$vol.mtime|date="Y-m-d H:i:s",###}</if>
-                        </td>
+                        <!--<td><if condition='$vol.reg_time == 0'>&nbsp-->
+                            <!--<else/>-->
+                            <!--{$vol.ctime|date="Y-m-d H:i:s",###}</if>-->
+                        <!--</td>-->
+                        <!--<td><if condition="$vol.mtime == 0">&nbsp-->
+                            <!--<else/>-->
+                            <!--{$vol.mtime|date="Y-m-d H:i:s",###}</if>-->
+                        <!--</td>-->
                         <td class="center" url="__CONTROLLER__"><a href="{:U('Rbac/reset')}?id={$vol.uid}">重置密码</a>&nbsp;&nbsp;<a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>
