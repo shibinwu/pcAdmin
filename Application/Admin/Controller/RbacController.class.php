@@ -272,6 +272,8 @@ class RbacController extends CommonController{
             if($role[0]['user_id']){
 
                 M('role_user')->where('user_id = ' .$role[0]['user_id']) -> save($role[0]);
+            }else{
+                M('role_user')->addAll($role);
             }
 
             $this->success('修改成功', U('user_list', '', ''));
