@@ -36,12 +36,9 @@
 
         <div class="pageheader notab">
             <h1 class="pagetitle">用户列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-
         </div><!--pageheader-->
 
         <div id="contentwrapper" class="contentwrapper">
-
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -71,7 +68,6 @@
                         <td>{$vol.username}</td>
                         <td>{$vol.email}</td>
                         <td>{$vol.phone}</td>
-                        <!--<td>{$vol.password}</td>-->
                         <td>
                             <if condition="$vol['username'] eq C('RBAC_SUPERADMIN')">
                                 超级管理员
@@ -80,7 +76,6 @@
                                     <foreach name="vol.role" item="value">
                                         {$value.name}({$value.remark})
                                     </foreach>
-
                             </if>
                         </td>
 
