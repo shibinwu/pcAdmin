@@ -234,8 +234,6 @@ class RbacController extends CommonController{
     {
         #接收post数据
         $post = I('post.');
-//       $file = $_FILES['picurl'];
-//	 	dump($file);die;
         #判断是否有附件上传
         if ($_FILES['picurl']['size'] > 0) {
             #配置
@@ -270,7 +268,12 @@ class RbacController extends CommonController{
                     'user_id' => $post['uid']
                 );
             }
-            M('role_user')->save($role);
+//            dump($role);die();
+            if($role[0]['user_id']){
+
+                M('role_user')->where('user_id = ' .$role[0]['user_id']) -> save($role[0]);
+            }
+
             $this->success('修改成功', U('user_list', '', ''));
         } else {
             $this->error('修改失败');
