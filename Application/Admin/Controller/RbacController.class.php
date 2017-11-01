@@ -159,7 +159,7 @@ class RbacController extends CommonController{
             }
         }
         #添加ctime字段
-        $post['ctime'] = time();
+        $post['reg_time'] = time();
 
         $uid = M('User')->add($post);
         $rold = array();
