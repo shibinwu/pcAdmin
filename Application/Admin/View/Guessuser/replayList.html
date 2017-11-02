@@ -30,12 +30,12 @@
 
     <include file = 'Test/header' />   <!--包含导航文件-->
 
-    <include file = 'Test/leftmember' />  <!--包含左侧栏文件-->
+    <include file = 'Test/leftguess' />  <!--包含左侧栏文件-->
 
     <div class="centercontent tables">
 
         <div class="pageheader notab">
-            <h1 class="pagetitle">会员评论列表</h1>
+            <h1 class="pagetitle">评论回复列表</h1>
         </div><!--pageheader-->
 
         <div id="contentwrapper" class="contentwrapper">
@@ -48,39 +48,28 @@
                     <col class="con1" />
                     <col class="con0" />
                     <col class="con1" />
-                    <col class="con0" />
-                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">ID</th>
-                    <!--<th class="head1">竞猜ID</th>-->
-                    <th class="head0">发表评论者</th>
-                    <th class="head0">评论内容</th>
-                    <th class="head0">支持</th>
-                    <th class="head0">反对</th>
-                    <!--<th class="head1">创建时间</th>-->
-                    <!--<th class="head0">修改时间</th>-->
+                    <th class="head0">HMID</th>
+                    <th class="head1">评论ID</th>
+                    <th class="head0">回复评论者ID</th>
+                    <th class="head0">回复内容</th>
+                    <th class="head1">创建时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
+                        <td>{$vol.hmid}</td>
                         <td>{$vol.mid}</td>
-                        <!--<td>{$vol.g_id}</td>-->
-                        <td>{$vol.uid}</td>
-                        <td>{$vol.message}</td>
-                        <td>{$vol.like}</td>
-                        <td>{$vol.nolike}</td>
-                        <!--<td><if condition='$vol.ctime == 0'>&nbsp-->
-                            <!--<else/>-->
-                            <!--{$vol.ctime|date="Y-m-d H:i:s",###}</if>-->
-                        <!--</td>-->
-                        <!--<td><if condition="$vol.mtime == 0">&nbsp-->
-                            <!--<else/>-->
-                            <!--{$vol.mtime|date="Y-m-d H:i:s",###}</if>-->
-                        <!--</td>-->
+                        <td>{$vol.ruid}</td>
+                        <td>{$vol.replay_msg}</td>
+                        <td><if condition='$vol.ctime == 0'>&nbsp
+                            <else/>
+                            {$vol.ctime|date="Y-m-d H:i:s",###}</if>
+                        </td>
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.mid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.mid}" class="del">删除</a></td>
                     </tr>
                 </volist>
@@ -105,4 +94,5 @@
         });
     });
 </script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/footer.js"></script>
 </html>

@@ -78,6 +78,44 @@ class GuessuserController extends CommonController{
 		#展示模版
 		$this -> display();
 	}
+	//评论列表
+	public function messageList(){
+		#获取数据
+		$model = M('User_message');
+		$model1 = M('Guess');
+		$model2 = M('Users');
+		#查询
+		$data = $model -> where('statu = 1') -> select();
+		$guess_data = $model1 -> field('g_id,g_name') -> select();
+		$users_data = $model2 -> field('id,name') -> select();
+		$temp = array();
+		foreach($guess_data as $index=>$item){
+			$temp[$item['g_id']] = $item;
+		}
+		foreach($users_data as $index=>$item){
+			$temps[$item['id']] = $item;
+		}
+		foreach($data as $index=>$value){
+			$data[$index]['g_id'] = $temp[$value['g_id']];
+			$data[$index]['uid'] = $temps[$value['uid']];
+		}
+		#传递变量给模版
+		$this -> assign('data',$data);
+		#展示模版
+		$this -> display();
+	}
+	//评论回复
+	public function replayList(){
+		#获取数据
+		$model = M('User_replay_message');
+		#查询
+		$data = $model -> where('statu = 1') -> select();
+//		dump($data);die;
+		#传递变量给模版
+		$this -> assign('data',$data);
+		#展示模版
+		$this -> display();
+	}
 
     #del方法，实现删除
     public function del(){
