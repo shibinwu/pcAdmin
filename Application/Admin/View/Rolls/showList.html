@@ -36,12 +36,9 @@
 
         <div class="pageheader notab">
             <h1 class="pagetitle">活动列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-
         </div><!--pageheader-->
 
         <div id="contentwrapper" class="contentwrapper">
-
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -56,16 +53,14 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">序号ID</th>
-                    <th class="head1">活动创建者ID</th>
+                    <th class="head0">序号</th>
+                    <th class="head1">活动创建者</th>
                     <th class="head0">活动内容</th>
-                    <th class="head0">腾讯微博</th>
-                    <th class="head0">新浪微博</th>
                     <th class="head1">活动开始时间</th>
                     <th class="head1">活动结束时间</th>
-                    <th class="head1">活动参加者ID</th>
+                    <!--<th class="head1">活动参加者ID</th>-->
                     <th class="head1">创建时间</th>
-                    <th class="head0">修改时间</th>
+                    <!--<th class="head0">修改时间</th>-->
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
@@ -73,21 +68,19 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.uid}</td>
+                        <td>{$vol.uid.name}</td>
                         <td>{$vol.content}</td>
-                        <td>{$vol.tencent_weibo}</td>
-                        <td>{$vol.sina_weibo}</td>
                         <td>{$vol.starttime|date="Y-m-d H:i:s",###}</td>
                         <td>{$vol.endtime|date="Y-m-d H:i:s",###}</td>
-                        <td>{$vol.user_roll}</td>
+                        <!--<td>{$vol.user_roll}</td>-->
                         <td><if condition='$vol.ctime == 0'>&nbsp
                             <else/>
                             {$vol.ctime|date="Y-m-d H:i:s",###}</if>
                         </td>
-                        <td><if condition="$vol.mtime == 0">&nbsp
-                            <else/>
-                            {$vol.mtime|date="Y-m-d H:i:s",###}</if>
-                        </td>
+                        <!--<td><if condition="$vol.mtime == 0">&nbsp-->
+                            <!--<else/>-->
+                            <!--{$vol.mtime|date="Y-m-d H:i:s",###}</if>-->
+                        <!--</td>-->
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.uid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.uid}" class="del">删除</a></td>
                     </tr>
                 </volist>

@@ -58,9 +58,17 @@ class MemberpropertyController extends CommonController{
     public function showList(){
         #获取数据
         $model = M('User_property');
+        $model2 = M('Users');
         #查询
         $data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
+        $users_data = $model2 -> field('id,name') -> select();
+        $temps = array();
+        foreach($users_data as $index=>$item){
+            $temps[$item['id']] = $item;
+        }
+        foreach($data as $index=>$value){
+            $data[$index]['uid'] = $temps[$value['uid']];
+        }
         #传递变量给模版
         $this -> assign('data',$data);
         #展示模版

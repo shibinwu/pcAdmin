@@ -56,8 +56,8 @@
                 <thead>
                 <tr>
                     <th class="head0">ID</th>
-                    <th class="head1">用户id</th>
-                    <th class="head0">任务id</th>
+                    <th class="head1">用户</th>
+                    <th class="head0">任务名称</th>
                     <th class="head0">任务奖励物品</th>
                     <th class="head0">物品奖励数量</th>
                     <th class="head0">用户完成任务阶段</th>
@@ -69,8 +69,8 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.uid}</td>
-                        <td>{$vol.task_id}</td>
+                        <td>{$vol.uid.name}</td>
+                        <td>{$vol.task_id.task_name}</td>
                         <td><if condition='$vol.reward_type == 1'>积分
                             <elseif condition='$vol.reward_type ==2'/>P豆
                             <elseif condition='$vol.reward_type ==3'/>V豆

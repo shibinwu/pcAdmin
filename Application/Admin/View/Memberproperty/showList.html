@@ -56,7 +56,7 @@
                 <thead>
                 <tr>
                     <th class="head0">ID</th>
-                    <th class="head1">用户ID</th>
+                    <th class="head1">用户</th>
                     <th class="head0">P豆</th>
                     <th class="head0">V豆</th>
                     <th class="head0">积分</th>
@@ -72,7 +72,7 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.id}</td>
-                        <td>{$vol.uid}</td>
+                        <td>{$vol.uid.name}</td>
                         <td>{$vol.property_p}</td>
                         <td>{$vol.property_v}</td>
                         <td>{$vol.score}</td>
