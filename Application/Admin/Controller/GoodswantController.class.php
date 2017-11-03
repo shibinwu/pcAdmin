@@ -123,52 +123,31 @@ class GoodswantController extends CommonController{
 
     #edit方法
 	 public function edit(){
-	 	#接收数据
-	 	$id = I('get.id');
-
-	 	#实例化模型
-	 	$model = M('Goods_want');
-	 	#查询操作
-	 	$data = $model -> find($id);
-//		 dump($data);
-	 	#传递给模版
-	 	$this -> assign('data',$data);
-	 	#展示模版
-	 	$this -> display();
+	 	 #接收数据
+	 	 $id = I('get.id');
+		 #实例化模型
+		 $model = M('Goods_sell_want');
+		 $model1 = M('Goods_new');
+		 $model2 = M('Users');
+		 #查询操作
+		 $data = $model -> find($id);
+		 $goods_data = $model1 -> field('id,name') -> select();
+		 $users_data = $model2 -> field('id,name') -> select();
+		 #传递给模版
+		 $this -> assign('data',$data);
+		 $this -> assign('goods_data',$goods_data);
+		 $this -> assign('users_data',$users_data);
+		 #展示模版
+		 $this -> display();
 	 }
 
 	 #editOk方法
 	 public function editOk(){
 	 	#接收post数据
 	 	$post = I('post.');
-//	 	dump($post);die;
-	 	#判断是否有附件上传
-//	 	if($_FILES['file']['size'] > 0){
-//	 		#配置
-//	 		$cfg = array(
-//	 			'rootPath' => WORKING_PATH . UPLOAD_ROOT_PATH
-//	 			);
-//	 		#实例化
-//	 		$upload = new \Think\Upload($cfg);
-//	 		#上传操作
-//	 		$info = $upload -> uploadOne($_FILES['file']);
-//	 		#判断上传结果
-//	 		if($info){
-//	 			#上传成功
-//	 			#filepath字段
-//	 			$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-//	 			#filename字段
-//	 			$post['filename'] = $info['savename'];
-//	 			#hasfile字段
-//	 			$post['hasfile'] = 1;
-//	 			// $yuanshi = $model -> find($post['id']);
-//	 			// $path = WORKING_PATH . $yuanshi['filepath'];
-//	 			// unlink($path);
-//	 		}
-//	 	}
 	 	#写入到数据表
-	 	$model = M('Goods_want');
-		 if($post['gwid']){
+	 	$model = M('Goods_sell_want');
+		 if($post['swid']){
 			 $rst = $model -> save($post);
 		 }else{
 			 echo '123';
@@ -177,10 +156,10 @@ class GoodswantController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['swid'])),1);
 	 	}
 	 }
 }
