@@ -20,44 +20,25 @@ class GoodswantController extends CommonController{
 	public function addOk(){
 		#接收数据
 		$post = I('post.');
-//		dump($post);die;
-		#获取文件的数据
-		 $file = $_FILES['file'];
-		#配置上传信息
-		 $cfg = array(
-		 		//保存根路径
-		 		'rootPath'      =>  WORKING_PATH . UPLOAD_ROOT_PATH,
-		 	);
-		#实例化上传类
-		 $uplaod = new \Think\Upload($cfg);
-		#上传操作
-		 if($file['size'] > 0){
-		 	$info = $uplaod -> uploadOne($file);//一维数组
-			 dump($info);die;
-		 	#判断返回结果
-		 	if($info){
-		 		#hasfile字段
-		 		$post['hasfile'] = 1;
-		 		#filename字段
-		 		$post['filename'] = $info['savename'];
-		 		#filepath字段
-		 		$post['filepath'] = UPLOAD_ROOT_PATH . $info['savepath'] . $info['savename'];
-		 	}
-		 }
-//		dump($post);die;
+		$model1 = M('Goods_new');
+		$data = $model1 -> find($post['gid']);
+		if($data['game_owner'] == 1){
+			$post['gtype'] = 2;
+		}elseif($data['game_owner'] == 2){
+			$post['gtype'] = 1;
+		}
 		#添加addtime字段
-		 $post['addtime'] = time();
-//		dump($post);die;
+	 	$post['ctime'] = time();
 		#写入数据表
-		$model = M('Goods_want');
+		$model = M('Goods_sell_want');
 		$rst = $model -> add($post);
 		#判断返回值
 		if($rst){
 			#成功
-			$this -> success('添加赛事成功',U('showList'),3);
+			$this -> success('添加成功',U('showList'),1);
 		}else{
 			#失败
-			$this -> error('添加赛事失败',U('add'),3);
+			$this -> error('添加失败',U('add'),1);
 		}
 	}
 
