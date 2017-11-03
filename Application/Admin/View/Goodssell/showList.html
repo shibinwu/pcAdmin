@@ -56,6 +56,7 @@
                     <th class="head0">ID</th>
                     <th class="head0">所属游戏</th>
                     <th class="head1">商品名称</th>
+                    <th class="head1">商品图片</th>
                     <th class="head0">用户名称</th>
                     <th class="head1">商品价格</th>
                     <th class="head0">库存</th>
@@ -73,6 +74,7 @@
                             <else/>&nbsp</if>
                         </td>
                         <td>{$vol.gid.name}</td>
+                        <td><img width="60" height="40" src="http://t.codechm.com/{$vol.gid.name}" alt=""></td>
                         <td>
                             <if condition='$vol.uid == 0'>wnv
                                 <else/>{$vol.uid.name}</if>
