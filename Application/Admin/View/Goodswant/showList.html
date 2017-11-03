@@ -77,9 +77,9 @@
                         <td>
                             <img width="60" height="40" src="http://t.codechm.com/{$vol.gid.icon}" alt="">
                         </td>
-
                         <td>
-                            {$vol.uid.name}
+                            <if condition='$vol.uid == 0'>wnv
+                                <else/>{$vol.uid.name}</if>
                         </td>
                         <td>{$vol.price}</td>
                         <td>{$vol.nums}</td>
