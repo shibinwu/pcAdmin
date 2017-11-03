@@ -6,11 +6,10 @@ use Think\Controller;
 #声明类并且继承父类
 class GoodssellController extends CommonController{
 
-
 	#add方法，展示模版文件
 	public function add(){
 		$model = M('Goods_new');
-		$data = $model -> field('id,name') -> select();
+		$data = $model -> field('id,name') ->  where('statu = 1')-> select();
 		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
@@ -74,22 +73,22 @@ class GoodssellController extends CommonController{
         #接收参数
         $id = I('get.id');
         #实例化模型
-        $model = M('Goods_sell');
+        $model = M('Goods_sell_want');
         #删除操作
 //        $rst = $model -> delete($id);
         #软删除
         $data = array(
-            'gsid'   =>  $id,
+            'swid'   =>  $id,
             'statu'  => '0'
         );
         $rst =$model -> save($data);
         #判断返回值
         if($rst){
             #删除成功
-            $this -> success('删除成功',U('showList'),3);
+            $this -> success('删除成功',U('showList'),1);
         }else{
             #删除失败
-            $this -> error('删除失败',U('showList'),3);
+            $this -> error('删除失败',U('showList'),1);
         }
     }
 
@@ -99,7 +98,7 @@ class GoodssellController extends CommonController{
 	 	$id = I('get.id');
 
 	 	#实例化模型
-	 	$model = M('Goods_sell');
+	 	$model = M('Goods_sell_want');
 	 	#查询操作
 	 	$data = $model -> find($id);
 //		 dump($data);
@@ -114,7 +113,7 @@ class GoodssellController extends CommonController{
 	 	#接收post数据
 	 	$post = I('post.');
 	 	#写入到数据表
-	 	$model = M('Goods_sell');
+	 	$model = M('Goods_sell_want');
 		 if($post['gsid']){
 			 $rst = $model -> save($post);
 		 }else{
@@ -124,10 +123,10 @@ class GoodssellController extends CommonController{
 	 	#判断返回结果
 	 	if($rst){
 	 		#成功
-	 		$this -> success('编辑成功',U('showList'),3);
+	 		$this -> success('编辑成功',U('showList'),1);
 	 	}else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),3);
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),1);
 	 	}
 	 }
 }

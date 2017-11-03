@@ -9,6 +9,9 @@ class GoodswantController extends CommonController{
 
 	#add方法，展示模版文件
 	public function add(){
+		$model = M('Goods_new');
+		$data = $model -> field('id,name') ->where('statu = 1') -> select();
+		$this -> assign('data',$data);
 		#展示模版
 		$this -> display();
 	}
@@ -66,7 +69,7 @@ class GoodswantController extends CommonController{
 		$model2 = M('Users');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-		$goods_data = $model1 -> field('id,name') -> select();
+		$goods_data = $model1 -> field('id,name,icon') -> select();
 		$users_data = $model2 -> field('id,name') -> select();
 		$temp = array();
 		$temps = array();
@@ -76,7 +79,6 @@ class GoodswantController extends CommonController{
 		foreach($users_data as $index=>$item){
 			$temps[$item['id']] = $item;
 		}
-//        dump($temp[1]);die();
 		foreach($data as $index=>$value){
 			$data[$index]['gid'] = $temp[$value['gid']];
 			$data[$index]['uid'] = $temps[$value['uid']];
