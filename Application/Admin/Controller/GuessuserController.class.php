@@ -89,6 +89,7 @@ class GuessuserController extends CommonController{
 		$guess_data = $model1 -> field('g_id,g_name') -> select();
 		$users_data = $model2 -> field('id,name') -> select();
 		$temp = array();
+		$temps = array();
 		foreach($guess_data as $index=>$item){
 			$temp[$item['g_id']] = $item;
 		}
@@ -108,9 +109,25 @@ class GuessuserController extends CommonController{
 	public function replayList(){
 		#获取数据
 		$model = M('User_replay_message');
+		$model1 = M('User_message');
+		$model2 = M('Users');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-//		dump($data);die;
+		$message_data = $model1 -> field('mid,message') -> select();
+
+		$users_data = $model2 -> field('id,name') -> select();
+		$temp = array();
+		foreach($message_data as $index=>$item){
+			$temp[$item['mid']] = $item;
+		}
+		$temps = array();
+		foreach($users_data as $index=>$item){
+			$temps[$item['id']] = $item;
+		}
+		foreach($data as $index=>$value){
+			$data[$index]['mid'] = $temp[$value['mid']];
+			$data[$index]['ruid'] = $temps[$value['ruid']];
+		}
 		#传递变量给模版
 		$this -> assign('data',$data);
 		#展示模版

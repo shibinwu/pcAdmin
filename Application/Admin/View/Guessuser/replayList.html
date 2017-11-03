@@ -27,7 +27,6 @@
 <div class="bodywrapper">
     <include file = 'Test/topheader' />   <!--包含网页头文件-->
 
-
     <include file = 'Test/header' />   <!--包含导航文件-->
 
     <include file = 'Test/leftguess' />  <!--包含左侧栏文件-->
@@ -51,11 +50,10 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">HMID</th>
-                    <th class="head1">评论ID</th>
-                    <th class="head0">回复评论者ID</th>
+                    <th class="head0">ID</th>
+                    <th class="head1">评论内容</th>
+                    <th class="head0">回复评论者</th>
                     <th class="head0">回复内容</th>
-                    <th class="head1">创建时间</th>
                     <th class="head1">操作</th>
                 </tr>
                 </thead>
@@ -63,13 +61,13 @@
                 <volist name='data' id='vol'>
                     <tr>
                         <td>{$vol.hmid}</td>
-                        <td>{$vol.mid}</td>
-                        <td>{$vol.ruid}</td>
+                        <td>{$vol.mid.message}</td>
+                        <td>{$vol.ruid.name}</td>
                         <td>{$vol.replay_msg}</td>
-                        <td><if condition='$vol.ctime == 0'>&nbsp
-                            <else/>
-                            {$vol.ctime|date="Y-m-d H:i:s",###}</if>
-                        </td>
+                        <!--<td><if condition='$vol.ctime == 0'>&nbsp-->
+                            <!--<else/>-->
+                            <!--{$vol.ctime|date="Y-m-d H:i:s",###}</if>-->
+                        <!--</td>-->
                         <td class="center" url="__CONTROLLER__"><a href="javascript:;" data-id="{$vol.mid}" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="{$vol.mid}" class="del">删除</a></td>
                     </tr>
                 </volist>
