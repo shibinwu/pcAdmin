@@ -50,6 +50,7 @@
                 </colgroup>
                 <thead>
                 <tr>
+                    <th class="head0">ID</th>
                     <th class="head0">比赛名称</th>
                     <th class="head1">左边队伍</th>
                     <th class="head0">右边队伍</th>
@@ -64,6 +65,7 @@
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
+                        <td>{$vol.g_id}</td>
                         <td>{$vol.g_name}</td>
                         <td>
                             <volist name='data1' id='vol1'>
