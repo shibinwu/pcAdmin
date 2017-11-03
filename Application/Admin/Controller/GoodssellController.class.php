@@ -21,7 +21,11 @@ class GoodssellController extends CommonController{
 		$post = I('post.');
 		$model = M('Goods_new');
 		$data = $model -> find($post['gid']);
-		$post['gtype'] = $data['game_owner'];
+		if($data['game_owner'] == 1){
+			$post['gtype'] = 2;
+		}elseif($data['game_owner'] == 2){
+			$post['gtype'] = 1;
+		}
 		#添加addtime字段
 	 	$post['ctime'] = time();
 		#写入数据表
@@ -94,39 +98,58 @@ class GoodssellController extends CommonController{
 
     #edit方法
 	 public function edit(){
-	 	#接收数据
-	 	$id = I('get.id');
+		 #接收数据
+		 $id = I('get.id');
+		 #实例化模型
+		 $model = M('Goods_sell_want');
+		 $model1 = M('Goods_new');
+		 $model2 = M('Users');
+		 #查询操作
+		 $data = $model -> find($id);
 
-	 	#实例化模型
-	 	$model = M('Goods_sell_want');
-	 	#查询操作
-	 	$data = $model -> find($id);
-//		 dump($data);
-	 	#传递给模版
-	 	$this -> assign('data',$data);
-	 	#展示模版
-	 	$this -> display();
+		 $goods_data = $model1 -> field('id,name') -> select();
+		 $users_data = $model2 -> field('id,name') -> select();
+		 $temp = array();
+		 $temps = array();
+		 foreach($goods_data as $index=>$item){
+			 $temp[$item['id']] = $item;
+		 }
+		 foreach($users_data as $index=>$item){
+			 $temps[$item['id']] = $item;
+		 }
+//		 $data['gid'] = $temp[$data['gid']];
+//		 $data['uid'] = $temps[$data['uid']];
+		 #传递给模版
+		 $this -> assign('data',$data);
+		 $this -> assign('goods_data',$goods_data);
+		 $this -> assign('users_data',$users_data);
+		 #展示模版
+		 $this -> display();
 	 }
 
 	 #editOk方法
 	 public function editOk(){
-	 	#接收post数据
-	 	$post = I('post.');
-	 	#写入到数据表
-	 	$model = M('Goods_sell_want');
-		 if($post['gsid']){
+	 	 #接收post数据
+	 	 $post = I('post.');
+
+		 if($post['uid'] == ""){
+			 $post['uid'] = 0;
+		 }
+	 	 #写入到数据表
+	 	 $model = M('Goods_sell_want');
+		  if($post['swid']){
 			 $rst = $model -> save($post);
-		 }else{
+		  }else{
 			 echo '123';
 			 die();
-		 }
-	 	#判断返回结果
-	 	if($rst){
+		  }
+	 	 #判断返回结果
+	 	 if($rst){
 	 		#成功
 	 		$this -> success('编辑成功',U('showList'),1);
-	 	}else{
+	 	 }else{
 	 		#失败
-	 		$this -> error('编辑失败',U('edit',array('id' => $post['id'])),1);
-	 	}
+	 		$this -> error('编辑失败',U('edit',array('id' => $post['swid'])),1);
+	 	 }
 	 }
 }
