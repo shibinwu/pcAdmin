@@ -35,13 +35,10 @@
     <div class="centercontent tables">
 
         <div class="pageheader notab">
-            <h1 class="pagetitle">用户列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-
+            <h1 class="pagetitle">会员列表</h1>
         </div><!--pageheader-->
 
         <div id="contentwrapper" class="contentwrapper">
-
 
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
                 <colgroup>
@@ -56,10 +53,10 @@
                 </colgroup>
                 <thead>
                 <tr>
+                    <th class="head0">ID</th>
                     <th class="head0">用户名</th>
+                    <th class="head0">头像</th>
                     <th class="head1">身份证号码</th>
-                    <th class="head0">微博</th>
-                    <th class="head0">微信</th>
                     <th class="head0">邮箱</th>
                     <th class="head0">昵称</th>
                     <th class="head0">手机号</th>
@@ -70,10 +67,10 @@
                 <tbody>
                 <volist name='data' id='vol'>
                     <tr>
+                        <td>{$vol.id}</td>
                         <td>{$vol.name}</td>
+                        <td><img width="60" height="40" src="http://admin.codechm.com/{$vol.picurl}" alt=""></td>
                         <td>{$vol.idnum}</td>
-                        <td>{$vol.weiboid}</td>
-                        <td>{$vol.openid}</td>
                         <td>{$vol.email}</td>
                         <td>{$vol.nickname}</td>
                         <td>{$vol.phone}</td>
