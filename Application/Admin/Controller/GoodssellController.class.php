@@ -45,7 +45,7 @@ class GoodssellController extends CommonController{
 		$model2 = M('Users');
 		#查询
 		$data = $model -> where('statu = 1') -> select();
-		$goods_data = $model1 -> field('id,name') -> select();
+		$goods_data = $model1 -> field('id,name,icon') -> select();
 		$users_data = $model2 -> field('id,name') -> select();
         $temp = array();
         $temps = array();
