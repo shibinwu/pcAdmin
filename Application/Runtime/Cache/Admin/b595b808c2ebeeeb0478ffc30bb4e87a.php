@@ -57,6 +57,7 @@
         <!--<div class="notification">
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
+        <div><?php echo (session('picurl')); ?></div>
         <div class="userinfo">
             <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <?php else: ?>
@@ -72,7 +73,7 @@
                 <a href="">
                     <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="http://t.codechm.com/<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
+                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
