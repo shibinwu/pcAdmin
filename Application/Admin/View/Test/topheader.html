@@ -30,7 +30,7 @@
             <if condition = "$Think.session.picurl eq ''">
                 <img src="__PUBLIC__/Admin/images/thumbs/avatar.png" alt="" />
                 <else/>
-                <img src="http://t.codechm.com/{$Think.session.picurl}"  width="30px" alt="" />
+                <img src="{$Think.session.picurl}"  width="30px" alt="" />
             </if>
 
             <if condition = "$Think.session.username eq ''">
