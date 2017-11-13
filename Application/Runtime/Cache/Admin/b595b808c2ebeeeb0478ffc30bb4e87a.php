@@ -57,7 +57,6 @@
         <!--<div class="notification">
             <a class="count" href="ajax/notifications.html"><span>9</span></a>
         </div>-->
-        <div><?php echo (session('picurl')); ?></div>
         <div class="userinfo">
             <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatar.png" alt="" />
                 <?php else: ?>
