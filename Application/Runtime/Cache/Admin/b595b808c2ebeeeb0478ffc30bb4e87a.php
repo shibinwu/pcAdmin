@@ -72,7 +72,7 @@
                 <a href="">
                     <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
+                        <img src="http://t.codechm.com/<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />

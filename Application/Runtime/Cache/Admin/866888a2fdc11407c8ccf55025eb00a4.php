@@ -68,7 +68,7 @@
                 <a href="">
                     <?php if($_SESSION['picurl']== ''): ?><img src="/Public/Admin/images/thumbs/avatarbig.png"  width="80px" height="100px" alt="" />
                         <?php else: ?>
-                        <img src="<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
+                        <img src="http://t.codechm.com/<?php echo (session('picurl')); ?>" width="80px" height="100px" alt="" /><?php endif; ?>
                 </a>
                 <div class="changetheme">
                     切换主题: <br />
@@ -140,23 +140,41 @@
 <head>
     <meta charset="UTF-8">
     <title>商城左侧栏</title>
+	
 </head>
 <body>
     <div class="vernav2 iconmenu">
     <ul>
+
+        <li><a href="#dota" class="drafts">DOTA英雄</a>
+            <span class="arrow"></span>
+            <ul id="dota">
+                <li><a href="<?php echo U('Dota/showList');?>">英雄列表</a></li>
+                <li><a href="<?php echo U('Dota/add');?>">添加英雄</a></li>
+            </ul>
+        </li>
+        <li><a href="#csgo" class="drafts">CSGO武器</a>
+            <span class="arrow"></span>
+            <ul id="csgo">
+                <li><a href="<?php echo U('Csgo/showList');?>">武器列表</a></li>
+                <li><a href="<?php echo U('Csgo/add');?>">添加武器</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#goodsattr" class="elements">属性管理</a>
+            <span class="arrow"></span>
+            <ul id="goodsattr">
+                <li><a href="<?php echo U('Goodsattr/dotaList');?>">英雄属性</a></li>
+                <li><a href="<?php echo U('Goodsattr/csgoList');?>">武器属性</a></li>
+                <li><a href="<?php echo U('Goodsattr/add');?>">添加属性</a></li>
+            </ul>
+        </li>
+
         <li><a href="#goods" class="drafts">商品管理</a>
             <span class="arrow"></span>
             <ul id="goods">
                 <li><a href="<?php echo U('Goods/showList');?>">商品列表</a></li>
                 <li><a href="<?php echo U('Goods/add');?>">添商品加</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#goodsattr" class="elements">商品详情</a>
-            <span class="arrow"></span>
-            <ul id="goodsattr">
-                <li><a href="<?php echo U('Goodsattr/showList');?>">详情列表</a></li>
-                <li><a href="<?php echo U('Goodsattr/add');?>">添加详情</a></li>
             </ul>
         </li>
 
@@ -187,8 +205,7 @@
     
         <div class="pageheader notab">
             <h1 class="pagetitle">商品列表</h1>
-            <span class="pagedesc">This is a sample description of a page</span>
-            
+
         </div><!--pageheader-->
         
         <div id="contentwrapper" class="contentwrapper">
@@ -201,44 +218,63 @@
                     <col class="con0" />
                     <col class="con1" />
                     <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
+                    <col class="con0" />
+                    <col class="con1" />
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="head0">商品名称</th>
-                    <th class="head1">商品价格</th>
-                    <th class="head0">库存</th>
-                    <th class="head1">商品所在售卖区</th>
-                    <th class="head0">可否竞猜</th>
-                    <th class="head1">市场估值</th>
+                    <th class="head0">ID</th>
+                    <th class="head1">商品名称</th>
+                    <th class="head0">商品图片</th>
+                    <th class="head1">游戏</th>
+                    <!--<th class="head0">英雄/武器</th>-->
+                    <!--<th class="head1">属性名称</th>-->
+                    <th class="head0">市场估价</th>
+                    <th class="head1">库存</th>
+                    <th class="head0">售卖区</th>
+                    <th class="head1">可否竞猜</th>
                     <th class="head0">累计成交量</th>
-                    <th class="head0">商品所属游戏</th>
-                    <th class="head0">操作</th>
+                    <th class="head1">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                        <td><?php echo ($vol["good_name"]); ?></td>
-                        <td><?php echo ($vol["price"]); ?></td>
+                        <td><?php echo ($vol["id"]); ?></td>
+                        <td><?php echo ($vol["name"]); ?></td>
+                        <td><img width="60" height="40" src="http://t.codechm.com/<?php echo ($vol['icon']); ?>"/></td>
+                        <td><?php if($vol["game_owner"] == 1): ?>dota
+                            <?php elseif($vol["game_owner"] ==2): ?>csgo
+                            <?php else: ?>&nbsp<?php endif; ?>
+                        </td>
+                        <!--<td><?php echo ($vol["game_owner"]); ?></td>-->
+                        <!--<td><?php echo ($vol["own_id"]); ?></td>-->
+                        <!--<td><?php echo ($vol["attr_ids"]); ?></td>-->
+                        <td><?php echo ($vol["valuation"]); ?></td>
                         <td><?php echo ($vol["stock"]); ?></td>
-                        <td><?php if($vol["g_part"] == 1): ?>推荐区
-                            <?php elseif($vol["g_part"] ==2): ?>打折区
-                            <?php elseif($vol["g_part"] ==3): ?>人气区
-                            <?php elseif($vol["g_part"] ==4): ?>土豪区
-                            <?php elseif($vol["g_part"] ==5): ?>求购区
+                        <td><?php if($vol["part"] == 1): ?>推荐区
+                            <?php elseif($vol["part"] ==2): ?>打折区
+                            <?php elseif($vol["part"] ==3): ?>人气区
+                            <?php elseif($vol["part"] ==4): ?>土豪区
+                            <?php elseif($vol["part"] ==5): ?>求购区
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
                         <td><?php if($vol["guess"] == 1): ?>可竞猜
-                            <?php elseif($vol["guess"] ==2): ?>不可竞猜
+                            <?php elseif($vol["guess"] ==0): ?>不可竞猜
                             <?php else: ?>&nbsp<?php endif; ?>
                         </td>
-                        <td><?php echo ($vol["valuation"]); ?></td>
                         <td><?php echo ($vol["saled_num"]); ?></td>
-                        <td><?php if($vol["gameowner"] == 1): ?>dota2
-                            <?php elseif($vol["gameowner"] == 2): ?>csgo
-                            <?php else: endif; ?>
+
+                        <td class="center">
+                            <?php if($vol[game_owner] == 1): ?><a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="dotaEdit">编辑</a> &nbsp;
+
+                            <?php else: ?>
+                            <a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="csgoEdit">编辑</a> &nbsp;<?php endif; ?>
+                            <a href="javascript:;" data-id="<?php echo ($vol["id"]); ?>" class="del">删除</a>
                         </td>
 
-                        <td class="center" url="/index.php/Admin/Goods"><a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="edit">编辑</a> &nbsp; <a href="javascript:;" data-id="<?php echo ($vol["gid"]); ?>" class="del">删除</a></td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </tbody>
             </table>
@@ -251,44 +287,44 @@
 </div><!--bodywrapper-->
 
 </body>
-<script type="text/javascript" src="/Public/Admin/js/showlist/showlist.js"></script>  <!--引入js实现编辑、删除、退出等事件-->
 <script type="text/javascript">
     //解决$方法不能用的问题
     jQuery.noConflict();
     jQuery(document).ready(function($){
+        //给dota删除按钮绑定点击事件
+        $('.dotaDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '/index.php/Admin/Goods' + '/dotaDel/id/' + id;
+        });
+        //给csgo删除按钮绑定点击事件
+        $('.csgoDel').on('click',function(){
+            //事件处理程序
+            id = this.getAttribute('data-id');    //jQuery对象，类数组的对象
+            window.location.href = '/index.php/Admin/Goods' + '/csgoDel/id/' + id;
+        });
+        //给编辑按钮绑定点击事件(用document解决分页后不能点击的bug)
+        $(document).on('click',".dotaEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '/index.php/Admin/Goods'+'/dotaEdit/id/' + id;
+        });
+        $(document).on('click',".csgoEdit",function(){
+            //事件的处理程序
+            id = this.getAttribute('data-id');//val方法是用于获取jQuery对象的值
+            //alert(id);
+            window.location.href = '/index.php/Admin/Goods'+'/csgoEdit/id/' + id;
+        });
+        //给退出按钮绑定点击事件
+        $('.exit').click(function () {
+            window.location.href = "/index.php/Admin/Public/logout";
+        });
         //默认选中效果，箭头指向
         $(function(){
             $(".headermenu>li").eq(4).addClass("current").siblings().removeClass("current")
         });
     });
-
-    function Foo(){
-        var i = 0;
-        return function (){
-            console.log(i++);
-        }
-    }
-
-    var f1 = Foo(),
-        f2 = Foo();
-
-    f1();
-    f1();
-
-    var fullname = '张三';
-    var obj ={
-        fullname:'李四',
-        prop: {
-            fullname: '王五',
-            getFullname: function () {
-                return this.fullname;
-            }
-        }
-    };
-
-    console.log(obj.prop.getFullname());
-    var test = obj.prop.getFullname;
-    console.log(test());
-    console.log(test.call(obj.prop));
 </script>
+<script type="text/javascript" src="/Public/Admin/js/plugins/footer.js"></script>
 </html>
