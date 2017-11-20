@@ -204,18 +204,22 @@ class GuessdataController extends CommonController
     {
         $id = $_GET['id'];
         #获取数据
-        $model1 = M('Guess_data');
+        $model1 = M('Guess');
         $model2 = M('Guess_team');
         #根据赛事获取对应队伍id
         $data1 = $model1->find($id);
+//        dump($data1);die();
         $data2 = $model2->select();
+
         //取出比赛的双方队伍
         $tmp = [];
         foreach ($data2 as $index => $item) {
             $tmp[$item['gtid']] = $item;
         }
-        $names[$data1['ltid']] = $tmp[$data1['ltid']]['gtname'];
-        $names[$data1['rtid']] = $tmp[$data1['rtid']]['gtname'];
+//        dump($tmp);die();
+        $names[$data1['g_leftid']] = $tmp[$data1['g_leftid']]['gtname'];
+        $names[$data1['g_rightid']] = $tmp[$data1['g_rightid']]['gtname'];
+//        dump($names);die();
         $this->ajaxReturn ($names);
     }
 }
